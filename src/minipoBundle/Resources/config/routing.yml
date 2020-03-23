@@ -10,30 +10,3 @@ minipo_employe:
 minipo_admin:
     path:     /admin/
     defaults: { _controller: minipoBundle:Default:admin }
-minipo_Afficher:
-    path:     /adminRH/AfficherEmploye
-    defaults: { _controller: minipoBundle:Employe:trouverEmploye }
-minipo_editEmploye:
-    path:     /adminRH/edit/{id}
-    defaults: { _controller: minipoBundle:Employe:edit }
-minipo_updateEmploye:
-    path:     /adminRH/update/{id}
-    defaults: { _controller: minipoBundle:Employe:update }
-minipo_delete:
-    path:     /adminRH/delete/{id}
-    defaults: { _controller: minipoBundle:Employe:delete }
-minipo_Ajouter:
-    path:     /adminRH/AjouterEmploye
-    defaults: { _controller: minipoBundle:Employe:Ajouter }
-minipo_Affecter:
-    path:     /adminRH/AffecterEquipe
-    defaults: { _controller: minipoBundle:Equipe:Affecter }
-minipo_Equipe:
-    path:     /adminRH/GererEquipe
-    defaults: { _controller: minipoBundle:Equipe:Equipe }
-minipo_deleteEquipe:
-    path:     /adminRH/deleteEquipe/{id}
-    defaults: { _controller: minipoBundle:Equipe:delete }
-minipo_updateEquipe:
-    path:     /adminRH/updateEquipe/{id}
-    defaults: { _controller: minipoBundle:Equipe:update }
