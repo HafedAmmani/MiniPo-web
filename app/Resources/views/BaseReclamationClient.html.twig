@@ -1,0 +1,282 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Shop || Rideo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assetsC/img/favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assetsC/apple-touch-icon.png') }}">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- style css -->
+    <link rel="stylesheet" href="{{ asset('assetsC/style.css') }}">
+    <!-- modernizr js -->
+    <script src="{{ asset('assetsC/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- header section start -->
+<header>
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="left floatleft">
+                        <ul>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                +11 (019) 25184203
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope-o"></i>
+                                rideo@mail.com
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right floatright">
+                        <ul>
+                            <li>
+                                <form action="#">
+                                    <button type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                    <input type="search" placeholder="Search" />
+                                </form>
+                            </li>
+                            <li>
+
+
+                                <i class="fa fa-user"></i>
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                    {{ app.user.username }}
+                                {% endif %}
+                                | <a href="{{ path('fos_user_security_logout') }}">Log out</a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sticky-menu" class="header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 header-bottom-bg">
+                    <div class="logo floatleft">
+                        <a href="index.html">
+                            <img src="img/logo.png" alt="Rideo" />
+                        </a>
+                    </div>
+                    <div class="mainmenu text-center floatleft">
+                        <nav>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li>
+                                    <a href="shop.html">products</a>
+                                </li>
+                                <li><a href="about.html">about</a></li>
+                                <li><a href="blog-1.html">blog</a>
+                                    <ul>
+                                        <li>
+                                            <a href="blog-1.html">Blog Style One</a>
+                                        </li>
+                                        <li>
+                                            <a href="single-blog.html">Single Blog</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                {#<li><a href="#">Pages</a>
+                                    <ul>
+                                        <li>
+                                            <a href="login.html">Login</a>
+                                        </li>
+                                        <li>
+                                            <a href="my-account.html">My account</a>
+                                        </li>
+                                        <li>
+                                            <a href="checkout.html">CheckOut</a>
+                                        </li>
+                                        <li>
+                                            <a href="wishlist.html">Wishlist</a>
+                                        </li>
+                                        <li>
+                                            <a href="cart.html">Cart</a>
+                                        </li>
+                                        <li>
+                                            <a href="about.html">About</a>
+                                        </li>
+                                        <li>
+                                            <a href="contact.html">Contact</a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">Shop</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-details.html">Product Details</a>
+                                        </li>
+                                        <li>
+                                            <a href="error-404.html">404 Error</a>
+                                        </li>
+                                    </ul>
+                                </li>#}
+                                <li>
+                                    <a href="#">Reclamation</a>
+                                    <ul>
+                                        <li><a href="#">Envoyer Recmalation</a>
+                                        </li>
+                                        <li><a href="#">Mes Reclamations</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="contact.html">contact</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- mobile menu start -->
+                    <div class="mobile-menu-area">
+                        <div class="mobile-menu">
+                            <nav id="dropdown">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>
+                                        <a href="shop.html">products</a>
+                                    </li>
+                                    <li><a href="about.html">about</a></li>
+                                    <li><a href="blog-1.html">blog</a>
+                                        <ul>
+                                            <li>
+                                                <a href="blog-1.html">Blog Style One</a>
+                                            </li>
+                                            <li>
+                                                <a href="single-blog.html">Single Blog</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Pages</a>
+                                        <ul>
+                                            <li>
+                                                <a href="login.html">Login</a>
+                                            </li>
+                                            <li>
+                                                <a href="my-account.html">My account</a>
+                                            </li>
+                                            <li>
+                                                <a href="checkout.html">CheckOut</a>
+                                            </li>
+                                            <li>
+                                                <a href="wishlist.html">Wishlist</a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.html">Cart</a>
+                                            </li>
+                                            <li>
+                                                <a href="about.html">About</a>
+                                            </li>
+                                            <li>
+                                                <a href="contact.html">Contact</a>
+                                            </li>
+                                            <li>
+                                                <a href="shop.html">Shop</a>
+                                            </li>
+                                            <li>
+                                                <a href="shop-gird-left.html">Shop Left Gird View</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-details.html">Product Details</a>
+                                            </li>
+                                            <li>
+                                                <a href="error-404.html">404 Error</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">contact</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- mobile menu end -->
+                    <div class="cart-menu-area floatright">
+                        <ul>
+                            <li><a href="#"><i class="pe-7s-shopbag"></i> <span>2</span></a>
+                                <ul class="cart-menu">
+                                    <li>
+                                        <a href="cart.html"><img src="{{ asset('assetsC/img/cart/1.png') }}" alt="" /></a>
+                                        <div class="cart-menu-title">
+                                            <a href="cart.html"><h5>Mount POW C058 FG </h5></a>
+                                            <span>1 x $2500</span>
+                                        </div>
+                                        <span class="cancel-item"><i class="fa fa-close"></i></span>
+                                    </li>
+                                    <li>
+                                        <a href="cart.html"><img src="{{ asset('assetsC/mg/cart/1.png') }}i" alt="" /></a>
+                                        <div class="cart-menu-title">
+                                            <a href="cart.html"><h5>Mount POW C058 FG </h5></a>
+                                            <span>1 x $2500</span>
+                                        </div>
+                                        <span class="cancel-item"><i class="fa fa-close"></i></span>
+                                    </li>
+                                    <li class="cart-menu-btn">
+                                        <a href="cart.html">view cart</a>
+                                        <a href="checkout.html">checkout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header section end -->
+<!-- page banner area start -->
+<div class="page-banner">
+    <img src="{{ asset('assetsC/img/slider/bg3.jpg') }}" alt="Page Banner" />
+</div>
+<section>
+    {% block reclamationclient %}
+
+    {% endblock %}
+</section>
+
+<!-- all js here -->
+<!-- jquery latest version -->
+<script src="{{ asset('assetsC/js/vendor/jquery-1.12.3.min.js') }}"></script>
+<!-- bootstrap js -->
+<script src="{{ asset('assetsC/js/bootstrap.min.js') }}"></script>
+<!-- camera slider JS -->
+<script src="{{ asset('assetsC/js/camera.min.js') }}"></script>
+<!-- jquery.easing js -->
+<script src="{{ asset('assetsC/js/jquery.easing.1.3.js') }}"></script>
+<!-- slick slider js -->
+<script src="{{ asset('assetsC/js/slick.min.js') }}"></script>
+<!-- jquery-ui js -->
+<script src="{{ asset('assetsC/js/jquery-ui.min.js') }}"></script>
+<!-- magnific-popup js -->
+<script src="{{ asset('assetsC/js/magnific-popup.min.js') }}"></script>
+<!-- countdown js -->
+<script src="{{ asset('assetsC/js/countdown.js') }}"></script>
+<!-- meanmenu js -->
+<script src="{{ asset('assetsC/js/jquery.meanmenu.js') }}"></script>
+<!-- plugins js -->
+<script src="{{ asset('assetsC/js/plugins.js') }}"></script>
+<!-- main js -->
+<script src="{{ asset('assetsC/js/main.js') }}"></script>
+
+<!-- Google Map JS -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_Agsvf36du-7l_mp8iu1a-rXoKcWfs2I"> </script>
+<!-- Custom map-script js -->
+<script src="{{ asset('assetsC/js/map-script.js') }}"></script>
+</body>
+</html>

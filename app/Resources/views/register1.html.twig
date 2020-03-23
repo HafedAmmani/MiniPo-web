@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{{ asset('assetsLogin/fonts/material-icon/css/material-design-iconic-font.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetsLogin/vendor/nouislider/nouislider.min.css') }}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{{ asset('assetsLogin/css/style.css') }}">
+</head>
+<body>
+
+<div class="main">
+
+    <div class="container">
+        <div class="signup-content">
+            <div class="signup-img">
+                <img src="{{ asset('assetsLogin/images/form-img.jpg') }}" alt="">
+                <div class="signup-img-content">
+                    <h2>Register now </h2>
+
+                </div>
+            </div>
+            <div class="signup-form">
+
+                    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'register-form'}}) }}
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="form-input">
+                                <label for="first_name" class="required">Prenom</label>
+                                {{ form_widget(form.Firstname, { 'attr': {'class': 'form-control placeholder-no-fix', 'placeholder':'Prenom'} }) }}
+                            </div>
+                            <div class="form-input">
+                                <label for="last_name" class="required">Nom</label>
+                                {{ form_widget(form.Lastname, { 'attr': {'class': 'form-control placeholder-no-fix', 'placeholder':'Nom'} }) }}
+                            </div>
+                            <div class="form-input">
+                                <label for="company" class="required">Adresse</label>
+                                {{ form_widget(form.adresse, { 'attr': {'class': 'form-control placeholder-no-fix', 'placeholder':'adresse'} }) }}
+                            </div>
+                            <div class="form-input">
+                                <label for="phone_number" class="required">Numero de telephone</label>
+                                {{ form_widget(form.tel, { 'attr': {'class': 'form-control placeholder-no-fix', 'placeholder':'Numero de telephone'} }) }}
+                            </div>
+
+
+                        </div>
+                        <div class="form-group">
+                            <div class="form-input">
+                                <label for="phone_number" class="required">Nom d'utilisateur</label>
+                                {{ form_widget(form.username, { 'attr': {'class': 'form-control placeholder-no-fix', 'placeholder':'Nom d utilisateur'} }) }}
+                            </div>
+                            <div class="form-input">
+                                <label for="phone_number" class="required">Email</label>
+                                {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder':'E-mail'} }) }}
+                            </div>
+                            <div class="form-input">
+                                <label for="phone_number" class="required">Mot de passe</label>
+                                {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder':'Mot de passe'} }) }}
+                            </div>
+                            <div class="form-input">
+                                <label for="phone_number" class="required">Recrire mot de passe</label>
+                                {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder':'Repeat Password'} }) }}
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-submit">
+
+                        <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+                        <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+
+
+                            <div class="compte">
+                                <div>Already have an account? <a href="{{ path('fos_user_security_login') }}" class="text"><b>Sign In</b></a></div>
+                            </div>
+
+                    </div>
+
+                    {{ form_end(form) }}
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- JS -->
+<script src="{{ asset('assetsLogin/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('assetsLogin/vendor/nouislider/nouislider.min.js') }}"></script>
+<script src="{{ asset('assetsLogin/vendor/wnumb/wNumb.js') }}"></script>
+<script src="{{ asset('assetsLogin/vendor/jquery-validation/dist/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('assetsLogin/vendor/jquery-validation/dist/additional-methods.min.js') }}"></script>
+<script src="{{ asset('assetsLogin/js/main.js') }}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
