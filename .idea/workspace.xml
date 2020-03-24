@@ -98,7 +98,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../git/Minipo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/css" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -109,16 +109,16 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Entity" />
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Resources\views\Default" />
-      <recent name="C:\wamp64\www\Minipo\web\aasetsLogin" />
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Repository" />
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Resources\views\RH" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Minipo\app\Resources\views" />
       <recent name="C:\wamp64\www\Minipo\web\assetsC\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Minipo\web\css" />
+      <recent name="C:\wamp64\www\Minipo\web" />
+      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Resources\views\Blog" />
+      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Controller" />
+      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Form" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -172,6 +172,8 @@
       <workItem from="1584812116573" duration="26499000" />
       <workItem from="1584906566654" duration="22745000" />
       <workItem from="1584987580906" duration="3803000" />
+      <workItem from="1585000926263" duration="6332000" />
+      <workItem from="1585071300570" duration="12624000" />
     </task>
     <servers />
   </component>
@@ -207,9 +209,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="493" y="312" key="ComposerCompositePathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137741724" />
-    <state x="548" y="175" key="FileChooserDialogImpl" timestamp="1584995276490">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1585003875442">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585003875442" />
     <state x="548" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1584995276489" />
     <state width="1493" height="274" key="GridCell.Tab.0.bottom" timestamp="1584933988213">
       <screen x="0" y="0" width="1536" height="864" />
@@ -239,9 +242,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="537" y="336" key="SymfonyPathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137809212" />
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1584987635344">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="465" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1585074180377">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="465" y="246" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585074180377" />
     <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584987635344" />
     <state x="425" y="199" width="672" height="677" key="run.anything.popup" timestamp="1584926912671">
       <screen x="0" y="0" width="1536" height="864" />

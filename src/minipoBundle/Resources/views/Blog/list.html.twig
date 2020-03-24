@@ -1,0 +1,411 @@
+{% extends 'BaseClient.html.twig' %}
+{% block new_style %}
+    <link href="{{ asset('css/image.css') }}" rel="stylesheet">
+{% endblock %}
+{%  block body %}
+
+
+
+    <!-- header section start -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="left floatleft">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    +11 (019) 25184203
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope-o"></i>
+                                    rideo@mail.com
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="right floatright">
+                            <ul>
+                                <li>
+                                    <form action="#">
+                                        <button type="submit">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                        <input type="search" placeholder="Search" />
+                                    </form>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user"></i>
+                                    <a href="{{ path('fos_user_security_login') }}">Account</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sticky-menu" class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 header-bottom-bg">
+                        <div class="logo floatleft">
+                            <a href="index.html">
+                                <img src="{{ asset('assetsC/img/logo.png') }}" alt="Rideo" />
+                            </a>
+                        </div>
+                        <div class="mainmenu text-center floatleft">
+                            <nav>
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>
+                                        <a href="shop.html">products</a>
+                                    </li>
+                                    <li><a href="about.html">about</a></li>
+                                    <li><a href="blog-1.html">blog</a>
+                                        <ul>
+                                            <li>
+                                                <a href="blog-1.html">Blog Style One</a>
+                                            </li>
+                                            <li>
+                                                <a href="single-blog.html">Single Blog</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Pages</a>
+                                        <ul>
+                                            <li>
+                                                <a href="login.html">Login</a>
+                                            </li>
+                                            <li>
+                                                <a href="my-account.html">My account</a>
+                                            </li>
+                                            <li>
+                                                <a href="checkout.html">CheckOut</a>
+                                            </li>
+                                            <li>
+                                                <a href="wishlist.html">Wishlist</a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.html">Cart</a>
+                                            </li>
+                                            <li>
+                                                <a href="about.html">About</a>
+                                            </li>
+                                            <li>
+                                                <a href="contact.html">Contact</a>
+                                            </li>
+                                            <li>
+                                                <a href="shop.html">Shop</a>
+                                            </li>
+                                            <li>
+                                                <a href="product-details.html">Product Details</a>
+                                            </li>
+                                            <li>
+                                                <a href="error-404.html">404 Error</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">contact</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- mobile menu start -->
+                        <div class="mobile-menu-area">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li>
+                                            <a href="shop.html">products</a>
+                                        </li>
+                                        <li><a href="about.html">about</a></li>
+                                        <li><a href="blog-1.html">blog</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="blog-1.html">Blog Style One</a>
+                                                </li>
+                                                <li>
+                                                    <a href="single-blog.html">Single Blog</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Pages</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="login.html">Login</a>
+                                                </li>
+                                                <li>
+                                                    <a href="my-account.html">My account</a>
+                                                </li>
+                                                <li>
+                                                    <a href="checkout.html">CheckOut</a>
+                                                </li>
+                                                <li>
+                                                    <a href="wishlist.html">Wishlist</a>
+                                                </li>
+                                                <li>
+                                                    <a href="cart.html">Cart</a>
+                                                </li>
+                                                <li>
+                                                    <a href="about.html">About</a>
+                                                </li>
+                                                <li>
+                                                    <a href="contact.html">Contact</a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop.html">Shop</a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop-gird-left.html">Shop Left Gird View</a>
+                                                </li>
+                                                <li>
+                                                    <a href="product-details.html">Product Details</a>
+                                                </li>
+                                                <li>
+                                                    <a href="error-404.html">404 Error</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="contact.html">contact</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- mobile menu end -->
+                        <div class="cart-menu-area floatright">
+                            <ul>
+                                <li><a href="#"><i class="pe-7s-shopbag"></i> <span>2</span></a>
+                                    <ul class="cart-menu">
+                                        <li>
+                                            <a href="cart.html"><img src="{{ asset('assetsC/img/cart/1.png') }}" alt="" /></a>
+                                            <div class="cart-menu-title">
+                                                <a href="cart.html"><h5>Mount POW C058 FG </h5></a>
+                                                <span>1 x $2500</span>
+                                            </div>
+                                            <span class="cancel-item"><i class="fa fa-close"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="cart.html"><img src="{{ asset('assetsC/mg/cart/1.png') }}i" alt="" /></a>
+                                            <div class="cart-menu-title">
+                                                <a href="cart.html"><h5>Mount POW C058 FG </h5></a>
+                                                <span>1 x $2500</span>
+                                            </div>
+                                            <span class="cancel-item"><i class="fa fa-close"></i></span>
+                                        </li>
+                                        <li class="cart-menu-btn">
+                                            <a href="cart.html">view cart</a>
+                                            <a href="checkout.html">checkout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header section end -->
+
+    <div class="page-banner">
+        <img src="{{ asset('assetsC/img/blogo.jpg') }}" alt="Page Banner">
+    </div>
+
+
+<div class="page-banner">
+    <section class="blog-area blog-one blog-margin section-padding">
+
+        <div class="container">
+            <h1>Lister les status disponibles</h1>
+            <li>
+                <form action="#">
+                    <button type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <input type="search" placeholder="Search">
+                </form>
+            </li>
+            <div class="row">
+                {% for blogs in blogs %}
+                <div class="col-sm-4">
+
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img class="img1" src="{{ asset('uploads/post/' ~ blogs.getImage()) }}" alt="{{ blogs.titre }}" />
+                        </div>
+                        <div>
+                            <h3>{{ blogs.titre }}</h3>
+                            <small class="text-muted">{{ blogs.date|date() }}</small>
+                        </div>
+
+                        <div class="blog-text clearfix">
+                            <hr class="line"/>
+                            <p>{{ blogs.description }}</p>
+                            <div class="button">
+                            <a href="{{ path('minipo_UpdateBlog',{'idA':blogs.idA })}}"><button type="button" class="edit-btn" >Modifier</button></a>
+                            <a href="{{ path('minipo_DeleteBlog',{'idA':blogs.idA })}}"><button type="button"class="deleted-btn" href="single-blog.html">Delete</button></a>
+                            </div>
+
+                            <div class="view-more">
+                                <a href="{{ path('minipo_DetaileBlog',{'idA':blogs.idA })}}">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            </div>
+    </section>
+</div>
+
+
+
+
+<!-- footer top start -->
+<div class="footer-top section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="s-footer-text">
+                    <div class="footer-title">
+                        <h4>Socail Network</h4>
+                    </div>
+                    <div class="social-link actions-btn clearfix">
+                        <ul>
+                            <li>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4>Newsletter</h4>
+                    <form action="#">
+                        <div class="input-text">
+                            <input type="text" name="email" placeholder="Email Address" />
+                        </div>
+                        <div class="submit-text">
+                            <input type="submit" name="submit" value="submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-3">
+                <div class="s-footer-text">
+                    <div class="footer-title">
+                        <h4>Contact</h4>
+                    </div>
+                    <div class="contact-link">
+                        <ul>
+                            <li>
+                                <span>Email:</span><p>Domain@email.com Name@company.info</p>
+                            </li>
+                            <li>
+                                <span>Phone:</span> <p>+111 (019) 25184203 +111 (018) 50950555</p>
+                            </li>
+                            <li>
+                                <span>Address:</span><p>777/a4 Bonosri Road, Danpura East USA. -25000</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-2">
+                <div class="s-footer-text">
+                    <div class="footer-title">
+                        <h4>INFORMATION</h4>
+                    </div>
+                    <div class="footer-menu">
+                        <ul>
+                            <li>
+                                <a href="about.html">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Our Store</a>
+                            </li>
+                            <li>
+                                <a href="#">Order history</a>
+                            </li>
+                            <li>
+                                <a href="#">Help</a>
+                            </li>
+                            <li>
+                                <a href="#">FAQ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-3">
+                <div class="s-footer-text">
+                    <div class="footer-title">
+                        <h4>My Account</h4>
+                    </div>
+                    <div class="footer-menu">
+                        <ul>
+                            <li>
+                                <a href="#">My Orer</a>
+                            </li>
+                            <li>
+                                <a href="cart.html">My Cart</a>
+                            </li>
+                            <li>
+                                <a href="wishlist.html">Wishlist</a>
+                            </li>
+                            <li>
+                                <a href="login.html">Login</a>
+                            </li>
+                            <li>
+                                <a href="login">Register</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer top end -->
+<!-- footer bottom start -->
+<div class="footer-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="left floatleft">
+                    <p>Copyright &copy; 2016 - Template Powered By <a href="https://freethemescloud.com/">Free themes Cloud</a></p>
+                </div>
+                <div class="right mayment-card floatright">
+                    <ul>
+                        <li>
+                            <a href="#"><img src="{{ asset('assetsC/img/footer/v1.png') }}" alt="Payment Card" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{{ asset('assetsC/img/footer/v2.png') }}" alt="Payment Card" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{{ asset('assetsC/img/footer/v3.png') }}" alt="Payment Card" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{{ asset('assetsC/img/footer/v4.png') }}" alt="Payment Card" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer bottom end -->
+</footer>
+<!-- footer section end -->
+{% endblock  %}

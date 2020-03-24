@@ -10,3 +10,49 @@ minipo_employe:
 minipo_admin:
     path:     /admin/
     defaults: { _controller: minipoBundle:Default:admin }
+minipo_Afficher:
+    path:     /adminRH/AfficherEmploye
+    defaults: { _controller: minipoBundle:Employe:trouverEmploye }
+minipo_editEmploye:
+    path:     /adminRH/edit/{id}
+    defaults: { _controller: minipoBundle:Employe:edit }
+minipo_updateEmploye:
+    path:     /adminRH/update/{id}
+    defaults: { _controller: minipoBundle:Employe:update }
+minipo_delete:
+    path:     /adminRH/delete/{id}
+    defaults: { _controller: minipoBundle:Employe:delete }
+minipo_Ajouter:
+    path:     /adminRH/AjouterEmploye
+    defaults: { _controller: minipoBundle:Employe:Ajouter }
+minipo_Affecter:
+    path:     /adminRH/AffecterEquipe
+    defaults: { _controller: minipoBundle:Equipe:Affecter }
+minipo_Equipe:
+    path:     /adminRH/GererEquipe
+    defaults: { _controller: minipoBundle:Equipe:Equipe }
+minipo_deleteEquipe:
+    path:     /adminRH/deleteEquipe/{id}
+    defaults: { _controller: minipoBundle:Equipe:delete }
+minipo_updateEquipe:
+    path:     /adminRH/updateEquipe/{id}
+    defaults: { _controller: minipoBundle:Equipe:update }
+
+minipo_addblog:
+    path:     /addBlog
+    defaults: { _controller: minipoBundle:Blog:addBlog }
+minipo_listblog:
+    path:     /listBlog
+    defaults: { _controller: minipoBundle:Blog:listBlog }
+minipo_UpdateBlog:
+    path:     /updateBlog/{idA}
+    defaults: { _controller: minipoBundle:Blog:updateBlog }
+minipo_DeleteBlog:
+    path:     /deleteBlog/{idA}
+    defaults: { _controller: minipoBundle:Blog:deleteBlog }
+minipo_DetaileBlog:
+    path:     /detailBlog/{idA}
+    defaults: { _controller: minipoBundle:Blog:detailBlog }
+minipo_searchByTitleBlog:
+    path:     /search
+    defaults: { _controller: minipoBundle:Blog:search }

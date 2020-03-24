@@ -38,7 +38,8 @@ class Articles
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="blob", length=65535, nullable=false)
+     * @ORM\Column(name="image", type="string", length=500)
+     * Assert\File(maxSize="500K",mimeType={"image/jpeg", "image/jpg", "image/png", "image/GIF"})
      */
     private $image;
 
