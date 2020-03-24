@@ -86,6 +86,7 @@
       <path value="$PROJECT_DIR$/vendor/hwi/oauth-bundle" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/cmen/google-charts-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Z5mG4jvYLFw5cm0IWbPLx0ItBB" />
@@ -98,7 +99,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/minipoBundle/Entity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../git/Minipo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -138,6 +139,7 @@
       <command value="php composer.phar require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
       <command value="s debug:router" />
       <command value="s doctrine:schema:update --force" />
+      <command value="c require cmen/google-charts-bundle" />
     </option>
   </component>
   <component name="ServiceViewManager">
@@ -170,7 +172,9 @@
       <workItem from="1584730378131" duration="23561000" />
       <workItem from="1584793804189" duration="105000" />
       <workItem from="1584812116573" duration="26499000" />
-      <workItem from="1584906566654" duration="21426000" />
+      <workItem from="1584906566654" duration="22745000" />
+      <workItem from="1584987580906" duration="14632000" />
+      <workItem from="1585073122112" duration="1439000" />
     </task>
     <servers />
   </component>
@@ -206,45 +210,45 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="493" y="312" key="ComposerCompositePathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137741724" />
-    <state x="548" y="175" key="FileChooserDialogImpl" timestamp="1584928627221">
+    <state x="548" y="175" key="FileChooserDialogImpl" timestamp="1584995276490">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="548" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1584928627221" />
-    <state width="1493" height="274" key="GridCell.Tab.0.bottom" timestamp="1584927078175">
+    <state x="548" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1584995276489" />
+    <state width="1493" height="274" key="GridCell.Tab.0.bottom" timestamp="1585011300990">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584927078175" />
-    <state width="1493" height="274" key="GridCell.Tab.0.center" timestamp="1584927078175">
+    <state width="1493" height="274" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1585011300990" />
+    <state width="1493" height="274" key="GridCell.Tab.0.center" timestamp="1585011300990">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1584927078175" />
-    <state width="1493" height="274" key="GridCell.Tab.0.left" timestamp="1584927078175">
+    <state width="1493" height="274" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1585011300990" />
+    <state width="1493" height="274" key="GridCell.Tab.0.left" timestamp="1585011300989">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1584927078175" />
-    <state width="1493" height="274" key="GridCell.Tab.0.right" timestamp="1584927078175">
+    <state width="1493" height="274" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1585011300989" />
+    <state width="1493" height="274" key="GridCell.Tab.0.right" timestamp="1585011300990">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1584927078175" />
-    <state x="537" y="248" key="NewPhpClassDialog" timestamp="1584926737597">
+    <state width="1493" height="274" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1585011300990" />
+    <state x="537" y="248" key="NewPhpClassDialog" timestamp="1585003230199">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="537" y="248" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1584926737597" />
-    <state x="277" y="76" key="SettingsEditor" timestamp="1584733645706">
+    <state x="537" y="248" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1585003230199" />
+    <state x="277" y="76" key="SettingsEditor" timestamp="1584999542591">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="277" y="76" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1584733645706" />
+    <state x="277" y="76" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1584999542591" />
     <state x="537" y="336" key="SymfonyPathDialog" timestamp="1584137809212">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="537" y="336" key="SymfonyPathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137809212" />
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1584906572717">
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1585073186048">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584906572717" />
-    <state x="425" y="199" width="672" height="677" key="run.anything.popup" timestamp="1584926912671">
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1585073186048" />
+    <state x="425" y="199" width="672" height="677" key="run.anything.popup" timestamp="1585000605170">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="199" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1584926912671" />
+    <state x="425" y="199" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1585000605170" />
   </component>
 </project>
