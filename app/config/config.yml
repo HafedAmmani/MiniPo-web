@@ -8,6 +8,8 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+    photos_directory: '%kernel.root_dir%/../web/uploads/post'
+
 
 framework:
     #esi: ~

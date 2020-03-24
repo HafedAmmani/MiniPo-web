@@ -1,3 +1,14 @@
 {% extends 'BaseClientInterne.html.twig' %}
 
 
+{% block Reclamation %}
+    <li>
+        <a href="#">Reclamation</a>
+        <ul>
+            <li><a href="{{ path('minipo_AjouterReclamation')}}">Envoyer Recmalation</a>
+            </li>
+            <li><a href="#">Mes Reclamations</a>
+            </li>
+        </ul>
+    </li>
+{% endblock  %}

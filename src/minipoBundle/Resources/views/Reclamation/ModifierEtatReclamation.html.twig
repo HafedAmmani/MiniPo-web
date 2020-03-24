@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+{% block reclamationclient   %}
+<form method="post">
+    <form class="form-horizontal m-t-40" method="post">
+        {#<div class="form-group">
+            <label>Date  <span class="help"> e.g. "George deo"</span></label>
+            <input type="text" class="form-control" value={{ reclamation.dater}}>
+        </div>#}
+        <div class="form-group">
+            <label >Type :</label>
+            <label >{{ reclamation.type}}</label>
+           {#<input type="text"  class="form-control" value={{ reclamation.type}}>#}
+        </div>
+        <div class="form-group">
+            <label>Objet :</label>
+            <label >{{ reclamation.objet}}</label>
+           {#<input type="text"  class="form-control" value={{ reclamation.objet}}>#}
+        </div>
+        <div class="form-group">
+            <label>Description :</label>
+            <label >{{ reclamation.description}}</label>
+            {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
+        </div>
+        <div class="form-group">
+            <label>Reponse</label>
+            <textarea class="form-control" name="reponse"  rows="5" value={{ reclamation.Reponse}}>{{reclamation.Reponse}}</textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Etat</label>
+            <select class="custom-select col-12" id="inlineFormCustomSelect" name="etat" value={{ reclamation.etatr}}>
+                {% if  reclamation.etatr is same as ('traiter')%}
+                    <option selected>traiter</option>
+                    <option>non traiter</option>
+                {%endif%}
+                {% if  reclamation.etatr is same as ('non traiter')%}
+                    <option>traiter</option>
+                    <option selected>non traiter</option>
+                {%endif%}
+            </select>
+        </div>
+
+        <a href="{{ path('minipo_ModifierEtatReclamation',{'id':reclamation.idr}) }}"><button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button></a>
+        <button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button>
+
+    </form>
+{#Etat:<select name="etat" value={{ reclamation.etatr}}>
+        {% if  reclamation.etatr is same as ('traiter')%}
+            <option selected>traiter</option>
+            <option>non traiter</option>
+        {%endif%}
+        {% if  reclamation.etatr is same as ('non traiter')%}
+            <option>traiter</option>
+            <option selected>non traiter</option>
+        {%endif%}
+
+    </select>
+    Reponse:<input type ="text" name="reponse" value={{ reclamation.Reponse}}>
+    <td><a href="{{ path('minipo_ModifierEtatReclamation',{'id':reclamation.idr}) }}">
+    <button >modifier</button></a>
+
+
+</form>#}
+
+{% endblock    %}

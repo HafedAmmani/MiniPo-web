@@ -272,14 +272,14 @@
 
                                 </ul>
                             </li>
-
+                            {% block Reclamation %}
                             <li>  <a class="has-arrow waves-effect waves-dark"  aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">Reclamtion </span></a>
                                 <ul aria-expanded="false" class="collapse">
                                     <li><a href="/">Ajouter Reclamations </a></li>
                                     <li><a href="/">Lister Reclamations </a></li>
                                 </ul>
                             </li>
-
+                            {% endblock  %}
 
                         </ul>
                     </nav>
@@ -303,7 +303,8 @@
                         <!-- ============================================================== -->
                         <!-- Start Page Content -->
                         <!-- ============================================================== -->
-
+                        {% block reclamationclient   %}
+                        {% endblock  %}
                         <!-- ============================================================== -->
                         <!-- End PAge Content -->
                         <!-- ============================================================== -->

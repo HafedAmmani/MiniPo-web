@@ -10,3 +10,75 @@ minipo_employe:
 minipo_admin:
     path:     /admin/
     defaults: { _controller: minipoBundle:Default:admin }
+minipo_Afficher:
+    path:     /adminRH/AfficherEmploye
+    defaults: { _controller: minipoBundle:Employe:trouverEmploye }
+minipo_editEmploye:
+    path:     /adminRH/edit/{id}
+    defaults: { _controller: minipoBundle:Employe:edit }
+minipo_updateEmploye:
+    path:     /adminRH/update/{id}
+    defaults: { _controller: minipoBundle:Employe:update }
+minipo_delete:
+    path:     /adminRH/delete/{id}
+    defaults: { _controller: minipoBundle:Employe:delete }
+minipo_Ajouter:
+    path:     /adminRH/AjouterEmploye
+    defaults: { _controller: minipoBundle:Employe:Ajouter }
+minipo_Affecter:
+    path:     /adminRH/AffecterEquipe
+    defaults: { _controller: minipoBundle:Equipe:Affecter }
+minipo_Equipe:
+    path:     /adminRH/GererEquipe
+    defaults: { _controller: minipoBundle:Equipe:Equipe }
+minipo_deleteEquipe:
+    path:     /adminRH/deleteEquipe/{id}
+    defaults: { _controller: minipoBundle:Equipe:delete }
+minipo_updateEquipe:
+    path:     /adminRH/updateEquipe/{id}
+    defaults: { _controller: minipoBundle:Equipe:update }
+minipo_AfficherToutesReclamation:
+    path:   /admin/afficher
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:AfficherToutesReclamation}
+minipo_AjouterReclamation:
+    path:   /client/ajouter
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:AjouterReclamation}
+minipo_ModifierEtatReclamation:
+    path:   /admin/modifieretat/{id}
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:ModifierEtatReclamation}
+minipo_SupprimerReclamation:
+    path:   /admin/afficher/supprimer/{etatr}
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:SupprimerReclamation}
+minipo_searchClub:
+    path:   /admin/RechercheReclamation
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:searchClub}
+
+minipo_showdetailed:
+    path:   /admin/showdetailed/{id}
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:showdetailed}
+
+
+minipo_AfficherToutesReclamationEmploye:
+    path:   /afficheremployer
+    defaults: { _controller: minipoBundle:ServiceReclamationEmploye:AfficherToutesReclamationEmploye}
+minipo_ModifierEtatReclamationEmploye:
+    path:   /modifieretatemploye/{id}
+    defaults: { _controller: minipoBundle:ServiceReclamationEmploye:ModifierEtatReclamationEmploye}
+minipo_SupprimerReclamationEmploye:
+    path:   /afficher/supprimerEmploye/{etatr}
+    defaults: { _controller: minipoBundle:ServiceReclamationEmploye:SupprimerReclamationEmploye}
+minipo_AjouterReclamationEmploye:
+    path:   /employe/ajouterEmploye
+    defaults: { _controller: minipoBundle:ServiceReclamationEmploye:AjouterReclamationEmploye}
+minipo_homepageEmploye:
+    path:     /employe
+    defaults: { _controller: minipoBundle:Default:indexEmploye }
+minipo_Search:
+    path:   /employe/SearchEmploye
+    defaults: { _controller: minipoBundle:ServiceReclamationEmploye:ajaxList}
+minipo_homepageClient:
+    path:     /client
+    defaults: { _controller: minipoBundle:Default:indexClient }
+minipo_notification:
+    path:     /notification
+    defaults: { _controller: minipoBundle:Notification:display }
