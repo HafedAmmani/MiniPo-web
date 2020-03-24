@@ -43,6 +43,9 @@ minipo_AfficherToutesReclamation:
 minipo_AjouterReclamation:
     path:   /client/ajouter
     defaults: { _controller: minipoBundle:ServiceReclamationClient:AjouterReclamation}
+minipo_AfficherMesReclamation:
+    path:   /client/afficherMesReclamation
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:AfficherMesReclamation}
 minipo_ModifierEtatReclamation:
     path:   /admin/modifieretat/{id}
     defaults: { _controller: minipoBundle:ServiceReclamationClient:ModifierEtatReclamation}
@@ -59,7 +62,7 @@ minipo_showdetailed:
 
 
 minipo_AfficherToutesReclamationEmploye:
-    path:   /afficheremployer
+    path:   /employe/afficheremployer
     defaults: { _controller: minipoBundle:ServiceReclamationEmploye:AfficherToutesReclamationEmploye}
 minipo_ModifierEtatReclamationEmploye:
     path:   /modifieretatemploye/{id}

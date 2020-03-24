@@ -75,14 +75,20 @@ class ServiceReclamationClientController extends Controller
         $em->flush();
         return $this->redirectToRoute("minipo_AfficherToutesReclamation");
     }
-    public function AfficherMesReclamationAction()
+    public function AfficherMesReclamationAction(Request $request)
     {
-        return $this->render('@minipo/Reclamation/index.html.twig');
-    }
+        $session = $request->getSession();
+        $id=$session->get('id');
+        $reclamation = $this->getDoctrine()->getRepository(Reclamation::class)->findOneBy(array('id'=>$id));
+        return $this->render('@minipo/Reclamation/AffichageReclamation.html.twig',array('reclamation'=>$reclamation));
+        }
+
+
+
     public function AfficherToutesReclamationAction()
     {
         $reclamation = $this->getDoctrine()->getRepository(Reclamation::class)->findAll();
-        return $this->render('@minipo/Reclamation/AffichageReclamation.html.twig',array('reclamation'=>$reclamation));
+        return $this->render('@minipo/Reclamation/AffichageMesReclamation.html.twig',array('reclamation'=>$reclamation));
     }
 
     public function searchAction(Request $request)

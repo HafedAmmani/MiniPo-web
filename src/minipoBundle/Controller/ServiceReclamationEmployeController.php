@@ -31,7 +31,7 @@ class ServiceReclamationEmployeController extends Controller
             $em->flush();
             $this->addFlash('info', 'Reclamation envoyee !');
 
-
+            return $this->redirectToRoute('minipo_AfficherToutesReclamationEmploye');
             }
         return $this->render('@minipo/Reclamation/AjouterReclamationEmploye.html.twig',array('f'=>$form->createView()));
     }
@@ -64,7 +64,7 @@ class ServiceReclamationEmployeController extends Controller
     public function AfficherToutesReclamationEmployeAction()
     {
         $reclamation = $this->getDoctrine()->getRepository(Reclamationemploye::class)->findAll();
-        return $this->render('@minipo/Reclamation/AffichageReclamationEmploye.html.twig',array('reclamationemploye'=>$reclamation));
+        return $this->render('@minipo/Reclamation/AffichageMesReclamationEmploye.html.twig',array('reclamationemploye'=>$reclamation));
     }
 
     public function searchAction(Request $request)

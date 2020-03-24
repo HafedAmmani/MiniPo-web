@@ -40,11 +40,7 @@
     </tr>
 
 </Table>#}
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Bordered Table</h4>
-                <h6 class="card-subtitle">Add<code>.table-bordered</code>for borders on all sides of the table and cells.</h6>
+
 
 
                     {#<label>Search: <input type="search" class="" placeholder="" aria-controls="example23" name="etatr"></label>
@@ -54,19 +50,7 @@
                             <a href="{{ path('minipo_RechercheReclamation') }}" data-toggle="tooltip" data-original-title="Close">
                         </li>
                     </ul>#}
-                <div class="sidebar-search">
-                    <div class="input-group custom-search-form">
-                        <input type="text" id="search" class="form-control" placeholder="Suche...">
-                    </div>
-                    <!-- /input-group -->
-                </div>
-                <ul class="nav" id="side-menu">
-                    <li>
-                        <a href="#"> Entities<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level" id="entitiesNav">
-                        </ul>
-                    </li>
-                </ul>
+
 
 
                 {#
@@ -115,7 +99,38 @@
                   </script>#}
 
 
-
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Reclamation Employe</h4>
+                                <h6 class="card-subtitle">Liste des Reclamations Employe</h6>
+                                <div class="row m-t-40">
+                                    <!-- Column -->
+                                    <div class="col-md-6 col-lg-3 col-xlg-3">
+                                        <div class="card card-inverse card-info">
+                                            <div class="box bg-info text-center">
+                                                <h1 class="font-light text-white">2,064</h1>
+                                                <h6 class="text-white">Total Reclamation </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3 col-xlg-3">
+                                        <div class="card card-success card-inverse">
+                                            <div class="box text-center">
+                                                <h1 class="font-light text-white">1,738</h1>
+                                                <h6 class="text-white">Total  traiter</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3 col-xlg-3">
+                                        <div class="card card-inverse card-danger">
+                                            <div class="box text-center">
+                                                <h1 class="font-light text-white">1,738</h1>
+                                                <h6 class="text-white">Total Non Traiter</h6>
+                                            </div>
+                                        </div>
+                                    </div>
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead>

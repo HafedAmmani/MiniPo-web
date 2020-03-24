@@ -27,6 +27,9 @@
     <expand />
     <select />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/doctrine/common" />
@@ -98,7 +101,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/minipoBundle/Resources/views/Default" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/minipoBundle/Resources/views/Reclamation" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -106,19 +109,19 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Minipo\app\Resources\views" />
-      <recent name="C:\wamp64\www\Minipo\web\assetsC\js" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp644\www\MiniPo-web\src\minipoBundle\Resources\views\Reclamation" />
       <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Resources\views\Default" />
       <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Repository" />
       <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Resources\views\Reclamation" />
       <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Form" />
-      <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Minipo\app\Resources\views" />
+      <recent name="C:\wamp64\www\Minipo\web\assetsC\js" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -145,12 +148,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:minipot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -178,6 +176,7 @@
       <workItem from="1584906566654" duration="22745000" />
       <workItem from="1584987580906" duration="3803000" />
       <workItem from="1585000177307" duration="8876000" />
+      <workItem from="1585010948541" duration="9687000" />
     </task>
     <servers />
   </component>
@@ -245,10 +244,10 @@
     </state>
     <state x="448" y="195" key="NewPhpClassDialog/0.0.1280.680@0.0.1280.680" timestamp="1585003006073" />
     <state x="537" y="248" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1584926737597" />
-    <state x="231" y="0" key="SettingsEditor" timestamp="1585000626136">
+    <state x="231" y="0" key="SettingsEditor" timestamp="1585013052411">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="231" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1585000626136" />
+    <state x="231" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1585013052411" />
     <state x="277" y="76" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1584733645706" />
     <state x="448" y="264" key="SymfonyPathDialog" timestamp="1585000590429">
       <screen x="0" y="0" width="1280" height="680" />
