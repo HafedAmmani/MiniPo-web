@@ -98,7 +98,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/minipoBundle/Entity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../git/Minipo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -170,7 +170,8 @@
       <workItem from="1584730378131" duration="23561000" />
       <workItem from="1584793804189" duration="105000" />
       <workItem from="1584812116573" duration="26499000" />
-      <workItem from="1584906566654" duration="21426000" />
+      <workItem from="1584906566654" duration="22745000" />
+      <workItem from="1584987580906" duration="3803000" />
     </task>
     <servers />
   </component>
@@ -206,26 +207,26 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="493" y="312" key="ComposerCompositePathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137741724" />
-    <state x="548" y="175" key="FileChooserDialogImpl" timestamp="1584928627221">
+    <state x="548" y="175" key="FileChooserDialogImpl" timestamp="1584995276490">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="548" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1584928627221" />
-    <state width="1493" height="274" key="GridCell.Tab.0.bottom" timestamp="1584927078175">
+    <state x="548" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1584995276489" />
+    <state width="1493" height="274" key="GridCell.Tab.0.bottom" timestamp="1584933988213">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584927078175" />
-    <state width="1493" height="274" key="GridCell.Tab.0.center" timestamp="1584927078175">
+    <state width="1493" height="274" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584933988213" />
+    <state width="1493" height="274" key="GridCell.Tab.0.center" timestamp="1584933988212">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1584927078175" />
-    <state width="1493" height="274" key="GridCell.Tab.0.left" timestamp="1584927078175">
+    <state width="1493" height="274" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1584933988212" />
+    <state width="1493" height="274" key="GridCell.Tab.0.left" timestamp="1584933988211">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1584927078175" />
-    <state width="1493" height="274" key="GridCell.Tab.0.right" timestamp="1584927078175">
+    <state width="1493" height="274" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1584933988211" />
+    <state width="1493" height="274" key="GridCell.Tab.0.right" timestamp="1584933988212">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1584927078175" />
+    <state width="1493" height="274" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1584933988212" />
     <state x="537" y="248" key="NewPhpClassDialog" timestamp="1584926737597">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -238,10 +239,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="537" y="336" key="SymfonyPathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137809212" />
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1584906572717">
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1584987635344">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584906572717" />
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584987635344" />
     <state x="425" y="199" width="672" height="677" key="run.anything.popup" timestamp="1584926912671">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
