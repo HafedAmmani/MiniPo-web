@@ -80,7 +80,7 @@ class ServiceReclamationClientController extends Controller
         $session = $request->getSession();
         $id=$session->get('id');
         $reclamation = $this->getDoctrine()->getRepository(Reclamation::class)->findOneBy(array('id'=>$id));
-        return $this->render('@minipo/Reclamation/AffichageReclamation.html.twig',array('reclamation'=>$reclamation));
+        return $this->render('',array('reclamation'=>$reclamation));
         }
 
 
@@ -88,7 +88,19 @@ class ServiceReclamationClientController extends Controller
     public function AfficherToutesReclamationAction()
     {
         $reclamation = $this->getDoctrine()->getRepository(Reclamation::class)->findAll();
-        return $this->render('@minipo/Reclamation/AffichageMesReclamation.html.twig',array('reclamation'=>$reclamation));
+        $SommeTraité=0;
+        $SommeNonTraité=0;
+        foreach($reclamation as $elt) {
+            if($elt->getEtatremp()=="traiter") {
+                $SommeTraité = $SommeTraité + 1;
+            }
+        }
+        foreach($reclamation as $elt) {
+            if($elt->getEtatremp()=="non traiter") {
+                $SommeNonTraité = $SommeNonTraité + 1;
+            }
+        }
+        return $this->render('@minipo/Reclamation/AffichageReclamation.html.twig',array('reclamation'=>$reclamation));
     }
 
     public function searchAction(Request $request)
