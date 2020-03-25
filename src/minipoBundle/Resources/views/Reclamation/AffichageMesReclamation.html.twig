@@ -1,14 +1,5 @@
 {% extends 'BaseReclamationClient.html.twig' %}
-{% block Reclamation %}
-    <li>  <a class="has-arrow waves-effect waves-dark"  aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">Reclamtion </span></a>
-        <ul aria-expanded="false" class="collapse">
-            <li><a href="{{ path('minipo_AjouterReclamation') }}">Ajouter Reclamations </a></li>
 
-            <li><a href="{{ path('minipo_AfficherMesReclamation') }}">Lister Reclamations </a></li>
-
-        </ul>
-    </li>
-{% endblock  %}
 
 {% block reclamationclient   %}
 
@@ -101,27 +92,40 @@
 
 
 <!-- .row -->
-<div class="row">
-    <!-- .col -->
-    <div class="col-md-6 col-lg-6 col-xlg-4">
-        <div class="card card-body">
-            <div class="row">
-                <div class="col-md-4 col-lg-3 text-center">
-                    <a href="app-contact-detail.html"><img src="../assets/images/users/1.jpg" alt="user" class="img-circle img-responsive"></a>
+    <div class="container-fluid">
+        <!-- .row -->
+        <div class="row">
+            <!-- .col -->
+            {% for elt in reclamation  %}
+                <div class="col-md-6 col-lg-6 col-xlg-4">
+                    <div class="card card-body">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-3 text-center">
+                                <a href="#"><img src="{{ asset('uploads/post/' ~ elt.image) }}"  class=""></a>
+                            </div>
+                            <div class="col-md-8 col-lg-9">
+                                <h3 class="box-title m-b-0">{{ elt.idcatrec.nom }}</h3> <small>{{ elt.objet}}</small>
+                                <h4>
+                                    {% if  elt.etatr is same as ('traiter')%}
+                                        <div class="label label-table label-success">{{ elt.etatr }}</div>
+                                    {%endif%}
+                                    {% if  elt.etatr is same as ('non traiter')%}
+                                        <div class="label label-table label-danger">{{ elt.etatr }}</div>
+                                    {%endif%}
+                                    <br/>
+                                    <br/>
+                                    <abbr title="Phone">{{ elt.dater|date()}}</abbr>
+
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-8 col-lg-9">
-                    <h3 class="box-title m-b-0">Johnathan Doe</h3> <small>Web Designer</small>
-                    <address>
-                        795 Folsom Ave, Suite 600 San Francisco, CADGE 94107
-                        <br/>
-                        <br/>
-                        <abbr title="Phone">P:</abbr> (123) 456-7890
-                    </address>
-                </div>
-            </div>
+            {% endfor   %}
         </div>
     </div>
 {% endblock %}
+
 
   {# minipo_SupprimerReclamation:
       path:   /afficher/supprimer/{etatr}

@@ -71,7 +71,7 @@
                 <div class="col-xs-12 header-bottom-bg">
                     <div class="logo floatleft">
                         <a href="index.html">
-                            <img src="img/logo.png" alt="Rideo" />
+                            <img src="{{ asset('assetsC/img/logo.png') }}" alt="Rideo" />
                         </a>
                     </div>
                     <div class="mainmenu text-center floatleft">
@@ -129,9 +129,9 @@
                                 <li>
                                     <a href="#">Reclamation</a>
                                     <ul>
-                                        <li><a href="#">Envoyer Recmalation</a>
+                                        <li><a href="{{ path('minipo_AjouterReclamation') }}">Envoyer Recmalation</a>
                                         </li>
-                                        <li><a href="#">Mes Reclamations</a>
+                                        <li><a href="{{ path('minipo_AfficherMesReclamation')}}">Mes Reclamations</a>
                                         </li>
                                     </ul>
                                 </li>

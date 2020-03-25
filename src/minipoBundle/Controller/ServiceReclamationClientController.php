@@ -22,16 +22,20 @@ class ServiceReclamationClientController extends Controller
     }
     public function AjouterReclamationAction(Request $request)
     {
+        $id=$this->getUser()->getId();
+
         $reclamation=new Reclamation();
         $form=$this->createForm(ReclamationType::class,$reclamation);
         $form=$form->handleRequest($request);
         if($form->isSubmitted() and $form->isValid()){
             $em=$this->getDoctrine()->getManager();
+            $classCat = $em->getRepository('minipoBundle:User')->find($id);
             $file=$reclamation->getImage();
             $filename= md5(uniqid()) . '.' . $file->guessExtension();
             $file->move($this->getParameter('photos_directory'), $filename);
             $reclamation->setImage($filename);
             $reclamation->setEtatr("non traiter");
+            $reclamation->setId($classCat);
             $em->persist($reclamation);
             $em->flush();
 
@@ -77,10 +81,9 @@ class ServiceReclamationClientController extends Controller
     }
     public function AfficherMesReclamationAction(Request $request)
     {
-        $session = $request->getSession();
-        $id=$session->get('id');
-        $reclamation = $this->getDoctrine()->getRepository(Reclamation::class)->findOneBy(array('id'=>$id));
-        return $this->render('',array('reclamation'=>$reclamation));
+        $id=$this->getUser()->getId();
+        $reclamation = $this->getDoctrine()->getRepository('minipoBundle:Reclamation')->findBy(array('id'=>$id));
+        return $this->render('@minipo/Reclamation/AffichageMesReclamation.html.twig',array('reclamation'=>$reclamation));
         }
 
 
@@ -91,16 +94,16 @@ class ServiceReclamationClientController extends Controller
         $SommeTraité=0;
         $SommeNonTraité=0;
         foreach($reclamation as $elt) {
-            if($elt->getEtatremp()=="traiter") {
+            if($elt->getEtatr()=="traiter") {
                 $SommeTraité = $SommeTraité + 1;
             }
         }
         foreach($reclamation as $elt) {
-            if($elt->getEtatremp()=="non traiter") {
+            if($elt->getEtatr()=="non traiter") {
                 $SommeNonTraité = $SommeNonTraité + 1;
             }
         }
-        return $this->render('@minipo/Reclamation/AffichageReclamation.html.twig',array('reclamation'=>$reclamation));
+        return $this->render('@minipo/Reclamation/AffichageReclamation.html.twig',array('reclamation'=>$reclamation ,'sommetraité'=>$SommeTraité , 'sommenontraité'=>$SommeNonTraité));
     }
 
     public function searchAction(Request $request)
