@@ -21,6 +21,7 @@ class EquipeController extends Controller
         $listAffectation = $this->getDoctrine()
             ->getRepository(Affectation::class)->findAll();
 
+
         $affectation = new Affectation();
         $em = $this->getDoctrine()->getManager();
         if($request->isMethod('POST')){
@@ -36,6 +37,10 @@ class EquipeController extends Controller
     public function EquipeAction(Request $request){
         $listEquipe = $this->getDoctrine()
             ->getRepository(Equipe::class)->findAll();
+        $SommeEquipe=0;
+        foreach($listEquipe as $elt) {
+            $SommeEquipe=$SommeEquipe + $elt->getNombre();
+        }
 
         $equipe = new Equipe();
         $em = $this->getDoctrine()->getManager();
@@ -47,7 +52,7 @@ class EquipeController extends Controller
             return $this->redirectToRoute('minipo_Equipe');
         }
 
-        return ($this->render('@minipo/RH/Equipe/GererEquipe.html.twig',array("listequipe"=>$listEquipe)));
+        return ($this->render('@minipo/RH/Equipe/GererEquipe.html.twig',array("listequipe"=>$listEquipe,"SommeEquipe"=>$SommeEquipe)));
     }
     public function deleteAction($id){
         $em = $this->getDoctrine()->getManager();

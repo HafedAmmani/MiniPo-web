@@ -5,6 +5,7 @@ namespace minipoBundle\Controller;
 
 
 use Doctrine\DBAL\Types\DateTimeType;
+use minipoBundle\Entity\Conge;
 use minipoBundle\Entity\User;
 use minipoBundle\Form\EmployerType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -81,5 +82,35 @@ class EmployeController extends Controller
 
 
         return $this->render('@minipo/RH/AjouterEmploye1.html.twig');
+    }
+
+    public function AjouterCongeAction(Request $request){
+
+        $conge = new Conge();
+        $id=$this->getUser()->getId();
+
+        if($request->isMethod('POST')){
+            $em = $this->getDoctrine()->getManager();
+            $id = $em->getRepository('minipoBundle:User')->find($id);
+            $conge->setType($request->get('type'));
+            $conge->setDatedebut($request->get('date_debut'));
+            $conge->setDatefin($request->get('date_fin'));
+            $conge->setNbrjrs($request->get('nbrjrs'));
+            $conge->setDescription($request->get('info_comp'));
+            $conge->setEtat(false);
+            $conge->setId($id);
+            $em->persist($conge);
+            $em->flush();
+            return $this->redirectToRoute('minipo_AjouterConge');
+
+        }
+        return $this->render('@minipo/Employe/AjouterConge.html.twig');
+    }
+    public function AfficherCongeAction(){
+        $id=$this->getUser()->getId();
+        $listConge = $this->getDoctrine()
+            ->getRepository(Conge::class)->findBy(array('id'=>$id));
+
+        return $this->render('@minipo/Employe/AfficherConge.html.twig',array("listConge"=>$listConge));
     }
 }

@@ -174,7 +174,8 @@
       <workItem from="1584812116573" duration="26499000" />
       <workItem from="1584906566654" duration="22745000" />
       <workItem from="1584987580906" duration="14632000" />
-      <workItem from="1585073122112" duration="1439000" />
+      <workItem from="1585073122112" duration="14973000" />
+      <workItem from="1585158042392" duration="5247000" />
     </task>
     <servers />
   </component>
@@ -198,10 +199,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1584566596175" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584819441774">
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585160956606">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1584819441774" />
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1585160956606" />
     <state x="645" y="362" key="#com.jetbrains.php.framework.ui.FailedToParseDialog" timestamp="1584731226983">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -230,10 +231,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="274" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1585011300990" />
-    <state x="537" y="248" key="NewPhpClassDialog" timestamp="1585003230199">
+    <state x="537" y="248" key="NewPhpClassDialog" timestamp="1585078180748">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="537" y="248" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1585003230199" />
+    <state x="537" y="248" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1585078180748" />
     <state x="277" y="76" key="SettingsEditor" timestamp="1584999542591">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -242,13 +243,17 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="537" y="336" key="SymfonyPathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137809212" />
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1585073186048">
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1585158042553">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1585073186048" />
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1585158042553" />
     <state x="425" y="199" width="672" height="677" key="run.anything.popup" timestamp="1585000605170">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="425" y="199" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1585000605170" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1585160135256">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1585160135256" />
   </component>
 </project>

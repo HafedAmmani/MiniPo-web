@@ -40,3 +40,9 @@ minipo_updateEquipe:
 minipo_BilanRH:
     path:     /adminRH/Bilan
     defaults: { _controller: minipoBundle:Bilan:index}
+minipo_AjouterConge:
+    path:     /employe/AjouterConge
+    defaults: { _controller: minipoBundle:Employe:AjouterConge}
+minipo_AfficherConge:
+    path:     /employe/AfficherConge
+    defaults: { _controller: minipoBundle:Employe:AfficherConge}

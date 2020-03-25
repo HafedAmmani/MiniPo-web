@@ -23,6 +23,8 @@
             <link href="{{ asset('css/colors/blue.css') }}" id="theme" rel="stylesheet">
 
         {% endblock %}
+        {% block new_style %}
+        {% endblock %}
     </head>
     <body class="fix-header fix-sidebar card-no-border">
 
@@ -78,7 +80,7 @@
                                 <!-- ============================================================== -->
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
-                                        <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                                        {#<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>#}
                                     </a>
                                     <div class="dropdown-menu mailbox animated slideInUp">
                                         <ul>
@@ -127,7 +129,7 @@
                                 <!-- ============================================================== -->
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-email"></i>
-                                        <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                                        {#<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>#}
                                     </a>
                                     <div class="dropdown-menu mailbox animated slideInUp" aria-labelledby="2">
                                         <ul>
@@ -232,7 +234,7 @@
                         <!-- User profile image -->
                         <div class="profile-img"> <img src="{{ asset('assets/images/users/profile.png') }}" alt="user" />
                             <!-- this is blinking heartbit-->
-                            <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            {#<div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>#}
                         </div>
                         <!-- User profile text-->
                         <div class="profile-text">
@@ -269,7 +271,8 @@
                             <li class="nav-small-cap"><a href="base.html.twig"><i class="mdi mdi-home"></i>Acceuil</a></li>
                             <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-book-plus"></i><span class="hide-menu">Demande Conge</span></a>
                                 <ul aria-expanded="false" class="collapse">
-
+                                    <li><a href="{{ path('minipo_AjouterConge') }}">Envoyer une demande</a></li>
+                                    <li><a href="{{ path('minipo_AfficherConge') }}">Lister Les demandes</a></li>
                                 </ul>
                             </li>
 
@@ -303,7 +306,8 @@
                         <!-- ============================================================== -->
                         <!-- Start Page Content -->
                         <!-- ============================================================== -->
-
+                        {% block content %}
+                        {% endblock %}
                         <!-- ============================================================== -->
                         <!-- End PAge Content -->
                         <!-- ============================================================== -->
@@ -373,6 +377,8 @@
             <script src="{{ asset('assets/plugins/styleswitcher/jQuery.style.switcher.js') }}"></script>
 
 
+        {% endblock %}
+        {% block add_script %}
         {% endblock %}
     </body>
 </html>
