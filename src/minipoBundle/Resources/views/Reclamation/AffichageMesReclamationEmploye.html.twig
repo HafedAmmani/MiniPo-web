@@ -102,15 +102,15 @@
 <div class="row">
     <!-- .col -->
     {% for elt in reclamationemploye  %}
-    <div class="col-md-6 col-lg-6 col-xlg-4">
+   <div class="col-md-6 col-lg-6 col-xlg-4">
         <div class="card card-body">
             <div class="row">
                 <div class="col-md-4 col-lg-3 text-center">
-                    <a href="#"><img src="{{ asset('uploads/post/' ~ elt.image) }}" alt="user" class="img-circle img-responsive"></a>
+                    <a href="{{ path('minipo_showdetailedEmploye',{'id':elt.idremp} ) }}"><img src="{{ asset('uploads/post/' ~ elt.image) }}" alt="user" class="img-circle img-responsive"></a>
                 </div>
                 <div class="col-md-8 col-lg-9">
                     <h3 class="box-title m-b-0">{{ elt.idcatrec.nom }}</h3> <small>{{ elt.objet}}</small>
-                    <h4>
+                    <a href="{{ path('minipo_showdetailedEmploye',{'id':elt.idremp} ) }}"><h4>
                         {% if  elt.etatremp is same as ('traiter')%}
                             <div class="label label-table label-success">{{ elt.etatremp }}</div>
                         {%endif%}
@@ -121,7 +121,7 @@
                         <br/>
                         <abbr title="Phone">{{ elt.dateRemp|date()}}</abbr>
 
-                    </h4>
+                        </h4></a>
                 </div>
             </div>
         </div>

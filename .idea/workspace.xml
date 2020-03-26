@@ -24,7 +24,23 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="minipot" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="minipot" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="minipot" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="minipot: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="Git.Settings">
@@ -101,7 +117,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/minipoBundle/Resources/views/Reclamation" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -112,16 +128,16 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Minipo\app\Resources\views" />
+      <recent name="C:\wamp64\www\Minipo\web\assetsC\js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp644\www\MiniPo-web\src\minipoBundle\Resources\views\Reclamation" />
       <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Resources\views\Default" />
       <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Repository" />
       <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Resources\views\Reclamation" />
       <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Form" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Minipo\app\Resources\views" />
-      <recent name="C:\wamp64\www\Minipo\web\assetsC\js" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -191,7 +207,8 @@
       <workItem from="1585000177307" duration="8876000" />
       <workItem from="1585010948541" duration="9687000" />
       <workItem from="1585047330689" duration="31098000" />
-      <workItem from="1585138336976" duration="1602000" />
+      <workItem from="1585138336976" duration="15113000" />
+      <workItem from="1585175615828" duration="3512000" />
     </task>
     <servers />
   </component>
@@ -199,10 +216,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="301" y="6" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585002704184">
+    <state x="301" y="6" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585145685452">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="301" y="6" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1585002704184" />
+    <state x="301" y="6" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1585145685452" />
     <state x="361" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1584316824834" />
     <state x="428" y="186" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585088751020">
       <screen x="0" y="0" width="1280" height="680" />
@@ -314,10 +331,10 @@
     </state>
     <state x="448" y="264" key="SymfonyPathDialog/0.0.1280.680@0.0.1280.680" timestamp="1585000590429" />
     <state x="537" y="336" key="SymfonyPathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137809212" />
-    <state x="388" y="203" key="com.intellij.ide.util.TipDialog" timestamp="1585138950249">
+    <state x="388" y="203" key="com.intellij.ide.util.TipDialog" timestamp="1585175797365">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="388" y="203" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585138950249" />
+    <state x="388" y="203" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585175797365" />
     <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584987635344" />
     <state x="354" y="157" width="672" height="533" key="run.anything.popup" timestamp="1585098373637">
       <screen x="0" y="0" width="1280" height="680" />

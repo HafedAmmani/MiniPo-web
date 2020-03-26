@@ -55,9 +55,9 @@ minipo_SupprimerReclamation:
 minipo_searchClub:
     path:   /admin/RechercheReclamation
     defaults: { _controller: minipoBundle:ServiceReclamationClient:searchClub}
-minipo_showdetailed:
-    path:   /admin/showdetailed/{id}
-    defaults: { _controller: minipoBundle:ServiceReclamationClient:showdetailed}
+minipo_showdetailedEmploye:
+    path:   /employe/showdetailed/{id}
+    defaults: { _controller: minipoBundle:ServiceReclamationEmploye:showdetailedEmploye}
 minipo_AfficherToutesReclamationEmploye:
     path:   /admin/afficheremployer
     defaults: { _controller: minipoBundle:ServiceReclamationEmploye:AfficherToutesReclamationEmploye}

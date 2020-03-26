@@ -81,15 +81,7 @@ class ServiceReclamationEmployeController extends Controller
         }
         return $this->render('@minipo/Reclamation/AffichageReclamationEmploye.html.twig',array('reclamationemploye'=>$reclamation,'sommetraité'=>$SommeTraité , 'sommenontraité'=>$SommeNonTraité));
     }
-    public function sommeReclamationAction(Request $request){
-        $em = $this->getDoctrine()->getManager();
-        $query = $em->createQuery("SELECT Count(etatremp) FROM minipoBundle:Reclamationemploye ");
-        $statement = $query->getResult();
 
-        var_dump($statement);
-
-        return $this->render('@minipo/Reclamation/AffichageReclamationEmploye.html.twig');
-    }
 
     public function searchAction(Request $request)
     {
@@ -116,18 +108,19 @@ class ServiceReclamationEmployeController extends Controller
 
         return $realEntities;
     }
-    public function showdetailedAction($id)
+    public function showdetailedEmployeAction(Request $request,$id)
     {
-        $em= $this->getDoctrine()->getManager();
-        $p=$em->getRepository('minipoBundle:Reclamation')->find($id);
-        return $this->render('@minipo/Reclamation/AffichageReclamation.html.twig', array(
-            'type'=>$p->getType(),
-            'objet'=>$p->getObjet(),
-            'description'=>$p->getDescription(),
-            'Reponse'=>$p->getReponse(),
-            'etatr'=>$p->getEtatr(),
-            'idr'=>$p->getIdr()
-        ));
+        $em=$this->getDoctrine()->getManager();
+        $reclamation=$em->getRepository((Reclamationemploye::class))->find($id);
+        if($request->isMethod('POST')){
+            if($reclamation->getEtatremp()=="non traiter"){
+                $reclamation->getObjet();
+            $reclamation->setdescription($request->get('description'));
+            $em->flush();
+            }
+            return $this->redirectToRoute('minipo_AfficherMesReclamationEmployes');
+        }
+        return $this->render('@minipo/Reclamation/DetailReclamationEmploye.html.twig',array('reclamation'=>$reclamation));
     }
     public function ajaxListAction(Request $request)
     {
@@ -139,13 +132,5 @@ class ServiceReclamationEmployeController extends Controller
 
         ));
     }
-    public function trouverEmployeAction(){
-        $repository=$this->getDoctrine()->getManager()->getRepository(Recl::class);
-        $listEmploye = $repository->findemploye();
-        $SommeSalaire=0;
-        foreach($listEmploye as $elt) {
-            $SommeSalaire=$SommeSalaire + $elt->getSalaire();
-        }
-        return ($this->render('@minipo/RH/afficherEmploye.html.twig',array("listeEmploye"=>$listEmploye , "SommeSalaire"=>$SommeSalaire)));
-    }
+
 }
