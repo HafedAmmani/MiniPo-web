@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Minipo.iml" filepath="$PROJECT_DIR$/.idea/Minipo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MiniPo-web.iml" filepath="$PROJECT_DIR$/.idea/MiniPo-web.iml" />
     </modules>
   </component>
 </project>

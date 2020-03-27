@@ -132,17 +132,18 @@
     </div>
                 <div class="card-body collapse show">
                     <div class="table-responsive">
+
                         <table class="table product-overview">
                             <thead>
                             <tr>
-                                <th>Nom</th>
-                                <th>Categorie</th>
+                                <th>{{ knp_pagination_sortable(reclamationemploye,'id','r.id.id') }}</th>
+                                <th>{{ knp_pagination_sortable(reclamationemploye,'idcatrec','c.idcatrec') }}</th>
                                 <th>Objet</th>
                                 <th>Description</th>
                                 <th>Image</th>
                                 <th>Reponse</th>
                                 <th>Date </th>
-                                <th>Etat </th>
+                                <th>{{ knp_pagination_sortable(reclamationemploye,'etatremp','r.etatremp') }}</th>
                             </tr>
                             </thead>
                             {% for elt in reclamationemploye  %}
@@ -169,15 +170,23 @@
                                     <a href="{{ path('minipo_ModifierEtatReclamationEmploye',{'id':elt.idremp}) }}" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
                                     {#<a href="{{ path('minipo_SupprimerReclamationEmploye',{'etatr':elt.etatRemp}) }}" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>#}
                                 </td>
+
                                 {% endfor  %}
                             </tr>
 
-
-
                             </tbody>
                         </table>
+
+                        <div class="navigation ">
+                            {{ knp_pagination_render(reclamationemploye) }}
+                        </div>
                     </div>
                 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

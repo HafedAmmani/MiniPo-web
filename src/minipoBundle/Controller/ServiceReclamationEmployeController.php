@@ -3,6 +3,7 @@
 namespace minipoBundle\Controller;
 use FOS\UserBundle\Model\UserInterface;
 
+use Knp\Component\Pager\Paginator;
 use minipoBundle\Entity\Reclamation;
 use minipoBundle\Entity\Reclamationemploye;
 use minipoBundle\Form\ReclamationemployeType;
@@ -64,9 +65,23 @@ class ServiceReclamationEmployeController extends Controller
         return $this->render('@minipo/Reclamation/AffichageMesReclamationEmploye.html.twig',array('reclamationemploye'=>$reclamation));
 
     }
-    public function AfficherToutesReclamationEmployeAction()
+    public function AfficherToutesReclamationEmployeAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
         $reclamation = $this->getDoctrine()->getRepository(Reclamationemploye::class)->findAll();
+        $dql="SELECT r From minipoBundle:Reclamationemploye r JOIN minipoBundle:CategorieReclamation c WHERE r.idcatrec=c.idcatrec";
+        $query=$em->createQuery($dql);
+        /**
+         * @var $paginator Paginator
+         */
+
+        $paginator=$this->get('knp_paginator');
+        dump(get_class($paginator));
+        $result=$paginator->paginate(
+            $query,
+            $request->query->getInt('page',1),10
+
+        );
         $SommeTraité=0;
         $SommeNonTraité=0;
         foreach($reclamation as $elt) {
@@ -79,7 +94,7 @@ class ServiceReclamationEmployeController extends Controller
                 $SommeNonTraité = $SommeNonTraité + 1;
             }
         }
-        return $this->render('@minipo/Reclamation/AffichageReclamationEmploye.html.twig',array('reclamationemploye'=>$reclamation,'sommetraité'=>$SommeTraité , 'sommenontraité'=>$SommeNonTraité));
+        return $this->render('@minipo/Reclamation/AffichageReclamationEmploye.html.twig',array('reclamationemploye'=>$result,'sommetraité'=>$SommeTraité , 'sommenontraité'=>$SommeNonTraité));
     }
 
 

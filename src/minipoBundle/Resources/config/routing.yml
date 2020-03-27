@@ -59,7 +59,7 @@ minipo_showdetailedEmploye:
     path:   /employe/showdetailed/{id}
     defaults: { _controller: minipoBundle:ServiceReclamationEmploye:showdetailedEmploye}
 minipo_AfficherToutesReclamationEmploye:
-    path:   /admin/afficheremployer
+    path:   /admin/afficheremployer/
     defaults: { _controller: minipoBundle:ServiceReclamationEmploye:AfficherToutesReclamationEmploye}
 
 minipo_ModifierEtatReclamationEmploye:
