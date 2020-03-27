@@ -71,6 +71,31 @@ class ServiceReclamationClientController extends Controller
         }
         return $this->render('@minipo/Reclamation/ModifierEtatReclamation.html.twig',array('reclamation'=>$reclamation));
     }
+    public function AjouterReclamationCommandeAction(Request $request,$idcmd)
+    {
+        $id=$this->getUser()->getId();
+
+        $reclamation=new Reclamation();
+        $form=$this->createForm(ReclamationType::class,$reclamation);
+        $form=$form->handleRequest($request);
+        if($form->isSubmitted() and $form->isValid()){
+            $em=$this->getDoctrine()->getManager();
+            $classCat = $em->getRepository('minipoBundle:User')->find($id);
+            $classCatidcmd = $em->getRepository('minipoBundle:Commande')->find($idcmd);
+            $file=$reclamation->getImage();
+            $filename= md5(uniqid()) . '.' . $file->guessExtension();
+            $file->move($this->getParameter('photos_directory'), $filename);
+            $reclamation->setImage($filename);
+            $reclamation->setEtatr("non traiter");
+            $reclamation->setId($classCat);
+            $reclamation->setIdcatrec(2 );
+            $reclamation->setIdcmd($classCatidcmd );
+            $em->persist($reclamation);
+            $em->flush();
+
+            return $this->redirectToRoute('minipo_AfficherMesReclamation');}
+        return $this->render('@minipo/Reclamation/AjouterReclamationClient.html.twig',array('f'=>$form->createView()));
+    }
 
     public function SupprimerReclamationAction($etatr)
     {

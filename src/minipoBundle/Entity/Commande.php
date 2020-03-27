@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Commande
  *
  * @ORM\Table(name="commande", indexes={@ORM\Index(name="fk_clt", columns={"id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="minipoBundle\Repository\CommandeRepository")
  */
 class Commande
 {

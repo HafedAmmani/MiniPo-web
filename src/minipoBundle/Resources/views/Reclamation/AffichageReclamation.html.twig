@@ -151,7 +151,16 @@
 
                         <tr>
                             <td> {{ elt.id.id}}</td>
-                            <td> {{ elt.idcatrec.nom }}</td>
+                            <td>  {% if  elt.idcatrec.nom is same as ('Problème de Compte')%}
+                                    <div class="label label-table label-primary">{{ elt.idcatrec.nom }}</div>
+                                {%endif%}
+                                {% if  elt.idcatrec.nom is same as ('Problème de Commande')%}
+                                    <div class="label label-table label-info">{{ elt.idcatrec.nom }}</div>
+                                {%endif%}
+                                {% if  elt.idcatrec.nom is same as ('Autre')%}
+                                    <div class="label label-table label-warning">{{ elt.idcatrec.nom }}</div>
+                                {%endif%}
+                                </td>
                             <td> {{ elt.objet}}</td>
                             <td> {{ elt.description}}</td>
                             <td width="200px"> <img class="img-fluid"width="30%" src="{{ asset('uploads/post/' ~ elt.image) }}" alt=""></td>

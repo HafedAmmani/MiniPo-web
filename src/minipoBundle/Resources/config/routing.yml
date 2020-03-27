@@ -84,3 +84,9 @@ minipo_Search:
 minipo_AfficherMesReclamationEmployes:
     path:   /employe/AfficherMesReclamationEmployes
     defaults: { _controller: minipoBundle:ServiceReclamationEmploye:AfficherMesReclamationEmploye}
+minipo_commandesClt:
+    path:     /client/MesCmd
+    defaults: { _controller: minipoBundle:Commande:commandesClt }
+minipo_reclamationcommande:
+    path:     /client/reccmd/{idcmd}
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:AjouterReclamationCommande }

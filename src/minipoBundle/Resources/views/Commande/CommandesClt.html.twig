@@ -1,0 +1,44 @@
+{% extends 'BaseReclamationClient.html.twig' %}
+
+{#{% block title %}Votre Commandes{% endblock %}
+#}
+    {% block reclamationclient   %}
+
+
+        {% if cmd==NULL %}
+            Pas de formation
+        {% else %}
+
+            <table border="1">
+                <tr>
+                    <th>Reférence</th>
+                    <th>Date Commande</th>
+                    <th>Etat Commande</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+                {% for elt in cmd %}
+                    <tr>
+                        <td>{{ elt.refc }}</td>
+                        <td>{{ elt.datec|date}}</td>
+                        <td>{{ elt.etatc }}</td>
+                        <td>{{ elt.total }}</td>
+                        <td>
+
+                            <a href=" # {#{{path('minipo_SupprimerCmd',{'id':elt.idcmd} )  }}#} " >
+                                <button>Supprimer</button>
+                            </a>
+                            <a href=" {{ path('minipo_reclamationcommande',{'idcmd':elt.idcmd } )  }}" >
+                                <button>Reclamer</button>
+                            </a>
+
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        {% endif %}
+
+
+
+    {% endblock %}

@@ -136,6 +136,18 @@
                                     </ul>
                                 </li>
                                 <li>
+                                    <a href="#">Commandes</a>
+
+                                    <ul>
+                                        {# {% if is_granted('IS_AUTHENTICATED_FULLY') %}#}
+                                        <li><a href=" {{ path('minipo_commandesClt')  }}">Mes Commandes</a></li>
+                                        {#{% endblock %}#}
+                                        <li><a href="#">Mes Factures</a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+                                <li>
                                     <a href="contact.html">contact</a>
                                 </li>
                             </ul>
