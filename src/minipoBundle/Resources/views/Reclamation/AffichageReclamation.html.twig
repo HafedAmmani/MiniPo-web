@@ -110,7 +110,7 @@
                                     <div class="col-md-6 col-lg-3 col-xlg-3">
                                         <div class="card card-inverse card-info">
                                             <div class="box bg-info text-center">
-                                                <h1 class="font-light text-white">{{ reclamation | length }}</h1>
+                                                <h1 class="font-light text-white">{{ total }}</h1>
                                                 <h6 class="text-white">Total Reclamation </h6>
                                             </div>
                                         </div>
@@ -136,13 +136,13 @@
                         <thead>
                         <tr>
                             <th>Nom</th>
-                            <th>Categorie</th>
+                            <th>{{ knp_pagination_sortable(reclamation,'Categorie','c.idcatrec') }}</th>
                             <th>Objet</th>
                             <th>Description</th>
                             <th>Image</th>
                             <th>Reponse</th>
-                            <th>Date </th>
-                            <th>Etat </th>
+                            <th>{{ knp_pagination_sortable(reclamation,'Date','r.dater') }}</th>
+                            <th>{{ knp_pagination_sortable(reclamation,'Etat','r.etatr') }}</th>
                             <th class="text-nowrap">Action</th>
                         </tr>
                         </thead>
@@ -179,6 +179,9 @@
 
                         </tbody>
                     </table>
+                    <div class="navigation ">
+                        {{ knp_pagination_render(reclamation) }}
+                    </div>
                 </div>
             </div>
         </div>

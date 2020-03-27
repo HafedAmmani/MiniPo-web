@@ -69,7 +69,9 @@ class ServiceReclamationEmployeController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $reclamation = $this->getDoctrine()->getRepository(Reclamationemploye::class)->findAll();
-        $dql="SELECT r From minipoBundle:Reclamationemploye r JOIN minipoBundle:CategorieReclamation c WHERE r.idcatrec=c.idcatrec";
+        $dql="SELECT r From minipoBundle:Reclamationemploye r JOIN minipoBundle:CategorieReclamation c 
+                                                      WHERE r.idcatrec=c.idcatrec" ;
+
         $query=$em->createQuery($dql);
         /**
          * @var $paginator Paginator
@@ -84,6 +86,10 @@ class ServiceReclamationEmployeController extends Controller
         );
         $SommeTraité=0;
         $SommeNonTraité=0;
+        $sommeReclamation=0;
+        foreach($reclamation as $elt){
+            $sommeReclamation=$sommeReclamation+1;
+        }
         foreach($reclamation as $elt) {
             if($elt->getEtatremp()=="traiter") {
                 $SommeTraité = $SommeTraité + 1;
@@ -94,7 +100,7 @@ class ServiceReclamationEmployeController extends Controller
                 $SommeNonTraité = $SommeNonTraité + 1;
             }
         }
-        return $this->render('@minipo/Reclamation/AffichageReclamationEmploye.html.twig',array('reclamationemploye'=>$result,'sommetraité'=>$SommeTraité , 'sommenontraité'=>$SommeNonTraité));
+        return $this->render('@minipo/Reclamation/AffichageReclamationEmploye.html.twig',array('reclamationemploye'=>$result,'total'=>$sommeReclamation,'sommetraité'=>$SommeTraité , 'sommenontraité'=>$SommeNonTraité));
     }
 
 

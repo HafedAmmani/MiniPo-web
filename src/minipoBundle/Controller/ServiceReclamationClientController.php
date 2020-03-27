@@ -3,6 +3,7 @@
 namespace minipoBundle\Controller;
 use Doctrine\ORM\Mapping\Id;
 use http\Env\Response;
+use Knp\Component\Pager\Paginator;
 use minipoBundle\Entity\Reclamation;
 use minipoBundle\Form\ReclamationType;
 use minipoBundle\Form\SearchReclamationType;
@@ -88,11 +89,30 @@ class ServiceReclamationClientController extends Controller
 
 
 
-    public function AfficherToutesReclamationAction()
-    {
+    public function AfficherToutesReclamationAction(Request $request)
+    {   $em = $this->getDoctrine()->getManager();
         $reclamation = $this->getDoctrine()->getRepository(Reclamation::class)->findAll();
+        $dql="SELECT r From minipoBundle:Reclamation r JOIN minipoBundle:CategorieReclamation c 
+                                                      WHERE r.idcatrec=c.idcatrec" ;
+
+        $query=$em->createQuery($dql);
+        /**
+         * @var $paginator Paginator
+         */
+
+        $paginator=$this->get('knp_paginator');
+        dump(get_class($paginator));
+        $result=$paginator->paginate(
+            $query,
+            $request->query->getInt('page',1),5
+
+        );
         $SommeTraité=0;
         $SommeNonTraité=0;
+        $sommeReclamation=0;
+        foreach($reclamation as $elt){
+            $sommeReclamation=$sommeReclamation+1;
+        }
         foreach($reclamation as $elt) {
             if($elt->getEtatr()=="traiter") {
                 $SommeTraité = $SommeTraité + 1;
@@ -103,7 +123,7 @@ class ServiceReclamationClientController extends Controller
                 $SommeNonTraité = $SommeNonTraité + 1;
             }
         }
-        return $this->render('@minipo/Reclamation/AffichageReclamation.html.twig',array('reclamation'=>$reclamation ,'sommetraité'=>$SommeTraité , 'sommenontraité'=>$SommeNonTraité));
+        return $this->render('@minipo/Reclamation/AffichageReclamation.html.twig',array('reclamation'=>$result ,'total'=>$sommeReclamation,'sommetraité'=>$SommeTraité , 'sommenontraité'=>$SommeNonTraité));
     }
 
     public function searchAction(Request $request)

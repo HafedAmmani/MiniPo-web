@@ -106,7 +106,7 @@
                     <div class="col-md-6 col-lg-3 col-xlg-3">
                         <div class="card card-inverse card-info">
                             <div class="box bg-info text-center">
-                                <h1 class="font-light text-white">{{ reclamationemploye | length }}</h1>
+                                <h1 class="font-light text-white">{{ total }}</h1>
                                 <h6 class="text-white">Total Reclamation </h6>
                             </div>
                         </div>
@@ -137,13 +137,13 @@
                             <thead>
                             <tr>
                                 <th>{{ knp_pagination_sortable(reclamationemploye,'id','r.id.id') }}</th>
-                                <th>{{ knp_pagination_sortable(reclamationemploye,'idcatrec','c.idcatrec') }}</th>
+                                <th>{{ knp_pagination_sortable(reclamationemploye,'Categorie','c.idcatrec') }}</th>
                                 <th>Objet</th>
                                 <th>Description</th>
                                 <th>Image</th>
                                 <th>Reponse</th>
-                                <th>Date </th>
-                                <th>{{ knp_pagination_sortable(reclamationemploye,'etatremp','r.etatremp') }}</th>
+                                <th>{{ knp_pagination_sortable(reclamationemploye,'Date','r.dateremp') }} </th>
+                                <th>{{ knp_pagination_sortable(reclamationemploye,'Etat','r.etatremp') }}</th>
                             </tr>
                             </thead>
                             {% for elt in reclamationemploye  %}
