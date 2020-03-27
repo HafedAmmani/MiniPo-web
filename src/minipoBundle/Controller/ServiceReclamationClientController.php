@@ -125,6 +125,20 @@ class ServiceReclamationClientController extends Controller
         }
         return $this->render('@minipo/Reclamation/AffichageReclamation.html.twig',array('reclamation'=>$result ,'total'=>$sommeReclamation,'sommetraité'=>$SommeTraité , 'sommenontraité'=>$SommeNonTraité));
     }
+    public function showdetailedClientAction(Request $request,$id)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $reclamation=$em->getRepository((Reclamation::class))->find($id);
+        if($request->isMethod('POST')){
+            if($reclamation->getEtatr()=="non traiter"){
+                $reclamation->getObjet();
+                $reclamation->setdescription($request->get('description'));
+                $em->flush();
+            }
+            return $this->redirectToRoute('minipo_AfficherMesReclamation');
+        }
+        return $this->render('@minipo/Reclamation/DetailReclamationClient.html.twig',array('reclamation'=>$reclamation));
+    }
 
     public function searchAction(Request $request)
     {

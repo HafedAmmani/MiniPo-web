@@ -119,7 +119,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Minipo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/minipoBundle/Resources/views/Reclamation" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -130,16 +130,16 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp644\www\MiniPo-web\vendor" />
-      <recent name="C:\wamp644\www\MiniPo-web\src\minipoBundle\Resources\views\Reclamation" />
-      <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Resources\views\Default" />
-      <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Repository" />
-      <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Resources\views\Reclamation" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Minipo\app\Resources\views" />
       <recent name="C:\wamp64\www\Minipo\web\assetsC\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp644\www\MiniPo-web\src\minipoBundle\Resources\views\Reclamation" />
+      <recent name="C:\wamp644\www\MiniPo-web\vendor" />
+      <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Resources\views\Default" />
+      <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Repository" />
+      <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Resources\views\Reclamation" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -225,7 +225,7 @@
       <workItem from="1585047330689" duration="31098000" />
       <workItem from="1585138336976" duration="15113000" />
       <workItem from="1585175615828" duration="11923000" />
-      <workItem from="1585224453731" duration="36347000" />
+      <workItem from="1585224453731" duration="38518000" />
     </task>
     <servers />
   </component>
@@ -288,10 +288,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1585241822894" />
-    <state x="416" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585272454685">
+    <state x="416" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585275626638">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="416" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1585272454685" />
+    <state x="416" y="148" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1585275626638" />
     <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1584819441774" />
     <state x="538" y="285" key="#com.jetbrains.php.framework.ui.FailedToParseDialog" timestamp="1585191383179">
       <screen x="0" y="0" width="1280" height="680" />
@@ -392,10 +392,10 @@
     </state>
     <state x="388" y="203" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585224468296" />
     <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584987635344" />
-    <state x="354" y="157" width="672" height="533" key="run.anything.popup" timestamp="1585191623002">
+    <state x="354" y="157" width="672" height="533" key="run.anything.popup" timestamp="1585276267135">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="354" y="157" width="672" height="533" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1585191623002" />
+    <state x="354" y="157" width="672" height="533" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1585276267135" />
     <state x="425" y="199" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1584926912671" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1585250937441">
       <screen x="0" y="0" width="1280" height="680" />

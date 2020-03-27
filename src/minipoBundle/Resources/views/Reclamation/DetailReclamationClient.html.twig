@@ -1,0 +1,85 @@
+{% extends 'BaseReclamationClient.html.twig' %}
+{% block reclamationclient   %}
+
+<form method="post">
+    <form class="form-horizontal m-t-40" method="post">
+        {#<div class="form-group">
+            <label>Date  <span class="help"> e.g. "George deo"</span></label>
+            <input type="text" class="form-control" value={{ reclamation.dater}}>
+        </div>#}
+        {# <div class="form-group">
+             <label >Type :</label>
+             <label >{{ reclamation.type}}</label>
+            {#<input type="text"  class="form-control" value={{ reclamation.type}}>
+        </div>#}
+
+
+
+
+        <div class="form-group">
+            <label>Envoye le  :</label>
+            <label >{{ reclamation.dater|date}}</label>
+            {#<input type="text"  class="form-control" value={{ reclamation.objet}}>#}
+        </div>
+        <h4>
+            <label>Etat  :</label>
+            {% if   reclamation.etatr is same as ('traiter')%}
+                <div class="label label-table label-success">{{ reclamation.etatr}}</div>
+            {%endif%}
+            {% if  reclamation.etatr is same as ('non traiter')%}
+                <div class="label label-table label-danger">{{ reclamation.etatr}}</div>
+            {%endif%}
+
+
+        </h4>
+        <div class="form-group">
+            <label>Categorie :</label>
+            <label >{{ reclamation.idcatrec.nom}}</label>
+            {#<input type="text"  class="form-control" value={{ reclamation.objet}}>#}
+        </div>
+
+        <div class="form-group">
+            <label>Objet :</label>
+            <label >{{ reclamation.objet}}</label>
+           {#<input type="text"  class="form-control" value={{ reclamation.objet}}>#}
+        </div>
+        <div class="form-group">
+            <label>Description :</label>
+
+            <textarea class="form-control" name="description"  rows="5" value="{{ reclamation.description}}">{{ reclamation.description}}</textarea>
+            {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
+        </div>
+        <div class="form-group" >
+        <img src="{{ asset('uploads/post/' ~ reclamation.image) }}" alt="user" class=""width="200px"></div>
+        <div class="form-group">
+            <label>Reponse</label>
+            <label >{{reclamation.Reponse}}</label>
+
+        </div>
+
+
+
+        <a href="{{ path('minipo_showdetailed',{'id':reclamation.idr}) }}"><button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button></a>
+        <a href="{{ path('minipo_AfficherMesReclamation') }}"><button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button></a>
+
+    </form>
+
+{#Etat:<select name="etat" value={{ reclamation.etatr}}>
+        {% if  reclamation.etatr is same as ('traiter')%}
+            <option selected>traiter</option>
+            <option>non traiter</option>
+        {%endif%}
+        {% if  reclamation.etatr is same as ('non traiter')%}
+            <option>traiter</option>
+            <option selected>non traiter</option>
+        {%endif%}
+
+    </select>
+    Reponse:<input type ="text" name="reponse" value={{ reclamation.Reponse}}>
+    <td><a href="{{ path('minipo_ModifierEtatReclamation',{'id':reclamation.idr}) }}">
+    <button >modifier</button></a>
+
+
+</form>#}
+
+{% endblock    %}

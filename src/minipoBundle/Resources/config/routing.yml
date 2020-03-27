@@ -46,6 +46,10 @@ minipo_AjouterReclamation:
 minipo_AfficherMesReclamation:
     path:   /client/afficherMesReclamation
     defaults: { _controller: minipoBundle:ServiceReclamationClient:AfficherMesReclamation}
+minipo_showdetailed:
+    path:   /client/showdetailed/{id}
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:showdetailedClient}
+
 minipo_ModifierEtatReclamation:
     path:   /admin/modifieretat/{id}
     defaults: { _controller: minipoBundle:ServiceReclamationClient:ModifierEtatReclamation}

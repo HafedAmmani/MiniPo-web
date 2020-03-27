@@ -101,10 +101,11 @@
                     <div class="card card-body">
                         <div class="row">
                             <div class="col-md-4 col-lg-3 text-center">
-                                <a href="#"><img src="{{ asset('uploads/post/' ~ elt.image) }}"  class=""></a>
+                                <a href="{{ path('minipo_showdetailed',{'id':elt.idr} ) }}"><img src="{{ asset('uploads/post/' ~ elt.image) }}"  class=""></a>
                             </div>
                             <div class="col-md-8 col-lg-9">
                                 <h3 class="box-title m-b-0">{{ elt.idcatrec.nom }}</h3> <small>{{ elt.objet}}</small>
+                                <a href="{{ path('minipo_showdetailed',{'id':elt.idr} ) }}">
                                 <h4>
                                     {% if  elt.etatr is same as ('traiter')%}
                                         <div class="label label-table label-success">{{ elt.etatr }}</div>
@@ -116,7 +117,7 @@
                                     <br/>
                                     <abbr title="Phone">{{ elt.dater|date()}}</abbr>
 
-                                </h4>
+                                </h4></a>
                             </div>
                         </div>
                     </div>

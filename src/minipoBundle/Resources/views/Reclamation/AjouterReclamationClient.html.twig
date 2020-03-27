@@ -1,5 +1,7 @@
 {% extends 'BaseReclamationClient.html.twig' %}
+{% form_theme f 'bootstrap_4_layout.html.twig' %}
 {% block reclamationclient   %}
+
     {{ form_start(f)}}
     {{ form_widget(f)}}
     {{ form_end(f)}}
