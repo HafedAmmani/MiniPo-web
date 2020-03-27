@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/Minipot/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Minipot/tests" isTestSource="true" packagePrefix="Tests\" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/clue/stream-filter" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/doctrine/annotations" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/doctrine/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/doctrine/doctrine-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/doctrine/doctrine-cache-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/fig/link-util" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/friendsofsymfony/user-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/hwi/oauth-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/incenteev/composer-parameter-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/jdorn/sql-formatter" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/php-http/client-common" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/php-http/discovery" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/php-http/guzzle6-adapter" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/php-http/httplug" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/php-http/httplug-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/php-http/logger-plugin" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/php-http/message" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/php-http/message-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/php-http/promise" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/php-http/stopwatch-plugin" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/psr/link" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/sensio/distribution-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/sensio/framework-extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/sensio/generator-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/sensiolabs/security-checker" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/swiftmailer/swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/symfony/monolog-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/symfony/phpunit-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/symfony/polyfill-apcu" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/symfony/polyfill-intl-icu" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/symfony/polyfill-php56" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/symfony/polyfill-php70" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/symfony/polyfill-util" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/symfony/swiftmailer-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/symfony/symfony" />
+      <excludeFolder url="file://$MODULE_DIR$/Minipot/vendor/twig/twig" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

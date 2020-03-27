@@ -1,0 +1,38 @@
+{% extends 'BaseReclamationClient.html.twig' %}
+
+{% block reclamationclient %}
+
+    {% if p==NULL  %}
+        Pas de formation
+    {% else %}
+
+        <table border="1">
+            <tr>
+                <th>id Produit</th>
+                <th>designation</th>
+                <th>qte en Stock</th>
+                <th>Prix</th>
+                <th>Categorie</th>
+                <th>Action</th>
+            </tr>
+            {% for elt in p %}
+                <tr>
+                    <td>{{ elt.idprod }}</td>
+                    <td>{{ elt.designation }}</td>
+                    <td>{{ elt.qtestock}}</td>
+                    <td>{{ elt.prix }}</td>
+                    <td>{{ elt.idcateg.nom }}</td>
+                    <td>
+
+                        <a href="{{path('minipo_aboutProd',{'id':elt.idprod} )  }}" >
+                            <button>J'ACHETE</button>
+                        </a>
+
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    {% endif %}
+{% endblock %}
+

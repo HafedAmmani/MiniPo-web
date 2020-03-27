@@ -10,3 +10,36 @@ minipo_employe:
 minipo_admin:
     path:     /admin/
     defaults: { _controller: minipoBundle:Default:admin }
+minipo_allCommandes:
+    path:     /allcmd
+    defaults: { _controller: minipoBundle:Commande:allCommandes }
+minipo_accepterCmd:
+    path:     /mod/{id}
+    defaults: { _controller: minipoBundle:Commande:accepterCmd }
+minipo_refuserCmd:
+    path:     /ref/{id}
+    defaults: { _controller: minipoBundle:Commande:refuserCmd }
+minipo_allFactures:
+    path:     /allfact
+    defaults: { _controller: minipoBundle:Facture:allFactures }
+minipo_allProduits:
+    path:     /allprod
+    defaults: { _controller: minipoBundle:Produit:allProduits }
+minipo_commandesClt:
+    path:     /MesCmd/{id}
+    defaults: { _controller: minipoBundle:Commande:commandesClt }
+minipo_aboutProd:
+    path:     /aboutprod/{id}
+    defaults: { _controller: minipoBundle:LigneCommande:aboutProd }
+minipo_ajouterLC:
+    path:     /ajoutlc
+    defaults: { _controller: minipoBundle:LigneCommande:ajouterLC }
+minipo_afficherPanier:
+    path:     /panier/{id}
+    defaults: { _controller: minipoBundle:LigneCommande:afficherPanier }
+minipo_affTest:
+    path:     /test
+    defaults: { _controller: minipoBundle:LigneCommande:affTest }
+minipo_deleteLc:
+    path:     /delLc/{id}/{idLc}
+    defaults: { _controller: minipoBundle:LigneCommande:deleteLc }

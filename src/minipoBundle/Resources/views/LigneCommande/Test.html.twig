@@ -1,0 +1,9 @@
+{% extends 'BaseReclamationClient.html.twig' %}
+
+{% block reclamationclient %}
+
+     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <a href="{{path('minipo_afficherPanier',{'id':app.user.id}) }}"><button>Mon Panier</button></a>
+    {% endif %}
+
+{% endblock %}

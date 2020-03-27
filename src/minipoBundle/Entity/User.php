@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * User
  *
  * @ORM\Table(name="user")
- * @ORM\Entity(repositoryClass="minipoBundle\Repository\EmployeRepository")
+ * @ORM\Entity()
  */
 class User extends BaseUser
 {

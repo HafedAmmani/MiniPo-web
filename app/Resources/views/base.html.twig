@@ -279,7 +279,8 @@
                             </li>
                             <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-handbag"></i><span class="hide-menu">Gestion Vente-Achat</span></a>
                                 <ul aria-expanded="false" class="collapse">
-
+                                    <li><a href={{ path('minipo_allCommandes') }}>Commandes</a></li>
+                                    <li><a href="{{ path('minipo_allFactures') }}">Factures</a></li>
                                 </ul>
                             </li>
                             <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-taxi"></i><span class="hide-menu">Gestion Livraison</span></a>
@@ -319,7 +320,9 @@
                         <!-- ============================================================== -->
                         <!-- Start Page Content -->
                         <!-- ============================================================== -->
+                        {% block content %}
 
+                        {% endblock %}
                         <!-- ============================================================== -->
                         <!-- End PAge Content -->
                         <!-- ============================================================== -->

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Lignecommande
  *
  * @ORM\Table(name="lignecommande", indexes={@ORM\Index(name="idcmd", columns={"idcmd"}), @ORM\Index(name="idprod", columns={"idprod"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="minipoBundle\Repository\LigneCommandeRepository")
  */
 class Lignecommande
 {

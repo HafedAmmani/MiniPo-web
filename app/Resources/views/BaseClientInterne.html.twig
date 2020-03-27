@@ -87,7 +87,7 @@
                                     <ul>
                                         <li><a href="index.html">Home</a></li>
                                         <li>
-                                            <a href="shop.html">products</a>
+                                            <a href="{{path('minipo_allProduits')}}">products</a>
                                         </li>
                                         <li><a href="about.html">about</a></li>
                                         <li><a href="blog-1.html">blog</a>
@@ -143,6 +143,18 @@
                                                     </li>
                                             </ul>
                                         </li>
+
+
+                                        <li>
+                                            <a href="#">Commandes</a>
+                                            <ul>
+                                                <li><a href="#">Mes Commandes</a>
+                                                </li>
+                                                <li><a href="#">Mes Factures</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
                                         <li>
                                             <a href="contact.html">contact</a>
                                         </li>
@@ -156,7 +168,7 @@
                                         <ul>
                                             <li><a href="index.html">Home</a></li>
                                             <li>
-                                                <a href="shop.html">products</a>
+                                                <a href="{{path('minipo_allProduits')}}">products</a>
                                             </li>
                                             <li><a href="about.html">about</a></li>
                                             <li><a href="blog-1.html">blog</a>
@@ -249,7 +261,7 @@
         </header>
         <!-- header section end -->
         <!-- slider section start -->
-        <div class="slider-area slider-one clearfix">
+        {#<div class="slider-area slider-one clearfix">
             <div class="slider" id="mainslider">
                 <div data-src="{{ asset('assetsC/img/slider/1.jpg') }}">
                     <div class="d-table">
@@ -263,8 +275,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div data-src="{{ asset('assetsC/img/slider/2.jpg') }}">
+                </div>#}
+                {#<div data-src="{{ asset('assetsC/img/slider/2.jpg') }}">
                     <div class="d-table">
                         <div class="d-tablecell">
                             <div class="container">
@@ -285,7 +297,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>#}
         <!-- slider section end -->
                 {#<!-- featured section start -->
         <section class="featured-area featured-one section-padding">
@@ -1948,7 +1960,8 @@
             <!-- footer bottom end -->
         </footer>
         <!-- footer section end -->#}
-
+    {% block content %}
+    {% endblock %}
 
 
 

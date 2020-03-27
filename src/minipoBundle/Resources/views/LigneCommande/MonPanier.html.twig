@@ -1,0 +1,45 @@
+{% extends 'Panier.html.twig' %}
+
+{% block tableau %}
+    {% if lc==NULL  %}
+    Pas de formation
+    {% else %}
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Unit Price</th>
+                <th>QTE</th>
+                <th>Subtotal</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for elt in lc %}
+                <tr>
+                    <td class="td-img text-left">
+                        <a href="#"><img src="{{ asset('assetsC/img/cart/1.jpg') }}" alt="Add Product" /></a>
+                        <div class="items-dsc">
+                            <p><a href="#">{{ elt.idprod.designation }}</a></p>
+                        </div>
+                    </td>
+                    <td>{{ elt.idprod.prix }}</td>
+                    <td>
+                        <form action="#" method="POST">
+                            <div class="plus-minus">
+                                <a class="dec qtybutton">-</a>
+                                <input type="text" value={{ elt.qte }} name="qtybutton" class="plus-minus-box">
+                                <a class="inc qtybutton">+</a>
+                            </div>
+                        </form>
+                    </td>
+                    <td>{{ elt.idprod.prix }}</td>
+                    <td>
+                        <a href="{{path('minipo_deleteLc',{'id':app.user.id,'idLc':elt.idlc}) }}"><i class="fa fa-trash" title="Remove this product"></i></a>
+                        <i class="fa fa-pencil" title="Update this product"></i>
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    {% endif %}
+{% endblock %}

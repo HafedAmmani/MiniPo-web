@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}Factures{% endblock %}
+
+    {% block content %}
+
+        {% if f==NULL  %}
+            Pas de formation
+        {% else %}
+            <table border="1">
+                <tr>
+                    <th>id</th>
+                    <th>Client</th>
+                    <th>Reférence Commande</th>
+                    <th>Date Facture</th>
+                    <th>Etat Facture</th>
+                    <th>Total</th>
+
+                </tr>
+                {% for elt in f %}
+                    <tr>
+                        <td>{{ elt.idfact }}</td>
+                        {#<td>{{ elt.idcmd.id.firstname ~" "~ elt.idcmd.id.lastname }}</td>#}<td>{{ elt.idcmd.refc }}</td>
+                        <td>{{ elt.idcmd.refc }}</td>
+                        <td>{{ elt.datef|date}}</td>
+                        <td>{{ elt.etatf }}</td>
+                        <td>{{ elt.idcmd.total }}</td>
+                        <td>
+
+
+
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        {% endif %}
+
+
+
+    {% endblock %}
+

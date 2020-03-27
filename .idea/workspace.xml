@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="840c042f-ddd7-46a0-9b31-d2b44fe48903" name="Default Changelist" comment="" />
+    <list default="true" id="f0c34425-ac9a-49a4-9a7e-1a92030a61b3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <pharConfigPath>$PROJECT_DIR$/Minipot/composer.json</pharConfigPath>
     <execution>
-      <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="f44d40fd-6b19-4888-8399-d39dc5891137" />
+      <executable />
     </execution>
   </component>
   <component name="DatabaseView">
@@ -24,7 +24,23 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="minipot" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="minipot" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="minipot" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="minipot: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -86,9 +102,66 @@
       <path value="$PROJECT_DIR$/vendor/hwi/oauth-bundle" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/sensiolabs/security-checker" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/composer" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/sensio/distribution-bundle" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/incenteev/composer-parameter-handler" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/sensio/generator-bundle" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/friendsofsymfony/user-bundle" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/hwi/oauth-bundle" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/php-http/stopwatch-plugin" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/symfony/polyfill-apcu" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/symfony/symfony" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/php-http/discovery" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/php-http/httplug-bundle" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/clue/stream-filter" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/php-http/message" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/php-http/guzzle6-adapter" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/php-http/client-common" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/php-http/logger-plugin" />
+      <path value="$PROJECT_DIR$/Minipot/vendor/monolog/monolog" />
     </include_path>
   </component>
-  <component name="ProjectId" id="1Z5mG4jvYLFw5cm0IWbPLx0ItBB" />
+  <component name="ProjectId" id="1ZatlIn3lCVXnELGT7QZqCKHeCa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -98,46 +171,29 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../git/Minipo" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/minipoBundle/Resources/views/LigneCommande" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Entity" />
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Resources\views\Default" />
-      <recent name="C:\wamp64\www\Minipo\web\aasetsLogin" />
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Repository" />
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Resources\views\RH" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Minipo\app\Resources\views" />
-      <recent name="C:\wamp64\www\Minipo\web\assetsC\js" />
+      <recent name="C:\wamp64\www\Minipot\app\Resources\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Minipot\src\minipoBundle\Resources\views\LigneCommande" />
+      <recent name="C:\wamp64\www\Minipot\app\Resources\views" />
+      <recent name="C:\wamp64\www\Minipot\src\minipoBundle\Resources\views\Commande" />
+      <recent name="C:\wamp64\www\Minipot\src\minipoBundle\Controller" />
+      <recent name="C:\wamp64\www\Minipot\src\minipoBundle\Resources\views\Facture" />
     </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="c dump-autoload" />
-      <command value="s generate:bundle" />
-      <command value="doctrine:mapping:import --force minipoBundle annotation" />
-      <command value="s doctrine:mapping:import --force minipoBundle annotation" />
-      <command value="s doctrine:generate:form minipoBundle:User Employer" />
-      <command value="s doctrine:generate:form minipoBundle:User " />
-      <command value="s require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="s composer.phar require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="s php composer.phar require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="c require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="c php composer.phar require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="c composer.phar require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="php composer.phar require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="s debug:router" />
-      <command value="s doctrine:schema:update --force" />
+      <command value="s doctrine:generate:form minipoBundle:User" />
+      <command value="s doctrine:generate:form minipotBundle:Reclamation" />
+      <command value="s doctrine:generate:form minipoBundle:Reclamation" />
+      <command value="s doctrine:generate:form minipoBundle:Commande" />
+      <command value="s doctrine:generate:form minipoBundle:LigneCommande" />
+      <command value="s doctrine:generate:form minipoBundle:Lignecommande" />
     </option>
   </component>
   <component name="ServiceViewManager">
@@ -157,21 +213,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="840c042f-ddd7-46a0-9b31-d2b44fe48903" name="Default Changelist" comment="" />
-      <created>1584137229361</created>
+      <changelist id="f0c34425-ac9a-49a4-9a7e-1a92030a61b3" name="Default Changelist" comment="" />
+      <created>1585089182077</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1584137229361</updated>
-      <workItem from="1584137232155" duration="14260000" />
-      <workItem from="1584191770666" duration="8676000" />
-      <workItem from="1584215671493" duration="12605000" />
-      <workItem from="1584316231563" duration="6668000" />
-      <workItem from="1584559587934" duration="25773000" />
-      <workItem from="1584730378131" duration="23561000" />
-      <workItem from="1584793804189" duration="105000" />
-      <workItem from="1584812116573" duration="26499000" />
-      <workItem from="1584906566654" duration="22745000" />
-      <workItem from="1584987580906" duration="3803000" />
+      <updated>1585089182077</updated>
+      <workItem from="1585089183753" duration="3059000" />
+      <workItem from="1585144164539" duration="2993000" />
+      <workItem from="1585147191472" duration="12578000" />
+      <workItem from="1585190282017" duration="31299000" />
+      <workItem from="1585318112323" duration="25059000" />
     </task>
     <servers />
   </component>
@@ -179,73 +230,65 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584316824834">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="275" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585145810649">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="361" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1584316824834" />
-    <state x="513" y="236" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584753737403">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="275" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1585145810649" />
+    <state x="413" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585345080072">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="513" y="236" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1584753737403" />
-    <state x="562" y="149" key="#com.intellij.ide.util.MemberChooser" timestamp="1584744258233">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="413" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1585345080072" />
+    <state x="407" y="256" key="ComposerCompositePathDialog" timestamp="1585147727959">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="562" y="149" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1584744258233" />
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584566596175">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="407" y="256" key="ComposerCompositePathDialog/0.0.1366.728@0.0.1366.728" timestamp="1585147727959" />
+    <state x="467" y="284" width="431" height="243" key="ComposerInitDialogKey" timestamp="1585090679324">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1584566596175" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584819441774">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="467" y="284" width="431" height="243" key="ComposerInitDialogKey/0.0.1366.728@0.0.1366.728" timestamp="1585090679324" />
+    <state x="463" y="151" key="FileChooserDialogImpl" timestamp="1585326861333">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1584819441774" />
-    <state x="645" y="362" key="#com.jetbrains.php.framework.ui.FailedToParseDialog" timestamp="1584731226983">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="463" y="151" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585326861333" />
+    <state x="542" y="263" key="FrameworkEditDialogDimensionKey" timestamp="1585147595448">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="645" y="362" key="#com.jetbrains.php.framework.ui.FailedToParseDialog/0.0.1536.864@0.0.1536.864" timestamp="1584731226983" />
-    <state x="493" y="312" key="ComposerCompositePathDialog" timestamp="1584137741724">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="542" y="263" key="FrameworkEditDialogDimensionKey/0.0.1366.728@0.0.1366.728" timestamp="1585147595448" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1585286335045">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="493" y="312" key="ComposerCompositePathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137741724" />
-    <state x="548" y="175" key="FileChooserDialogImpl" timestamp="1584995276490">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585286335045" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1585286335045">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="548" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1584995276489" />
-    <state width="1493" height="274" key="GridCell.Tab.0.bottom" timestamp="1584933988213">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585286335045" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1585286335045">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584933988213" />
-    <state width="1493" height="274" key="GridCell.Tab.0.center" timestamp="1584933988212">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585286335045" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1585286335045">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1584933988212" />
-    <state width="1493" height="274" key="GridCell.Tab.0.left" timestamp="1584933988211">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585286335045" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1585145839947">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1584933988211" />
-    <state width="1493" height="274" key="GridCell.Tab.0.right" timestamp="1584933988212">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1585145839947" />
+    <state x="451" y="199" key="NewPhpClassDialog" timestamp="1585337166377">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1584933988212" />
-    <state x="537" y="248" key="NewPhpClassDialog" timestamp="1584926737597">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="451" y="199" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1585337166377" />
+    <state x="186" y="10" key="SettingsEditor" timestamp="1585147788741">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="537" y="248" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1584926737597" />
-    <state x="277" y="76" key="SettingsEditor" timestamp="1584733645706">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="186" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585147788741" />
+    <state x="455" y="279" key="SymfonyPathDialog" timestamp="1585147776590">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="277" y="76" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1584733645706" />
-    <state x="537" y="336" key="SymfonyPathDialog" timestamp="1584137809212">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="455" y="279" key="SymfonyPathDialog/0.0.1366.728@0.0.1366.728" timestamp="1585147776590" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1585280798763">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="537" y="336" key="SymfonyPathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137809212" />
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1584987635344">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584987635344" />
-    <state x="425" y="199" width="672" height="677" key="run.anything.popup" timestamp="1584926912671">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="425" y="199" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1584926912671" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1585280798763" />
   </component>
 </project>

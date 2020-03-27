@@ -12,7 +12,8 @@ class DefaultController extends Controller
     }
     public function clientAction()
     {
-        return $this->render('@minipo/Default/indexclient.html.twig');
+        //return $this->render('@minipo/Default/indexclient.html.twig');
+        return $this->redirectToRoute('minipo_allProduits');
     }
     public function employeAction()
     {
