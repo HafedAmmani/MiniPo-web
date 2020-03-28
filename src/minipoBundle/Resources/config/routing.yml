@@ -90,3 +90,6 @@ minipo_commandesClt:
 minipo_reclamationcommande:
     path:     /client/reccmd/{idcmd}
     defaults: { _controller: minipoBundle:ServiceReclamationClient:AjouterReclamationCommande }
+minipo_Stat:
+    path:     /admin/stat
+    defaults: { _controller: minipoBundle:Stat:StatRecClt }

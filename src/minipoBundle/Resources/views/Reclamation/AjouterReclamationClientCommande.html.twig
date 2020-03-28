@@ -1,0 +1,18 @@
+{% extends 'BaseReclamationClient.html.twig' %}
+{% form_theme f 'bootstrap_4_layout.html.twig' %}
+{% block reclamationclient   %}
+    <div class="form-group">
+        <label >Catagorie : </label>
+        <label >Probleme de Commande </label>
+
+        {#<input type="text"  class="form-control" value={{ reclamation.type}}>#}
+    </div>
+    <div class="form-group">
+        <label >Reference commande: </label>
+        <label >{{c.refC}}</label>
+        {#<input type="text"  class="form-control" value={{ reclamation.type}}>#}
+    </div>
+    {{ form_start(f)}}
+    {{ form_widget(f)}}
+    {{ form_end(f)}}
+{% endblock    %}

@@ -107,6 +107,8 @@
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/ob/highcharts-bundle" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-json" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Z5mG4jvYLFw5cm0IWbPLx0ItBB" />
@@ -119,7 +121,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/minipoBundle/Resources/views/Commande" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/minipoBundle/Resources/views/Reclamation" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -130,16 +132,16 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp644\www\MiniPo-web\src\minipoBundle\Resources\views\Commande" />
-      <recent name="C:\wamp644\www\MiniPo-web\src\minipoBundle\Resources\views\Reclamation" />
-      <recent name="C:\wamp644\www\MiniPo-web\vendor" />
-      <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Resources\views\Default" />
-      <recent name="C:\wamp644\www\Minipo1\src\minipoBundle\Repository" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Minipo\app\Resources\views" />
       <recent name="C:\wamp64\www\Minipo\web\assetsC\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp644\www\MiniPo-web\src\minipoBundle\Resources\views\Reclamation" />
+      <recent name="C:\wamp644\www\MiniPo-web\src\minipoBundle\Controller" />
+      <recent name="C:\wamp644\www\MiniPo-web\src\minipoBundle\Form" />
+      <recent name="C:\wamp644\www\MiniPo-web\src\minipoBundle\Resources\views\Commande" />
+      <recent name="C:\wamp644\www\MiniPo-web\vendor" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -226,7 +228,8 @@
       <workItem from="1585138336976" duration="15113000" />
       <workItem from="1585175615828" duration="11923000" />
       <workItem from="1585224453731" duration="40726000" />
-      <workItem from="1585319585276" duration="14722000" />
+      <workItem from="1585319585276" duration="28544000" />
+      <workItem from="1585393619136" duration="29173000" />
     </task>
     <servers />
   </component>
@@ -312,34 +315,34 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="462" y="106" key="EnvironmentVariablesDialog/0.0.1280.680@0.0.1280.680" timestamp="1585190909532" />
-    <state x="446" y="112" key="FileChooserDialogImpl" timestamp="1585226939535">
+    <state x="446" y="112" key="FileChooserDialogImpl" timestamp="1585338593562">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="112" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585226939535" />
+    <state x="446" y="112" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585338593562" />
     <state x="548" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1584995276489" />
     <state x="588" y="240" key="FrameworkEditDialogDimensionKey" timestamp="1585191505873">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="588" y="240" key="FrameworkEditDialogDimensionKey/0.0.1280.680@0.0.1280.680" timestamp="1585191505873" />
-    <state width="1237" height="173" key="GridCell.Tab.0.bottom" timestamp="1585322495649">
+    <state width="1237" height="173" key="GridCell.Tab.0.bottom" timestamp="1585360012670">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="173" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585322495649" />
+    <state width="1237" height="173" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585360012670" />
     <state width="1493" height="274" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584933988213" />
-    <state width="1237" height="173" key="GridCell.Tab.0.center" timestamp="1585322495649">
+    <state width="1237" height="173" key="GridCell.Tab.0.center" timestamp="1585360012670">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="173" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585322495649" />
+    <state width="1237" height="173" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585360012670" />
     <state width="1493" height="274" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1584933988212" />
-    <state width="1237" height="173" key="GridCell.Tab.0.left" timestamp="1585322495648">
+    <state width="1237" height="173" key="GridCell.Tab.0.left" timestamp="1585360012670">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="173" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585322495648" />
+    <state width="1237" height="173" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585360012670" />
     <state width="1493" height="274" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1584933988211" />
-    <state width="1237" height="173" key="GridCell.Tab.0.right" timestamp="1585322495649">
+    <state width="1237" height="173" key="GridCell.Tab.0.right" timestamp="1585360012670">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="173" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585322495649" />
+    <state width="1237" height="173" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585360012670" />
     <state width="1493" height="274" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1584933988212" />
     <state width="1237" height="67" key="GridCell.Tab.1.bottom" timestamp="1585103324912">
       <screen x="0" y="0" width="1280" height="680" />
@@ -393,10 +396,10 @@
     </state>
     <state x="388" y="203" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585224468296" />
     <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584987635344" />
-    <state x="354" y="157" width="672" height="533" key="run.anything.popup" timestamp="1585321258003">
+    <state x="354" y="157" width="672" height="533" key="run.anything.popup" timestamp="1585393741190">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="354" y="157" width="672" height="533" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1585321258003" />
+    <state x="354" y="157" width="672" height="533" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1585393741190" />
     <state x="425" y="199" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1584926912671" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1585250937441">
       <screen x="0" y="0" width="1280" height="680" />

@@ -5,6 +5,7 @@ use Doctrine\ORM\Mapping\Id;
 use http\Env\Response;
 use Knp\Component\Pager\Paginator;
 use minipoBundle\Entity\Reclamation;
+use minipoBundle\Form\ReclamationCommandeType;
 use minipoBundle\Form\ReclamationType;
 use minipoBundle\Form\SearchReclamationType;
 use minipoBundle\minipoBundle;
@@ -74,27 +75,31 @@ class ServiceReclamationClientController extends Controller
     public function AjouterReclamationCommandeAction(Request $request,$idcmd)
     {
         $id=$this->getUser()->getId();
+        $c=$this->getDoctrine()->getManager();
+        $idcatrec=2;
+        $classCatidcmd = $c->getRepository('minipoBundle:Commande')->find($idcmd);
 
         $reclamation=new Reclamation();
-        $form=$this->createForm(ReclamationType::class,$reclamation);
+        $form=$this->createForm(ReclamationCommandeType::class,$reclamation);
         $form=$form->handleRequest($request);
         if($form->isSubmitted() and $form->isValid()){
             $em=$this->getDoctrine()->getManager();
             $classCat = $em->getRepository('minipoBundle:User')->find($id);
             $classCatidcmd = $em->getRepository('minipoBundle:Commande')->find($idcmd);
+            $classCatidcatrec = $em->getRepository('minipoBundle:CategorieReclamation')->find($idcatrec);
             $file=$reclamation->getImage();
             $filename= md5(uniqid()) . '.' . $file->guessExtension();
             $file->move($this->getParameter('photos_directory'), $filename);
             $reclamation->setImage($filename);
             $reclamation->setEtatr("non traiter");
             $reclamation->setId($classCat);
-            $reclamation->setIdcatrec(2 );
+            $reclamation->setIdcatrec($classCatidcatrec);
             $reclamation->setIdcmd($classCatidcmd );
             $em->persist($reclamation);
             $em->flush();
 
             return $this->redirectToRoute('minipo_AfficherMesReclamation');}
-        return $this->render('@minipo/Reclamation/AjouterReclamationClient.html.twig',array('f'=>$form->createView()));
+        return $this->render('@minipo/Reclamation/AjouterReclamationClientCommande.html.twig',array('c'=>$classCatidcmd,'f'=>$form->createView()));
     }
 
     public function SupprimerReclamationAction($etatr)
