@@ -10,6 +10,7 @@ security:
         ROLE_EMPLOYE : ROLE_EMPLOYE
         ROLE_CLIENT : ROLE_CLIENT
         ROLE_RH : ROLE_RH
+        ROLE_BLOG : ROLE_BLOG
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         in_memory:
@@ -40,3 +41,4 @@ security:
         - { path: ^/employe, role: ROLE_EMPLOYE }
         - { path: ^/client, role: ROLE_CLIENT }
         - { path: ^/adminRH, role: ROLE_RH }
+        - { path: ^/adminBlog, role: ROLE_BLOG }

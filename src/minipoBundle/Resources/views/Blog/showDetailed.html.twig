@@ -1,37 +1,146 @@
 {% extends 'BaseClient.html.twig' %}
+{% form_theme Form 'BaseClient.html.twig' %}
 
 {% block body %}
-    <h1>Show details !!</h1>
+<header>
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="left floatleft">
+                        <ul>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                +11 (019) 25184203
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope-o"></i>
+                                rideo@mail.com
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right floatright">
+                        <ul>
+                            <li>
+                                <form action="#">
+                                    <button type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                    <input type="search" placeholder="Search">
+                                </form>
+                            </li>
+                            <li>
+                                <i class="fa fa-user"></i>
+                                <a href="/Minipo/web/app_dev.php/login">Account</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sticky-menu" class="header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 header-bottom-bg">
+                    <div class="logo floatleft">
+                        <a href="index.html">
+                            <img src="/Minipo/web/assetsC/img/logo.png" alt="Rideo">
+                        </a>
+                    </div>
+                    <div class="mainmenu text-center floatleft">
+                        <nav>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li>
+                                    <a href="shop.html">products</a>
+                                </li>
+                                <li><a href="about.html">about</a></li>
+                                <li><a href="/Minipo/web/app_dev.php/listBlog">blog</a></li>
+                            </ul>
+                        </nav>
+                    </div>
 
+                    <div class="cart-menu-area floatright">
+                        <ul>
+                            <li><a href="#"><i class="pe-7s-shopbag"></i> <span>2</span></a>
+                                <ul class="cart-menu">
+                                    <li>
+                                        <a href="cart.html"><img src="/Minipo/web/assetsC/img/cart/1.png" alt=""></a>
+                                        <div class="cart-menu-title">
+                                            <a href="cart.html"><h5>Mount POW C058 FG </h5></a>
+                                            <span>1 x $2500</span>
+                                        </div>
+                                        <span class="cancel-item"><i class="fa fa-close"></i></span>
+                                    </li>
+                                    <li>
+                                        <a href="cart.html"><img src="/Minipo/web/assetsC/mg/cart/1.pngi" alt=""></a>
+                                        <div class="cart-menu-title">
+                                            <a href="cart.html"><h5>Mount POW C058 FG </h5></a>
+                                            <span>1 x $2500</span>
+                                        </div>
+                                        <span class="cancel-item"><i class="fa fa-close"></i></span>
+                                    </li>
+                                    <li class="cart-menu-btn">
+                                        <a href="cart.html">view cart</a>
+                                        <a href="checkout.html">checkout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="page-banner">
+    <img src="/Minipo/web/assetsC/img/blogo.jpg" alt="Page Banner">
+</div>
     <section class="blog-area sigle-blog blog-margin section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-9">
                     <p class="home"><a href="{{ path('minipo_listblog') }}">Home</a> </p>
                     <div class="single-blog-page">
-
-                        <div class="single-blog-img">
-                            <img src="{{ asset('uploads/post/' ~ Image) }}" alt="{{ Titre }}">
-                        </div>
                         <div class="blog-text">
                             <div class="post-title">
                                 <h3>{{ Titre }}</h3>
-                                <p class="date-com"><span>Rakib Hossain</span> | {{ Date |date }}|  12 comments</p>
+                                <p class="date-com"><span>{{ blogs.id.username }}</span> | {{ Date |date() }}|  12 comments</p>
                             </div>
-                            <p>{{ Descripion }}</p>
+                            <p>{{ blogs.getDescription() }}</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <h4>{{ com|length }} Comments</h4>
+
+                            {% for comment in com %}
+
                             <div class="about-author comments">
-                                <h4>19 comments</h4>
-                                <div class="autohr-text">
-                                    <img alt="" src="img/about/2.jpg">
+
                                     <div class="author-des">
-                                        <h4><a href="#">Gerald Barnes</a></h4>
-                                        <span class="floatright"><a href="#">Reply</a>  /   <a href="#">Hide</a></span>
-                                        <span>27 Jun, 2016 at 2:30pm</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas eleifend. Phasellus a felis at est bibenes dum feugiat ut eget eni Praesent et messages in consectetur.</p>
+                                        <h4><a href="#">{{ comment.Firstname }} {{ comment.Lastname  }}</a></h4>
+                                        <span>{{ Date |date() }}</span>
+                                        <p>{{ comment.description }}</p>
+                                        <span class="floatright"><a >Reply</a>  / <a href="{{ path('minipo_deleteCom',{'idcom': comment.idcom,'idA': blogs.idA}) }}">Hide</a></span>
+
                                     </div>
-                                </div>
                             </div>
-                            <div class="about-author reply">
+
+                            {% endfor %}
+                         {#  <div class="about-author reply">
                                 <div class="autohr-text">
                                     <img alt="" src="img/about/3.jpg">
                                     <div class="author-des">
@@ -42,160 +151,48 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="about-author">
-                                <div class="autohr-text">
-                                    <img alt="" src="img/about/4.jpg">
-                                    <div class="author-des">
-                                        <h4><a href="#">Gregory Hernandez</a></h4>
-                                        <span class="floatright"><a href="#">Reply</a>  /   <a href="#">Hide</a></span>
-                                        <span>27 Jun, 2016 at 2:30pm</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas eleifend. Phasellus a felis at est bibenes dum feugiat ut eget eni Praesent et messages in consectetur.</p>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
+                          #}
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <div class="leave-comment">
                             <h4>leave your review</h4>
-                            <form method="post" action="#">
+                            {{ form_start(Form) }}
+
                                 <div class="row">
-                                    <div class="col-xs-12 col-sm-6">
-                                        <div class="input-text">
-                                            <input type="text" placeholder="Your Name" name="name">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6">
-                                        <div class="input-text">
-                                            <input type="text" required="" placeholder="Email" name="email">
-                                        </div>
-                                    </div>
+
                                     <div class="col-xs-12">
                                         <div class="input-text">
-                                            <textarea rows="4" placeholder="Comment" id="comment" name="comment"></textarea>
+
+                                            {{ form_widget(Form.description, { 'attr': {'id':'comment' ,  'placeholder':'description'} }) }}
                                         </div>
                                     </div>
                                     <div class="col-xs-12">
                                         <div class="submit-text">
-                                            <input type="submit" value="submit comments" name="submit">
+                                             {{ form_widget(Form.Submit, { 'attr': {'class':'input'} } ) }}
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            {{ form_end(Form) }}
+
                         </div>
+                            {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+                            <br><br><br>
+                            <div class="alert alert-warning" role="alert">
+                                <h3>
+                                    In order to post in our blog you need to be connected, if you are not
+                                    you can join us by clicking <a href="{{ path('fos_user_registration_register') }}">HERE</a>
+                                    Or if you already have an account click <a href="{{ path('fos_user_security_login ') }}" >HERE</a> to connect !
+                                </h3>
+                            </div>
+                            {% endif %}
                     </div>
                     <!-- single post end -->
                 </div>
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                    <div class="sidebar left-sidebar">
-                        <div class="category single-side">
-                            <div class="sidebar-title">
-                                <h3>Shop categories</h3>
-                            </div>
-                            <ul>
-                                <li>
-                                    <a href="#">Bikes</a> <span class="floatright">(90)</span>
-                                </li>
-                                <li>
-                                    <a href="#">Components</a> <span class="floatright">(60)</span>
-                                </li>
-                                <li>
-                                    <a href="#">Apparel</a> <span class="floatright">(50)</span>
-                                </li>
-                                <li>
-                                    <a href="#">Accessories</a> <span class="floatright">(30)</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="single-side clearfix">
-                            <div class="sidebar-title">
-                                <h3>RECENT ITEMS</h3>
-                            </div>
-                            <div class="recent-item">
-                                <div class="img">
-                                    <a href="product-details.html"><img src="img/products/side1.png" alt="Resent Item"></a>
-                                </div>
-                                <div class="text">
-                                    <a href="product-details.html"><h5>Kuat NV 2 Bike Tray</h5></a>
-                                    <div class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star gray-star"></i>
-                                    </div>
-                                    <p><span>$170.00</span><del>$170.00</del></p>
-                                </div>
-                            </div>
-                            <div class="recent-item">
-                                <div class="img">
-                                    <a href="product-details.html"><img src="img/products/side2.png" alt="Resent Item"></a>
-                                </div>
-                                <div class="text">
-                                    <a href="product-details.html"><h5>Shimano Pro Wrench</h5></a>
-                                    <div class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star gray-star"></i>
-                                    </div>
-                                    <p><span>$170.00</span></p>
-                                </div>
-                            </div>
-                            <div class="recent-item">
-                                <div class="img">
-                                    <a href="product-details.html"><img src="img/products/side3.png" alt="Resent Item"></a>
-                                </div>
-                                <div class="text">
-                                    <a href="product-details.html"><h5>Link Pliers</h5></a>
-                                    <div class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star gray-star"></i>
-                                    </div>
-                                    <p><span>$170.00</span></p>
-                                </div>
-                            </div>
-                            <div class="recent-item">
-                                <div class="img">
-                                    <a href="product-details.html"><img src="img/products/side4.png" alt="Resent Item"></a>
-                                </div>
-                                <div class="text">
-                                    <a href="product-details.html"><h5>Cable Cutter</h5></a>
-                                    <div class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star gray-star"></i>
-                                    </div>
-                                    <p><span>$120.00</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-side">
-                            <div class="sidebar-title">
-                                <h3>Popular Tags</h3>
-                            </div>
-                            <div class="tag-btn clearfix">
-                                <a href="#">Bike</a>
-                                <a href="#">Wheel</a>
-                                <a href="#">Aparel</a>
-                                <a href="#">GPS</a>
-                                <a href="#">Track</a>
-                                <a href="#">Accessories</a>
-                                <a href="#">Men</a>
-                                <a href="#">Women</a>
-                                <a href="#">Power</a>
-                            </div>
-                        </div>
-                        <div class="sidebar-banner banner-hover">
-                            <a href="#"><img src="img/banner.jpg" alt="Banner"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+        </div>
+        </div>
         </div>
     </section>
+
+
 {% endblock %}

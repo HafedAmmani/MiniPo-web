@@ -61,121 +61,11 @@
                                         <a href="shop.html">products</a>
                                     </li>
                                     <li><a href="about.html">about</a></li>
-                                    <li><a href="blog-1.html">blog</a>
-                                        <ul>
-                                            <li>
-                                                <a href="blog-1.html">Blog Style One</a>
-                                            </li>
-                                            <li>
-                                                <a href="single-blog.html">Single Blog</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Pages</a>
-                                        <ul>
-                                            <li>
-                                                <a href="login.html">Login</a>
-                                            </li>
-                                            <li>
-                                                <a href="my-account.html">My account</a>
-                                            </li>
-                                            <li>
-                                                <a href="checkout.html">CheckOut</a>
-                                            </li>
-                                            <li>
-                                                <a href="wishlist.html">Wishlist</a>
-                                            </li>
-                                            <li>
-                                                <a href="cart.html">Cart</a>
-                                            </li>
-                                            <li>
-                                                <a href="about.html">About</a>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">Contact</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop.html">Shop</a>
-                                            </li>
-                                            <li>
-                                                <a href="product-details.html">Product Details</a>
-                                            </li>
-                                            <li>
-                                                <a href="error-404.html">404 Error</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html">contact</a>
-                                    </li>
+                                    <li><a href="{{ path('minipo_listblog') }}">blog</a></li>
                                 </ul>
                             </nav>
                         </div>
-                        <!-- mobile menu start -->
-                        <div class="mobile-menu-area">
-                            <div class="mobile-menu">
-                                <nav id="dropdown">
-                                    <ul>
-                                        <li><a href="index.html">Home</a></li>
-                                        <li>
-                                            <a href="shop.html">products</a>
-                                        </li>
-                                        <li><a href="about.html">about</a></li>
-                                        <li><a href="blog-1.html">blog</a>
-                                            <ul>
-                                                <li>
-                                                    <a href="blog-1.html">Blog Style One</a>
-                                                </li>
-                                                <li>
-                                                    <a href="single-blog.html">Single Blog</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Pages</a>
-                                            <ul>
-                                                <li>
-                                                    <a href="login.html">Login</a>
-                                                </li>
-                                                <li>
-                                                    <a href="my-account.html">My account</a>
-                                                </li>
-                                                <li>
-                                                    <a href="checkout.html">CheckOut</a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html">Wishlist</a>
-                                                </li>
-                                                <li>
-                                                    <a href="cart.html">Cart</a>
-                                                </li>
-                                                <li>
-                                                    <a href="about.html">About</a>
-                                                </li>
-                                                <li>
-                                                    <a href="contact.html">Contact</a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.html">Shop</a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop-gird-left.html">Shop Left Gird View</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product-details.html">Product Details</a>
-                                                </li>
-                                                <li>
-                                                    <a href="error-404.html">404 Error</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="contact.html">contact</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- mobile menu end -->
+
                         <div class="cart-menu-area floatright">
                             <ul>
                                 <li><a href="#"><i class="pe-7s-shopbag"></i> <span>2</span></a>
@@ -220,15 +110,6 @@
     <section class="blog-area blog-one blog-margin section-padding">
 
         <div class="container">
-            <h1>Lister les status disponibles</h1>
-            <li>
-                <form action="#">
-                    <button type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
-                    <input type="search" placeholder="Search">
-                </form>
-            </li>
             <div class="row">
                 {% for blogs in blogs %}
                 <div class="col-sm-4">
@@ -237,21 +118,21 @@
                         <div class="blog-img">
                             <img class="img1" src="{{ asset('uploads/post/' ~ blogs.getImage()) }}" alt="{{ blogs.titre }}" />
                         </div>
+                        <hr style="margin-left: 20px; height: 90px; position: absolute; top: 200px; width: 2px;" class="line"/>
+
                         <div>
-                            <h3>{{ blogs.titre }}</h3>
-                            <small class="text-muted">{{ blogs.date|date() }}</small>
+                            <h3 style="margin-left: 10% ;margin-top: 10%;text-transform: uppercase;"><b>{{ blogs.titre }}</b></h3>
+                            <small style="margin-left: 10%" class="text-muted">{{ blogs.date|date("m/d/Y", "Europe/Paris") }}</small>
+
                         </div>
-
                         <div class="blog-text clearfix">
-                            <hr class="line"/>
-                            <p>{{ blogs.description }}</p>
-                            <div class="button">
-                            <a href="{{ path('minipo_UpdateBlog',{'idA':blogs.idA })}}"><button type="button" class="edit-btn" >Modifier</button></a>
-                            <a href="{{ path('minipo_DeleteBlog',{'idA':blogs.idA })}}"><button type="button"class="deleted-btn" href="single-blog.html">Delete</button></a>
-                            </div>
-
-                            <div class="view-more">
-                                <a href="{{ path('minipo_DetaileBlog',{'idA':blogs.idA })}}">View More</a>
+                            <p style="margin-left: 5%">{{ blogs.description }}</p>
+                            <div style="margin-bottom: 20%" class="button">
+                                <div style="margin-left:110px;">
+                            <a  href="{{ path('minipo_UpdateBlog',{'idA':blogs.idA })}}"><button type="button" class="edit-btn" >Modifier</button></a>
+                            <a  href="{{ path('minipo_DeleteBlog',{'idA':blogs.idA })}}"><button type="button"class="deleted-btn" href="single-blog.html">Delete</button></a>
+                                </div>
+                                    <a style="margin-top: 25%;margin-left: 60%" href="{{ path('minipo_DetaileBlog',{'idA':blogs.idA })}}">View More</a>
                             </div>
                         </div>
                     </div>

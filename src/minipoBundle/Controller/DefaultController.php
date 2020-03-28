@@ -22,4 +22,8 @@ class DefaultController extends Controller
     {
         return $this->render('@minipo/Default/indexadmin.html.twig');
     }
+    public function blogAction()
+    {
+        return $this->render('@minipo/Default/indexBlog.html.twig');
+    }
 }

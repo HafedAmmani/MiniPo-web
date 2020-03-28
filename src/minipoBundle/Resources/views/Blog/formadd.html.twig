@@ -1,0 +1,26 @@
+{% extends 'BaseClient.html.twig' %}
+
+{%  block body %}
+    <div class="leave-comment">
+        <h4>leave your review</h4>
+        <form  action="{{ path('minipo_addcomment' ) }}" method="post" id="comment">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="input-text">
+                        <input type="text" placeholder="Objet" name="name">
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="input-text">
+                        <textarea rows="4" placeholder="Description" id="comment" name="comment"></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="submit-text">
+                        <input type="submit" value="submit comments" name="submit">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock  %}

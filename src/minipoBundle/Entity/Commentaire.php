@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Commentaire
  *
  * @ORM\Table(name="commentaire", indexes={@ORM\Index(name="id", columns={"id"}), @ORM\Index(name="idA", columns={"idA"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="minipoBundle\Repository\BlogRepository")
  */
 class Commentaire
 {
@@ -28,12 +28,6 @@ class Commentaire
      */
     private $description;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="objet", type="string", length=200, nullable=false)
-     */
-    private $objet;
 
     /**
      * @var \Articles
@@ -54,6 +48,20 @@ class Commentaire
      * })
      */
     private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Lastname", type="string", length=255, nullable=false)
+     */
+    protected $lastname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Firstname", type="string", length=255, nullable=false)
+     */
+    protected $firstname;
 
     /**
      * @return int
@@ -88,27 +96,40 @@ class Commentaire
     }
 
     /**
-     * @return string
-     */
-    public function getObjet()
-    {
-        return $this->objet;
-    }
-
-    /**
-     * @param string $objet
-     */
-    public function setObjet($objet)
-    {
-        $this->objet = $objet;
-    }
-
-    /**
      * @return \Articles
      */
     public function getIda()
     {
         return $this->ida;
+    }
+    /**
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+    /**
+     * @param string $firstname
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+    }
+    /**
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * @param string $lastname
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
     }
 
     /**

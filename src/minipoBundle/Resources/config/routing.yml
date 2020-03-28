@@ -4,6 +4,9 @@ minipo_homepage:
 minipo_client:
     path:     /client/
     defaults: { _controller: minipoBundle:Default:client }
+minipo_agentBlog:
+    path:     /agentBlog/
+    defaults: { _controller: minipoBundle:Default:blog }
 minipo_employe:
     path:     /employe/
     defaults: { _controller: minipoBundle:Default:employe }
@@ -56,3 +59,13 @@ minipo_DetaileBlog:
 minipo_searchByTitleBlog:
     path:     /search
     defaults: { _controller: minipoBundle:Blog:search }
+
+minipo_addcomment:
+    path:     /addCom
+    defaults: { _controller: minipoBundle:Blog:addComment }
+minipo_listCom:
+  path:     /listCom
+  defaults: { _controller: minipoBundle:Blog:listCom }
+minipo_deleteCom:
+    path:     /deleteCom/{idcom}/{idA}
+    defaults: { _controller: minipoBundle:Blog:deleteCommentaire }
