@@ -128,7 +128,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/minipoBundle/Resources/views/Reclamation" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/assetsC/img/slider" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -140,16 +140,16 @@
     <property name="settings.editor.selected.configurable" value="sshConsole" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Minipo\app\Resources\views" />
-      <recent name="C:\wamp64\www\Minipo\web\assetsC\js" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp644\www\MiniPo-web\web\assetsC\img\slider" />
       <recent name="C:\wamp644\www\MiniPo-web\src\minipoBundle\Resources\views\Reclamation" />
       <recent name="C:\wamp644\www\MiniPo-web\src\minipoBundle\Controller" />
       <recent name="C:\wamp644\www\MiniPo-web\src\minipoBundle\Form" />
       <recent name="C:\wamp644\www\MiniPo-web\src\minipoBundle\Resources\views\Commande" />
-      <recent name="C:\wamp644\www\MiniPo-web\vendor" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Minipo\app\Resources\views" />
+      <recent name="C:\wamp64\www\Minipo\web\assetsC\js" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -239,6 +239,7 @@
       <workItem from="1585319585276" duration="28544000" />
       <workItem from="1585393619136" duration="32659000" />
       <workItem from="1585487667437" duration="23258000" />
+      <workItem from="1585577014910" duration="14218000" />
     </task>
     <servers />
   </component>

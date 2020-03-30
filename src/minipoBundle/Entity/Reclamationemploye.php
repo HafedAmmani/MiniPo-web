@@ -57,14 +57,13 @@ class Reclamationemploye
      * @var string
      *
      * @ORM\Column(name="reponse", type="string", length=500, nullable=false)
-     * @Assert\NotBlank
      */
     private $reponse;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string", length=500, nullable=false)
+     * @ORM\Column(name="image", type="string", length=500, nullable=true)
      * @Assert\File(maxSize="500k", mimeTypes={"image/jpeg", "image/jpg", "image/png", "image/GIF"})
      */
     private $image;

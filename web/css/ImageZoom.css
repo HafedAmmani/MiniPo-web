@@ -15,3 +15,11 @@
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
+div.input{
+    width: 45%;
+    margin: 10px 10% 10px 2%;
+}
+div.bouton1{
+    width: 45%;
+    margin: 10px 10% 10px 2%;
+}

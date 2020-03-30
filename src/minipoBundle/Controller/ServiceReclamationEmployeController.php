@@ -16,23 +16,27 @@ class ServiceReclamationEmployeController extends Controller
     {
         return $this->render('@minipo/Default/indexEmploye.html.twig');
     }
-    public function AjouterReclamationEmployeAction(Request $request,$id=15)
-    {
+    public function AjouterReclamationEmployeAction(Request $request)
+    {    $id=$this->getUser()->getId();
         $reclamation=new Reclamationemploye();
         $form=$this->createForm(ReclamationemployeType::class,$reclamation);
         $form=$form->handleRequest($request);
         if($form->isSubmitted() and $form->isValid()){
             $em=$this->getDoctrine()->getManager();
+            $classCat = $em->getRepository('minipoBundle:User')->find($id);
+
             $file=$reclamation->getImage();
+            if($file != null){
             $filename= md5(uniqid()) . '.' . $file->guessExtension();
             $file->move($this->getParameter('photos_directory'), $filename);
-            $reclamation->setImage($filename);
+            $reclamation->setImage($filename);}
             $reclamation->setEtatremp("non traiter");
+            $reclamation->setId($classCat);
             $em->persist($reclamation);
             $em->flush();
             $this->addFlash('info', 'Reclamation envoyee !');
 
-            return $this->redirectToRoute('minipo_AfficherToutesReclamationEmploye');
+            return $this->redirectToRoute('minipo_AfficherMesReclamationEmployes');
             }
         return $this->render('@minipo/Reclamation/AjouterReclamationEmploye.html.twig',array('f'=>$form->createView()));
     }

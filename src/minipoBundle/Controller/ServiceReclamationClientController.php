@@ -32,10 +32,13 @@ class ServiceReclamationClientController extends Controller
         if($form->isSubmitted() and $form->isValid()){
             $em=$this->getDoctrine()->getManager();
             $classCat = $em->getRepository('minipoBundle:User')->find($id);
+
             $file=$reclamation->getImage();
+            if($file !=null ){
             $filename= md5(uniqid()) . '.' . $file->guessExtension();
             $file->move($this->getParameter('photos_directory'), $filename);
             $reclamation->setImage($filename);
+            }
             $reclamation->setEtatr("non traiter");
             $reclamation->setId($classCat);
             $em->persist($reclamation);
@@ -88,9 +91,10 @@ class ServiceReclamationClientController extends Controller
             $classCatidcmd = $em->getRepository('minipoBundle:Commande')->find($idcmd);
             $classCatidcatrec = $em->getRepository('minipoBundle:CategorieReclamation')->find($idcatrec);
             $file=$reclamation->getImage();
+            if($file!=null){
             $filename= md5(uniqid()) . '.' . $file->guessExtension();
             $file->move($this->getParameter('photos_directory'), $filename);
-            $reclamation->setImage($filename);
+            $reclamation->setImage($filename);}
             $reclamation->setEtatr("non traiter");
             $reclamation->setId($classCat);
             $reclamation->setIdcatrec($classCatidcatrec);
