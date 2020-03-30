@@ -42,10 +42,10 @@ minipo_updateEquipe:
     defaults: { _controller: minipoBundle:Equipe:update }
 
 minipo_addblog:
-    path:     /addBlog
+    path:     /agentBlog/addBlog
     defaults: { _controller: minipoBundle:Blog:addBlog }
 minipo_listblog:
-    path:     /listBlog
+    path:     /agentBlog/listBlog
     defaults: { _controller: minipoBundle:Blog:listBlog }
 minipo_UpdateBlog:
     path:     /updateBlog/{idA}
@@ -69,3 +69,10 @@ minipo_listCom:
 minipo_deleteCom:
     path:     /deleteCom/{idcom}/{idA}
     defaults: { _controller: minipoBundle:Blog:deleteCommentaire }
+
+minipo_listComRep:
+    path:     /listComRep
+    defaults: { _controller: minipoBundle:Blog:addCommentRep }
+minipo_ListBlogClient:
+    path:     /client/ListBlogClient
+    defaults: { _controller: minipoBundle:Blog:listBlogClient }

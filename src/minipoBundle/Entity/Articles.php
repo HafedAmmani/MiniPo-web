@@ -3,12 +3,17 @@
 namespace minipoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+
+
 
 /**
  * Articles
  *
  * @ORM\Table(name="articles", indexes={@ORM\Index(name="id", columns={"id"})})
  * @ORM\Entity
+ * @Vich\Uploadable
  */
 class Articles
 {
@@ -61,12 +66,60 @@ class Articles
     private $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="Lastname", type="string", length=255, nullable=false)
+     */
+    protected $lastname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Firstname", type="string", length=255, nullable=false)
+     */
+    protected $firstname;
+
+    /**
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * @param string $lastname
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @param string $firstname
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+    }
+
+
+    /**
      * @return \DateTime
      */
     public function getDate()
     {
         return $this->date;
     }
+
 
     /**
      * @param \DateTime $date
@@ -154,6 +207,76 @@ class Articles
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName", size="imageSize")
+     *
+     * @var File|null
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="string")
+     *
+     * @var string|null
+     */
+    private $imageName;
+
+    /**
+     * @ORM\Column(type="datetime")
+     *
+     * @var \DateTimeInterface|null
+     */
+    private $updatedAt;
+
+    /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     */
+    public function setImageFile($imageFile = null)
+    {
+        $this->imageFile = $imageFile;
+
+        if (null !== $imageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageName( $imageName)
+    {
+        $this->imageName = $imageName;
+    }
+
+    public function getImageName()
+    {
+        return $this->imageName;
+    }
+
+
+
+    /**
+     * @return \DateTimeInterface|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 
 

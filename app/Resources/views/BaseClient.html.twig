@@ -57,7 +57,11 @@
                                     </li>
                                     <li>
                                         <i class="fa fa-user"></i>
-                                        <a href="{{ path('fos_user_security_login') }}">Account</a>
+                                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                            {{ app.user.username }}
+                                        {% endif %}
+                                        | <a href="{{ path('fos_user_security_logout') }}">Log out</a>
+
                                     </li>
                                 </ul>
                             </div>
@@ -85,11 +89,9 @@
                                         <li><a href="blog-1.html">blog</a>
                                             <ul>
                                                 <li>
-                                                    <a href="blog-1.html">Blog Style One</a>
+                                                    <a href="{{ path('minipo_ListBlogClient') }}">lister les Blogs </a>
                                                 </li>
-                                                <li>
-                                                    <a href="single-blog.html">Single Blog</a>
-                                                </li>
+
                                             </ul>
                                         </li>
                                         <li><a href="#">Pages</a>

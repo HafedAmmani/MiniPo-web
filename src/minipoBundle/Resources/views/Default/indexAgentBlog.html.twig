@@ -1,0 +1,24 @@
+{% extends 'BaseRB.html.twig' %}
+<div class="mainmenu text-center floatleft">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="shop.html">products</a>
+            </li>
+            <li><a href="about.html">about</a></li>
+
+            <li><a href="blog-1.html">blog</a>
+                <ul>
+                    <li><a href="{{ path('minipo_listblog') }}">lister les blogs</a></li>
+                    <li>
+                        <a href="{{ path('minipo_addblog') }}">Ajouter Blog</a>
+                    </li>
+
+
+
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>

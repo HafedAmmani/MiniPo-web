@@ -1,4 +1,4 @@
-{% extends 'BaseClient.html.twig' %}
+{% extends 'BaseRB.html.twig' %}
 {% block new_style %}
     <link href="{{ asset('css/image.css') }}" rel="stylesheet">
 {% endblock %}
@@ -35,8 +35,14 @@
                                     </form>
                                 </li>
                                 <li>
+
+
                                     <i class="fa fa-user"></i>
-                                    <a href="{{ path('fos_user_security_login') }}">Account</a>
+                                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                        {{ app.user.username }}
+                                    {% endif %}
+                                    | <a href="{{ path('fos_user_security_logout') }}">Log out</a>
+
                                 </li>
                             </ul>
                         </div>
@@ -61,7 +67,24 @@
                                         <a href="shop.html">products</a>
                                     </li>
                                     <li><a href="about.html">about</a></li>
-                                    <li><a href="{{ path('minipo_listblog') }}">blog</a></li>
+
+                                    <li><a href="blog-1.html">blog</a>
+                                        <ul>
+                                            <li><a href="{{ path('minipo_listblog') }}">Lister les blogs</a></li>
+                                            <li>
+                                                <a href="{{ path('minipo_addblog') }}">Ajouter Blog</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Reclamation</a>
+                                        <ul>
+                                            <li><a href="#">Envoyer Recmalation</a>
+                                            </li>
+                                            <li><a href="#">Mes Reclamations</a>
+                                            </li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -116,13 +139,13 @@
 
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img class="img1" src="{{ asset('uploads/post/' ~ blogs.getImage()) }}" alt="{{ blogs.titre }}" />
+                            <img class="img1" src="{{ asset('uploads/post/' ~ blogs.getImageName()) }}" alt="{{ blogs.titre }}" />
                         </div>
                         <hr style="margin-left: 20px; height: 90px; position: absolute; top: 200px; width: 2px;" class="line"/>
 
                         <div>
                             <h3 style="margin-left: 10% ;margin-top: 10%;text-transform: uppercase;"><b>{{ blogs.titre }}</b></h3>
-                            <small style="margin-left: 10%" class="text-muted">{{ blogs.date|date("m/d/Y", "Europe/Paris") }}</small>
+                            <small style="margin-left: 10%" class="text-muted">  {{ blogs.getFirstname() }} {{ blogs.getLastname() }} | {{ blogs.date|date() }}</small>
 
                         </div>
                         <div class="blog-text clearfix">

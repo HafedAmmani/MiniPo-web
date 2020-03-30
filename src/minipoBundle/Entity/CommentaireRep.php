@@ -5,28 +5,28 @@ namespace minipoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Commentaire
+ * CommentaireRep
  *
- * @ORM\Table(name="commentaire", indexes={@ORM\Index(name="id", columns={"id"}), @ORM\Index(name="idA", columns={"idA"})})
+ * @ORM\Table(name="commentaireRep", indexes={@ORM\Index(name="id", columns={"id"}), @ORM\Index(name="idA", columns={"idA"})})
  * @ORM\Entity(repositoryClass="minipoBundle\Repository\BlogRepository")
  */
-class Commentaire
+class CommentaireRep
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="idcom", type="integer", nullable=false)
+     * @ORM\Column(name="idcomRep", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idcom;
+    private $idcomRep;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=1000, nullable=false)
+     * @ORM\Column(name="descriptionRep", type="string", length=1000, nullable=false)
      */
-    private $description;
+    private $descriptionRep;
 
 
     /**
@@ -39,8 +39,6 @@ class Commentaire
      */
     private $ida;
 
-
-
     /**
      * @var \User
      *
@@ -50,6 +48,17 @@ class Commentaire
      * })
      */
     private $id;
+
+    /**
+     * @var \Commentaire
+     *
+     * @ORM\ManyToOne(targetEntity="Commentaire")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idcom", referencedColumnName="idcom")
+     * })
+     */
+    private $idcom;
+
 
     /**
      * @var string
@@ -68,33 +77,33 @@ class Commentaire
     /**
      * @return int
      */
-    public function getIdcom()
+    public function getIdcomRep()
     {
         return $this->idcom;
     }
 
     /**
-     * @param int $idcom
+     * @param int $idcomRep
      */
-    public function setIdcom($idcom)
+    public function setIdcomRep($idcomRep)
     {
-        $this->idcom = $idcom;
+        $this->idcomRep = $idcomRep;
     }
 
     /**
      * @return string
      */
-    public function getDescription()
+    public function getDescriptionRep()
     {
-        return $this->description;
+        return $this->descriptionRep;
     }
 
     /**
-     * @param string $description
+     * @param string $descriptionRep
      */
-    public function setDescription($description)
+    public function setDescriptionRep($descriptionRep)
     {
-        $this->description = $description;
+        $this->descriptionRep = $descriptionRep;
     }
 
     /**
@@ -104,6 +113,23 @@ class Commentaire
     {
         return $this->ida;
     }
+
+    /**
+     * @return \Commentaire
+     */
+    public function getIdcom()
+    {
+        return $this->idcom;
+    }
+
+    /**
+     * @param \Commentaire $idcom
+     */
+    public function setIdcom($idcom)
+    {
+        $this->idcom = $idcom;
+    }
+
     /**
      * @return string
      */

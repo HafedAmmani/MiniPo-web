@@ -104,10 +104,15 @@
                 <div class="col-xs-12 col-sm-8 col-md-9">
                     <p class="home"><a href="{{ path('minipo_listblog') }}">Home</a> </p>
                     <div class="single-blog-page">
+
+                        <div class="single-blog-img">
+                            <img src="{{ asset('uploads/post/' ~ blogs.getImageName()) }}" alt="Single Blog">
+                        </div>
+
                         <div class="blog-text">
                             <div class="post-title">
                                 <h3>{{ Titre }}</h3>
-                                <p class="date-com"><span>{{ blogs.id.username }}</span> | {{ Date |date() }}|  12 comments</p>
+                                <p class="date-com"><span>{{ blogs.getFirstname() }} {{ blogs.getLastname() }}</span> | {{ Date |date() }}|  {{ com|length }} comments</p>
                             </div>
                             <p>{{ blogs.getDescription() }}</p>
 
@@ -134,7 +139,7 @@
                                         <h4><a href="#">{{ comment.Firstname }} {{ comment.Lastname  }}</a></h4>
                                         <span>{{ Date |date() }}</span>
                                         <p>{{ comment.description }}</p>
-                                        <span class="floatright"><a >Reply</a>  / <a href="{{ path('minipo_deleteCom',{'idcom': comment.idcom,'idA': blogs.idA}) }}">Hide</a></span>
+                                        <span class="floatright" ><a >Reply</a>  / <a href="{{ path('minipo_deleteCom',{'idcom': comment.idcom,'idA': blogs.idA}) }}">Hide</a></span>
 
                                     </div>
                             </div>
@@ -144,7 +149,7 @@
                                 <div class="autohr-text">
                                     <img alt="" src="img/about/3.jpg">
                                     <div class="author-des">
-                                        <h4><a href="#">Gregory Hernandez</a></h4>
+                                        <h4><a href="#">{{ comment.Firstname }} {{ comment.Lastname  }}</a></h4>
                                         <span class="floatright"><a href="#">Reply</a>  /   <a href="#">Hide</a></span>
                                         <span>27 Jun, 2016 at 2:30pm</span>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas eleifend. Phasellus a felis at est bibenes dum feugiat ut eget eni Praesent et messages in consectetur.</p>

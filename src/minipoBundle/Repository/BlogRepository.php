@@ -44,6 +44,11 @@ class BlogRepository extends EntityRepository{
             ->createQuery("SELECT c From minipoBundle:commentaire c WHERE c.ida=$id");
         return $query = $qb->getResult();
     }
+    public function findcommentrep($id){
+        $qb = $this->getEntityManager()
+            ->createQuery("SELECT c From minipoBundle:commentaireRep c WHERE c.idcom=$id");
+        return $query = $qb->getResult();
+    }
     public function deletcomment($idcom){
         $qb = $this->getEntityManager()
             ->createQuery("DELETE  From minipoBundle:commentaire c WHERE c.idcom=$idcom");
