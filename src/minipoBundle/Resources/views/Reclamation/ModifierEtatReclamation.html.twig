@@ -1,14 +1,32 @@
 {% extends 'base.html.twig' %}
+{% block Reclamation %}
+    <li>  <a class="has-arrow waves-effect waves-dark"  aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">Gestion Reclamtion </span></a>
+        <ul aria-expanded="false" class="collapse">
+            <li><a href="{{ path('minipo_AfficherToutesReclamationEmploye') }}">Reclamations employe  </a></li>
+            <li><a href="{{ path('minipo_AfficherToutesReclamation') }}">Reclamations Client </a></li>
+            <li><a href="{{ path('minipo_Stat') }}">Statistique</a></li>
+            <li><a href="/">Modern</a></li>
+        </ul>
+    </li>
+{% endblock  %}
+{% block new_style %}
+    <link href="{{ asset('/css/ImageZoom.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block reclamationclient   %}
 <form method="post">
+    <div style="margin: 0 auto;width: 1000px;">
+    <div class="card-body">
+        <h1 class="card-title">Traitement de la Reclamation</h1>
+    </div>
+    <div class="col-md-6 ">
     <form class="form-horizontal m-t-40" method="post">
         {#<div class="form-group">
             <label>Date  <span class="help"> e.g. "George deo"</span></label>
             <input type="text" class="form-control" value={{ reclamation.dater}}>
         </div>#}
         <div class="form-group">
-            <label >Type :</label>
-            <label >{{ reclamation.type}}</label>
+
            {#<input type="text"  class="form-control" value={{ reclamation.type}}>#}
         </div>
         <div class="form-group">
@@ -21,9 +39,11 @@
             <label >{{ reclamation.description}}</label>
             {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
         </div>
+        <div  class="image-box" id="container"style="margin-left: 100px">
+            <img src="{{ asset('uploads/post/' ~ reclamation.image) }}" alt="user" class="" width="200px"></div>
         <div class="form-group">
             <label>Reponse</label>
-            <textarea class="form-control" name="reponse"  rows="5" value={{ reclamation.Reponse}}>{{reclamation.Reponse}}</textarea>
+            <textarea class="form-control" name="reponse" placeholder="Inserez une reponse" rows="5" value={{ reclamation.Reponse}}>{{reclamation.Reponse}}</textarea>
         </div>
 
         <div class="form-group">
@@ -40,26 +60,12 @@
             </select>
         </div>
 
-        <a href="{{ path('minipo_ModifierEtatReclamation',{'id':reclamation.idr}) }}"><button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button></a>
+        <a href="{{ path('minipo_ModifierEtatReclamation',{'id':reclamation.idr}) }}"><button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Traiter</button></a>
         <button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button>
 
     </form>
-{#Etat:<select name="etat" value={{ reclamation.etatr}}>
-        {% if  reclamation.etatr is same as ('traiter')%}
-            <option selected>traiter</option>
-            <option>non traiter</option>
-        {%endif%}
-        {% if  reclamation.etatr is same as ('non traiter')%}
-            <option>traiter</option>
-            <option selected>non traiter</option>
-        {%endif%}
-
-    </select>
-    Reponse:<input type ="text" name="reponse" value={{ reclamation.Reponse}}>
-    <td><a href="{{ path('minipo_ModifierEtatReclamation',{'id':reclamation.idr}) }}">
-    <button >modifier</button></a>
-
-
-</form>#}
+    </div>
+    </div>
+</form>
 
 {% endblock    %}

@@ -6,6 +6,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -21,12 +22,13 @@ class ReclamationType extends AbstractType
                 array(
                     'class'=>'minipoBundle:CategorieReclamation',
                     'choice_label'=>'nom',
+                    'label'=>'categorie',
                     'multiple'=>false
                 ))
             ->add('objet')
-            ->add('description')
+            ->add('description',TextareaType::class)
             ->add('image',FileType::class)
-            ->add('valider', SubmitType::class,['attr'=>['formnovalidate'=>'formnovalidate']]);
+            ->add('Envoyer', SubmitType::class,['attr'=>['formnovalidate'=>'formnovalidate']]);
     }/**
      * {@inheritdoc}
      */

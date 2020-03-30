@@ -25,13 +25,14 @@ class ReclamationemployeType extends AbstractType
                 array(
                     'class'=>'minipoBundle:CategorieReclamation',
                     'choice_label'=>'nom',
+                    'label'=>'categorie',
                     'multiple'=>false
                 ))
 
             ->add('objet')
             ->add('description',TextareaType::class)
             ->add('image',FileType::class)
-            ->add('valider', SubmitType::class,['attr'=>['formnovalidate'=>'formnovalidate']]);
+            ->add('Envoyer', SubmitType::class,['attr'=>['formnovalidate'=>'formnovalidate']]);
     }/**
      * {@inheritdoc}
      */

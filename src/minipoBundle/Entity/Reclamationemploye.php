@@ -25,6 +25,8 @@ class Reclamationemploye
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=1000, nullable=false)
+     * @Assert\NotBlank
+     * @Assert\Length(min=10,minMessage="vous devez inserer une description s'il vous plait!")
      */
     private $description;
 
@@ -46,6 +48,8 @@ class Reclamationemploye
      * @var string
      *
      * @ORM\Column(name="objet", type="string", length=255, nullable=false)
+     *  @Assert\NotBlank
+     * @Assert\Length(min=5)
      */
     private $objet;
 
@@ -53,6 +57,7 @@ class Reclamationemploye
      * @var string
      *
      * @ORM\Column(name="reponse", type="string", length=500, nullable=false)
+     * @Assert\NotBlank
      */
     private $reponse;
 

@@ -2,20 +2,12 @@
 {% block reclamationclient   %}
 
 <form method="post">
+    <div style="margin: 0 auto;width: 1000px;">
+    <div class="card-body">
+        <h1 class="card-title">Votre Reclamation !</h1>
+    </div>
+    <div class="col-md-6 ">
     <form class="form-horizontal m-t-40" method="post">
-        {#<div class="form-group">
-            <label>Date  <span class="help"> e.g. "George deo"</span></label>
-            <input type="text" class="form-control" value={{ reclamation.dater}}>
-        </div>#}
-        {# <div class="form-group">
-             <label >Type :</label>
-             <label >{{ reclamation.type}}</label>
-            {#<input type="text"  class="form-control" value={{ reclamation.type}}>
-        </div>#}
-
-
-
-
         <div class="form-group">
             <label>Envoye le  :</label>
             <label >{{ reclamation.dater|date}}</label>
@@ -50,7 +42,7 @@
             {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
         </div>
         <div class="form-group" >
-        <img src="{{ asset('uploads/post/' ~ reclamation.image) }}" alt="user" class=""width="200px"></div>
+        <img src="{{ asset('uploads/post/' ~ reclamation.image) }}" alt="user" class=""width="200px"style="margin-left: 100px"></div>
         <div class="form-group">
             <label>Reponse</label>
             <label >{{reclamation.Reponse}}</label>
@@ -59,27 +51,13 @@
 
 
 
-        <a href="{{ path('minipo_showdetailed',{'id':reclamation.idr}) }}"><button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button></a>
+        <a href="{{ path('minipo_showdetailed',{'id':reclamation.idr}) }}"><button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Modifier</button></a>
         <a href="{{ path('minipo_AfficherMesReclamation') }}"><button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button></a>
 
     </form>
+    </div>
+    </div>
+</form>
 
-{#Etat:<select name="etat" value={{ reclamation.etatr}}>
-        {% if  reclamation.etatr is same as ('traiter')%}
-            <option selected>traiter</option>
-            <option>non traiter</option>
-        {%endif%}
-        {% if  reclamation.etatr is same as ('non traiter')%}
-            <option>traiter</option>
-            <option selected>non traiter</option>
-        {%endif%}
-
-    </select>
-    Reponse:<input type ="text" name="reponse" value={{ reclamation.Reponse}}>
-    <td><a href="{{ path('minipo_ModifierEtatReclamation',{'id':reclamation.idr}) }}">
-    <button >modifier</button></a>
-
-
-</form>#}
 
 {% endblock    %}
