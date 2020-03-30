@@ -8,8 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * Livraison
  *
  * @ORM\Table(name="livraison", indexes={@ORM\Index(name="fk_idl", columns={"id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="minipoBundle\Repository\livraisonRepository")
  */
+
 class Livraison
 {
     /**
@@ -24,13 +25,6 @@ class Livraison
     /**
      * @var string
      *
-     * @ORM\Column(name="dateliv", type="string", length=255, nullable=false)
-     */
-    private $dateliv;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="destination", type="string", length=50, nullable=false)
      */
     private $destination;
@@ -38,16 +32,18 @@ class Livraison
     /**
      * @var string
      *
-     * @ORM\Column(name="etatl", type="string", length=30, nullable=false)
+     * @ORM\Column(name="etatl", type="enumetat",nullable=false, options={"default":"non livree"})
      */
-    private $etatl;
-
+    private $etatl="non livree";
     /**
-     * @var string
+     * @var \Commande
      *
-     * @ORM\Column(name="matriculeL", type="string", length=255, nullable=false)
+     * @ORM\ManyToOne(targetEntity="Commande")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idc", referencedColumnName="idcmd")
+     * })
      */
-    private $matriculel;
+    private $idc;
 
     /**
      * @var \User
@@ -58,6 +54,20 @@ class Livraison
      * })
      */
     private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dateliv", type="string", length=255, nullable=false)
+     */
+    private $dateliv;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="matriculeL", type="string", length=255, nullable=true)
+     */
+    private $matriculel;
 
     /**
      * @return int
@@ -73,22 +83,6 @@ class Livraison
     public function setIdliv($idliv)
     {
         $this->idliv = $idliv;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDateliv()
-    {
-        return $this->dateliv;
-    }
-
-    /**
-     * @param string $dateliv
-     */
-    public function setDateliv($dateliv)
-    {
-        $this->dateliv = $dateliv;
     }
 
     /**
@@ -124,19 +118,19 @@ class Livraison
     }
 
     /**
-     * @return string
+     * @return \Commande
      */
-    public function getMatriculel()
+    public function getIdc()
     {
-        return $this->matriculel;
+        return $this->idc;
     }
 
     /**
-     * @param string $matriculel
+     * @param \Commande $idc
      */
-    public function setMatriculel($matriculel)
+    public function setIdc($idc)
     {
-        $this->matriculel = $matriculel;
+        $this->idc = $idc;
     }
 
     /**
@@ -154,6 +148,43 @@ class Livraison
     {
         $this->id = $id;
     }
+
+    /**
+     * @return string
+     */
+    public function getDateliv()
+    {
+        return $this->dateliv;
+    }
+
+    /**
+     * @param string $dateliv
+     */
+    public function setDateliv($dateliv)
+    {
+        $this->dateliv = $dateliv;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMatriculel()
+    {
+        return $this->matriculel;
+    }
+
+    /**
+     * @param string $matriculel
+     */
+    public function setMatriculel($matriculel)
+    {
+        $this->matriculel = $matriculel;
+    }
+
+
+
+
+
 
 
 }

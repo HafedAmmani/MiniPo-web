@@ -10,3 +10,24 @@ minipo_employe:
 minipo_admin:
     path:     /admin/
     defaults: { _controller: minipoBundle:Default:admin }
+minipo_afficheLiv:
+    path:     /affiche
+    defaults: { _controller: minipoBundle:LivraisonBack:afficheLiv }
+minipo_ajoutliv:
+    path:     /ajout
+    defaults: { _controller: minipoBundle:LivraisonBack:ajoutliv }
+minipo_update:
+    path:     /update/{id}
+    defaults: { _controller: minipoBundle:LivraisonBack:updateLiv }
+minipo_delete:
+    path:     /delete/{id}
+    defaults: { _controller: minipoBundle:LivraisonBack:Delete }
+minipo_afficheLivreur:
+    path:     /afficheLivreur
+    defaults: { _controller: minipoBundle:LivraisonFront:afficheLivreur }
+minipo_updateEtat:
+    path:     /updateEtat/{id}
+    defaults: { _controller: minipoBundle:LivraisonFront:updateEtat }
+minipo_searchByEtat:
+    path:     /searchByEtat
+    defaults: { _controller: minipoBundle:LivraisonFront:searchByEtat }
