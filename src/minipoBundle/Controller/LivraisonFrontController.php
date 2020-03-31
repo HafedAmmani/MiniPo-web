@@ -3,6 +3,7 @@
 namespace minipoBundle\Controller;
 
 use minipoBundle\Entity\Livraison;
+use minipoBundle\Form\RechercheDestType;
 use minipoBundle\Form\RechercheType;
 use minipoBundle\Form\UpdateEtatType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -44,5 +45,17 @@ class LivraisonFrontController extends Controller
         }
         return $this->render("@minipo/Livraison/searchbyetat.html.twig", array('form'=>$form->createView(),'livraison'=>$livs));
     }
-
+    public function searchByDestAction(Request $request){
+        $liv = new Livraison();
+        $form = $this->createForm(RechercheDestType::class,$liv);
+        $form = $form->handleRequest($request);
+        if($form->isSubmitted()){
+            $livs = $this->getDoctrine()->getRepository(Livraison::class)
+                ->findBy(array('destination'=> $liv->getDestination()));
+        }
+        else {
+            $livs = $this->getDoctrine()->getRepository(Livraison::class)->findAll();
+        }
+        return $this->render("@minipo/Livraison/searchbydest.html.twig", array('form'=>$form->createView(),'livraison'=>$livs));
+    }
 }

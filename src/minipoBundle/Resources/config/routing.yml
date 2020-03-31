@@ -31,3 +31,9 @@ minipo_updateEtat:
 minipo_searchByEtat:
     path:     /searchByEtat
     defaults: { _controller: minipoBundle:LivraisonFront:searchByEtat }
+minipo_searchByDest:
+    path:     /searchByDest
+    defaults: { _controller: minipoBundle:LivraisonFront:searchByDest }
+minipo_mail:
+    path:     /mail/{name}
+    defaults: { _controller: minipoBundle:LivraisonBack:mail }

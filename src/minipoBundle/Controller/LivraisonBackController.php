@@ -51,4 +51,35 @@ class LivraisonBackController extends Controller
         return $this->redirectToRoute('minipo_afficheLiv');
     }
 
+    public function mailAction($name)
+    {
+        $message = (new \Swift_Message('Hello Email'))
+            ->setFrom('projetminipo@gmail.com')
+            ->setTo('projetminipo@gmail.com')
+            ->setBody(
+                $this->renderView(
+                // app/Resources/views/Emails/registration.html.twig
+                    '@minipo/Livraison/email.html.twig',
+                    ['name' => $name]
+                ),
+                'text/html'
+            )
+
+            // you can remove the following code if you don't define a text version for your emails
+            ->addPart(
+                $this->renderView(
+                    '@minipo/Livraison/email.html.twig',
+                    ['name' => $name]
+                ),
+                'text/plain'
+            )
+        ;
+
+        $this->get('mailer')->send($message);
+
+        // or, you can also fetch the mailer service this way
+        // $this->get('mailer')->send($message);
+
+        return new Response('<html><body>test</body></html>');
+    }
 }
