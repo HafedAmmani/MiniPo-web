@@ -15,6 +15,7 @@
         </thead>
         <tbody>
             {% for elt in lc %}
+            <form method="post" >
                 <tr>
                     <td class="td-img text-left">
                         <a href="#"><img src="{{ asset('assetsC/img/cart/1.jpg') }}" alt="Add Product" /></a>
@@ -24,22 +25,24 @@
                     </td>
                     <td>{{ elt.idprod.prix }}</td>
                     <td>
-                        <form action="#" method="POST">
+                        <form method="post">
                             <div class="plus-minus">
                                 <a class="dec qtybutton">-</a>
-                                <input type="text" value={{ elt.qte }} name="qtybutton" class="plus-minus-box">
+                                <input type="text" name="qte" class="plus-minus-box" value={{ elt.qte }} >
                                 <a class="inc qtybutton">+</a>
                             </div>
                         </form>
                     </td>
-                    <td>{{ elt.idprod.prix }}</td>
+                    <td>{{ elt.subtotal }}</td>
                     <td>
-                        <a href="{{path('minipo_deleteLc',{'id':app.user.id,'idLc':elt.idlc}) }}"><i class="fa fa-trash" title="Remove this product"></i></a>
-                        <i class="fa fa-pencil" title="Update this product"></i>
+                        <a href="{{ path('minipo_deleteLc',{'id':app.user.id,'idLc':elt.idlc}) }}"><i class="fa fa-trash" title="Remove this product"></i></a>
+                        <a href="{{ path('minipo_updateQteLc',{'id':app.user.id,'idLc':elt.idlc} ) }}"><button type="submit"><i class="fa fa-pencil" title="Update this product"></i></button></a>
                     </td>
                 </tr>
+            </form>
             {% endfor %}
 
         </tbody>
+        {% block total %}<p>Subtotal: <span class="floatright">{{ lc[0].idcmd.total }}</span></p>{% endblock %}
     {% endif %}
 {% endblock %}

@@ -29,6 +29,13 @@ class Lignecommande
     private $qte;
 
     /**
+     * @var float
+     *
+     * @ORM\Column(name="subtotal", type="float", nullable=false)
+     */
+    private $subtotal;
+
+    /**
      * @var \Commande
      *
      * @ORM\ManyToOne(targetEntity="Commande")
@@ -81,6 +88,22 @@ class Lignecommande
     }
 
     /**
+     * @return float
+     */
+    public function getSubtotal()
+    {
+        return $this->subtotal;
+    }
+
+    /**
+     * @param float $subtotal
+     */
+    public function setSubtotal($subtotal)
+    {
+        $this->subtotal = $subtotal;
+    }
+
+    /**
      * @return \Commande
      */
     public function getIdcmd()
@@ -110,6 +133,12 @@ class Lignecommande
     public function setIdprod($idprod)
     {
         $this->idprod = $idprod;
+    }
+
+    public function __toString()
+    {
+
+        return strval( $this->getIdcmd() );
     }
 
 

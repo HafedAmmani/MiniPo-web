@@ -9,29 +9,13 @@
             Pas de formation
         {% else %}
 
-            {#<form method="POST">
+
                 <h3>{{ p.designation }}</h3>
                 <p>{{ p.idcateg.nom }}</p> <br /><hr>
-                <strong><h3>{{ p.prix }}</h3></strong>
-                <input type="number" id="quantity" name="qte" min="1" />
-                <a class="shop-btn" href="{{ path('minipo_ajouterLC',{'idprod':p.idprod}) }}">
-                    <input type="button" name="ajout" value="Ajouter Au Panier" />
-                </a>#}
-              <form method="POST">
-                  {#<h3>{{ p.designation }}</h3>
-                  <p>{{ p.idcateg.nom }}</p> <br /><hr>
-                  <strong><h3>{{ p.prix }}</h3></strong><br/><br/><br/><br/>
-                  <input type="number" id="quantity" name="qte" min="1" />
-                  <a class="shop-btn" href="{{ path('minipo_ajouterLC',{'idprod':p.idprod}) }}">
-                      <input type="button" name="ajout" value="Ajouter Au Panier" />
-               </a>#}
+               <strong><h3>{{ p.prix }}</h3></strong>
 
-   <input type='text' name="idcmd" value={{ 4 }} /><br/>
-   <input type='text' name="idprod" value={{ p.idprod }} /><br/>
-   <input type="number" id="qte" name="qte" min="1" /><br/>
-   <input type="submit" name="modifier" value="Ajouter Au Panier" /><br/>
+            {{ form(f) }}
 
-  </form>
 
 {% endif %}
 {% endblock %}

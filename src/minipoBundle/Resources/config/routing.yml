@@ -1,6 +1,9 @@
 minipo_homepage:
     path:     /
     defaults: { _controller: minipoBundle:Default:indexclientexterne }
+minipo_index:
+    path:     /pdf/{idFact}
+    defaults: { _controller: minipoBundle:Default:index}
 minipo_client:
     path:     /client/
     defaults: { _controller: minipoBundle:Default:client }
@@ -28,11 +31,14 @@ minipo_allProduits:
 minipo_commandesClt:
     path:     /MesCmd/{id}
     defaults: { _controller: minipoBundle:Commande:commandesClt }
+minipo_validerCmd:
+    path:     /valdCmd/{id}
+    defaults: { _controller: minipoBundle:Commande:validerCmd }
 minipo_aboutProd:
     path:     /aboutprod/{id}
     defaults: { _controller: minipoBundle:LigneCommande:aboutProd }
 minipo_ajouterLC:
-    path:     /ajoutlc
+    path:     /ajoutlc/{idProd}
     defaults: { _controller: minipoBundle:LigneCommande:ajouterLC }
 minipo_afficherPanier:
     path:     /panier/{id}
@@ -43,3 +49,27 @@ minipo_affTest:
 minipo_deleteLc:
     path:     /delLc/{id}/{idLc}
     defaults: { _controller: minipoBundle:LigneCommande:deleteLc }
+minipo_updateQteLc:
+    path:     /upqteLc/{id}/{idLc}
+    defaults: { _controller: minipoBundle:LigneCommande:updateQteLc }
+minipo_createFacture:
+    path:     /addfact/{id}/{idCmd}
+    defaults: { _controller: minipoBundle:Facture:createFacture }
+minipo_facturesClt:
+    path:     /factclt/{id}
+    defaults: { _controller: minipoBundle:Facture:facturesClt }
+minipo_updateEtatFact:
+    path:     /updaEtatFact/{id}/{idFact}
+    defaults: { _controller: minipoBundle:Facture:updateEtatFact }
+minipo_deleteFacture:
+    path:     /delFact/{id}/{idCmd}
+    defaults: { _controller: minipoBundle:Facture:deleteFacture }
+minipo_deleteCmd:
+    path:     /delCmd/{id}/{idCmd}
+    defaults: { _controller: minipoBundle:Commande:deleteCmd }
+minipo_suppCmd:
+    path:     /delete/{id}/{idCmd}
+    defaults: { _controller: minipoBundle:Commande:suppCmd }
+minipo_detailCmd:
+    path:     /detailCmd/{idCmd}
+    defaults: { _controller: minipoBundle:Commande:detailCmd }

@@ -1,6 +1,6 @@
 {% extends 'BaseReclamationClient.html.twig' %}
 
-    {% block title %}Votre Commandes{% endblock %}
+    {% block title %}Vos Commandes{% endblock %}
 
     {% block reclamationclient %}
 
@@ -25,7 +25,7 @@
                         <td>{{ elt.total }}</td>
                         <td>
 
-                            <a href=" # {#{{path('minipo_SupprimerCmd',{'id':elt.idcmd} )  }}#} " >
+                            <a href=" {{path('minipo_suppCmd',{'id':app.user.id,'idCmd':elt.idcmd} )  }} {#{{path('minipo_deleteCmd',{'id':app.user.id,'idCmd':elt.idcmd} )  }} #}" >
                                 <button>Supprimer</button>
                             </a>
                             <a href=" # {#{{ path('minipo_ReclamerCmd',{'id':elt.idcmd} )  }}#}" >

@@ -1,0 +1,46 @@
+{% extends 'BaseReclamationClient.html.twig' %}
+
+    {% block title %}Vos Factures{% endblock %}
+
+    {% block reclamationclient %}
+
+
+        {% if fact==NULL %}
+            Pas de formation
+        {% else %}
+
+            <table border="1">
+                <tr>
+                    <th>Reference Facture</th>
+                    <th>Date Facture</th>
+                    <th>Etat Facture</th>
+                    <th>Reference Commande</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+                {% for elt in fact %}
+                    <tr>
+                        <td>{{ elt.idfact }}</td>
+                        <td>{{ elt.datef|date}}</td>
+                        <td>{{ elt.etatf }}</td>
+                        <td>{{ elt.idcmd.refc }}</td>
+                        <td>{{ elt.idcmd.total }}</td>
+                        <td>
+
+                            <a href=" {{path('minipo_updateEtatFact',{'id':app.user.id,'idFact':elt.idfact} )  }}" >
+                                <button>Payer</button>
+                            </a>
+                            <a href=" {{path('minipo_index',{'idFact':elt.idfact} )  }}" >
+                                <button>Detail</button>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        {% endif %}
+
+
+
+    {% endblock %}
+

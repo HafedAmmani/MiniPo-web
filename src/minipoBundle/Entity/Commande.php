@@ -155,6 +155,12 @@ class Commande
         $this->id = $id;
     }
 
+    public function __toString()
+    {
+
+        return strval( $this->getIdcmd() );
+    }
+
 
 }
 

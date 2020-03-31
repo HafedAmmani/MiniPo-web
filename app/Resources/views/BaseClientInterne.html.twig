@@ -148,9 +148,8 @@
                                         <li>
                                             <a href="#">Commandes</a>
                                             <ul>
-                                                <li><a href="#">Mes Commandes</a>
-                                                </li>
-                                                <li><a href="#">Mes Factures</a>
+                                                <li><a href="{{path('minipo_commandesClt',{'id':app.user.id}) }}">Mes Commandes</a></li>
+                                                <li><a href="{{path('minipo_facturesClt',{'id':app.user.id}) }}">Mes Factures</a>
                                                 </li>
                                             </ul>
                                         </li>

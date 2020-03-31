@@ -24,7 +24,7 @@
                     <td>{{ elt.idcateg.nom }}</td>
                     <td>
 
-                        <a href="{{path('minipo_aboutProd',{'id':elt.idprod} )  }}" >
+                        <a href=" {{ path('minipo_ajouterLC',{'idProd':elt.idprod} )  }}{#{{path('minipo_aboutProd',{'id':elt.idprod} )  }}#}" >
                             <button>J'ACHETE</button>
                         </a>
 
@@ -35,4 +35,6 @@
         </table>
     {% endif %}
 {% endblock %}
+
+
 

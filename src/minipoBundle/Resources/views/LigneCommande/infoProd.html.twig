@@ -15,7 +15,7 @@
                 <p>{{ p.idcateg.nom }}</p> <br /><hr>
                 <strong><h3>{{ p.prix }}</h3></strong>
                 <input type="number" id="quantity" name="qte" min="1">
-                <a class="shop-btn" href="{{ path('minipo_ajouterLC',{'idprod':p.idprod}) }}">
+                <a class="shop-btn" href="{{ path('minipo_ajouterLC',{'id':app.user.id,'idprod':p.idprod}) }}">
                     <input type="button" name="ajout" value="Ajouter Au Panier" />
                 </a>
             </form>
