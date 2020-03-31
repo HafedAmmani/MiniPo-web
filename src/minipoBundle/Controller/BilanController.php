@@ -28,7 +28,7 @@ class BilanController extends Controller
         $pieChart->getData()->setArrayToDataTable(
             $data
         );
-        $pieChart->getOptions()->setTitle('Pourcentages des étudiants par niveau');
+        $pieChart->getOptions()->setTitle('Pourcentages des Catégorie pour les Conge');
         $pieChart->getOptions()->setHeight(500);
         $pieChart->getOptions()->setWidth(900);
         $pieChart->getOptions()->getTitleTextStyle()->setBold(true);

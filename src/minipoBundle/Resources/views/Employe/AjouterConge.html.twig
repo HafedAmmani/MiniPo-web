@@ -44,7 +44,7 @@
                             <h5>Nombre des jours posé <span class="text-danger">*</span></h5>
                             <div class="input-group">
 
-                                <input type="number" name="nbrjrs" class="form-control" required data-validation-required-message="This field is required" min="1" >
+                                <input type="number" name="nbrjrs" placeholder="Nombre des jours" class="form-control" required data-validation-required-message="This field is required" min="1" >
 
                             </div>
                         </div>
@@ -54,10 +54,7 @@
                                 <textarea name="info_comp" id="textarea" class="form-control" required placeholder="Entre votre information..."></textarea>
                             </div>
                         </div>
-                        
-                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <input type="hidden"  name="id_user" value="{{ app.user.id }}">
-                        {% endif %}
+
 
                         <div class="text-xs-right">
                             <button type="submit" class="btn btn-info">Submit</button>
@@ -71,7 +68,7 @@
 {% endblock %}
 
 {% block add_script %}
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+
     <script src="{{ asset('js/validation.js') }}"></script>
     <script>
         ! function(window, document, $) {

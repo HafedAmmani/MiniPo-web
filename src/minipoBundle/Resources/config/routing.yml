@@ -25,6 +25,9 @@ minipo_delete:
 minipo_Ajouter:
     path:     /adminRH/AjouterEmploye
     defaults: { _controller: minipoBundle:Employe:Ajouter }
+minipo_AjouterEmp:
+    path:     /adminRH/AjouterEmploye1
+    defaults: { _controller: minipoBundle:Employe:Ajouter2 }
 minipo_Affecter:
     path:     /adminRH/AffecterEquipe
     defaults: { _controller: minipoBundle:Equipe:Affecter }
@@ -46,3 +49,12 @@ minipo_AjouterConge:
 minipo_AfficherConge:
     path:     /employe/AfficherConge
     defaults: { _controller: minipoBundle:Employe:AfficherConge}
+minipo_AfficherEmployeConge:
+    path:     /adminRH/AfficherEmployeConge
+    defaults: { _controller: minipoBundle:Employe:AfficherEmployeEnConge}
+minipo_DemandeConge:
+    path:     /adminRH/DemandeConge
+    defaults: { _controller: minipoBundle:Employe:DemandeConge}
+minipo_AccepterConge:
+    path:     /adminRH/AccepterConge/{id}
+    defaults: { _controller: minipoBundle:Employe:AccepterConge}

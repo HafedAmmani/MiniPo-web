@@ -1,67 +1,85 @@
+{% extends 'baseRH.html.twig' %}
+{% block title %}Ajouter Employe{% endblock %}
+{% block content %}
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h3 class="text-themecolor">Ajouter Employe</h3>
+        </div>
 
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLabel1">Ajouter un nouveau Employe</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <form method="post">
-                    <div class="row">
-                        <div class="col-md-12 ">
-                            <div class="form-group">
-                                <label>Nom</label>
-                                <input type="text" name="nom" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 ">
-                            <div class="form-group">
-                                <label>Prenom</label>
-                                <input type="text" name="prenom" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 ">
-                            <div class="form-group">
-                                <label>Adresse</label>
-                                <input type="text" name="adresse" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 ">
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="text" name="email" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 ">
-                            <div class="form-group">
-                                <label>Telephone</label>
-                                <input type="text" name="tel" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 ">
-                            <div class="form-group">
-                                <label>Salaire</label>
-                                <input type="text" name="salaire" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn btn-success">Enregistrer</button>
-                </form>
-            </div>
-
+        <div>
+            <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
         </div>
     </div>
-</div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+
+                    {{ form_start(form) }}
+                        <div class="form-group">
+                            <h5>Nom <span class="text-danger">*</span></h5>
+                            <div class="controls">
+
+                            {{ form_widget(form.lastname, { 'attr': {'class': 'form-control', 'placeholder':'Nom'} }) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h5>Prenom <span class="text-danger">*</span></h5>
+                            <div class="controls">
+
+                            {{ form_widget(form.firstname, { 'attr': {'class': 'form-control', 'placeholder':'Prenom'} }) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h5>Adresse <span class="text-danger">*</span></h5>
+                            <div class="controls">
+
+                            {{ form_widget(form.adresse, { 'attr': {'class': 'form-control', 'placeholder':'Adresse'} }) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h5>Email <span class="text-danger">*</span></h5>
+                            <div class="controls">
+
+                            {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder':'Email'} }) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h5>Telephone <span class="text-danger">*</span></h5>
+                            <div class="input-group">
+
+                                {{ form_widget(form.tel, { 'attr': {'class': 'form-control', 'placeholder':'Telephone'} }) }}
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h5>Salaire <span class="text-danger">*</span></h5>
+                            <div class="input-group">
+
+                                {{ form_widget(form.salaire, { 'attr': {'class': 'form-control', 'placeholder':'Salaire'} }) }}
+                            </div>
+                        </div>
+
+                        <div class="text-xs-right">
+                            <button type="submit" class="btn btn-info">Submit</button>
+                            <button type="reset" class="btn btn-inverse">Cancel</button>
+                        </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block add_script %}
+    <script src="{{ asset('js/validation.js') }}"></script>
+    <script>
+        ! function(window, document, $) {
+            "use strict";
+            $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(), $(".skin-square input").iCheck({
+                checkboxClass: "icheckbox_square-green",
+                radioClass: "iradio_square-green"
+            }), $(".touchspin").TouchSpin(), $(".switchBootstrap").bootstrapSwitch();
+        }(window, document, jQuery);
+    </script>
+{% endblock %}

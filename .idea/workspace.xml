@@ -1,31 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="840c042f-ddd7-46a0-9b31-d2b44fe48903" name="Default Changelist" comment="" />
+    <list default="true" id="e686dcc4-71ae-42d0-ad14-47f9e5381b0c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="f44d40fd-6b19-4888-8399-d39dc5891137" />
+      <executable />
     </execution>
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -89,58 +75,22 @@
       <path value="$PROJECT_DIR$/vendor/cmen/google-charts-bundle" />
     </include_path>
   </component>
-  <component name="ProjectId" id="1Z5mG4jvYLFw5cm0IWbPLx0ItBB" />
+  <component name="ProjectId" id="1ZlsoW04SCBaTKCv8GW4uSQhGMp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../git/Minipo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EspritClub" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Entity" />
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Resources\views\Default" />
-      <recent name="C:\wamp64\www\Minipo\web\aasetsLogin" />
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Repository" />
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Resources\views\RH" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Minipo\app\Resources\views" />
-      <recent name="C:\wamp64\www\Minipo\web\assetsC\js" />
-    </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="c dump-autoload" />
-      <command value="s generate:bundle" />
-      <command value="doctrine:mapping:import --force minipoBundle annotation" />
-      <command value="s doctrine:mapping:import --force minipoBundle annotation" />
-      <command value="s doctrine:generate:form minipoBundle:User Employer" />
-      <command value="s doctrine:generate:form minipoBundle:User " />
-      <command value="s require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="s composer.phar require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="s php composer.phar require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="c require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="c php composer.phar require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="c composer.phar require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="php composer.phar require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="s debug:router" />
-      <command value="s doctrine:schema:update --force" />
-      <command value="c require cmen/google-charts-bundle" />
-    </option>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -159,23 +109,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="840c042f-ddd7-46a0-9b31-d2b44fe48903" name="Default Changelist" comment="" />
-      <created>1584137229361</created>
+      <changelist id="e686dcc4-71ae-42d0-ad14-47f9e5381b0c" name="Default Changelist" comment="" />
+      <created>1585425195227</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1584137229361</updated>
-      <workItem from="1584137232155" duration="14260000" />
-      <workItem from="1584191770666" duration="8676000" />
-      <workItem from="1584215671493" duration="12605000" />
-      <workItem from="1584316231563" duration="6668000" />
-      <workItem from="1584559587934" duration="25773000" />
-      <workItem from="1584730378131" duration="23561000" />
-      <workItem from="1584793804189" duration="105000" />
-      <workItem from="1584812116573" duration="26499000" />
-      <workItem from="1584906566654" duration="22745000" />
-      <workItem from="1584987580906" duration="14632000" />
-      <workItem from="1585073122112" duration="14973000" />
-      <workItem from="1585158042392" duration="5247000" />
+      <updated>1585425195227</updated>
+      <workItem from="1585425243922" duration="5721000" />
     </task>
     <servers />
   </component>
@@ -183,77 +122,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584316824834">
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585434561634">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1584316824834" />
-    <state x="513" y="236" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584753737403">
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1585434561634" />
+    <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1585434509146">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="513" y="236" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1584753737403" />
-    <state x="562" y="149" key="#com.intellij.ide.util.MemberChooser" timestamp="1584744258233">
+    <state x="549" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1585434509146" />
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1585425270813">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="562" y="149" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1584744258233" />
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584566596175">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1584566596175" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585160956606">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1585160956606" />
-    <state x="645" y="362" key="#com.jetbrains.php.framework.ui.FailedToParseDialog" timestamp="1584731226983">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="645" y="362" key="#com.jetbrains.php.framework.ui.FailedToParseDialog/0.0.1536.864@0.0.1536.864" timestamp="1584731226983" />
-    <state x="493" y="312" key="ComposerCompositePathDialog" timestamp="1584137741724">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="493" y="312" key="ComposerCompositePathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137741724" />
-    <state x="548" y="175" key="FileChooserDialogImpl" timestamp="1584995276490">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="548" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1584995276489" />
-    <state width="1493" height="274" key="GridCell.Tab.0.bottom" timestamp="1585011300990">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1585011300990" />
-    <state width="1493" height="274" key="GridCell.Tab.0.center" timestamp="1585011300990">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1585011300990" />
-    <state width="1493" height="274" key="GridCell.Tab.0.left" timestamp="1585011300989">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1585011300989" />
-    <state width="1493" height="274" key="GridCell.Tab.0.right" timestamp="1585011300990">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1585011300990" />
-    <state x="537" y="248" key="NewPhpClassDialog" timestamp="1585078180748">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="537" y="248" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1585078180748" />
-    <state x="277" y="76" key="SettingsEditor" timestamp="1584999542591">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="277" y="76" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1584999542591" />
-    <state x="537" y="336" key="SymfonyPathDialog" timestamp="1584137809212">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="537" y="336" key="SymfonyPathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137809212" />
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1585158042553">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1585158042553" />
-    <state x="425" y="199" width="672" height="677" key="run.anything.popup" timestamp="1585000605170">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="425" y="199" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1585000605170" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1585160135256">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1585160135256" />
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1585425270813" />
   </component>
 </project>

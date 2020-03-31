@@ -79,9 +79,19 @@ class EmployeController extends Controller
             return $this->redirectToRoute('minipo_Afficher');
 
         }
-
-
         return $this->render('@minipo/RH/AjouterEmploye1.html.twig');
+    }
+    public function Ajouter2Action(Request $request){
+        $user = new User();
+        $form = $this->createForm(EmployerType::class,$user);
+        $form = $form->handleRequest($request);
+        if ($form->isSubmitted()){
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
+            return $this->redirectToRoute('club7_read1');
+        }
+        return $this->render('@minipo/RH/AjouterEmploye.html.twig',array('form'=> $form->createView()));
     }
 
     public function AjouterCongeAction(Request $request){
@@ -112,5 +122,33 @@ class EmployeController extends Controller
             ->getRepository(Conge::class)->findBy(array('id'=>$id));
 
         return $this->render('@minipo/Employe/AfficherConge.html.twig',array("listConge"=>$listConge));
+    }
+    public function AfficherEmployeEnCongeAction(){
+
+        $repository=$this->getDoctrine()->getManager()->getRepository(User::class);
+        $listEmploye = $repository->findemployeenconge();
+        return $this->render('@minipo/RH/AffichageemployeConge.html.twig',array("listemploye"=>$listEmploye));
+    }
+    public function DemandeCongeAction(){
+        $em = $this->getDoctrine()->getManager();
+        $Conge = $em->getRepository(Conge::class)
+            ->findAll();
+        $repository=$this->getDoctrine()->getManager()->getRepository(User::class);
+        $listConge = $repository->findCongeemploye();
+
+        $repository=$this->getDoctrine()->getManager()->getRepository(User::class);
+        $listCongeAccepter = $repository->findDemandeAccepter();
+
+        return $this->render('@minipo/RH/DemandeConge.html.twig',array("listconge"=>$listConge,"Conge"=>$Conge,"listCongeAccepter"=>$listCongeAccepter));
+    }
+    public function AccepterCongeAction($id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $emp = $em->getRepository(Conge::class)->find($id);
+
+        $emp->setEtat(true);
+        $em->flush();
+        return $this->redirectToRoute("minipo_DemandeConge");
     }
 }
