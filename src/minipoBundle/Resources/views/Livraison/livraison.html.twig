@@ -1,7 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block content %}
 {% if listeliv==NULL  %}
     Pas de formation
 {% else %}
-    <table border="1">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Liste Livraison</h4>
+    <div class="table-responsive">
+
+
+    <table class="table table-striped">
         <tr> <th>id</th>
             <th>destination</th>
             <th>etat livraison</th>
@@ -28,6 +36,10 @@
         {% endfor %}
 
     </table>
+    </div>
+    </div>
+    </div>
 {% endif %}
+{% endblock %}
 
 

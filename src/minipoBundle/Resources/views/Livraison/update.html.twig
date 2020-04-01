@@ -1,1 +1,39 @@
-{{ form(f) }}
+{% extends 'base.html.twig' %}
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">Update Livraison</div>
+            <div class="form-material m-t-40" _lpchecked="1">
+
+                    {{ form_start(f) }}
+                    {{ form_errors(f) }}
+
+                <div class="form-group">
+                        {{ form_label(f.idc) }}
+                        {{ form_widget(f.idc) }}
+                    </div>
+
+                <div class="form-group">
+                        {{ form_label(f.destination) }}
+                        {{ form_widget(f.destination) }}
+                    </div>
+
+                <div class="form-group">
+                    {{ form_label(f.dateliv) }}
+                    {{ form_widget(f.dateliv) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(f.id) }}
+                    {{ form_widget(f.id) }}
+                </div>
+
+                    <div class="form-group">
+                        {{ form_widget(f.modifier, {'attr': {'class': 'btn waves-effect waves-light btn-primary'}}) }}
+                    </div>
+
+                    {{ form_end(f) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
