@@ -2,11 +2,11 @@
 {% block reclamationclient   %}
 
 <form method="post">
-    <div style="margin: 0 auto;width: 1000px;">
+    <div style="margin: 0 auto;width: 1000px;margin-top: 100px;">
     <div class="card-body">
-        <h1 class="card-title">Votre Reclamation !</h1>
+        <center><h1 class="card-title">Votre Reclamation !</h1></center>
     </div>
-    <div class="col-md-6 ">
+    <div class="col-md-6 "style="margin-top: 50px;margin-left: 200px;">
     <form class="form-horizontal m-t-40" method="post">
         <div class="form-group">
             <label>Envoye le  :</label>
@@ -35,24 +35,42 @@
             <label >{{ reclamation.objet}}</label>
            {#<input type="text"  class="form-control" value={{ reclamation.objet}}>#}
         </div>
+        {% if reclamation.etatr is same as ('non traiter') %}
         <div class="form-group">
             <label>Description :</label>
-
             <textarea class="form-control" name="description"  rows="5" value="{{ reclamation.description}}">{{ reclamation.description}}</textarea>
             {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
         </div>
+        {% endif %}
+        {% if reclamation.etatr is same as ('traiter') %}
+            <div class="form-group">
+                <label>Description :</label>
+                <label>{{ reclamation.description}}</label>
+                {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
+            </div>
+        {% endif %}
+        {% if reclamation.image == NULL %}
+        <div class="form-group" >
+        <img src="{{ asset('assets/images/Point_d_interrogation.jpg') }}" alt="user" class="img-circle img-responsive" width=100px></div>
+        {% endif  %}
+        {% if reclamation.image != NULL %}
         <div class="form-group" >
         <img src="{{ asset('uploads/post/' ~ reclamation.image) }}" alt="user" class=""width="200px"style="margin-left: 100px"></div>
+        {% endif  %}
         <div class="form-group">
-            <label>Reponse</label>
+            <label>Reponse : </label>
             <label >{{reclamation.Reponse}}</label>
 
         </div>
 
 
-
+        {% if reclamation.etatr is same as ('traiter') %}
+        <a href="{{ path('minipo_AfficherMesReclamation') }}"><button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button></a>
+        {% endif %}
+        {% if reclamation.etatr is same as ('non traiter') %}
         <a href="{{ path('minipo_showdetailed',{'id':reclamation.idr}) }}"><button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Modifier</button></a>
         <a href="{{ path('minipo_AfficherMesReclamation') }}"><button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button></a>
+        {% endif %}
 
     </form>
     </div>

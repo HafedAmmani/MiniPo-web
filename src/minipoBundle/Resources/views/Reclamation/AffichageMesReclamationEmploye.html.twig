@@ -113,9 +113,16 @@
    <div class="col-md-6 col-lg-6 col-xlg-4">
         <div class="card card-body">
             <div class="row">
+                {% if elt.image == NULL %}
+                    <div class="col-md-4 col-lg-3 text-center">
+                        <a href="{{ path('minipo_showdetailedEmploye',{'id':elt.idremp} ) }}"><img src="{{ asset('assets/images/Point_d_interrogation.jpg') }}" alt="user" class="img-circle img-responsive"></a>
+                    </div>
+                {% endif %}
+                {% if elt.image != NULL %}
                 <div class="col-md-4 col-lg-3 text-center">
                     <a href="{{ path('minipo_showdetailedEmploye',{'id':elt.idremp} ) }}"><img src="{{ asset('uploads/post/' ~ elt.image) }}" alt="user" class="img-circle img-responsive"></a>
                 </div>
+                {% endif %}
                 <div class="col-md-8 col-lg-9">
                     <h3 class="box-title m-b-0">{{ elt.idcatrec.nom }}</h3> <small>{{ elt.objet}}</small>
                     <a href="{{ path('minipo_showdetailedEmploye',{'id':elt.idremp} ) }}"><h4>

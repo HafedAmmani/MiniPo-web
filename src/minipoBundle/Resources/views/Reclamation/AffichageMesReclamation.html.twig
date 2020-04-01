@@ -94,20 +94,29 @@
 <!-- .row -->
     <div class="container-fluid">
         <!-- .row -->
-        <div style="margin: 0 auto;width: 1000px;margin-left: 500px;">
+        <div style="margin: 0 auto;margin-top: 50px;">
             <div class="card-body">
-                <h1 class="card-title">Vos Reclamations !</h1>
+                <center><h1 class="card-title">Vos Reclamations !</h1></center>
             </div>
         </div>
+        <div class="col-md-6 col-lg-6 col-xlg-4"style="margin-top: 50px;margin-left: 200px;" >
+            <div class="card card-body">
         <div class="row">
             <!-- .col -->
             {% for elt in reclamation  %}
-                <div class="col-md-6 col-lg-6 col-xlg-4">
+                <div class="col-md-6 col-lg-6 col-xlg-4"style="margin-top: 50px;">
                     <div class="card card-body">
                         <div class="row">
+                        {% if elt.image == NULL %}
                             <div class="col-md-4 col-lg-3 text-center">
-                                <a href="{{ path('minipo_showdetailed',{'id':elt.idr} ) }}"><img src="{{ asset('uploads/post/' ~ elt.image) }}"  class=""></a>
+                                <a href="{{ path('minipo_showdetailedEmploye',{'id':elt.idr} ) }}"><img src="{{ asset('assets/images/Point_d_interrogation.jpg') }}" alt="user" class="img-circle img-responsive" width=100px></a>
                             </div>
+                        {% endif %}
+                        {% if elt.image != NULL %}
+                            <div class="col-md-4 col-lg-3 text-center">
+                                <a href="{{ path('minipo_showdetailedEmploye',{'id':elt.idr} ) }}"><img src="{{ asset('uploads/post/' ~ elt.image) }}" alt="user" class="img-circle img-responsive" width=100px></a>
+                            </div>
+                        {% endif %}
                             <div class="col-md-8 col-lg-9">
                                 <h3 class="box-title m-b-0">{{ elt.idcatrec.nom }}</h3> <small>{{ elt.objet}}</small>
                                 <a href="{{ path('minipo_showdetailed',{'id':elt.idr} ) }}">
@@ -130,6 +139,9 @@
             {% endfor   %}
         </div>
     </div>
+        </div>
+    </div>
+
 {% endblock %}
 
 

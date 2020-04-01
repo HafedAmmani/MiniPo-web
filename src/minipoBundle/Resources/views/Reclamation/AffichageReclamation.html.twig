@@ -150,7 +150,7 @@
                         <tbody>
 
                         <tr>
-                            <td> {{ elt.id.id}}</td>
+                            <td> {{ elt.id.firstname ~" "~ elt.id.lastname}}</td>
                             <td>  {% if  elt.idcatrec.nom is same as ('Problème de Compte')%}
                                     <div class="label label-table label-primary">{{ elt.idcatrec.nom }}</div>
                                 {%endif%}
@@ -163,7 +163,12 @@
                                 </td>
                             <td> {{ elt.objet}}</td>
                             <td> {{ elt.description}}</td>
+                            {% if elt.image == NULL %}
+                            <td width="200px"> <img class="img-fluid"width="30%" src="{{ asset('assets/images/Point_d_interrogation.jpg') }}" ></td>
+                            {% endif  %}
+                            {% if elt.image != NULL %}
                             <td width="200px"> <img class="img-fluid"width="30%" src="{{ asset('uploads/post/' ~ elt.image) }}" alt=""></td>
+                            {% endif %}
                             <td> {{ elt.Reponse}} </td>
                             <td> {{ elt.dater|date()}}</td>
                             <td>

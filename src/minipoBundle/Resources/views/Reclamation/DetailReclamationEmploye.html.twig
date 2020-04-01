@@ -14,22 +14,10 @@
 <form method="post">
     <div style="margin: 0 auto;width: 1000px;">
     <div class="card-body">
-        <h1 class="card-title">Votre Reclamation !</h1>
+        <center><h1 class="card-title">Votre Reclamation !</h1></center>
     </div>
-    <div class="col-md-6 ">
+    <div class="col-md-6 "style="margin-left: 200px;">
     <form class="form-horizontal m-t-40" method="post">
-        {#<div class="form-group">
-            <label>Date  <span class="help"> e.g. "George deo"</span></label>
-            <input type="text" class="form-control" value={{ reclamation.dater}}>
-        </div>#}
-        {# <div class="form-group">
-             <label >Type :</label>
-             <label >{{ reclamation.type}}</label>
-            {#<input type="text"  class="form-control" value={{ reclamation.type}}>
-        </div>#}
-
-
-
 
         <div class="form-group">
             <label>Envoye le  :</label>
@@ -58,14 +46,28 @@
             <label >{{ reclamation.objet}}</label>
            {#<input type="text"  class="form-control" value={{ reclamation.objet}}>#}
         </div>
-        <div class="form-group">
-            <label>Description :</label>
-
-            <textarea class="form-control" name="description"  rows="5" value="{{ reclamation.description}}">{{ reclamation.description}}</textarea>
-            {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
-        </div>
-        <div class="form-group" >
-        <img src="{{ asset('uploads/post/' ~ reclamation.image) }}" alt="user" class=""width="200px"style="margin-left: 100px"></div>
+        {% if reclamation.etatremp is same as ('non traiter') %}
+            <div class="form-group">
+                <label>Description :</label>
+                <textarea class="form-control" name="description"  rows="5" value="{{ reclamation.description}}">{{ reclamation.description}}</textarea>
+                {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
+            </div>
+        {% endif %}
+        {% if reclamation.etatremp is same as ('traiter') %}
+            <div class="form-group">
+                <label>Description :</label>
+                <label>{{ reclamation.description}}</label>
+                {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
+            </div>
+        {% endif %}
+        {% if reclamation.image == NULL %}
+            <div class="form-group" >
+                <img src="{{ asset('assets/images/Point_d_interrogation.jpg') }}" alt="user"  width="200px"style="margin-left: 100px"></div>
+        {% endif  %}
+        {% if reclamation.image != NULL %}
+            <div class="form-group" >
+                <img src="{{ asset('uploads/post/' ~ reclamation.image) }}" alt="user" class=""width="200px"style="margin-left: 100px"></div>
+        {% endif  %}
         <div class="form-group">
             <label>Reponse</label>
             <label >{{reclamation.Reponse}}</label>
@@ -74,8 +76,14 @@
 
 
 
+        {% if reclamation.etatremp is same as ('traiter') %}
+        <a href="{{ path('minipo_AfficherMesReclamationEmployes') }}"><button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button></a>
+        {% endif %}
+
+        {% if reclamation.etatremp is same as ('non traiter') %}
         <a href="{{ path('minipo_showdetailedEmploye',{'id':reclamation.idremp}) }}"><button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Modifier</button></a>
         <a href="{{ path('minipo_AfficherMesReclamationEmployes') }}"><button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button></a>
+        {% endif %}
     </form>
     </div>
     </div>
