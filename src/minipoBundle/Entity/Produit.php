@@ -63,6 +63,12 @@ class Produit
     private $idcateg;
 
     /**
+     * @var string
+     * @ORM\Column(name="photo", type="string", length=255, nullable=false)
+     */
+    private $photo;
+
+    /**
      * @return int
      */
     public function getIdprod()
@@ -157,6 +163,23 @@ class Produit
     {
         $this->idcateg = $idcateg;
     }
+
+    /**
+     * @return string
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param string $photo
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+    }
+
 
 
 }

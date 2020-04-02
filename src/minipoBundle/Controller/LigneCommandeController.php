@@ -58,6 +58,7 @@ class LigneCommandeController extends Controller
         //verifier que la panier est vide ou non
         $repo=$this->getDoctrine()->getManager()->getRepository(Lignecommande::class);
         $i=$repo->myFindMaxLcByCmd($idCmd);
+
         if ($i[1]==0){
             //le Panier est vide alors supprimer Panier
             $em=$this->getDoctrine()->getManager();
@@ -112,6 +113,15 @@ class LigneCommandeController extends Controller
 
     public function ajouterLCAction(Request $request,$idProd)
     {
+        //*******************Panier*****************************
+        $id=$this->getUser()->getId();
+        $repo=$this->getDoctrine()->getManager()->getRepository(Lignecommande::class);
+        $Panier=$repo->myFindPanier($id);
+        //****************************************************************
+
+        //***********************************AjouterajouterLCAction*********************************
+
+
         //****user connectée****
         $id=$this->getUser()->getId();
         $em=$this->getDoctrine()->getManager();
@@ -123,7 +133,7 @@ class LigneCommandeController extends Controller
 
         $form=$this->createForm(LignecommandeType::class,$lc);
         $form=$form->handleRequest($request);
-        if($form->isSubmitted()){
+        if($form->isSubmitted() and $form->isValid()){
 
             //*******Quantité demmandée*********
             $qted=$lc->getQte();
@@ -199,7 +209,7 @@ class LigneCommandeController extends Controller
                 }
                 else{
                     //*****Panier n'existe pas*****
-                    //***creer panier****
+                    //***créer panier****
                     $pan=new Commande();
                     $pan->setId($this->getUser());
                     $pan->setEtatc("Non Validee");
@@ -229,7 +239,7 @@ class LigneCommandeController extends Controller
 
        }
 
-        return $this->render('@minipo/LigneCommande/AboutProd.html.twig',array('p'=>$prod,'f'=> $form->createView()));
+        return $this->render('@minipo/LigneCommande/AboutProd.html.twig',array('p'=>$prod,'lc'=>$Panier,'f'=> $form->createView()));
     }
 
 }

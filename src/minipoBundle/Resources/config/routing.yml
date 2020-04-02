@@ -59,7 +59,7 @@ minipo_facturesClt:
     path:     /factclt/{id}
     defaults: { _controller: minipoBundle:Facture:facturesClt }
 minipo_updateEtatFact:
-    path:     /updaEtatFact/{id}/{idFact}
+    path:     /updaEtatFact/{id}/{idCmd}
     defaults: { _controller: minipoBundle:Facture:updateEtatFact }
 minipo_deleteFacture:
     path:     /delFact/{id}/{idCmd}
@@ -73,3 +73,6 @@ minipo_suppCmd:
 minipo_detailCmd:
     path:     /detailCmd/{idCmd}
     defaults: { _controller: minipoBundle:Commande:detailCmd }
+minipo_ajouter:
+    path:     /ajouterrrr/{idProd}
+    defaults: { _controller: minipoBundle:LigneCommande:ajouter }

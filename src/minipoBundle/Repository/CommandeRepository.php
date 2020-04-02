@@ -13,7 +13,7 @@ class CommandeRepository extends EntityRepository
                     createQuery("select c 
                                       from minipoBundle:Commande c 
                                       where c.id=$id
-                                      and c.etatc='Validee' or c.etatc='Acceptee' ");
+                                      and c.etatc='Validee' or c.etatc='Acceptee' or c.etatc='Refusee'");
         return $query=$qb->getResult();
 
     }

@@ -80,14 +80,14 @@
                                 </li>
                                 <li><a href="about.html">about</a></li>
                                 <li><a href="blog-1.html">blog</a>
-                                    <rcul>
+                                    <ul>
                                         <li>
                                             <a href="blog-1.html">Blog Style One</a>
                                         </li>
                                         <li>
                                             <a href="single-blog.html">Single Blog</a>
                                         </li>
-                                    </rcul>
+                                    </ul>
                                 </li>
                                 {#
                                 <li><a href="#">Pages</a>
@@ -219,8 +219,7 @@
                             <div class="cart-menu-area floatright">
                                 <ul>
                                     <li><a href="#"><i class="pe-7s-shopbag"></i> <span>0</span></a>
-                                        <ul class="cart-menu">
-                                        </ul>
+                                       
                                     </li>
                                 </ul>
                             </div>
@@ -228,11 +227,11 @@
 
                             <div class="cart-menu-area floatright">
                                 <ul>
-                                    <li><a href="#"><i class="pe-7s-shopbag"></i><span>2</span></a>
+                                    <li><a href="#"><i class="pe-7s-shopbag"></i><span>{{ lc|length }}</span></a>
                                         <ul class="cart-menu">
-                                            {% for elt in lc %}
+                                            {% for elt in lc|slice(0,2) %}
                                                 <li>
-                                                    <a href="cart.html"><img src="{{ asset('assetsC/img/cart/1.png') }}" alt="" /></a>
+                                                    <a href="cart.html"><img src="{{ asset('assetsC/img/products/'~elt.idprod.photo) }}" alt="" /></a>
                                                     <div class="cart-menu-title">
                                                         <h5>{{elt.idprod.designation}} </h5>
                                                         <span>{{ elt.qte ~" x "~elt.idprod.prix }}   </span>
@@ -242,6 +241,7 @@
                                             {% endfor %}
                                             <li class="cart-menu-btn">
                                                 <a href="{{ path('minipo_afficherPanier',{'id':app.user.id}) }}">checkout</a>
+                                                <a href="{{ path('minipo_validerCmd',{'id':app.user.id}) }}">Valier</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -267,21 +267,23 @@
 <section class="about-area section-padding">
     <div class="container">
         <div class="row">
+            {% block infoProd %}
             <div class="col-xs-12 col-sm-9 col-md-6">
                 <div class="about-img">
-                    {% block image %}<img src="{{ asset('assetsC/img/about/1.jpg') }}" alt="" /> {% endblock %}
+                    <img src="{{ asset('assetsC/img/about/1.jpg') }}" alt="" />
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6">
                 <div class="about-text">
-                    {% block infoProd %}
+
                         <h3>About Us</h3>
                         <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem  Lorem  The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', </p> <br />
                         <p> making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years,</p>
                         <a class="shop-btn" href="#">Read More</a>
-                    {% endblock %}
+
                 </div>
             </div>
+            {% endblock %}
         </div>
     </div>
 </section>

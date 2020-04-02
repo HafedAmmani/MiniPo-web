@@ -22,8 +22,6 @@ class FactureController extends Controller
     public function createFactureAction($id,$idCmd)
     {
         $cmd=$this->getDoctrine()->getRepository(Commande::class)->find($idCmd);
-        //$idCde=$cmd->getIdcmd();
-
         $facture=new Facture();
         $facture->setIdcmd($cmd);
         $facture->setDatef(new \DateTime("now"));
@@ -49,20 +47,25 @@ class FactureController extends Controller
         return $this->render('@minipo/Facture/FacturesClt.html.twig',array('fact'=>$list,'lc'=>$Panier));
     }
 
-    public function updateEtatFactAction($id,$idFact){
-
-        //*******************Panier*****************************
-        $id=$this->getUser()->getId();
-        $repo=$this->getDoctrine()->getManager()->getRepository(Lignecommande::class);
-        $Panier=$repo->myFindPanier($id);
-        //****************************************************************
+    public function updateEtatFactAction($id,$idCmd){
 
         $em=$this->getDoctrine()->getManager();
-        $facture=$em->getRepository(Facture::class)->find($idFact);
-        $facture->setEtatf("Payee");
-        $em->flush();
-        return $this->redirectToRoute('minipo_facturesClt',array('id'=>$id));
-        //return $this->render('@minipo/Facture/FacturesClt.html.twig',array('id'=>$id,'lc'=>$Panier));
+        $commande=$em->getRepository(Commande::class)->find($idCmd);
+        $etat=$commande->getEtatc();
+        if (strcmp($etat,"Acceptee")==0){
+            $facture=$em->getRepository(Facture::class)->findBy(array('idcmd'=>$idCmd));
+            $facture[0]->setEtatf("Payee");
+            $facture[0]->setDatef(new \DateTime("now"));
+            $em->flush();
+            //Notification
+            //******************
+            return $this->redirectToRoute('minipo_facturesClt',array('id'=>$id));
+        }
+        else{
+            //Notification
+            //******************
+            return $this->redirectToRoute('minipo_commandesClt',array('id'=>$id));
+        }
 
 
     }

@@ -25,8 +25,14 @@
                         <td>{{ elt.total }}</td>
                         <td>
 
+                            <a href=" {{path('minipo_updateEtatFact',{'id':app.user.id,'idCmd':elt.idcmd} )  }}" >
+                                <button>Payer</button>
+                            </a>
                             <a href=" {{path('minipo_suppCmd',{'id':app.user.id,'idCmd':elt.idcmd} )  }} {#{{path('minipo_deleteCmd',{'id':app.user.id,'idCmd':elt.idcmd} )  }} #}" >
                                 <button>Supprimer</button>
+                            </a>
+                            <a href=" {{path('minipo_detailCmd',{'id':app.user.id,'idCmd':elt.idcmd} )  }} {#{{path('minipo_deleteCmd',{'id':app.user.id,'idCmd':elt.idcmd} )  }} #}" >
+                                <button>detail</button>
                             </a>
                             <a href=" # {#{{ path('minipo_ReclamerCmd',{'id':elt.idcmd} )  }}#}" >
                                 <button>Reclamer</button>

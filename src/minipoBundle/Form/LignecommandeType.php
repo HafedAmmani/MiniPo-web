@@ -15,7 +15,7 @@ class LignecommandeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('qte')->
-        add('valider',SubmitType::class);
+        add('valider',SubmitType::class,['attr'=>['formnovalidate'=>'formnovalidate']]);
     }/**
      * {@inheritdoc}
      */

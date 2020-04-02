@@ -171,20 +171,21 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/minipoBundle/Resources/views/Facture" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AtelierPHP" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Minipot\app\Resources\views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Minipot\src\minipoBundle\Resources\views\Facture" />
       <recent name="C:\wamp64\www\Minipot\web\assetsC\css" />
       <recent name="C:\wamp64\www\Minipot\app\Resources\views" />
       <recent name="C:\wamp64\www\Minipot\app\Resources\views\default" />
       <recent name="C:\wamp64\www\Minipot\src\minipoBundle\Resources\views\LigneCommande" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Minipot\src\minipoBundle\Resources\views\Commande" />
+      <recent name="C:\wamp64\www\Minipot\app\Resources\views" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -196,7 +197,6 @@
       <command value="s doctrine:generate:form minipoBundle:LigneCommande" />
       <command value="s doctrine:generate:form minipoBundle:Lignecommande" />
       <command value="s doctrine:clear" />
-      <command value="s doctrine:schema:update --force" />
       <command value="s COMPOSER_MEMORY_LIMIT=-1" />
       <command value="COMPOSER_MEMORY_LIMIT=-1 composer.phar" />
       <command value="composer.phar COMPOSER_MEMORY_LIMIT=-1 " />
@@ -204,6 +204,7 @@
       <command value="composer require knplabs/knp-snappy-bundle" />
       <command value="c require knplabs/knp-snappy-bundle" />
       <command value="s cache:clear" />
+      <command value="s doctrine:schema:update --force" />
     </option>
   </component>
   <component name="ServiceViewManager">
@@ -236,7 +237,7 @@
       <workItem from="1585486882248" duration="3969000" />
       <workItem from="1585491998841" duration="7773000" />
       <workItem from="1585573968779" duration="39428000" />
-      <workItem from="1585626702150" duration="17830000" />
+      <workItem from="1585626702150" duration="66495000" />
     </task>
     <servers />
   </component>
@@ -248,18 +249,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1585145810649" />
-    <state x="485" y="83" key="#com.intellij.ide.util.MemberChooser" timestamp="1585576747251">
+    <state x="485" y="83" key="#com.intellij.ide.util.MemberChooser" timestamp="1585779208030">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="485" y="83" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1585576747251" />
+    <state x="485" y="83" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1585779208030" />
     <state x="413" y="114" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585611341880">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="114" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1585611341880" />
-    <state x="413" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585647190782">
+    <state x="413" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585788084019">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1585647190782" />
+    <state x="413" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1585788084019" />
     <state x="407" y="256" key="ComposerCompositePathDialog" timestamp="1585487369743">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -268,30 +269,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="467" y="284" width="431" height="243" key="ComposerInitDialogKey/0.0.1366.728@0.0.1366.728" timestamp="1585490499877" />
-    <state x="463" y="151" key="FileChooserDialogImpl" timestamp="1585580906226">
+    <state x="463" y="151" key="FileChooserDialogImpl" timestamp="1585780075078">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="151" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585580906226" />
+    <state x="463" y="151" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585780075078" />
     <state x="542" y="263" key="FrameworkEditDialogDimensionKey" timestamp="1585492802606">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="542" y="263" key="FrameworkEditDialogDimensionKey/0.0.1366.728@0.0.1366.728" timestamp="1585492802606" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1585626586517">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1585784381861">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585626586517" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1585626586517">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585784381861" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1585784381861">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585626586517" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1585626586517">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585784381861" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1585784381861">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585626586517" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1585626586517">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585784381861" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1585784381861">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585626586517" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585784381861" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1585145839947">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -308,9 +309,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="455" y="279" key="SymfonyPathDialog/0.0.1366.728@0.0.1366.728" timestamp="1585147776590" />
-    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1585611530123">
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1585782649176">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1585611530123" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1585782649176" />
   </component>
 </project>

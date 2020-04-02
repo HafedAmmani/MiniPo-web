@@ -3,6 +3,7 @@
 namespace minipoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Lignecommande
@@ -25,6 +26,8 @@ class Lignecommande
      * @var integer
      *
      * @ORM\Column(name="qte", type="integer", nullable=false)
+     * @Assert\NotBlank (message="le champs Qte est obligatoire")
+     * @Assert\GreaterThan(0)
      */
     private $qte;
 

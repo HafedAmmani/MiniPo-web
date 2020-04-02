@@ -9,12 +9,21 @@
             Pas de formation
         {% else %}
 
-
+            <div class="col-xs-12 col-sm-9 col-md-6">
+                <div class="about-img">
+                    <img src="{{ asset('assetsC/img/products/'~p.photo) }}" alt="{{ p.designation }}" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="about-text">
                 <h3>{{ p.designation }}</h3>
                 <p>{{ p.idcateg.nom }}</p> <br /><hr>
                <strong><h3>{{ p.prix }}</h3></strong>
 
             {{ form(f) }}
+
+            </div>
+            </div>
 
 
 {% endif %}

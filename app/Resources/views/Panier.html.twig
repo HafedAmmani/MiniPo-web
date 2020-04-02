@@ -212,35 +212,41 @@
                         </div>
                     </div>
                     <!-- mobile menu end -->
-                    <div class="cart-menu-area floatright">
-                        <ul>
-                            <li><a href="#"><i class="pe-7s-shopbag"></i> <span>2</span></a>
-                                <ul class="cart-menu">
-                                    <li>
-                                        <a href="cart.html"><img src="{{ asset('assetsC/img/cart/1.png') }}" alt="" /></a>
-                                        <div class="cart-menu-title">
-                                            <a href="cart.html"><h5>Mount POW C058 FG </h5></a>
-                                            <span>1 x $2500</span>
-                                        </div>
-                                        <span class="cancel-item"><i class="fa fa-close"></i></span>
-                                    </li>
-                                    <li>
-                                        <a href="cart.html"><img src="{{ asset('assetsC/img/cart/1.png') }}" alt="" /></a>
-                                        <div class="cart-menu-title">
-                                            <a href="cart.html"><h5>Mount POW C058 FG </h5></a>
-                                            <span>1 x $2500</span>
-                                        </div>
-                                        <span class="cancel-item"><i class="fa fa-close"></i></span>
-                                    </li>
-                                    <li class="cart-menu-btn">
-                                        <a href="cart.html">view cart</a>
-                                        <a href="checkout.html">checkout</a>
+                    {% block panierMobile %}
+                        {% if lc==NULL  %}
+                            <div class="cart-menu-area floatright">
+                                <ul>
+                                    <li><a href="#"><i class="pe-7s-shopbag"></i> <span>0</span></a>
+
                                     </li>
                                 </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                            </div>
+                        {% else %}
+
+                            <div class="cart-menu-area floatright">
+                                <ul>
+                                    <li><a href="#"><i class="pe-7s-shopbag"></i><span>{{ lc|length }}</span></a>
+                                        <ul class="cart-menu">
+                                            {% for elt in lc|slice(0,2) %}
+                                                <li>
+                                                    <a href="cart.html"><img src="{{ asset('assetsC/img/products/'~elt.idprod.photo) }}" alt="" /></a>
+                                                    <div class="cart-menu-title">
+                                                        <h5>{{elt.idprod.designation}} </h5>
+                                                        <span>{{ elt.qte ~" x "~elt.idprod.prix }}   </span>
+                                                    </div>
+                                                    <span class="cancel-item"><a href="#"><i class="fa fa-close"></i></a></span>
+                                                </li>
+                                            {% endfor %}
+                                            <li class="cart-menu-btn">
+                                                <a href="{{ path('minipo_afficherPanier',{'id':app.user.id}) }}">checkout</a>
+                                                <a href="{{ path('minipo_validerCmd',{'id':app.user.id}) }}">Valier</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        {% endif %}
+                    {% endblock %}
             </div>
         </div>
     </div>
@@ -256,11 +262,12 @@
 {% block containe %}
 <section class="cart-page section-padding">
     <div class="container">
+        {% block tableau %}
         <div class="row">
             <div class="col-xs-12">
                 <div class="table-responsive table-one margin-minus section-padding-bottom">
                     <table class="spacing-table text-center">
-                        {% block tableau %}
+
                             <thead>
                             <tr>
                                 <th>Product</th>
@@ -312,23 +319,26 @@
                                 <td><i class="fa fa-trash" title="Remove this product"></i></td>
                             </tr>
                             </tbody>
-                        {% endblock %}
+
                     </table>
+
                 </div>
             </div>
         </div>
+        <div class="single-check p-bottom50"style="width: 100%;">
+            <div class="subtotal clearfix"style="width: 100%;">
+                <p>Total: <span class="floatright">$156.87</span></p>
+            </div>
+            <div class="col-sm-4" style="width: 100%;">
+            <div class="default-btn text-right">
+                <a class="btn-style" href="{{ path('minipo_validerCmd',{'id':app.user.id}) }}"style="border: 1px solid #777;font-family: roboto;margin-top: 25px">Valider{#PROCCED TO CHECKOUT#}</a>
+            </div>
+            </div>
+        </div>
+        {% endblock %}
+
     </div>
 
-            <div class="col-sm-4">
-                <div class="estimate-text responsive">
-                    <div class="subtotal clearfix">
-                        {% block total %}<p>Subtotal: <span class="floatright">$156.87</span></p>{% endblock %}
-                    </div>
-                    <div class="default-btn text-right">
-                        <a class="btn-style" href="{{ path('minipo_validerCmd',{'id':app.user.id}) }}">Valier{#PROCCED TO CHECKOUT#}</a>
-                    </div>
-                </div>
-            </div>
 </section>
 {% endblock %}
 <!-- cart page content section end -->

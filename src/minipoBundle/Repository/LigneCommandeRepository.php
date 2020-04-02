@@ -21,6 +21,7 @@ class LigneCommandeRepository extends EntityRepository
 
     }
 
+
     public function myFindQte($idprod){
         $qb=$this->getEntityManager()->
         createQuery("select SUM(lc.qte) 

@@ -1,25 +1,45 @@
-{% extends 'BaseReclamationClient.html.twig' %}
+{% extends 'AboutProduct.html.twig' %}
 
-{% block reclamationclient %}
+    {% block choose %}{% endblock %}
+    {% block ourProd %}{% endblock %}
 
     {% block title %}<title>Info Produit</title> {% endblock %}
-
-
+    {% block infoProd %}
         {% if p==NULL  %}
             Pas de formation
         {% else %}
 
-            <form method="POST">
-                <img src="{{ asset('assetsC/mg/cart/1.png') }}i" alt="" />
-                <h3>{{ p.designation }}</h3>
-                <p>{{ p.idcateg.nom }}</p> <br /><hr>
-                <strong><h3>{{ p.prix }}</h3></strong>
-                <input type="number" id="quantity" name="qte" min="1">
-                <a class="shop-btn" href="{{ path('minipo_ajouterLC',{'id':app.user.id,'idprod':p.idprod}) }}">
-                    <input type="button" name="ajout" value="Ajouter Au Panier" />
-                </a>
-            </form>
+            <div class="col-xs-12 col-sm-9 col-md-6">
+                <div class="about-img">
+                    <img src="{{ asset('assetsC/img/products/'~p.photo) }}" alt="{{ p.designation }}" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="about-text">
+                    <h3>{{ p.designation }}</h3>
+                    <p>{{ p.idcateg.nom }}</p> <br /><hr>
+                    <strong><h3>{{ p.prix }}</h3></strong>
+
+                    <form name="qte" method="post">
+
+                        Qte: <input type="number" id="qte" name="qte" min="1" value="9999" style="width:55px" /><br/><br/>
+
+
+                        <div class="actions-btn">
+                            <div class="clearfix text-center">
+
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <input type="submit" name="Save"  value=" Ajouter" style="width: 12%;height:7%; background-color: white;border: none;" /><br/>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
 
         {% endif %}
-
-{% endblock %}
+    {% endblock %}
