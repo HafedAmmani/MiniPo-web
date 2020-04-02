@@ -359,6 +359,7 @@
 
 
         {% block javascripts %}
+
             <!-- ============================================================== -->
             <!-- All Jquery -->
             <!-- ============================================================== -->
@@ -392,6 +393,8 @@
             <script src="{{ asset('assets/plugins/styleswitcher/jQuery.style.switcher.js') }}"></script>
 
 
+        {% endblock %}
+        {% block add_script %}
         {% endblock %}
     </body>
 </html>

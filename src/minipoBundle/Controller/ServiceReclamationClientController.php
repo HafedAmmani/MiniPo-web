@@ -67,7 +67,9 @@ class ServiceReclamationClientController extends Controller
         $em=$this->getDoctrine()->getManager();
         $reclamation=$em->getRepository((Reclamation::class))->find($id);
         if($request->isMethod('POST')){
-            $reclamation->setEtatr($request->get('etat'));
+
+
+            if($reclamation->getEtatr()=="non traiter"){$reclamation->setEtatr($request->get('etat'));}
             $reclamation->setReponse($request->get('reponse'));
 
             $em->flush();

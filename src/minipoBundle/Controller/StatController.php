@@ -35,7 +35,7 @@ class StatController extends Controller
             'showInLegend'=>true
         ));
         $ob3->chart->renderTo('linechart3');  // The #id of the div where to render the chart
-        $ob3->title->text('Reclamation Employe  traiter par categorie ');
+        $ob3->title->text('Reclamation Employe non traiter par categorie ');
         $ob3->plotOptions->pie(array(
             'allowPointSelect'=>true,
             'cursor'=>'pointer',

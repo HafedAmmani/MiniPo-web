@@ -45,7 +45,9 @@ class ServiceReclamationEmployeController extends Controller
         $em=$this->getDoctrine()->getManager();
         $reclamation=$em->getRepository((Reclamationemploye::class))->find($id);
         if($request->isMethod('POST')){
-            $reclamation->setEtatremp($request->get('etat'));
+
+            if($reclamation->getEtatremp()=="non traiter"){$reclamation->setEtatremp($request->get('etat'));}
+
             $reclamation->setReponse($request->get('reponse'));
 
             $em->flush();

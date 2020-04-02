@@ -11,7 +11,7 @@
 {% endblock  %}
 {% block reclamationclient   %}
 
-<form method="post">
+<form method="post"novalidate>
     <div style="margin: 0 auto;width: 1000px;">
     <div class="card-body">
         <center><h1 class="card-title">Votre Reclamation !</h1></center>
@@ -49,8 +49,10 @@
         {% if reclamation.etatremp is same as ('non traiter') %}
             <div class="form-group">
                 <label>Description :</label>
-                <textarea class="form-control" name="description"  rows="5" value="{{ reclamation.description}}">{{ reclamation.description}}</textarea>
-                {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
+                <div class="controls">
+                    <textarea class="form-control" id="textarea" name="description"required data-validation-required-message="Vous devez inserer une description"minlength="2"  rows="5" value="{{ reclamation.description}}">{{ reclamation.description}}</textarea>
+                    {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
+                </div>
             </div>
         {% endif %}
         {% if reclamation.etatremp is same as ('traiter') %}
@@ -108,3 +110,16 @@
 </form>#}
 
 {% endblock    %}
+{% block add_script %}
+
+    <script src="{{ asset('js/validation.js') }}"></script>
+    <script>
+        ! function(window, document, $) {
+            "use strict";
+            $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(), $(".skin-square input").iCheck({
+                checkboxClass: "icheckbox_square-green",
+                radioClass: "iradio_square-green"
+            }), $(".touchspin").TouchSpin(), $(".switchBootstrap").bootstrapSwitch();
+        }(window, document, jQuery);
+    </script>
+{% endblock %}

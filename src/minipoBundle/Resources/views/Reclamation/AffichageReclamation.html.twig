@@ -164,10 +164,10 @@
                             <td> {{ elt.objet}}</td>
                             <td> {{ elt.description}}</td>
                             {% if elt.image == NULL %}
-                            <td width="200px"> <img class="img-fluid"width="30%" src="{{ asset('assets/images/Point_d_interrogation.jpg') }}" ></td>
+                            <td width="1%" ><center> <img class="img-fluid"width="20%" src="{{ asset('assets/images/Point_d_interrogation.jpg') }}" ></center></td>
                             {% endif  %}
                             {% if elt.image != NULL %}
-                            <td width="200px"> <img class="img-fluid"width="30%" src="{{ asset('uploads/post/' ~ elt.image) }}" alt=""></td>
+                            <td width="10%"height="20%"><center> <img class="img-fluid"width="30%" src="{{ asset('uploads/post/' ~ elt.image) }}" alt=""></center></td>
                             {% endif %}
                             <td> {{ elt.Reponse}} </td>
                             <td> {{ elt.dater|date()}}</td>
@@ -182,8 +182,8 @@
 
 
                             <td class="text-nowrap">
-                                <a href="{{ path('minipo_ModifierEtatReclamation',{'id':elt.idr}) }}" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
-                                <a href="{{ path('minipo_SupprimerReclamation',{'etatr':elt.etatr}) }}" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
+                               <center><a href="{{ path('minipo_ModifierEtatReclamation',{'id':elt.idr}) }}" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a></center>
+                                {#<a href="{{ path('minipo_SupprimerReclamation',{'etatr':elt.etatr}) }}" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>#}
                             </td>
                             {% endfor  %}
 
