@@ -3,6 +3,8 @@
 namespace minipoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Livraison
@@ -57,7 +59,8 @@ class Livraison
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Le champ date est obligatoire")
+     * @Assert\Regex("/^\d{1,2}\/\d{1,2}\/\d{4}$/",message="Le champ date n'est pas conforme (exp: dd/mm/yyyy)")
      * @ORM\Column(name="dateliv", type="string", length=255, nullable=false)
      */
     private $dateliv;

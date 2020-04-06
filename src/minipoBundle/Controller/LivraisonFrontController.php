@@ -30,7 +30,7 @@ class LivraisonFrontController extends Controller
             $em->flush();
             return $this->redirectToRoute('minipo_afficheLiv');
         }
-        return $this->render('@minipo/Livraison/updateEtat.html.twig', array('f' => $form->createView()));
+        return $this->render('@minipo/Livraison/updateEtat.html.twig', array('f' => $form->createView(),'livraison' => $liv));
     }
     public function searchByEtatAction(Request $request){
         $liv = new Livraison();

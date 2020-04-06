@@ -24,6 +24,8 @@ class LivraisonBackController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($livraison);
             $em->flush();
+            $livraison->setMatriculel("X".$livraison->getIdliv());
+            $em->flush();
             return $this->redirectToRoute('minipo_afficheLiv');}
         return $this->render( '@minipo/Livraison/ajoutliv.html.twig', array('f'=>$form->createView()));
 

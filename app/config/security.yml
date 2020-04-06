@@ -36,7 +36,7 @@ security:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin, role: ROLE_ADMIN }
-        - { path: ^/employe, role: ROLE_EMPLOYE }
-        - { path: ^/client, role: ROLE_CLIENT }
-        - { path: ^/adminRH, role: ROLE_RH }
+        - { path: ^/admin, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/employe, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/client, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/adminRH, role: IS_AUTHENTICATED_ANONYMOUSLY }

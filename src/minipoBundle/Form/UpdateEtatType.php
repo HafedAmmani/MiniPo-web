@@ -18,16 +18,13 @@ class UpdateEtatType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('matriculel')
-            ->add('etatl', ChoiceType::class, ["choices" =>[
+        $builder->add('etatl', ChoiceType::class, ["choices" =>[
                         'Non Livree' => 'non livree',
                         'Livree'     => 'livree',
-                        'En Cours'    => 'en cours'
+                        'Refusee'    => 'refusee'
                     ],
                 "multiple"=>false
             ])
-                ->add('dateliv')
-                ->add('destination')
                 ->add('modifier',SubmitType::class);
     }/**
      * {@inheritdoc}

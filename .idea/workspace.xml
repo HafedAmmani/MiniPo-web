@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="840c042f-ddd7-46a0-9b31-d2b44fe48903" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/minipoBundle/Form/RechercheDestType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/email.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/searchbydest.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/security.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/security.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minipoBundle/Controller/LivraisonBackController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Controller/LivraisonBackController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minipoBundle/Controller/LivraisonFrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Controller/LivraisonFrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Resources/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Entity/Livraison.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Entity/Livraison.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Form/UpdateEtatType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Form/UpdateEtatType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/affichLivraisonLivreur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/affichLivraisonLivreur.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/ajoutliv.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/ajoutliv.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/updateEtat.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/updateEtat.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +111,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AtelierPHP" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -203,7 +203,8 @@
       <workItem from="1585221739939" duration="18808000" />
       <workItem from="1585560356466" duration="11551000" />
       <workItem from="1585582208838" duration="15406000" />
-      <workItem from="1585657087371" duration="12146000" />
+      <workItem from="1585657087371" duration="23687000" />
+      <workItem from="1586180207072" duration="9841000" />
     </task>
     <servers />
   </component>
@@ -243,30 +244,30 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="493" y="312" key="ComposerCompositePathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137741724" />
-    <state x="548" y="175" key="FileChooserDialogImpl" timestamp="1585582613106">
+    <state x="548" y="175" key="FileChooserDialogImpl" timestamp="1586201946186">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="548" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1585582613106" />
+    <state x="548" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1586201946186" />
     <state x="625" y="329" key="FrameworkEditDialogDimensionKey" timestamp="1585582621195">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="625" y="329" key="FrameworkEditDialogDimensionKey/0.0.1536.864@0.0.1536.864" timestamp="1585582621195" />
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1585670805423">
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1585825158304">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1585670805423" />
-    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1585670805422">
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1585825158304" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1585825158304">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1585670805422" />
-    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1585670805422">
+    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1585825158304" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1585825158304">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1585670805422" />
-    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1585670805422">
+    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1585825158304" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1585825158304">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1585670805422" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1585825158304" />
     <state x="537" y="248" key="NewPhpClassDialog" timestamp="1585596976885">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -275,6 +276,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="604" y="365" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1585228657669" />
+    <state x="563" y="158" key="RollbackChangesDialog" timestamp="1586197125735">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="563" y="158" key="RollbackChangesDialog/0.0.1536.864@0.0.1536.864" timestamp="1586197125735" />
     <state x="277" y="76" key="SettingsEditor" timestamp="1585582623751">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -283,10 +288,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="537" y="336" key="SymfonyPathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137809212" />
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1585657089767">
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1586180249210">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1585657089767" />
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1586180249210" />
     <state x="473" y="66" width="590" height="732" key="find.popup" timestamp="1585583575908">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
