@@ -7,6 +7,7 @@ use minipoBundle\Form\RechercheDestType;
 use minipoBundle\Form\RechercheType;
 use minipoBundle\Form\UpdateEtatType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class LivraisonFrontController extends Controller
@@ -44,6 +45,26 @@ class LivraisonFrontController extends Controller
             $livs = $this->getDoctrine()->getRepository(Livraison::class)->findAll();
         }
         return $this->render("@minipo/Livraison/searchbyetat.html.twig", array('form'=>$form->createView(),'livraison'=>$livs));
+    }
+    public function searchAction(Request $request){
+        $params = array();
+        $content = $request->getContent();
+        if (!empty($content))
+        {
+            $params = json_decode($content, true);
+        }
+        $em = $this->getDoctrine()->getManager();
+        if($params['etatl'] === "all")
+            if (!isset($params['destination']))
+                $livs = $em->getRepository(Livraison::class)->findBy(array('id' => 54));
+            else
+                $livs = $em->getRepository(Livraison::class)->findBy(array('id' => 54,'destination' => $params["destination"]));
+        else
+            if (!isset($params['destination']))
+                $livs = $em->getRepository(Livraison::class)->findBy(array('id' => 54,'etatl' => $params["etatl"]));
+            else
+                $livs = $em->getRepository(Livraison::class)->findBy(array('id' => 54,'etatl' => $params["etatl"],'destination' => $params["destination"]));
+        return $this->render("@minipo/Livraison/search.html.twig", array('livraison'=>$livs));
     }
     public function searchByDestAction(Request $request){
         $liv = new Livraison();

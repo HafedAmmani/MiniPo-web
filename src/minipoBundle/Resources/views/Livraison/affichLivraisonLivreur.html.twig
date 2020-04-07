@@ -7,9 +7,12 @@
             <div class="card-body">
                 <h4 class="card-title">Liste Livraison</h4>
                 <div class="table-responsive">
+                    <div class="dataTables_wrapper">
+                        <div id="example_filter" class="dataTables_filter">
+                            <label>Destination:<input type="search" class="" placeholder="" aria-controls="example" id="destination"></label>
+                        </div>
 
-
-                    <table class="table table-striped">
+                    <table class="table table-striped" id="table-data">
                         <tr> <th>matricule livraison</th>
                             <th>destination</th>
                             <th>etat livraison</th>
@@ -25,10 +28,47 @@
                         {% endfor %}
 
                     </table>
+                    </div>
                 </div>
             </div>
         </div>
     {% endif %}
+
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+<script type="application/javascript">
+
+$( document ).ready(function() {
+    console.log( "ready!" );
+$("#destination").change(function(){
+    if($(this).val() !== "")
+    $.ajax({
+        type: "POST",
+        url: "/search",
+        data: JSON.stringify({"etatl": "all", "destination": $(this).val()}),
+        dataType:"json"
+    })
+        .always(function( data ) {
+            // insert data into div
+            $("#table-data").html(data.responseText);
+        });
+    else
+        $.ajax({
+            type: "POST",
+            url: "/search",
+            data: JSON.stringify({"etatl": "all"}),
+            dataType:"json"
+        })
+            .always(function( data ) {
+                // insert data into div
+                $("#table-data").html(data.responseText);
+            });
+    });
+
+});
+
+    </script>
 {% endblock %}
 
 
