@@ -58,12 +58,12 @@ class LivraisonFrontController extends Controller
             if (!isset($params['destination']))
                 $livs = $em->getRepository(Livraison::class)->findBy(array('id' => 54));
             else
-                $livs = $em->getRepository(Livraison::class)->findBy(array('id' => 54,'destination' => $params["destination"]));
+                $livs = $em->getRepository(Livraison::class)->searchLivraison(54, $params["etatl"],$params["destination"]);
         else
             if (!isset($params['destination']))
                 $livs = $em->getRepository(Livraison::class)->findBy(array('id' => 54,'etatl' => $params["etatl"]));
             else
-                $livs = $em->getRepository(Livraison::class)->findBy(array('id' => 54,'etatl' => $params["etatl"],'destination' => $params["destination"]));
+                $livs = $em->getRepository(Livraison::class)->searchLivraison(54, $params["etatl"],$params["destination"]);
         return $this->render("@minipo/Livraison/search.html.twig", array('livraison'=>$livs));
     }
     public function searchByDestAction(Request $request){

@@ -10,15 +10,15 @@ use Doctrine\DBAL\Types\Type;
 class EnumEtatType extends Type
 {
     const ENUM_ETAT= 'enumetat';
-    const STATUS_ENCOURS = 'en cours';
     const STATUS_LIVREE = 'livree';
+    const STATUS_REFUSEE= 'refusee';
     const STATUS_NONLIVREE = 'non livree';
     /**
      * @inheritDoc
      */
     public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform)
     {
-        return "ENUM('en cours', 'livre')";
+        return "ENUM('livre', 'refusee')";
     }
     public function convertToPHPValue($value, AbstractPlatform $platform)
     {
@@ -26,7 +26,7 @@ class EnumEtatType extends Type
     }
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
-        if (!in_array($value, array(self::STATUS_ENCOURS , self::STATUS_LIVREE, self::STATUS_NONLIVREE))) {
+        if (!in_array($value, array(self::STATUS_LIVREE , self::STATUS_REFUSEE , self::STATUS_NONLIVREE))) {
             throw new \InvalidArgumentException("Invalid status");
         }
         return $value;

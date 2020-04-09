@@ -11,10 +11,16 @@ use Symfony\Component\HttpFoundation\Request;
 
 class LivraisonBackController extends Controller
 {
-    public function afficheLivAction(){
+    public function afficheLivAction(Request $request){
         $repository=$this->getDoctrine()->getManager()->getRepository(Livraison::class);
         $listliv=$repository->findLivraison();
-        return($this->render('@minipo/Livraison/livraison.html.twig',array("listeliv"=>$listliv)));
+        $paginator = $this->get('knp_paginator');
+        $liste  = $paginator->paginate(
+            $listliv,
+            $request->query->get('page', 1)/*le numéro de la page à afficher*/,
+            2/*nbre d'éléments par page*/
+        );
+        return($this->render('@minipo/Livraison/livraison.html.twig',array("listeliv"=>$liste)));
     }
     public function ajoutlivAction(Request $request){
         $livraison= new Livraison();
