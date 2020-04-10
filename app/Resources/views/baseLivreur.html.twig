@@ -2,7 +2,7 @@
 <html>
     <head>
 
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Minipot{% endblock %}</title>
         {% block stylesheets %}
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -266,37 +266,12 @@
                     <nav class="sidebar-nav">
                         <ul id="sidebarnav">
                             <li class="nav-devider"></li>
-                            <li class="nav-small-cap"><a href="base.html.twig"><i class="mdi mdi-home"></i>Acceuil</a></li>
-                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">Gestion Utilisateur</span></a>
-                                <ul aria-expanded="false" class="collapse">
+                            <li class="nav-small-cap"><a href="/livreur/afficheLivreur" style="background: unset"><i class="mdi mdi-home"></i>Acceuil</a></li>
 
-                                </ul>
-                            </li>
-                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-social-dropbox"></i><span class="hide-menu">Gestion de produit</span></a>
-                                <ul aria-expanded="false" class="collapse">
+                            <li> <a href="/livreur/afficheLivreur" class="has-arrow waves-effect waves-dark" aria-expanded="false" style="background: unset"><i class="mdi mdi-taxi"></i><span class="hide-menu">Gestion Livraison</span></a>
 
-                                </ul>
                             </li>
-                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-handbag"></i><span class="hide-menu">Gestion Vente-Achat</span></a>
-                                <ul aria-expanded="false" class="collapse">
 
-                                </ul>
-                            </li>
-                            <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-taxi"></i><span class="hide-menu">Gestion Livraison</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="/admin/affiche">Liste des livraisons  </a></li>
-                                    <li><a href="/admin/ajout">Ajouter livraison  </a></li>
-
-                                </ul>
-                            </li>
-                            <li>  <a class="has-arrow waves-effect waves-dark"  aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">Gestion Reclamtion </span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="/">Reclamations employe  </a></li>
-                                    <li><a href="/">Reclamations Client </a></li>
-                                    <li><a href="/">Statistique</a></li>
-                                    <li><a href="/">Modern</a></li>
-                                </ul>
-                            </li>
 
 
                         </ul>

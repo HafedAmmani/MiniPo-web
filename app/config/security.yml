@@ -8,6 +8,7 @@ security:
         ROLE_USER: ROLE_USER
         ROLE_ADMIN: ROLE_ADMIN
         ROLE_EMPLOYE : ROLE_EMPLOYE
+        ROLE_LIVREUR : ROLE_LIVREUR
         ROLE_CLIENT : ROLE_CLIENT
         ROLE_RH : ROLE_RH
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
@@ -36,7 +37,8 @@ security:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/employe, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/client, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/adminRH, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, role: ROLE_ADMIN }
+        - { path: ^/employe, role: ROLE_EMPLOYE }
+        - { path: ^/livreur, role: ROLE_LIVREUR }
+        - { path: ^/client, role: ROLE_CLIENT }
+        - { path: ^/adminRH, role: ROLE_RH }

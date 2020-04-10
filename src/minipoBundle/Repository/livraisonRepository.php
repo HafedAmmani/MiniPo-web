@@ -11,8 +11,8 @@ class livraisonRepository extends EntityRepository
         return $query=$qb->getResult();
     }
 
-    public function findLivreur(){
-        $qb=$this->getEntityManager()->createQuery("select l.matriculel,l.destination,l.etatl,l.dateliv from minipoBundle:livraison l where l.id=54 ");
+    public function findLivreur($id){
+        $qb=$this->getEntityManager()->createQuery("select l from minipoBundle:livraison l where l.id=:id ")->setParameter('id', $id);
         return $query=$qb->getResult();
     }
 
@@ -30,6 +30,13 @@ class livraisonRepository extends EntityRepository
                 ->setParameter('destination', $destination);
         return $query=$qb->getResult();
     }
+    public function getEmailData($idc,$idliv){
+        $qb=$this->getEntityManager()
+            ->createQuery("select c,l from minipoBundle:livraison l, minipoBundle:commande c where c.idcmd=:idc and l.idliv=:idliv")
+            ->setParameter('idc',$idc)
+            ->setParameter('idliv', $idliv);
+        return $query=$qb->getResult();
 
+    }
 
 }

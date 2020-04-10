@@ -53,6 +53,10 @@ class AfterLoginRedirection implements AuthenticationSuccessHandlerInterface
 
             $redirection = new RedirectResponse($this->router->generate('minipo_Afficher'));
         }
+        if (in_array('ROLE_LIVREUR', $rolesTab, true)) {
+
+            $redirection = new RedirectResponse($this->router->generate('minipo_afficheLivreur'));
+        }
         return $redirection;
     }
 

@@ -2,6 +2,7 @@
 
 namespace minipoBundle\Form;
 
+use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -19,7 +20,7 @@ class LivraisonType extends AbstractType
         $builder->add('idc', EntityType::class,
                     array(
                         'class'=>'minipoBundle:Commande',
-                        'choice_label'=>'idcmd',
+                        'choice_label'=>'refc',
                         'multiple'=>false
                     ))
                 ->add('destination')
@@ -27,7 +28,11 @@ class LivraisonType extends AbstractType
                 ->add('id', EntityType::class,
                     array(
                         'class'=>'minipoBundle:User',
-                        'choice_label'=>'id',
+                        'query_builder' => function (EntityRepository $er) {
+                            return $er->createQueryBuilder('u')
+                                ->where("u.roles LIKE '%ROLE_LIVREUR%'");
+                        },
+                        'choice_label'=>'username',
                         'multiple'=>false
                     ))
             ->add('valider',SubmitType::class,

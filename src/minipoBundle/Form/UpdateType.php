@@ -2,6 +2,7 @@
 
 namespace minipoBundle\Form;
 
+use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -16,18 +17,16 @@ class UpdateType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('idc', EntityType::class,
-                    array(
-                        'class'=>'minipoBundle:Commande',
-                        'choice_label'=>'idcmd',
-                        'multiple'=>false
-                    ))
-                ->add('destination')
+        $builder->add('destination')
                 ->add('dateliv')
                 ->add('id', EntityType::class,
                     array(
                         'class'=>'minipoBundle:User',
-                        'choice_label'=>'id',
+                        'query_builder' => function (EntityRepository $er) {
+                            return $er->createQueryBuilder('u')
+                                ->where("u.roles LIKE '%ROLE_LIVREUR%'");
+                        },
+                        'choice_label'=>'username',
                         'multiple'=>false
                     ))
             ->add('modifier',SubmitType::class);

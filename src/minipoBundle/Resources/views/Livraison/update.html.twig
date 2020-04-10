@@ -2,30 +2,30 @@
 {% block content %}
     <div class="card">
         <div class="card-body">
-            <div class="card-title">Update Livraison</div>
+            <div class="card-title"><a href="/admin/affiche"><i class="fa fa-arrow-left"></i></a> Update Livraison</div>
             <div class="form-material m-t-40" _lpchecked="1">
 
                     {{ form_start(f) }}
                     {{ form_errors(f) }}
 
-                <div class="form-group">
-                        {{ form_label(f.idc) }}
-                        {{ form_widget(f.idc) }}
-                    </div>
-
-                <div class="form-group">
-                        {{ form_label(f.destination) }}
-                        {{ form_widget(f.destination) }}
-                    </div>
-
-                <div class="form-group">
-                    {{ form_label(f.dateliv) }}
-                    {{ form_widget(f.dateliv) }}
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-3" >Matricule commande</div>
+                    <div class="col-3">{{ liv.idc.refc }}</div>
                 </div>
 
-                <div class="form-group">
-                    {{ form_label(f.id) }}
-                    {{ form_widget(f.id) }}
+                <div class="row" style="margin-bottom: 15px">
+                        {{ form_label(f.destination, null,{'label_attr': {'class': 'col-3'}}) }}
+                        {{ form_widget(f.destination, {'attr': {'class': 'col-3'}}) }}
+                    </div>
+
+                <div class="row" style="margin-bottom: 15px">
+                    {{ form_label(f.dateliv, "Date", {'label_attr': {'class': 'col-3'}}) }}
+                    {{ form_widget(f.dateliv, {'attr': {'class': 'col-3'}}) }}
+                </div>
+
+                <div class="row" style="margin-bottom: 15px">
+                    {{ form_label(f.id, "Livreur", {'label_attr': {'class': 'col-3'}}) }}
+                    {{ form_widget(f.id, {'attr': {'class': 'col-3'}}) }}
                 </div>
 
                     <div class="form-group">

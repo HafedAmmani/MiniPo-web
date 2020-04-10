@@ -15,7 +15,7 @@ class LivraisonFrontController extends Controller
     public function afficheLivreurAction()
     {
         $repository = $this->getDoctrine()->getManager()->getRepository(Livraison::class);
-        $listliv = $repository->findLivreur();
+        $listliv = $repository->findLivreur($this->getUser()->getId());
         return ($this->render('@minipo/Livraison/affichLivraisonLivreur.html.twig', array("listeliv" => $listliv)));
     }
 
@@ -29,7 +29,7 @@ class LivraisonFrontController extends Controller
         if ($form->isSubmitted()) {
             $em = $this->getDoctrine()->getManager();
             $em->flush();
-            return $this->redirectToRoute('minipo_afficheLiv');
+            return $this->redirectToRoute('minipo_afficheLivreur');
         }
         return $this->render('@minipo/Livraison/updateEtat.html.twig', array('f' => $form->createView(),'livraison' => $liv));
     }
@@ -56,14 +56,14 @@ class LivraisonFrontController extends Controller
         $em = $this->getDoctrine()->getManager();
         if($params['etatl'] === "all")
             if (!isset($params['destination']))
-                $livs = $em->getRepository(Livraison::class)->findBy(array('id' => 54));
+                $livs = $em->getRepository(Livraison::class)->findBy(array('id' => $this->getUser()->getId()));
             else
-                $livs = $em->getRepository(Livraison::class)->searchLivraison(54, $params["etatl"],$params["destination"]);
+                $livs = $em->getRepository(Livraison::class)->searchLivraison($this->getUser()->getId() , $params["etatl"],$params["destination"]);
         else
             if (!isset($params['destination']))
-                $livs = $em->getRepository(Livraison::class)->findBy(array('id' => 54,'etatl' => $params["etatl"]));
+                $livs = $em->getRepository(Livraison::class)->findBy(array('id' => $this->getUser()->getId(),'etatl' => $params["etatl"]));
             else
-                $livs = $em->getRepository(Livraison::class)->searchLivraison(54, $params["etatl"],$params["destination"]);
+                $livs = $em->getRepository(Livraison::class)->searchLivraison($this->getUser()->getId() , $params["etatl"],$params["destination"]);
         return $this->render("@minipo/Livraison/search.html.twig", array('livraison'=>$livs));
     }
     public function searchByDestAction(Request $request){

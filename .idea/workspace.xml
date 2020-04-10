@@ -2,19 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="840c042f-ddd7-46a0-9b31-d2b44fe48903" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Minipo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Minipo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/baseLivreur.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/details.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/security.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/security.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Controller/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minipoBundle/Controller/LivraisonBackController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Controller/LivraisonBackController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minipoBundle/Controller/LivraisonFrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Controller/LivraisonFrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Entity/EnumEtatType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Entity/EnumEtatType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Form/LivraisonType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Form/LivraisonType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Form/UpdateType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Form/UpdateType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Redirection/AfterLoginRedirection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Redirection/AfterLoginRedirection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minipoBundle/Repository/livraisonRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Repository/livraisonRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Resources/config/routing.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/affichLivraisonLivreur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/affichLivraisonLivreur.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/ajoutliv.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/ajoutliv.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/email.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/email.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/livraison.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/livraison.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/search.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/search.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/update.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/update.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/updateEtat.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/minipoBundle/Resources/views/Livraison/updateEtat.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +125,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AtelierPHP" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Resources/views/default" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -128,19 +136,19 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\phpMyAdmin\htdocs\MiniPo-web\src\minipoBundle\Resources\views\Livraison" />
-      <recent name="C:\xampp\phpMyAdmin\htdocs\MiniPo-web\src\minipoBundle\Form" />
-      <recent name="C:\xampp\phpMyAdmin\htdocs\Minipo\Minipo\src\minipoBundle\Repository" />
-      <recent name="C:\xampp\phpMyAdmin\htdocs\Minipo\Minipo\src\minipoBundle\Resources\views\Default" />
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Entity" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\phpMyAdmin\htdocs\MiniPo-web\app\Resources\views" />
       <recent name="C:\xampp\phpMyAdmin\htdocs\MiniPo-web\src\minipoBundle\Resources\views\Default" />
       <recent name="C:\xampp\phpMyAdmin\htdocs\Minipo\Minipo\src\minipoBundle\Resources\views\Livraison" />
       <recent name="C:\wamp64\www\Minipo\app\Resources\views" />
       <recent name="C:\wamp64\www\Minipo\web\assetsC\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\phpMyAdmin\htdocs\MiniPo-web\app\Resources\views\default" />
+      <recent name="C:\xampp\phpMyAdmin\htdocs\MiniPo-web\src\minipoBundle\Resources\views\Livraison" />
+      <recent name="C:\xampp\phpMyAdmin\htdocs\MiniPo-web\src\minipoBundle\Form" />
+      <recent name="C:\xampp\phpMyAdmin\htdocs\Minipo\Minipo\src\minipoBundle\Repository" />
+      <recent name="C:\xampp\phpMyAdmin\htdocs\Minipo\Minipo\src\minipoBundle\Resources\views\Default" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -176,8 +184,14 @@
       <command value="composer require knplabs/knp-paginator-bundle " />
       <command value="c dump-autoload" />
       <command value="c require knplabs/knp-paginator-bundle " />
-      <command value="s server:run" />
       <command value="s cache:clear" />
+      <command value="c fos:user:create testuser test@example.com p@ssword" />
+      <command value="s fos:user:create testuser" />
+      <command value="s fos:user:create testuser test@example.com p@ssword" />
+      <command value="s fos:user:promote testuser ROLE_LIVREUR" />
+      <command value="s server:run" />
+      <command value="s fos:user:create testadmin admin@example.com p@ssword" />
+      <command value="s fos:user:promote testadmin ROLE_ADMIN" />
     </option>
   </component>
   <component name="ServiceViewManager">
@@ -219,7 +233,9 @@
       <workItem from="1586180207072" duration="10001000" />
       <workItem from="1586285910157" duration="8577000" />
       <workItem from="1586386519502" duration="2411000" />
-      <workItem from="1586426795354" duration="20979000" />
+      <workItem from="1586426795354" duration="21144000" />
+      <workItem from="1586506395194" duration="43000" />
+      <workItem from="1586518224740" duration="29764000" />
     </task>
     <servers />
   </component>
@@ -247,10 +263,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1585225343283" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585604934866">
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586555024757">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1585604934866" />
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1586555024757" />
     <state x="645" y="362" key="#com.jetbrains.php.framework.ui.FailedToParseDialog" timestamp="1584731226983">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -267,22 +283,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="625" y="329" key="FrameworkEditDialogDimensionKey/0.0.1536.864@0.0.1536.864" timestamp="1585582621195" />
-    <state width="1493" height="244" key="GridCell.Tab.0.bottom" timestamp="1586468624341">
+    <state width="1493" height="244" key="GridCell.Tab.0.bottom" timestamp="1586531177055">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="244" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1586468624341" />
-    <state width="1493" height="244" key="GridCell.Tab.0.center" timestamp="1586468624341">
+    <state width="1493" height="244" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1586531177055" />
+    <state width="1493" height="244" key="GridCell.Tab.0.center" timestamp="1586531177054">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="244" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1586468624341" />
-    <state width="1493" height="244" key="GridCell.Tab.0.left" timestamp="1586468624341">
+    <state width="1493" height="244" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1586531177054" />
+    <state width="1493" height="244" key="GridCell.Tab.0.left" timestamp="1586531177054">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="244" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1586468624341" />
-    <state width="1493" height="244" key="GridCell.Tab.0.right" timestamp="1586468624341">
+    <state width="1493" height="244" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1586531177054" />
+    <state width="1493" height="244" key="GridCell.Tab.0.right" timestamp="1586531177054">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="244" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1586468624341" />
+    <state width="1493" height="244" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1586531177054" />
     <state x="537" y="248" key="NewPhpClassDialog" timestamp="1585596976885">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -303,18 +319,18 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="537" y="336" key="SymfonyPathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137809212" />
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1586427041654">
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1586518254612">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1586427041654" />
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1586518254612" />
     <state x="473" y="66" width="590" height="732" key="find.popup" timestamp="1585583575908">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="473" y="66" width="590" height="732" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1585583575908" />
-    <state x="425" y="199" width="672" height="677" key="run.anything.popup" timestamp="1586462540756">
+    <state x="425" y="199" width="672" height="677" key="run.anything.popup" timestamp="1586551157200">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="199" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1586462540756" />
+    <state x="425" y="199" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1586551157200" />
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1586432416894">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

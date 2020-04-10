@@ -22,4 +22,8 @@ class DefaultController extends Controller
     {
         return $this->render('@minipo/Default/indexadmin.html.twig');
     }
+    public function livreurAction()
+    {
+        return $this->render('@minipo/Livraison/affichLivraisonLivreur.html.twig');
+    }
 }

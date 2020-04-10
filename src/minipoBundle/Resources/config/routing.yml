@@ -11,32 +11,35 @@ minipo_admin:
     path:     /admin/
     defaults: { _controller: minipoBundle:Default:admin }
 minipo_afficheLiv:
-    path:     /affiche
+    path:     /admin/affiche
     defaults: { _controller: minipoBundle:LivraisonBack:afficheLiv }
 minipo_ajoutliv:
-    path:     /ajout
+    path:     /admin/ajout
     defaults: { _controller: minipoBundle:LivraisonBack:ajoutliv }
 minipo_update:
-    path:     /update/{id}
+    path:     /admin/update/{id}
     defaults: { _controller: minipoBundle:LivraisonBack:updateLiv }
 minipo_delete:
-    path:     /delete/{id}
+    path:     /admin/delete/{id}
     defaults: { _controller: minipoBundle:LivraisonBack:Delete }
 minipo_afficheLivreur:
-    path:     /afficheLivreur
+    path:     /livreur/afficheLivreur
     defaults: { _controller: minipoBundle:LivraisonFront:afficheLivreur }
 minipo_updateEtat:
-    path:     /updateEtat/{id}
+    path:     /livreur/updateEtat/{id}
     defaults: { _controller: minipoBundle:LivraisonFront:updateEtat }
 minipo_searchByEtat:
-    path:     /searchByEtat
+    path:     /livreur/searchByEtat
     defaults: { _controller: minipoBundle:LivraisonFront:searchByEtat }
 minipo_searchByDest:
-    path:     /searchByDest
+    path:     /livreur/searchByDest
     defaults: { _controller: minipoBundle:LivraisonFront:searchByDest }
 minipo_search:
-    path:     /search
+    path:     /livreur/search
     defaults: { _controller: minipoBundle:LivraisonFront:search }
 minipo_mail:
-    path:     /mail/{name}
+    path:     /admin/mail/{name}
     defaults: { _controller: minipoBundle:LivraisonBack:mail }
+minipo_details:
+    path:     /admin/details/{id}
+    defaults: { _controller: minipoBundle:LivraisonBack:details }

@@ -10,25 +10,31 @@
 
 
     <table class="table table-striped">
-        <tr> <th>id</th>
-            <th>destination</th>
-            <th>etat livraison</th>
-            <th>id commande </th>
-            <th>id livreur</th>
-            <th>date livraison</th>
-            <th>matricule livraison</th>
+        <tr>
+            <th>Matricule</th>
+            <th>Destination</th>
+            <th>Statut</th>
+            <th>Matricule commande </th>
+            <th>Nom livreur</th>
+            <th>Date livraison</th>
+            <th>Action</th>
 
         </tr>
         {% for elt in listeliv %}
             <tr>
 
-                <td>{{ elt.idliv }}</td>
+                <td>{{ elt.matriculeL }}</td>
                 <td>{{ elt.destination }}</td>
-                <td>{{ elt.etatl }}</td>
+                <td><span class="label label-{% if elt.etatl == "non livree" %}warning{% elseif elt.etatl == "livree" %}success{% else %}danger{% endif %}">{{ elt.etatl }}</span></td>
                 <td>{{ elt.idc.refC }}</td>
                 <td>{{ elt.id.username }}</td>
                 <td>{{ elt.dateliv }}</td>
-                <td>{{ elt.matriculeL }}</td>
+
+                <td class="text-nowrap">
+                    <a href="/admin/details/{{ elt.idliv }}" data-toggle="tooltip" data-original-title="Detail"> <i class="fa fa-eye text-inverse m-r-10"></i> </a>
+                    <a href="/admin/update/{{ elt.idliv }}" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                    <a href="/admin/delete/{{ elt.idliv }}" data-toggle="tooltip" data-original-title="Delete"> <i class="fa fa-close text-danger"></i> </a>
+                </td>
 
 
 

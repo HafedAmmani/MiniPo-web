@@ -5,6 +5,7 @@ namespace minipoBundle\Controller;
 use minipoBundle\Entity\Livraison;
 use minipoBundle\Form\LivraisonType;
 use minipoBundle\Form\UpdateType;
+use Swift_Message;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -45,9 +46,24 @@ class LivraisonBackController extends Controller
         if($form->isSubmitted()){
             $em = $this->getDoctrine()->getManager();
             $em->flush();
+            $data = $em->getRepository(Livraison::class)
+                ->getEmailData($liv->getIdc(),$liv->getIdliv());
+            $message = (new Swift_Message('Order Confirmation'))
+                ->setFrom('projetminipo@gmail.com')
+                ->setTo('projetminipo@gmail.com')
+                ->setBody(
+                    $this->renderView(
+                    // app/Resources/views/Emails/registration.html.twig
+                        '@minipo/Livraison/email.html.twig',
+                        ['data' => $data]
+                    ),
+                    'text/html'
+                );
+
+            $this->get('mailer')->send($message);
             return $this->redirectToRoute('minipo_afficheLiv');
         }
-        return $this->render('@minipo/Livraison/update.html.twig',array('f'=>$form->createView()));
+        return $this->render('@minipo/Livraison/update.html.twig',array('f'=>$form->createView(),'liv'=>$liv));
     }
     public function DeleteAction($id)
     {
@@ -61,7 +77,7 @@ class LivraisonBackController extends Controller
 
     public function mailAction($name)
     {
-        $message = (new \Swift_Message('Hello Email'))
+        $message = (new Swift_Message('Hello Email'))
             ->setFrom('projetminipo@gmail.com')
             ->setTo('projetminipo@gmail.com')
             ->setBody(
@@ -71,17 +87,7 @@ class LivraisonBackController extends Controller
                     ['name' => $name]
                 ),
                 'text/html'
-            )
-
-            // you can remove the following code if you don't define a text version for your emails
-            ->addPart(
-                $this->renderView(
-                    '@minipo/Livraison/email.html.twig',
-                    ['name' => $name]
-                ),
-                'text/plain'
-            )
-        ;
+            );
 
         $this->get('mailer')->send($message);
 
@@ -89,5 +95,11 @@ class LivraisonBackController extends Controller
         // $this->get('mailer')->send($message);
 
         return new Response('<html><body>test</body></html>');
+    }
+    public function detailsAction($id)
+    {
+        $repository = $this->getDoctrine()->getManager()->getRepository(Livraison::class);
+        $liv=$repository->find($id);
+        return ($this->render('@minipo/Livraison/details.html.twig', array("liv" => $liv)));
     }
 }

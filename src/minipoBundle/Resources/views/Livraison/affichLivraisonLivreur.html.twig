@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseLivreur.html.twig' %}
 {% block content %}
     {% if listeliv==NULL  %}
         Pas de formation
@@ -19,10 +19,11 @@
                         </div>
 
                     <table class="table table-striped" id="table-data">
-                        <tr> <th>matricule livraison</th>
-                            <th>destination</th>
-                            <th>etat livraison</th>
-                            <th>date livraison</th>
+                        <tr> <th>Matricule livraison</th>
+                            <th>Destination</th>
+                            <th>Statut</th>
+                            <th>Date livraison</th>
+                            <th>Action</th>
                         </tr>
                         {% for elt in listeliv %}
                             <tr>
@@ -30,6 +31,9 @@
                                 <td>{{ elt.destination }}</td>
                                 <td>{{ elt.etatl }}</td>
                                 <td>{{ elt.dateliv }}</td>
+                                <td class="text-nowrap">
+                                    <a href="/livreur/updateEtat/{{ elt.idliv }}" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                </td>
                             </tr>
                         {% endfor %}
 
@@ -51,8 +55,8 @@ $("#destination").keyup(function(){
     if($(this).val() !== "")
     $.ajax({
         type: "POST",
-        url: "/search",
-        data: JSON.stringify({"etatl": $('#etatl').val(), "destination": $(this).val()+"%"}),
+        url: "/livreur/search",
+        data: JSON.stringify({"etatl": $('#etatl').val(), "destination": "%"+$(this).val()+"%"}),
         dataType:"json"
     })
         .always(function( data ) {
@@ -62,8 +66,8 @@ $("#destination").keyup(function(){
     else
         $.ajax({
             type: "POST",
-            url: "/search",
-            data: JSON.stringify({"etatl": $(this).val()}),
+            url: "/livreur/search",
+            data: JSON.stringify({"etatl": $('#etatl').val()}),
             dataType:"json"
         })
             .always(function( data ) {
@@ -75,8 +79,8 @@ $("#destination").keyup(function(){
         if($("#destination").val() !== "")
             $.ajax({
                 type: "POST",
-                url: "/search",
-                data: JSON.stringify({"etatl": $(this).val(), "destination": $("#destination").val()+"%"}),
+                url: "/livreur/search",
+                data: JSON.stringify({"etatl": $(this).val(), "destination": "%"+$("#destination").val()+"%"}),
                 dataType:"json"
             })
                 .always(function( data ) {
@@ -86,7 +90,7 @@ $("#destination").keyup(function(){
         else
             $.ajax({
                 type: "POST",
-                url: "/search",
+                url: "/livreur/search",
                 data: JSON.stringify({"etatl": $(this).val()}),
                 dataType:"json"
             })
