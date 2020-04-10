@@ -20,6 +20,7 @@
         "friendsofsymfony/user-bundle": "~2.0",
         "hwi/oauth-bundle": "^0.6.3",
         "incenteev/composer-parameter-handler": "^2.0",
+        "knplabs/knp-paginator-bundle": "^3.0",
         "knplabs/knp-snappy-bundle": "^1.5",
         "php-http/guzzle6-adapter": "^1.1",
         "php-http/httplug-bundle": "^1.15",

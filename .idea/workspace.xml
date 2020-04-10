@@ -171,21 +171,21 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AtelierPHP" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Minipot\src\minipoBundle\Resources\views\Commande" />
+      <recent name="C:\wamp64\www\Minipot\app\Resources\views" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Minipot\src\minipoBundle\Resources\views\Facture" />
       <recent name="C:\wamp64\www\Minipot\web\assetsC\css" />
       <recent name="C:\wamp64\www\Minipot\app\Resources\views" />
       <recent name="C:\wamp64\www\Minipot\app\Resources\views\default" />
       <recent name="C:\wamp64\www\Minipot\src\minipoBundle\Resources\views\LigneCommande" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Minipot\src\minipoBundle\Resources\views\Commande" />
-      <recent name="C:\wamp64\www\Minipot\app\Resources\views" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -205,6 +205,8 @@
       <command value="c require knplabs/knp-snappy-bundle" />
       <command value="s cache:clear" />
       <command value="s doctrine:schema:update --force" />
+      <command value="composer require knplabs/knp-paginator-bundle" />
+      <command value="c require knplabs/knp-paginator-bundle" />
     </option>
   </component>
   <component name="ServiceViewManager">
@@ -237,7 +239,13 @@
       <workItem from="1585486882248" duration="3969000" />
       <workItem from="1585491998841" duration="7773000" />
       <workItem from="1585573968779" duration="39428000" />
-      <workItem from="1585626702150" duration="66495000" />
+      <workItem from="1585626702150" duration="67986000" />
+      <workItem from="1585814192826" duration="1197000" />
+      <workItem from="1586025062952" duration="2076000" />
+      <workItem from="1586124051621" duration="596000" />
+      <workItem from="1586206499996" duration="2371000" />
+      <workItem from="1586508596987" duration="6311000" />
+      <workItem from="1586518115196" duration="7205000" />
     </task>
     <servers />
   </component>
@@ -277,22 +285,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="542" y="263" key="FrameworkEditDialogDimensionKey/0.0.1366.728@0.0.1366.728" timestamp="1585492802606" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1585784381861">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1586517514562">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585784381861" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1585784381861">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586517514562" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1586517514562">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585784381861" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1585784381861">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586517514562" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1586517514562">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585784381861" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1585784381861">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586517514562" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1586517514562">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585784381861" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586517514562" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1585145839947">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -309,9 +317,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="455" y="279" key="SymfonyPathDialog/0.0.1366.728@0.0.1366.728" timestamp="1585147776590" />
-    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1585782649176">
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1586515345786">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1585782649176" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1586515345786" />
   </component>
 </project>

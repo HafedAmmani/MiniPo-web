@@ -35,4 +35,13 @@ class CommandeRepository extends EntityRepository
         return $query=$qb->getSingleScalarResult();
 
     }
+
+    public function myFindAllCmd(){
+        $qb=$this->getEntityManager()->
+        createQuery("select c 
+                                      from minipoBundle:Commande c 
+                                      where c.etatc='Validee' or c.etatc='Acceptee' or c.etatc='Refusee'");
+        return $query=$qb->getResult();
+
+    }
 }

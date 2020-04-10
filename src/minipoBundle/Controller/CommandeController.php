@@ -15,24 +15,36 @@ class CommandeController extends Controller
 
     public function allCommandesAction()
     {
-        $commandes=$this->getDoctrine()->getRepository(Commande::class)->findAll();
-        return $this->render('@minipo/Commande/Commandes.html.twig',array('cmd'=>$commandes));
+
+        $repo=$this->getDoctrine()->getManager()->getRepository(Commande::class);
+        $list=$repo->myFindAllCmd();
+        return $this->render('@minipo/Commande/Commandes.html.twig',array('cmd'=>$list));
     }
     public function accepterCmdAction($id){
         $em=$this->getDoctrine()->getManager();
         $commandes=$em->getRepository(Commande::class)->find($id);
+        $etat=$commandes->getEtatc();
+
+        if (strcmp($etat,"Validee")==0) {
 
             $commandes->setEtatc("Acceptee");
             $em->flush();
             return $this->redirectToRoute('minipo_allCommandes');
+        }
+
+        return $this->redirectToRoute('minipo_allCommandes');
 
     }
     public function refuserCmdAction($id){
         $em=$this->getDoctrine()->getManager();
         $commandes=$em->getRepository(Commande::class)->find($id);
+        $etat=$commandes->getEtatc();
+        if (strcmp($etat,"Validee")==0) {
+            $commandes->setEtatc("Refusee");
+            $em->flush();
+            return $this->redirectToRoute('minipo_allCommandes');
+        }
 
-        $commandes->setEtatc("Refusee");
-        $em->flush();
         return $this->redirectToRoute('minipo_allCommandes');
 
     }
