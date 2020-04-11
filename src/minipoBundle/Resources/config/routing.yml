@@ -58,3 +58,6 @@ minipo_DemandeConge:
 minipo_AccepterConge:
     path:     /adminRH/AccepterConge/{id}
     defaults: { _controller: minipoBundle:Employe:AccepterConge}
+minipo_acceuilRH:
+    path:     /adminRH/acceuilRH
+    defaults: { _controller: minipoBundle:Acceuil:acceuil}

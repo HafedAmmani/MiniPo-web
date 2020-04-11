@@ -16,6 +16,7 @@ class EmployeController extends Controller
     public function trouverEmployeAction(){
         $repository=$this->getDoctrine()->getManager()->getRepository(User::class);
         $listEmploye = $repository->findemploye();
+
         $SommeSalaire=0;
         foreach($listEmploye as $elt) {
             $SommeSalaire=$SommeSalaire + $elt->getSalaire();
@@ -127,7 +128,14 @@ class EmployeController extends Controller
 
         $repository=$this->getDoctrine()->getManager()->getRepository(User::class);
         $listEmploye = $repository->findemployeenconge();
-        return $this->render('@minipo/RH/AffichageemployeConge.html.twig',array("listemploye"=>$listEmploye));
+        $options = array(
+            'code'   => 'string to encode',
+            'type'   => 'qrcode',
+            'format' => 'html',
+        );
+        $barcode =
+            $this->get('skies_barcode.generator')->generate($options);
+        return $this->render('@minipo/RH/AffichageemployeConge.html.twig',array("listemploye"=>$listEmploye,"barcode"=>$barcode));
     }
     public function DemandeCongeAction(){
         $em = $this->getDoctrine()->getManager();

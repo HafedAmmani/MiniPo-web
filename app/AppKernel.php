@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new minipoBundle\minipoBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
+            new Skies\QRcodeBundle\SkiesQRcodeBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

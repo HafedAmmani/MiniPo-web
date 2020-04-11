@@ -29,6 +29,7 @@
                     <th data-hide="all"> Date de retour </th>
                     <th data-hide="all"> Type </th>
                     <th data-hide="all"> Description </th>
+                    <th data-hide="all"> QR code </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -44,6 +45,7 @@
                         <td>{{ elt.datefin }}</td>
                         <td>{{ elt.type }}</td>
                         <td>{{ elt.description }}</td>
+                        <td>{{ barcode({code: elt.tel , type: 'qrcode', format: 'html'}) }}</td>
                     </tr>
 
 
