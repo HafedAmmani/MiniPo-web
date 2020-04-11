@@ -51,11 +51,17 @@ minipo_UpdateBlog:
     path:     /updateBlog/{idA}
     defaults: { _controller: minipoBundle:Blog:updateBlog }
 minipo_DeleteBlog:
-    path:     /deleteBlog/{idA}
+    path:     /agentBlog/deleteBlog/{idA}
     defaults: { _controller: minipoBundle:Blog:deleteBlog }
 minipo_DetaileBlog:
-    path:     /detailBlog/{idA}
+    path:     /agentBlog/detailBlog/{idA}
     defaults: { _controller: minipoBundle:Blog:detailBlog }
+
+minipo_DetaileBlogClient:
+    path:     /client/detailBlog/{idA}
+    defaults: { _controller: minipoBundle:Blog:detailBlogClient }
+
+
 minipo_searchByTitleBlog:
     path:     /search
     defaults: { _controller: minipoBundle:Blog:search }
@@ -76,3 +82,7 @@ minipo_listComRep:
 minipo_ListBlogClient:
     path:     /client/ListBlogClient
     defaults: { _controller: minipoBundle:Blog:listBlogClient }
+
+minipo_searchBlog:
+    path:     /client/search
+    defaults: { _controller: minipoBundle:Blog:search }

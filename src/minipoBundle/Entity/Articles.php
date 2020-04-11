@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\File\File;
  * Articles
  *
  * @ORM\Table(name="articles", indexes={@ORM\Index(name="id", columns={"id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="minipoBundle\Repository\BlogRepository")
  * @Vich\Uploadable
  */
 class Articles

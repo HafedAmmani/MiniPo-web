@@ -9,15 +9,19 @@ use Doctrine\ORM\EntityRepository;
 class BlogRepository extends EntityRepository{
 
     public function findEntitiesByString($str){
+
         return $this->getEntityManager()
             ->createQuery(
                 'SELECT p
-                FROM minipoBundle:articles p
+                FROM minipoBundle:Articles p
                 WHERE p.titre LIKE :str'
             )
             ->setParameter('str', '%'.$str.'%')
             ->getResult();
     }
+
+
+
     /**
      * get one by id
      *

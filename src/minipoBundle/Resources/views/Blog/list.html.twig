@@ -68,7 +68,7 @@
                                     </li>
                                     <li><a href="about.html">about</a></li>
 
-                                    <li><a href="blog-1.html">blog</a>
+                                    <li><a href="{{ path('minipo_listblog') }}">blog</a>
                                         <ul>
                                             <li><a href="{{ path('minipo_listblog') }}">Lister les blogs</a></li>
                                             <li>
@@ -151,11 +151,11 @@
                         <div class="blog-text clearfix">
                             <p style="margin-left: 5%">{{ blogs.description }}</p>
                             <div style="margin-bottom: 20%" class="button">
-                                <div style="margin-left:110px;">
+                                <div style="margin-left:110px;padding-bottom: 5%;padding-top: 10%">
                             <a  href="{{ path('minipo_UpdateBlog',{'idA':blogs.idA })}}"><button type="button" class="edit-btn" >Modifier</button></a>
                             <a  href="{{ path('minipo_DeleteBlog',{'idA':blogs.idA })}}"><button type="button"class="deleted-btn" href="single-blog.html">Delete</button></a>
                                 </div>
-                                    <a style="margin-top: 25%;margin-left: 60%" href="{{ path('minipo_DetaileBlog',{'idA':blogs.idA })}}">View More</a>
+                                    <a style="margin-top: 25%;margin-left: 45%" href="{{ path('minipo_DetaileBlog',{'idA':blogs.idA })}}">View More</a>
                             </div>
                         </div>
                     </div>

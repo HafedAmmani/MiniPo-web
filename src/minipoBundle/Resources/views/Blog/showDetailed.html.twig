@@ -6,35 +6,50 @@
     <div class="header-top">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12">
-                    <div class="left floatleft">
-                        <ul>
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                +11 (019) 25184203
-                            </li>
-                            <li>
-                                <i class="fa fa-envelope-o"></i>
-                                rideo@mail.com
-                            </li>
-                        </ul>
-                    </div>
+                 <div class="col-xs-12">
+                     <div class="left floatleft">
+                         <ul>
+                             <li>
+                                 <i class="fa fa-phone"></i>
+                                 +11 (019) 25184203
+                             </li>
+                             <li>
+                                 <i class="fa fa-envelope-o"></i>
+                                 rideo@mail.com
+                             </li>
+                         </ul>
+                     </div>
+
+
+
+
+
+
                     <div class="right floatright">
-                        <ul>
-                            <li>
-                                <form action="#">
-                                    <button type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                    <input type="search" placeholder="Search">
-                                </form>
-                            </li>
-                            <li>
-                                <i class="fa fa-user"></i>
-                                <a href="/Minipo/web/app_dev.php/login">Account</a>
-                            </li>
-                        </ul>
-                    </div>
+                         <ul>
+                             <li>
+                                 <form action="#">
+                                     <button type="submit">
+                                         <i class="fa fa-search"></i>
+                                     </button>
+                                     <input type="search" placeholder="Search">
+                                 </form>
+                             </li>
+
+
+
+
+
+
+
+
+
+                             <li>
+                                 <i class="fa fa-user"></i>
+                                 <a href="/Minipo/web/app_dev.php/login">Account</a>
+                             </li>
+                         </ul>
+                     </div>
                 </div>
             </div>
         </div>
@@ -56,7 +71,7 @@
                                     <a href="shop.html">products</a>
                                 </li>
                                 <li><a href="about.html">about</a></li>
-                                <li><a href="/Minipo/web/app_dev.php/listBlog">blog</a></li>
+                                <li><a href="{{ path('minipo_listblog') }}">blog</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -102,8 +117,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-9">
-                    <p class="home"><a href="{{ path('minipo_listblog') }}">Home</a> </p>
+                   {# <p class="home"><a href="{{ path('minipo_listblog') }}">Home</a> </p>#}
                     <div class="single-blog-page">
+
+
+
+
+
+
+
 
                         <div class="single-blog-img">
                             <img src="{{ asset('uploads/post/' ~ blogs.getImageName()) }}" alt="Single Blog">
