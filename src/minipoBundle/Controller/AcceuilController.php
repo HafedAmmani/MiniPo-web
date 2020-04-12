@@ -53,9 +53,9 @@ class AcceuilController extends Controller
         $pieChart->getData()->setArrayToDataTable(
             $data
         );
-        $pieChart->getOptions()->setTitle('Pourcentages des Catégorie pour les Conge');
+        $pieChart->getOptions()->setTitle('Pourcentages des nombres de jour pour les employe');
         $pieChart->getOptions()->setHeight(500);
-        $pieChart->getOptions()->setWidth(900);
+        $pieChart->getOptions()->setWidth(700);
         $pieChart->getOptions()->getTitleTextStyle()->setBold(true);
         $pieChart->getOptions()->getTitleTextStyle()->setColor('#009900');
         $pieChart->getOptions()->getTitleTextStyle()->setItalic(true);

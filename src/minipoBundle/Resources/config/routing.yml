@@ -61,3 +61,6 @@ minipo_AccepterConge:
 minipo_acceuilRH:
     path:     /adminRH/acceuilRH
     defaults: { _controller: minipoBundle:Acceuil:acceuil}
+minipo_profile:
+    path:     /adminRH/Profile
+    defaults: { _controller: minipoBundle:Profile:ProfileEmp}

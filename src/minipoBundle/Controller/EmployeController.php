@@ -86,11 +86,13 @@ class EmployeController extends Controller
         $user = new User();
         $form = $this->createForm(EmployerType::class,$user);
         $form = $form->handleRequest($request);
-        if ($form->isSubmitted()){
+        if ($form->isSubmitted() and $form->isValid()){
+            $user->setRoles(['employe']);
+            $user->setDate(new \DateTime('now'));
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
-            return $this->redirectToRoute('club7_read1');
+            return $this->redirectToRoute('minipo_Afficher');
         }
         return $this->render('@minipo/RH/AjouterEmploye.html.twig',array('form'=> $form->createView()));
     }

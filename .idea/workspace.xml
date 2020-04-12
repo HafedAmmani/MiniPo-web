@@ -93,6 +93,18 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Minipo\app\Resources\views" />
+      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Resources\views\RH" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="s doctrine:schema:update --force" />
+      <command value="s debug:router " />
+    </option>
+  </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
@@ -118,7 +130,9 @@
       <workItem from="1585425243922" duration="5721000" />
       <workItem from="1586552198683" duration="8345000" />
       <workItem from="1586560864135" duration="225000" />
-      <workItem from="1586561726167" duration="2918000" />
+      <workItem from="1586561726167" duration="4278000" />
+      <workItem from="1586591266243" duration="1716000" />
+      <workItem from="1586713286858" duration="17888000" />
     </task>
     <servers />
   </component>
@@ -126,21 +140,45 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586555221215">
+    <state x="562" y="149" key="#com.intellij.ide.util.MemberChooser" timestamp="1586715725149">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1586555221215" />
+    <state x="562" y="149" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1586715725149" />
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586716222721">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1586716222721" />
     <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1585434509146">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1585434509146" />
-    <state x="537" y="248" key="NewPhpClassDialog" timestamp="1586552734629">
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1586723145236">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="537" y="248" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1586552734629" />
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1586561751147">
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1586723145236" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1586723145236">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1586561751147" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1586723145236" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1586723145236">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1586723145236" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1586723145236">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1586723145236" />
+    <state x="537" y="248" key="NewPhpClassDialog" timestamp="1586716085908">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="537" y="248" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1586716085908" />
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1586713296275">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1586713296275" />
+    <state x="425" y="197" width="672" height="677" key="run.anything.popup" timestamp="1586724125826">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="425" y="197" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1586724125826" />
   </component>
 </project>

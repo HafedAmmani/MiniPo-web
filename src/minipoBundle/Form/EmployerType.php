@@ -20,9 +20,8 @@ class EmployerType extends AbstractType
             ->add('email')
             ->add('tel')
             ->add('salaire')
-            ->add('date')
-            ->add('save',SubmitType::class)
-            ;
+            ->add('save',SubmitType::class,['attr'=>['formnovalidate'=>'formnovalidate']]);
+
     }/**
      * {@inheritdoc}
      */

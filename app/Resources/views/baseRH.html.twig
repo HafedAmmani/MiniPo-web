@@ -194,23 +194,21 @@
                                 <!-- Profile -->
                                 <!-- ============================================================== -->
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('assets/images/users/1.jpg') }}" alt="user" class="profile-pic" /></a>
+                                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('assets/images/img/'~app.user.image) }}" alt="user" class="profile-pic" /></a>
                                     <div class="dropdown-menu dropdown-menu-right scale-up">
                                         <ul class="dropdown-user">
                                             <li>
                                                 <div class="dw-user-box">
-                                                    <div class="u-img"><img src="{{ asset('assets/images/users/1.jpg') }}" alt="user"></div>
+                                                    <div class="u-img"><img src="{{ asset('assets/images/img/'~app.user.image) }}" alt="user"></div>
                                                     <div class="u-text">
-                                                        <h4>Steave Jobs</h4>
-                                                        <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+                                                        <h4>{{ app.user.Lastname }} {{ app.user.Firstname }}</h4>
+                                                        <p class="text-muted">{{ app.user.email }}</p><a href="{{ path("fos_user_profile_edit") }}" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
                                                 </div>
                                             </li>
                                             <li role="separator" class="divider"></li>
-                                            <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
-                                            <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
+                                            <li><a href="{{ path("fos_user_profile_edit") }}"><i class="ti-user"></i> My Profile</a></li>
+
                                             <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
-                                            <li role="separator" class="divider"></li>
-                                            <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
                                             <li role="separator" class="divider"></li>
                                             <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
                                         </ul>
@@ -232,7 +230,7 @@
                     <!-- User profile -->
                     <div class="user-profile">
                         <!-- User profile image -->
-                        <div class="profile-img"> <img src="{{ asset('assets/images/users/profile.png') }}" alt="user" />
+                        <div class="profile-img"> <img src="{{ asset('assets/images/img/'~app.user.image) }}" alt="user" />
                             <!-- this is blinking heartbit-->
                             <div class="notify setpos"> {#<span class="heartbit"></span> <span class="point"></span>#} </div>
                         </div>
@@ -246,7 +244,7 @@
                             <a href="{{ path('fos_user_security_logout') }}" class="" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
                             <div class="dropdown-menu animated flipInY">
                                 <!-- text-->
-                                <a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
+                                <a href="{{ path("fos_user_profile_edit") }}" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
                                 <!-- text-->
                                 <a href="#" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a>
                                 <!-- text-->
@@ -272,7 +270,7 @@
                             <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-account-multiple-plus"></i><span class="hide-menu">Ajouter Employe</span></a>
                                 <ul aria-expanded="false" class="collapse">
                                     <li><a href="{{ path('minipo_Afficher') }}">Liste Employe </a></li>
-                                    <li><a href="{{ path('minipo_Ajouter') }}">Ajouter Employe </a></li>
+                                    <li><a href="{{ path('minipo_AjouterEmp') }}">Ajouter Employe </a></li>
                                 </ul>
                             </li>
                             <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-account-switch"></i><span class="hide-menu">Affecter Equipe</span></a>
