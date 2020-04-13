@@ -74,6 +74,8 @@
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/cmen/google-charts-bundle" />
       <path value="$PROJECT_DIR$/vendor/yellowskies/qr-code-bundle" />
+      <path value="$PROJECT_DIR$/vendor/gregwar/captcha" />
+      <path value="$PROJECT_DIR$/vendor/gregwar/captcha-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ZlsoW04SCBaTKCv8GW4uSQhGMp" />
@@ -103,6 +105,7 @@
     <option name="myCommands">
       <command value="s doctrine:schema:update --force" />
       <command value="s debug:router " />
+      <command value="c require gregwar/captcha-bundle" />
     </option>
   </component>
   <component name="ServiceViewManager">
@@ -133,6 +136,7 @@
       <workItem from="1586561726167" duration="4278000" />
       <workItem from="1586591266243" duration="1716000" />
       <workItem from="1586713286858" duration="17888000" />
+      <workItem from="1586740845118" duration="3306000" />
     </task>
     <servers />
   </component>
@@ -152,33 +156,33 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1585434509146" />
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1586723145236">
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1586741736778">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1586723145236" />
-    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1586723145236">
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1586741736778" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1586741736777">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1586723145236" />
-    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1586723145236">
+    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1586741736777" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1586741736777">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1586723145236" />
-    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1586723145236">
+    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1586741736777" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1586741736777">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1586723145236" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1586741736777" />
     <state x="537" y="248" key="NewPhpClassDialog" timestamp="1586716085908">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="537" y="248" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1586716085908" />
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1586713296275">
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1586740845221">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1586713296275" />
-    <state x="425" y="197" width="672" height="677" key="run.anything.popup" timestamp="1586724125826">
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1586740845221" />
+    <state x="425" y="197" width="672" height="677" key="run.anything.popup" timestamp="1586740882623">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="197" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1586724125826" />
+    <state x="425" y="197" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1586740882623" />
   </component>
 </project>

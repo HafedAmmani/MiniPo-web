@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Gregwar\CaptchaBundle\Type\CaptchaType;
 
 class EmployerType extends AbstractType
 {
@@ -20,6 +21,11 @@ class EmployerType extends AbstractType
             ->add('email')
             ->add('tel')
             ->add('salaire')
+            ->add('captcha', CaptchaType::class, array(
+                'width' => 200,
+                'height' => 50,
+                'length' => 6,
+            ))
             ->add('save',SubmitType::class,['attr'=>['formnovalidate'=>'formnovalidate']]);
 
     }/**
