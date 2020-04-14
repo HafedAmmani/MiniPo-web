@@ -4,7 +4,7 @@ namespace minipoBundle\Controller;
 
 use minipoBundle\Entity\Livraison;
 use minipoBundle\Form\LivraisonType;
-use minipoBundle\Form\UpdateType;
+use minipoBundle\Form\UpdateLType;
 use Swift_Message;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -41,7 +41,7 @@ class LivraisonBackController extends Controller
         $em= $this->getDoctrine()->getManager();
         $liv = $em->getRepository(Livraison::class)
             ->find($id);
-        $form = $this->createForm(UpdateType::class, $liv);
+        $form = $this->createForm(UpdateLType::class, $liv);
         $form = $form->handleRequest($request);
         if($form->isSubmitted()){
             $em = $this->getDoctrine()->getManager();

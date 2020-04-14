@@ -4,7 +4,7 @@ namespace minipoBundle\Controller;
 
 use minipoBundle\Entity\Livraison;
 use minipoBundle\Form\RechercheDestType;
-use minipoBundle\Form\RechercheType;
+use minipoBundle\Form\RechercheLType;
 use minipoBundle\Form\UpdateEtatType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -35,7 +35,7 @@ class LivraisonFrontController extends Controller
     }
     public function searchByEtatAction(Request $request){
         $liv = new Livraison();
-        $form = $this->createForm(RechercheType::class,$liv);
+        $form = $this->createForm(RechercheLType::class,$liv);
         $form = $form->handleRequest($request);
         if($form->isSubmitted()){
             $livs = $this->getDoctrine()->getRepository(Livraison::class)

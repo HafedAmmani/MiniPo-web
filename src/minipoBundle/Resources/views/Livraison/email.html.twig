@@ -280,7 +280,7 @@ When you are ready to add this to your Shopify site. You should use http://zurb.
                             <br/>
 
                             <h4>Your Order <small>{{ data[1].datec |date("m/d/Y")}}</small></h4>
-                            <p>Thank you for placing your order with MiniPo. This email is to confirm your delivery {{ data[0].matriculeL }},you will be delivered at 2020-02-18 by our friendly delivery guy {{ data[0].id.username }}.</p>
+                            <p>Thank you for placing your order with MiniPo. This email is to confirm your delivery {{ data[0].matriculeL }},you will be delivered at {{ data[1].datec |date("m/d/Y")}} by our friendly delivery guy {{ data[0].id.username }}.</p>
 
                             <br/>
 
