@@ -25,12 +25,29 @@ class EquipeController extends Controller
         $affectation = new Affectation();
         $em = $this->getDoctrine()->getManager();
         if($request->isMethod('POST')){
+            $nb=0;
+            foreach ($listAffectation as $listaff){
+                $nom=$request->get('equipe');
+                if($listaff->getNomeq()==$nom){
+                $nb=$nb+1;}
+
+            }
+
+            foreach ($listEquipe as $listeq){
+            if($request->get('equipe') == $listeq->getNomeq() && $nb < $listeq->getNombre()){
             $affectation->setNom($request->get('nom'));
             $affectation->setNomeq($request->get('equipe'));
             $em->persist($affectation);
             $em->flush();
+            $this->addFlash("success", "Success, l'employe est affecté");
             return $this->redirectToRoute('minipo_Affecter');
+            }elseif($nb > $listeq->getNombre()){
+                $this->addFlash("error", "Vous depassez le nombre maximum de ce equipe");
+            }
+
+            }
         }
+
 
         return ($this->render('@minipo/RH/Equipe/AffecterEquipe.html.twig',array("listeEmploye"=>$listEmploye,"listequipe"=>$listEquipe,"listaffectation"=>$listAffectation)));
     }
@@ -45,11 +62,16 @@ class EquipeController extends Controller
         $equipe = new Equipe();
         $em = $this->getDoctrine()->getManager();
         if($request->isMethod('POST')){
+
             $equipe->setNomeq($request->get('nomeq'));
             $equipe->setNombre($request->get('nombre'));
             $em->persist($equipe);
             $em->flush();
+            $this->addFlash("success", "Success, l'equipe est ajouté");
             return $this->redirectToRoute('minipo_Equipe');
+
+
+
         }
 
         return ($this->render('@minipo/RH/Equipe/GererEquipe.html.twig',array("listequipe"=>$listEquipe,"SommeEquipe"=>$SommeEquipe)));

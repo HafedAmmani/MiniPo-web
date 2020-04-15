@@ -71,7 +71,6 @@ class User extends BaseUser
 
     /**
      * @var string
-     * @Assert\NotBlank
      * @Assert\Regex("^[0-9]$^")
      * @ORM\Column(name="salaire", type="string", length=150, nullable=true)
      */
@@ -87,7 +86,6 @@ class User extends BaseUser
     protected $tel;
     /**
      * @var string
-     *
      * @ORM\Column(name="image", type="string", length=150, nullable=true)
      */
     protected $image;

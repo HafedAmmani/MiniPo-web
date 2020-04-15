@@ -1,5 +1,5 @@
 {% extends 'baseRH.html.twig' %}
-{% block title %}Employe en Conge{% endblock %}
+{% block title %}Acceuil{% endblock %}
 
 {% block add_style %}
     <link href="{{ asset('assets/plugins/calendar/dist/fullcalendar.css') }}" rel="stylesheet" />
@@ -39,7 +39,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="m-b-0"><i class="mdi mdi-alert-circle text-success"></i></h2>
+                            <h2 class="m-b-0"><a href="{{ path("minipo_Afficher") }}"><i class="mdi mdi-alert-circle text-success"></i></a></h2>
                             <h3 class="">{{ SommeEmploye }}</h3>
                             <h6 class="card-subtitle">Total employe</h6></div>
                     </div>
@@ -51,7 +51,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="m-b-0"><i class="mdi mdi-briefcase-check text-info"></i></h2>
+                            <h2 class="m-b-0"><a href="{{ path("minipo_Affecter") }}"><i class="mdi mdi-briefcase-check text-info"></i></a></h2>
                             <h3 class="">{{ SommeEmployeAffec }}</h3>
                             <h6 class="card-subtitle">Employe Affecté</h6></div>
                     </div>
@@ -63,7 +63,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="m-b-0"><i class="mdi mdi-buffer text-warning"></i></h2>
+                            <h2 class="m-b-0"><a href="{{ path("minipo_DemandeConge") }}" ><i class="mdi mdi-buffer text-warning"></i></a></h2>
                             <h3 class="">{{ listconge|length }}</h3>
                             <h6 class="card-subtitle">Demande de Conge</h6></div>
                     </div>
@@ -91,49 +91,20 @@
             </div>
             <!-- Column -->
             <div class="col-lg-4 col-xlg-3">
-                <div class="card card-inverse card-info">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="m-r-20 align-self-center">
-                                <h1 class="text-white"><i class="ti-light-bulb"></i></h1></div>
-                            <div>
-                                <h3 class="card-title">Sales Analytics</h3>
-                                <h6 class="card-subtitle">March  2017</h6> </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6 align-self-center">
-                                <h2 class="font-light text-white"><sup><small><i class="ti-arrow-up"></i></small></sup>35487</h2>
-                            </div>
-                            <div class="col-6 p-t-10 p-b-20 text-right">
-                                <div class="spark-count" style="height:65px"></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card card-inverse">
+                    <div id="bar"></div>
                 </div>
-                <div class="card card-inverse card-success">
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <div class="m-r-20 align-self-center">
-                                <h1 class="text-white"><i class="ti-pie-chart"></i></h1></div>
-                            <div>
-                                <h3 class="card-title">Bandwidth usage</h3>
-                                <h6 class="card-subtitle">March  2017</h6> </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6 align-self-center">
-                                <h2 class="font-light text-white">50 GB</h2>
-                            </div>
-                            <div class="col-6 p-t-10 p-b-20 text-right align-self-center">
-                                <div class="spark-count2" style="height:65px"></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card card-inverse ">
+
+                        <div id="oldColumnChart"></div>
+
                 </div>
             </div>
             <!-- Column -->
         </div>
 
-        <!-- Row -->
+
+        {#<!-- Row -->
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -227,7 +198,7 @@
                 </div>
             </div>
         </div>
-        <!-- Row -->
+        <!-- Row -->#}
 
         <!-- ============================================================== -->
         <!-- End PAge Content -->
@@ -245,6 +216,12 @@
 {% endblock %}
 {% block add_script %}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> <script type="text/javascript"> {{ gc_draw(piechart, 'div_chart') }} </script>
+
+    <script type="text/javascript">
+        {{ gc_draw([oldColumnChart], ['oldColumnChart']) }}
+        {{ gc_draw([bar], ['bar']) }}
+    </script>
+
     <!-- Calendar JavaScript -->
     <script src="{{ asset('assets/plugins/calendar/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/moment/moment.js') }}"></script>

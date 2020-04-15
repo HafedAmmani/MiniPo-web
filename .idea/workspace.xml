@@ -87,7 +87,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EspritClub" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../integration/Minipo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -103,9 +103,9 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
+      <command value="c require gregwar/captcha-bundle" />
       <command value="s doctrine:schema:update --force" />
       <command value="s debug:router " />
-      <command value="c require gregwar/captcha-bundle" />
     </option>
   </component>
   <component name="ServiceViewManager">
@@ -136,7 +136,15 @@
       <workItem from="1586561726167" duration="4278000" />
       <workItem from="1586591266243" duration="1716000" />
       <workItem from="1586713286858" duration="17888000" />
-      <workItem from="1586740845118" duration="3306000" />
+      <workItem from="1586740845118" duration="4908000" />
+      <workItem from="1586812495290" duration="8885000" />
+      <workItem from="1586855502197" duration="305000" />
+      <workItem from="1586864106869" duration="4089000" />
+      <workItem from="1586882553328" duration="19455000" />
+      <workItem from="1586913601629" duration="2443000" />
+      <workItem from="1586944900981" duration="3458000" />
+      <workItem from="1586956368135" duration="593000" />
+      <workItem from="1586979468229" duration="237000" />
     </task>
     <servers />
   </component>
@@ -144,45 +152,61 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="562" y="149" key="#com.intellij.ide.util.MemberChooser" timestamp="1586715725149">
+    <state x="562" y="149" key="#com.intellij.ide.util.MemberChooser" timestamp="1586865151621">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="562" y="149" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1586715725149" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586716222721">
+    <state x="562" y="149" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1586865151621" />
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586886876141">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1586716222721" />
-    <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1585434509146">
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1586886876141" />
+    <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1586979667370">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1585434509146" />
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1586741736778">
+    <state x="549" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1586979667370" />
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1586900732039">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1586741736778" />
-    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1586741736777">
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1586900732039" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1586900732039">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1586741736777" />
-    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1586741736777">
+    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1586900732039" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1586900732038">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1586741736777" />
-    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1586741736777">
+    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1586900732038" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1586900732039">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1586741736777" />
-    <state x="537" y="248" key="NewPhpClassDialog" timestamp="1586716085908">
+    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1586900732039" />
+    <state x="537" y="248" key="NewPhpClassDialog" timestamp="1586864382083">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="537" y="248" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1586716085908" />
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1586740845221">
+    <state x="537" y="248" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1586864382083" />
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1586944900920">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1586740845221" />
-    <state x="425" y="197" width="672" height="677" key="run.anything.popup" timestamp="1586740882623">
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1586944900920" />
+    <state x="425" y="197" width="672" height="677" key="run.anything.popup" timestamp="1586900647156">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="197" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1586740882623" />
+    <state x="425" y="197" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1586900647156" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/minipoBundle/Controller/EquipeController.php</url>
+          <line>23</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/minipoBundle/Controller/AcceuilController.php</url>
+          <line>138</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
