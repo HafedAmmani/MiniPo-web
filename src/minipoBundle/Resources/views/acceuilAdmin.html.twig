@@ -1,0 +1,257 @@
+{% extends 'base.html.twig' %}
+{% block title %}Acceuil{% endblock %}
+{% block add_style %}
+    <link href="{{ asset('assets/plugins/morrisjs/morris.css') }}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h3 class="text-themecolor">Acceuil</h3>
+        </div>
+
+        <div>
+            <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <!-- Column -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Row -->
+                        <div class="row">
+                            <div class="col-8"><a href="{{ path('minipo_afficheLiv') }}"><h2><i class="fa fa-truck"></i> {{ sumliv }}</h2></a>
+                                <h6>Total livraison</h6></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Row -->
+                        <div class="row">
+                            <div class="col-8"><a href="{{ path('minipo_AfficherToutesReclamation') }}"><h2 class=""><i class="fa fa-file-text"></i> {{ Sommerec }}</h2></a>
+                                <h6>Reclamations client</h6></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Row -->
+                        <div class="row">
+                            <div class="col-10"><a href="{{ path('minipo_AfficherToutesReclamationEmploye') }}"><h2><i class="fa fa-file-text"></i> {{ Sommerecemp }}</h2></a>
+                                <h6>Reclamations employe</h6></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Row -->
+                        <div class="row">
+                            <div class="col-10"><a href="{{ path('minipo_allCommandes') }}"><h2><i class="fa fa-spinner"></i> {{ sc }}</h2></a>
+                                <h6>Commandes en attente</h6></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Row -->
+        <div class="row">
+            <div class="col-lg-8 col-md-7">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap">
+                            <div>
+                                <h4 class="card-title">Etat des commandes</h4>
+                            </div>
+                        </div>
+                        {#<div id="oldColumnChart" style="height: 405px;"></div>#}
+                        <div id="oldColumnChart" style="height: 405px;"></div>
+                    </div>
+                </div>
+                <div class="card card-default">
+                    <div class="card-header">
+                        <div class="card-actions">
+                            <a class="" data-action="collapse"><i class="ti-minus"></i></a>
+                            <a class="btn-minimize" data-action="expand"><i class="mdi mdi-arrow-expand"></i></a>
+                            <a class="btn-close" data-action="close"><i class="ti-close"></i></a>
+                        </div>
+                        <h4 class="card-title m-b-0">Les produits en vente</h4>
+                    </div>
+                    <div class="card-body collapse show">
+                        <div class="table-responsive">
+                            <table class="table product-overview">
+                                <thead>
+                                <tr>
+                                    <th>Designation</th>
+                                    <th>Photo</th>
+                                    <th>Categorie</th>
+                                    <th>Prix</th>
+                                    <th>Quantité</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for elt in prod %}
+                                    <tr>
+                                        <td>{{ elt.designation }}</td>
+                                        <td><img src="{{ asset('assetsC/img/products/'~elt.photo) }}" style="width: 50px;height: 50px;"></td>
+                                        <td>{{ elt.idcateg.nom }}</td>
+                                        <td>{{ elt.prix }}</td>
+                                        <td>{{ elt.qtestock }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            {% block pagination %}<div class="text-right">{{ knp_pagination_render(prod) }}</div>{% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-5">
+                <!-- Column -->
+                <div class="card card-default">
+                    <div class="card-header">
+                        <div class="card-actions">
+                            <a class="" data-action="collapse"><i class="ti-minus"></i></a>
+                            <a class="btn-minimize" data-action="expand"><i class="mdi mdi-arrow-expand"></i></a>
+                            <a class="btn-close" data-action="close"><i class="ti-close"></i></a>
+                        </div>
+                        <h4 class="card-title m-b-0">Etat facture</h4>
+                    </div>
+                    <div class="card-body collapse show">
+                        <div id="div_chart" class="ecomm-donute" style="height: 317px;"></div>
+                        <ul class="list-inline m-t-20 text-center">
+                            <li >
+                                <h6 class="text-muted"><i class="fa fa-circle text-info"></i> Payée</h6>
+                            </li>
+                            <li>
+                                <h6 class="text-muted"><i class="fa fa-circle text-danger"></i> Non payée</h6>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- Column -->
+                <div class="card card-default">
+                    <div class="card-header">
+                        <div class="card-actions">
+                            <a class="" data-action="collapse"><i class="ti-minus"></i></a>
+                            <a class="btn-minimize" data-action="expand"><i class="mdi mdi-arrow-expand"></i></a>
+                            <a class="btn-close" data-action="close"><i class="ti-close"></i></a>
+                        </div>
+                        <h4 class="card-title m-b-0">Offer for you</h4>
+                    </div>
+                    <div class="card-body collapse show bg-info">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item flex-column">
+                                    <i class="fa fa-shopping-cart fa-2x text-white"></i>
+                                    <p class="text-white">25th Jan</p>
+                                    <h3 class="text-white font-light">Now Get <span class="font-bold">50% Off</span><br>
+                                        on buy</h3>
+                                    <div class="text-white m-t-20">
+                                        <i>- Ecommerce site</i>
+                                    </div>
+                                </div>
+                                <div class="carousel-item flex-column">
+                                    <i class="fa fa-shopping-cart fa-2x text-white"></i>
+                                    <p class="text-white">25th Jan</p>
+                                    <h3 class="text-white font-light">Now Get <span class="font-bold">50% Off</span><br>
+                                        on buy</h3>
+                                    <div class="text-white m-t-20">
+                                        <i>- Ecommerce site</i>
+                                    </div>
+                                </div>
+                                <div class="carousel-item flex-column active">
+                                    <i class="fa fa-shopping-cart fa-2x text-white"></i>
+                                    <p class="text-white">25th Jan</p>
+                                    <h3 class="text-white font-light">Now Get <span class="font-bold">50% Off</span><br>
+                                        on buy</h3>
+                                    <div class="text-white m-t-20">
+                                        <i>- Ecommerce site</i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column -->
+                <div class="card card-default">
+                    <div class="card-header">
+                        <div class="card-actions">
+                            <a class="" data-action="collapse"><i class="ti-minus"></i></a>
+                            <a class="btn-minimize" data-action="expand"><i class="mdi mdi-arrow-expand"></i></a>
+                            <a class="btn-close" data-action="close"><i class="ti-close"></i></a>
+                        </div>
+                        <h4 class="card-title m-b-0">Latest Products</h4>
+                    </div>
+                    <div class="card-body p-0 collapse show text-center">
+                        <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+                            <img src="{{ asset('assetsC/img/products/'~lastprod[lastprod|length-1].photo) }}" style="width: 250px;height: 250px;">
+                            <h4>{{ lastprod[lastprod|length-1].designation}}</h4>
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item flex-column">
+
+                                        <img src="{{ asset('assetsC/img/products/'~lastprod[lastprod|length-1].photo) }}" style="width: 50px;height: 50px;">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Row -->
+
+
+        <!-- Row -->
+
+        <!-- Row -->
+        <!-- Row -->
+
+        <!-- Row -->
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+
+{% endblock %}
+{% block add_script %}
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        {{ gc_draw(piechart, 'div_chart') }}
+    </script>
+    <script type="text/javascript">
+        {{ gc_draw([oldColumnChart], ['oldColumnChart']) }}
+    </script>
+    <script src="{{ asset('assets/plugins/raphael/raphael-min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/morrisjs/morris.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/sparkline/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ ('js/dashboard4.js') }}"></script>
+{% endblock %}

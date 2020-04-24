@@ -1,0 +1,109 @@
+{% extends 'baseRH.html.twig' %}
+{% block title %}Affecter Equipe{% endblock %}
+{% block content %}
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h3 class="text-themecolor">Gerer des Equipes</h3>
+        </div>
+        <div class="col-md-7 col-4 align-self-center">
+            <div class="d-flex m-t-10 justify-content-end">
+                <div class="d-flex m-r-20 m-l-10 hidden-md-down">
+                    <div class="chart-text m-r-10">
+                        <h5 class="m-b-0"><small>Capacite total des equipes</small></h5>
+                        <h4 class="m-t-0 text-info">{{ SommeEquipe }}</h4></div>
+                    <div class="spark-chart">
+                        <div id="monthchart"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="">
+                <button class="right-side-toggle waves-effect waves-light btn-success btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+            </div>
+        </div>
+    </div>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <form class="m-t-40" novalidate method="post">
+                        <div class="form-group">
+                            <h5>Nom d'equipe <span class="text-danger">*</span></h5>
+                            <div class="controls">
+                                <input type="text" name="nomeq" class="form-control" required data-validation-required-message="This field is required"> </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <h5>Nombre <span class="text-danger">*</span></h5>
+                            <div class="input-group">
+
+                                <input type="number" name="nombre" min="3" max="20" class="form-control" required data-validation-required-message="This field is required">
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="text-xs-right">
+                            <button type="submit" class="btn btn-info">Submit</button>
+                            <button type="reset" class="btn btn-inverse">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Nom d'equipe</th>
+                            <th>Nombre</th>
+                            <th class="text-nowrap">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for elt in listequipe %}
+                            <tr>
+                                <td>{{ elt.idEq }}</td>
+                                <td>{{ elt.NomEq }}</td>
+                                <td>{{ elt.Nombre }}</td>
+                                <td class="text-nowrap">
+                                    <a href="{{ path('minipo_updateEquipe',
+                                        {'id':elt.idEq}) }}" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                    <a href="{{ path('minipo_deleteEquipe',
+                                        {'id':elt.idEq}) }}" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block add_script %}
+    <script src="{{ asset('js/validation.js') }}"></script>
+    <script>
+        ! function(window, document, $) {
+            "use strict";
+            $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(), $(".skin-square input").iCheck({
+                checkboxClass: "icheckbox_square-green",
+                radioClass: "iradio_square-green"
+            }), $(".touchspin").TouchSpin(), $(".switchBootstrap").bootstrapSwitch();
+        }(window, document, jQuery);
+    </script>
+{% endblock %}

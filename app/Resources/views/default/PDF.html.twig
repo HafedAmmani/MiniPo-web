@@ -1,0 +1,111 @@
+<!doctype html>
+<html class="no-js" lang="en" style="height:100%">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    {% block title %}<title>{{ title }}</title> {% endblock %}
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assetsC/img/favicon.ico')}}">
+    <link rel="apple-touch-icon" href="{{ asset('assetsC/apple-touch-icon.png') }}">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="C:\wamp64\www\integration\Minipo\web\assetsC\css\style.css">
+</head>
+<body style="color:#222;height:100%;position:relative;">
+{% if lc==NULL %}
+    Pas de formation
+{% else %}
+
+    <img src="C:\wamp64\www\integration\Minipo\web\assetsC\img\slider\logo2.png" alt="Rideo" style="position:absolute;top:7px;left:0;width:20%;"/>
+
+    <h1 style="position:absolute;top:200px;margin-left:360px;">Facture</h1><br><br><br><br><br>
+    <br/><br/>
+    <div style="position:absolute;top:40px;right:0;width:30%;">
+        <div style="color:#555;float:left;width:105px;text-align:right;">De:</div>
+        <div style="margin-left: 115px;border-left: 1px solid #cccccc;padding-left: 10px;">
+            <strong>Minipo Groupe</strong>
+            <p>Site: www.Minipo.com</p>
+            <p>le: {{ d|date('d/m/yy') }}</p>
+
+        </div>
+    </div>
+
+
+
+    <section class="cart-page section-padding">
+        <div class="container">
+
+            <div class="col-xs-12">
+                <div class="single-check p-bottom50 clearfix" style="top:300px;">
+                    <div class="check-title">
+                        <br/><br/><br/><br/><br/>
+                        <strong><LABEL>Facture Réference: {{ f.idfact }} </LABEL></strong><br/><br/>
+                        <LABEL>date d'emission: {{ f.datef|date('d/m/yy') }}</LABEL><br/><br/>
+                        <LABEL>Etat Facture: {{ f.etatf }}</LABEL><br/><br/>
+                        <LABEL>client: {{ lc[0].idcmd.id.firstname~" "~lc[0].idcmd.id.lastname }}</LABEL><br/><br/>
+                        <label>Contact: {{ lc[0].idcmd.id.tel }}</label><br/><br/><br/>
+                    </div>
+
+                    <div class="table-responsive table-two">
+                        <table class="order-table text-center">
+                            <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Prix Unitaire</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            {% for elt in lc %}
+                                <tr>
+                                    <td class="td-text" >
+                                        <p style="margin-left:200px;">{{ elt.idprod.designation }}</p>
+
+                                    </td>
+                                    <td><p style="margin-left:60px;width:20px;">{{ elt.idprod.prix }}</p></td>
+                                    <td><p style="margin-left:45px;width:20px;">{{ elt.qte }}</p></td>
+                                    <td><p style="margin-left:25px;width:20px;">{{ elt.subtotal }}</p></td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="single-check p-bottom50">
+                    <div class="check-title">
+                        <h3>Facture Total:</h3>
+                    </div>
+                    <div class="subtotal clearfix">
+                        <p>Total <strong class="floatright"><span>{{ lc[0].idcmd.total }}</span></strong></p>
+                    </div>
+                    <br/><br/><br/>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+    <footer>
+
+        <p style="position: absolute;left:780px;top:1000px;height:120px;">Signature<p>
+            <img src="C:\wamp64\www\integration\Minipo\web\assetsC\img\blog\ss.png" style="position:absolute;left:700px;top:1030px;width:20%;"/>
+
+            <div style="border-top:1px solid #cccccc;position:absolute;bottom:0;left:0;right:0;padding:1em 5px 0 5px;">
+        <p>Z.I. Chotrana II B.P. 160 Pôle Technologique El Ghazela - Ariana 2083</p>
+        <p>contact tel : +216 71 000 000 / +216 50 000 000 / Email:projetminipo@gmail.com</p>
+        </div>
+
+    </footer>
+{% endif %}
+</body>
+</html>

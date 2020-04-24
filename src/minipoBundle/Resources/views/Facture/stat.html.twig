@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+     {% block msg %}{% endblock %}
+    {% block mail %}{% endblock %}
+    {% block search %}{% endblock %}
+{% block img2 %}{% endblock %}
+    {% block img %}
+        <div class="profile-img"> <img src="{{ asset('assets/images/img/'~img) }}" alt="user" /></div>
+    {% endblock %}
+
+    {% block reclamationclient   %}
+
+<div id="div_chart"></div><br><br><br><br>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    {{ gc_draw(piechart, 'div_chart') }}
+</script>
+
+
+<div id="oldColumnChart"></div>
+<div id="newColumnChart"></div>
+<div id="diffColumnChart"></div>
+
+
+<script type="text/javascript">
+    {{ gc_draw([oldColumnChart, newColumnChart, diffColumnChart], ['oldColumnChart', 'newColumnChart', 'diffColumnChart']) }}
+</script>
+
+{#
+ {{ mukadi_chart(chart) }}
+ <script src="/bundles/mukadichartjs/jquery.js"></script>
+ <script src="/bundles/mukadichartjs/Chart.bundle.min.js"></script>
+ <script src="/bundles/mukadichartjs/mukadi.chart.min.js"></script>
+ <script type="text/javascript">
+     #}
+
+
+</script>
+
+
+{% endblock %}
+

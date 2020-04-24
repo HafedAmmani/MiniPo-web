@@ -1,0 +1,86 @@
+{% extends 'BaseReclamationClient.html.twig' %}
+
+    {% block title %}Vos Factures{% endblock %}
+
+    {% block reclamationclient %}
+
+
+        {% if fact==NULL %}
+            Pas de formation
+        {% else %}
+            <div class="text-right">
+                <input type='text' name="idl" id="search" style="width: 25%" placeholder="chercher ici"/>
+                {#<i id="search" class="fa fa-search"></i>#}
+            </div>
+
+            <br><br>
+
+            <table style="width:100%;max-width:100%;margin-bottom:20px" id="client_table">
+                <tr>
+                    <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">Reference Facture</th>
+                    <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">Date Facture</th>
+                    <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">Etat Facture</th>
+                    <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">Reference Commande</th>
+                    <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">Total</th>
+                    <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">Action</th>
+                </tr>
+                {% for elt in fact %}
+                    <tr>
+                        <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">{{ elt.idfact }}</td>
+                        <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">{{ elt.datef|date('d/m/y')}}</td>
+                        <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">{{ elt.etatf }}</td>
+                        <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">{{ elt.idcmd.refc }}</td>
+                        <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">{{ elt.idcmd.total }}</td>
+                        <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">
+
+
+                            <a href=" {{path('minipo_index',{'idFact':elt.idfact} )  }} " >
+                                <i class="fa fa-eye" title="detail this bill"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+            <br><br><div class="text-center">{{ knp_pagination_render(fact) }}</div>
+
+
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+            <script>
+                $(document).ready(function() {
+                    $('#client_table tr').dataTable({"sPaginationType": "full_numbers"});// note pagination will be done by datatables
+                });
+                $(document).ready(function(){
+                    $('#search').keyup(function(){
+                        search_table($(this).val());
+                    });
+                    function search_table(value){
+                        $('#client_table tr').each(function(){
+                            var found = 'false';
+                            $(this).each(function(){
+                                if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                                {
+                                    found = 'true';
+                                }
+                            });
+                            if(found === 'true')
+                            {
+                                $(this).show();
+                            }
+                            else
+                            {
+                                $(this).hide();
+                            }
+                        });
+                    }
+                });
+            </script>
+
+        {% endif %}
+
+
+
+    {% endblock %}
+

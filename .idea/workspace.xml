@@ -10,7 +10,7 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="f44d40fd-6b19-4888-8399-d39dc5891137" />
+      <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="6ef2e357-2801-4c4a-9374-50ccaad2b802" />
     </execution>
   </component>
   <component name="DatabaseView">
@@ -86,6 +86,23 @@
       <path value="$PROJECT_DIR$/vendor/hwi/oauth-bundle" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
+      <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/blackknight467/star-rating-bundle" />
+      <path value="$PROJECT_DIR$/vendor/pusher/pusher-php-server" />
+      <path value="$PROJECT_DIR$/vendor/mrad/notifications-bundle" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/sodium_compat" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-json" />
+      <path value="$PROJECT_DIR$/vendor/ob/highcharts-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/cmen/google-charts-bundle" />
+      <path value="$PROJECT_DIR$/vendor/gregwar/captcha-bundle" />
+      <path value="$PROJECT_DIR$/vendor/gregwar/captcha" />
+      <path value="$PROJECT_DIR$/vendor/yellowskies/qr-code-bundle" />
+      <path value="$PROJECT_DIR$/vendor/stripe/stripe-php" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Z5mG4jvYLFw5cm0IWbPLx0ItBB" />
@@ -98,7 +115,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../git/Minipo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Minipo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -110,20 +127,22 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Entity" />
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Resources\views\Default" />
-      <recent name="C:\wamp64\www\Minipo\web\aasetsLogin" />
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Repository" />
-      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Resources\views\RH" />
+      <recent name="C:\wamp64\www\integration\Minipo\web\assets\images\img" />
+      <recent name="C:\wamp64\www\Minipo\web\assets\images" />
+      <recent name="C:\wamp64\www\Minipo\src\minipoBundle\Controller" />
+      <recent name="C:\wamp64\www\Minipo\var" />
+      <recent name="C:\wamp64\www\Minipo\app\Resources\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Minipo\app\Resources\views" />
-      <recent name="C:\wamp64\www\Minipo\web\assetsC\js" />
+      <recent name="C:\wamp64\www\integration\Minipo\app\Resources\views" />
+      <recent name="C:\wamp64\www\Minipo\web\assetsC\img\slider" />
+      <recent name="C:\wamp64\www\Minipo\web\assetsC\img" />
+      <recent name="C:\wamp64\www\Minipo\var\cache\dev" />
+      <recent name="C:\wamp64\www\Minipo\var\cache\de_\vich_uploader" />
     </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="c dump-autoload" />
       <command value="s generate:bundle" />
       <command value="doctrine:mapping:import --force minipoBundle annotation" />
       <command value="s doctrine:mapping:import --force minipoBundle annotation" />
@@ -136,9 +155,26 @@
       <command value="c php composer.phar require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
       <command value="c composer.phar require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
       <command value="php composer.phar require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="s debug:router" />
+      <command value="c dump-autoload" />
+      <command value="c require cmen/google-charts-bundle" />
+      <command value="c require gregwar/captcha-bundle" />
+      <command value="c require stripe/stripe-php" />
+      <command value="c require symfony/swiftmailer-bundle" />
       <command value="s doctrine:schema:update --force" />
+      <command value="s fos:user:create testuser test@example.com p@ssword" />
+      <command value="s fos:user:promote testuser ROLE_LIVREUR" />
+      <command value="c install" />
+      <command value="s cache:clear" />
+      <command value="c require knplabs/knp-snappy-bundle" />
+      <command value="s server:run" />
+      <command value="s debug:router" />
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -172,6 +208,47 @@
       <workItem from="1584812116573" duration="26499000" />
       <workItem from="1584906566654" duration="22745000" />
       <workItem from="1584987580906" duration="3803000" />
+      <workItem from="1585000926263" duration="6332000" />
+      <workItem from="1585071300570" duration="21821000" />
+      <workItem from="1585178633525" duration="6162000" />
+      <workItem from="1585249607232" duration="21434000" />
+      <workItem from="1585316921148" duration="12037000" />
+      <workItem from="1585339422961" duration="10260000" />
+      <workItem from="1585351129837" duration="444000" />
+      <workItem from="1585351609521" duration="6213000" />
+      <workItem from="1585404197803" duration="703000" />
+      <workItem from="1585405698973" duration="13472000" />
+      <workItem from="1585440176611" duration="2433000" />
+      <workItem from="1585442641715" duration="314000" />
+      <workItem from="1585442979419" duration="3098000" />
+      <workItem from="1585487401299" duration="37533000" />
+      <workItem from="1585533542954" duration="395000" />
+      <workItem from="1585576700997" duration="3393000" />
+      <workItem from="1585585419692" duration="15736000" />
+      <workItem from="1585685468377" duration="10267000" />
+      <workItem from="1585813923796" duration="1322000" />
+      <workItem from="1586201514816" duration="4967000" />
+      <workItem from="1586526379829" duration="4690000" />
+      <workItem from="1586532173348" duration="9011000" />
+      <workItem from="1586594714253" duration="2057000" />
+      <workItem from="1586637163629" duration="3157000" />
+      <workItem from="1586731054084" duration="7007000" />
+      <workItem from="1586772564005" duration="2778000" />
+      <workItem from="1586795561237" duration="28710000" />
+      <workItem from="1586829696309" duration="403000" />
+      <workItem from="1586871151381" duration="317000" />
+      <workItem from="1586871621928" duration="7435000" />
+      <workItem from="1586879140993" duration="13200000" />
+      <workItem from="1586893680539" duration="28863000" />
+      <workItem from="1586923634908" duration="12154000" />
+      <workItem from="1586937201970" duration="979000" />
+      <workItem from="1586948125808" duration="5757000" />
+      <workItem from="1586956390270" duration="22987000" />
+      <workItem from="1586979672717" duration="1378000" />
+      <workItem from="1586982657280" duration="10850000" />
+      <workItem from="1587023269481" duration="618000" />
+      <workItem from="1587509959490" duration="1176000" />
+      <workItem from="1587671853833" duration="7235000" />
     </task>
     <servers />
   </component>
@@ -183,69 +260,107 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1584316824834" />
-    <state x="513" y="236" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584753737403">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="513" y="225" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586881346181">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="513" y="225" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1586881346181" />
     <state x="513" y="236" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1584753737403" />
-    <state x="562" y="149" key="#com.intellij.ide.util.MemberChooser" timestamp="1584744258233">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="562" y="142" key="#com.intellij.ide.util.MemberChooser" timestamp="1585590959771">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="562" y="142" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1585590959771" />
     <state x="562" y="149" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1584744258233" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584566596175">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1584566596175" />
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584819441774">
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586964208176">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1584819441774" />
+    <state x="499" y="179" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1586921161113" />
+    <state x="499" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1586964208176" />
     <state x="645" y="362" key="#com.jetbrains.php.framework.ui.FailedToParseDialog" timestamp="1584731226983">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="645" y="362" key="#com.jetbrains.php.framework.ui.FailedToParseDialog/0.0.1536.864@0.0.1536.864" timestamp="1584731226983" />
-    <state x="493" y="312" key="ComposerCompositePathDialog" timestamp="1584137741724">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="452" y="68" width="645" height="687" key="#phpunit.xml.dist" timestamp="1586883845007">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="452" y="68" width="645" height="687" key="#phpunit.xml.dist/0.0.1536.824@0.0.1536.824" timestamp="1586883845007" />
+    <state x="493" y="298" key="ComposerCompositePathDialog" timestamp="1585444757277">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="493" y="298" key="ComposerCompositePathDialog/0.0.1536.824@0.0.1536.824" timestamp="1585444757277" />
     <state x="493" y="312" key="ComposerCompositePathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137741724" />
-    <state x="548" y="175" key="FileChooserDialogImpl" timestamp="1584995276490">
+    <state x="545" y="297" width="445" height="260" key="ComposerInitDialogKey" timestamp="1585442028802">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="545" y="297" width="445" height="260" key="ComposerInitDialogKey/0.0.1536.824@0.0.1536.824" timestamp="1585442028802" />
+    <state x="548" y="175" key="FileChooserDialogImpl" timestamp="1587673610474">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="548" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1584995276489" />
-    <state width="1493" height="274" key="GridCell.Tab.0.bottom" timestamp="1584933988213">
+    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585444749621" />
+    <state x="548" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1587673610474" />
+    <state width="1493" height="274" key="GridCell.Tab.0.bottom" timestamp="1586994809786">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584933988213" />
-    <state width="1493" height="274" key="GridCell.Tab.0.center" timestamp="1584933988212">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586935828397" />
+    <state width="1493" height="274" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1586994809786" />
+    <state width="1493" height="274" key="GridCell.Tab.0.center" timestamp="1586994809771">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1584933988212" />
-    <state width="1493" height="274" key="GridCell.Tab.0.left" timestamp="1584933988211">
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586935828397" />
+    <state width="1493" height="274" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1586994809771" />
+    <state width="1493" height="274" key="GridCell.Tab.0.left" timestamp="1586994809770">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1584933988211" />
-    <state width="1493" height="274" key="GridCell.Tab.0.right" timestamp="1584933988212">
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586935828381" />
+    <state width="1493" height="274" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1586994809770" />
+    <state width="1493" height="274" key="GridCell.Tab.0.right" timestamp="1586994809771">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="274" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1584933988212" />
-    <state x="537" y="248" key="NewPhpClassDialog" timestamp="1584926737597">
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586935828397" />
+    <state width="1493" height="274" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1586994809771" />
+    <state x="537" y="248" key="NewPhpClassDialog" timestamp="1586959194799">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="537" y="248" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1584926737597" />
-    <state x="277" y="76" key="SettingsEditor" timestamp="1584733645706">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="537" y="237" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1586881257654" />
+    <state x="537" y="248" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1586959194799" />
+    <state x="277" y="72" key="SettingsEditor" timestamp="1585444766760">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="277" y="72" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585444766760" />
     <state x="277" y="76" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1584733645706" />
-    <state x="537" y="336" key="SymfonyPathDialog" timestamp="1584137809212">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="537" y="320" key="SymfonyPathDialog" timestamp="1585440527380">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="537" y="320" key="SymfonyPathDialog/0.0.1536.824@0.0.1536.824" timestamp="1585440527380" />
     <state x="537" y="336" key="SymfonyPathDialog/0.0.1536.864@0.0.1536.864" timestamp="1584137809212" />
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1584987635344">
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog" timestamp="1587671855367">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584987635344" />
-    <state x="425" y="199" width="672" height="677" key="run.anything.popup" timestamp="1584926912671">
+    <state x="465" y="246" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586937277866" />
+    <state x="465" y="258" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1587671855367" />
+    <state x="425" y="199" width="672" height="677" key="run.anything.popup" timestamp="1587677573778">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="199" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1584926912671" />
+    <state x="425" y="190" width="672" height="646" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1586931425861" />
+    <state x="425" y="199" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1587677573778" />
+    <state x="431" y="152" width="672" height="711" key="search.everywhere.popup" timestamp="1587510184320">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1586534926429" />
+    <state x="431" y="152" width="672" height="711" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1587510184320" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/minipoBundle/Resources/views/acceuilAdmin.html.twig</url>
+          <line>96</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

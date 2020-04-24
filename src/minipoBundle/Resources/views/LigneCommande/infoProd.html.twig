@@ -1,0 +1,121 @@
+{% extends 'AboutProduct.html.twig' %}
+
+
+    {% block choose %}{% endblock %}
+    {% block ourProd %}{% endblock %}
+
+    {% block title %}<title>Info Produit</title> {% endblock %}
+       {% block header %}
+           <header>
+               <div class="header-top">
+                   <div class="container">
+                       <div class="row">
+                           <div class="col-xs-12">
+                               <div class="left floatleft">
+                                   <ul>
+                                       <li>
+                                           <i class="fa fa-phone"></i>
+                                           +216 71 000 000 +216 50 000 000
+                                       </li>
+                                       <li>
+                                           <i class="fa fa-envelope-o"></i>
+                                           projetminipo@gmail.com
+                                       </li>
+                                   </ul>
+                               </div>
+                               <div class="right floatright">
+                                   <ul>
+                                       <li>
+                                           <i class="fa fa-user"></i>
+                                           <a href="{{ path('fos_user_security_login') }}">Account</a>
+                                       </li>
+                                   </ul>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div id="sticky-menu" class="header-bottom">
+                   <div class="container">
+                       <div class="row">
+                           <div class="col-xs-12 header-bottom-bg">
+                               <div class="logo floatleft">
+                                   <a href="index.html">
+                                       <img style="margin-top: 25%" src="{{ asset('assetsC/img/logo-M-client.png') }}" alt="Rideo" />
+                                   </a>
+                               </div>
+                               <div class="mainmenu text-center floatleft">
+                                   <nav>
+                                       <ul>
+                                           <li><a href="{{path('minipo_homepage')}}">Home</a></li>
+
+                                           <li><a href="{{ path('minipo_about') }}">about</a></li>
+                                           <li>
+                                               <a href="{{ path('minipo_ListBlogClientExt') }}">blog</a>
+                                           </li>
+
+
+                                       </ul>
+                                   </nav>
+                               </div>
+                               <!-- mobile menu start -->
+                               <div class="mobile-menu-area">
+                                   <div class="mobile-menu">
+                                       <nav id="dropdown">
+                                           <ul>
+                                               <li><a href="{{ path('minipo_affichage') }}">Home</a></li>
+                                               <li><a href="blog-1.html">blog</a>
+                                                   <ul>
+                                                       <li>
+                                                           <a href="blog-1.html">Blog Style One</a>
+                                                       </li>
+                                                       <li>
+                                                           <a href="single-blog.html">Single Blog</a>
+                                                       </li>
+                                                   </ul>
+                                               </li>
+                                               <a href="contact.html">contact</a>
+                                               </li>
+                                           </ul>
+                                       </nav>
+                                   </div>
+                               </div>
+                               <!-- mobile menu end -->
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </header>
+       {% endblock %}
+
+
+    {% block infoProd %}
+        {% if p==NULL  %}
+            Pas de formation
+        {% else %}
+
+            <div class="col-xs-12 col-sm-9 col-md-6">
+                <div>
+                    <img style="height: 285px;width: 370px;" src="{{ asset('assetsC/img/products/'~p.photo) }}" alt="{{ p.designation }}" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="about-text">
+                    <h3>{{ p.designation }}</h3>
+                    <strong><h1>{{ p.prix~" TND" }}</h1></strong>
+                    <hr/><br/>
+                    <p>{{ p.description }}</p>
+                    <hr/>
+                    <div class="categ-tag">
+                        <ul class="clearfix">
+                            <li>
+                                <p>CATEGORIES: {{ p.idcateg.nom }}</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        {% endif %}
+    {% endblock %}

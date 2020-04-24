@@ -1,0 +1,117 @@
+{% extends 'baseRH.html.twig' %}
+{% block title %}Ajouter Employe{% endblock %}
+{% block content %}
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h3 class="text-themecolor">Ajouter Employe</h3>
+        </div>
+
+        <div>
+            <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+
+                    {{ form_start(form) }}
+                        <div class="form-group">
+                            <h5>Nom <span class="text-danger">*</span></h5>
+                            <div class="controls">
+
+                            {{ form_widget(form.lastname, { 'attr': {'class': 'form-control', 'placeholder':'Nom'} }) }}
+                            </div>
+                            {% for errorItem in form.lastname.vars.errors %}
+                                <span class="alert-danger">{{ errorItem.message }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="form-group">
+                            <h5>Prenom <span class="text-danger">*</span></h5>
+                            <div class="controls">
+
+                            {{ form_widget(form.firstname, { 'attr': {'class': 'form-control', 'placeholder':'Prenom'} }) }}
+                            </div>
+                            {% for errorItem in form.firstname.vars.errors %}
+                                <span class="alert-danger">{{ errorItem.message }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="form-group">
+                            <h5>Adresse <span class="text-danger">*</span></h5>
+                            <div class="controls">
+
+                            {{ form_widget(form.adresse, { 'attr': {'class': 'form-control', 'placeholder':'Adresse'} }) }}
+                            </div>
+                            {% for errorItem in form.adresse.vars.errors %}
+                                <span class="alert-danger">{{ errorItem.message }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="form-group">
+                            <h5>Email <span class="text-danger">*</span></h5>
+                            <div class="controls">
+
+                            {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder':'Email'} }) }}
+                            </div>
+                            {% for errorItem in form.email.vars.errors %}
+                                <span class="alert-danger">{{ errorItem.message }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="form-group">
+                            <h5>Telephone <span class="text-danger">*</span></h5>
+                            <div class="input-group">
+
+                                {{ form_widget(form.tel, { 'attr': {'class': 'form-control', 'placeholder':'Telephone'} }) }}
+
+                            </div>
+                            {% for errorItem in form.tel.vars.errors %}
+                                <span class="alert-danger">{{ errorItem.message }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="form-group">
+                            <h5>Salaire <span class="text-danger">*</span></h5>
+                            <div class="input-group">
+
+                                {{ form_widget(form.salaire, { 'attr': {'class': 'form-control', 'placeholder':'Salaire'} }) }}
+                            </div>
+                            {% for errorItem in form.salaire.vars.errors %}
+                                <span class="alert-danger">{{ errorItem.message }}</span>
+                            {% endfor %}
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="input-group">
+
+                                {{ form_widget(form.captcha) }}
+
+                            </div>
+                            {% for errorItem in form.captcha.vars.errors %}
+                                <span class="alert-danger">{{ errorItem.message }}</span>
+                            {% endfor %}
+                        </div>
+
+                        <div class="text-xs-right">
+                            {{ form_widget(form.save, { 'attr': {'class': 'btn btn-info'} }) }}
+{#                            <button type="submit" class="btn btn-info">Submit</button>#}
+                            <button type="reset" class="btn btn-inverse">Cancel</button>
+
+                        </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{#{% block add_script %}#}
+{#    <script src="{{ asset('js/validation.js') }}"></script>#}
+{#    <script>#}
+{#        ! function(window, document, $) {#}
+{#            "use strict";#}
+{#            $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(), $(".skin-square input").iCheck({#}
+{#                checkboxClass: "icheckbox_square-green",#}
+{#                radioClass: "iradio_square-green"#}
+{#            }), $(".touchspin").TouchSpin(), $(".switchBootstrap").bootstrapSwitch();#}
+{#        }(window, document, jQuery);#}
+{#    </script>#}
+{#{% endblock %}#}

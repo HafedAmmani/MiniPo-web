@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+ {% block Reclamation %}
+     <li>  <a class="has-arrow waves-effect waves-dark"  aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">Gestion Reclamtion </span></a>
+         <ul aria-expanded="false" class="collapse">
+             <li><a href="{{ path('minipo_AfficherToutesReclamationEmploye') }}">Reclamations employe  </a></li>
+             <li><a href="{{ path('minipo_AfficherToutesReclamation') }}">Reclamations Client </a></li>
+             <li><a href="{{ path('minipo_Stat') }}">Statistique</a></li>
+             <li><a href="/">Modern</a></li>
+         </ul>
+     </li>
+ {% endblock  %}
+{% block reclamationclient   %}
+    <!-- Load jQuery from Google's CDN if needed -->
+
+    <!-- Load jQuery from Google's CDN if needed -->
+    <h1>Statistique</h1>
+    <div class="row">
+
+        <div class="col-md-6 ">
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+            <script type="text/javascript">
+                {{ chart(chart) }}
+            </script>
+
+            <div class="col-md-8 col-lg-9" id="linechart" style="width: 600px; height: 300px;   "> </div>
+
+
+
+
+        </div>
+        <div class="col-md-6 ">
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+            <script src="//code.highcharts.com/4.1.8/highcharts.js"></script>
+            <script src="//code.highcharts.com/4.1.8/modules/exporting.js"></script>
+            <script type="text/javascript">
+                {{ chart(chart2) }}
+            </script>
+
+            <div class="col-md-8 col-lg-9" id="linechart2" style="width: 500px; height: 300px;"></div>
+
+        </div>
+
+
+    </div>
+    <div class="row">
+
+        <div class="col-md-6 ">
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+            <script type="text/javascript">
+                {{ chart(chart3) }}
+            </script>
+
+            <div class="col-md-8 col-lg-9" id="linechart3" style="width: 600px; height: 300px;   "> </div>
+
+
+
+
+        </div>
+        <div class="col-md-6 ">
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+            <script type="text/javascript">
+                {{ chart(chart4) }}
+            </script>
+
+            <div class="col-md-8 col-lg-9" id="linechart4" style="width: 500px; height: 300px;"></div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+{% endblock  %}

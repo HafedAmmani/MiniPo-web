@@ -1,0 +1,90 @@
+{% extends 'BaseReclamationClient.html.twig' %}
+
+    {% block title %}Vos Commandes{% endblock %}
+
+    {% block reclamationclient %}
+
+
+        {% if cmd==NULL %}
+            Pas de formation
+        {% else %}
+            <div class="text-right">
+                <input type='text' name="idl" id="search" style="width: 25% ; margin-top: 5%" placeholder="chercher ici"/>
+                {#<i id="search" class="fa fa-search"></i>#}
+            </div>
+            <br><br>
+            <table style="width:100%;max-width:100%;margin-bottom:20px" id="client_table">
+                <tr>
+                    <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">Reférence</th>
+                    <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">Date Commande</th>
+                    <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">Etat Commande</th>
+                    <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">Total</th>
+                    <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">Action</th>
+                </tr>
+                {% for elt in cmd %}
+                    <tr>
+                        <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">{{ elt.refc }}</td>
+                        <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">{{ elt.datec|date}}</td>
+                        <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">{{ elt.etatc }}</td>
+                        <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">{{ elt.total }}</td>
+                        <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">
+
+                            <a href=" {{path('minipo_updateEtatFact',{'id':app.user.id,'idCmd':elt.idcmd} )  }}" >
+                                <i class="fa fa-dollar" title="pay this order"></i>
+                            </a>
+                            <a href=" {{path('minipo_suppCmd',{'id':app.user.id,'idCmd':elt.idcmd} )  }} {#{{path('minipo_deleteCmd',{'id':app.user.id,'idCmd':elt.idcmd} )  }} #}" >
+                                <i class="fa fa-close" title="Remove this order"></i>
+                            </a>
+                            <a href=" {{path('minipo_detailCmd',{'id':app.user.id,'idCmd':elt.idcmd} )  }} {#{{path('minipo_deleteCmd',{'id':app.user.id,'idCmd':elt.idcmd} )  }} #}" >
+                                <i class="fa fa-eye" title="detail this order"></i>
+                            </a>
+                            <a href=" {{ path('minipo_reclamationcommande',{'idcmd':elt.idcmd } )  }} " >
+                                <i class="fa fa-archive" title="claim this order"></i>
+                            </a>
+
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+            <br><br><div class="text-center">{{ knp_pagination_render(cmd) }}</div>
+
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+            <script>
+                $(document).ready(function() {
+                    $('#client_table tr').dataTable({"sPaginationType": "full_numbers"});// note pagination will be done by datatables
+                });
+                $(document).ready(function(){
+                    $('#search').keyup(function(){
+                        search_table($(this).val());
+                    });
+                    function search_table(value){
+                        $('#client_table tr').each(function(){
+                            var found = 'false';
+                            $(this).each(function(){
+                                if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                                {
+                                    found = 'true';
+                                }
+                            });
+                            if(found === 'true')
+                            {
+                                $(this).show();
+                            }
+                            else
+                            {
+                                $(this).hide();
+                            }
+                        });
+                    }
+                });
+            </script>
+
+        {% endif %}
+
+
+
+    {% endblock %}
+

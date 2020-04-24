@@ -1,0 +1,110 @@
+{% extends 'BaseReclamationClient.html.twig' %}
+{% block new_style %}
+    <link href="{{ asset('/css/ImageZoom.css') }}" rel="stylesheet">
+{% endblock %}
+{% block reclamationclient   %}
+    {% block body %}
+
+        <div style="margin: 0 auto;width: 1000px;margin-top: 100px; margin-bottom:50px;">
+            <div class="card-body">
+                <center><h1 class="card-title">Votre Reclamation !</h1></center>
+            </div>
+            <div style="margin-top: 50px;margin-left: 200px;">
+                <form class="form-horizontal m-t-40" method="post">
+                    <div class="form-group">
+                        <label>Envoye le  :</label>
+                        <label >{{ reclamation.dater|date('d/m/y')}}</label>
+                        {#<input type="text"  class="form-control" value={{ reclamation.objet}}>#}
+                    </div>
+                    <h4>
+                        <label>Etat  :</label>
+                        {% if   reclamation.etatr is same as ('traiter')%}
+                            <div class="label label-table label-success">{{ reclamation.etatr}}</div>
+                        {%endif%}
+                        {% if  reclamation.etatr is same as ('non traiter')%}
+                            <div class="label label-table label-danger">{{ reclamation.etatr}}</div>
+                        {%endif%}
+
+
+                    </h4>
+
+
+
+                    <div class="form-group">
+                        <label>Categorie :</label>
+                        <label >{{ reclamation.idcatrec.nom}}</label>
+                        {#<input type="text"  class="form-control" value={{ reclamation.objet}}>#}
+                    </div>
+
+                    <div class="form-group">
+                        <label>Objet :</label>
+                        <label >{{ reclamation.objet}}</label>
+                        {#<input type="text"  class="form-control" value={{ reclamation.objet}}>#}
+                    </div>
+                    {% if reclamation.etatr is same as ('non traiter') %}
+                        <div class="form-group">
+                            <label>Description :</label>
+                            <div class="controls">
+                                <textarea class="form-control" id="textarea" name="description"required data-validation-required-message="Vous devez inserer une description"minlength="2"  rows="5" value="{{ reclamation.description}}">{{ reclamation.description}}</textarea>
+                                {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if reclamation.etatr is same as ('traiter') %}
+                        <div class="form-group">
+                            <label>Description :</label>
+                            <label>{{ reclamation.description}}</label>
+                            {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
+                        </div>
+                    {% endif %}
+                    {% if reclamation.image == NULL %}
+                        <div class="form-group" >
+                            <img src="{{ asset('assets/images/Point_d_interrogation.jpg') }}" alt="user" class="img-circle img-responsive" width=100px></div>
+                    {% endif  %}
+                    {% if reclamation.image != NULL %}
+                        <div class="form-group" >
+                            <img src="{{ asset('uploads/post/' ~ reclamation.image) }}" alt="user" class=""width="200px"style="margin-left: 100px"></div>
+                    {% endif  %}
+                    <div class="form-group">
+                        <label>Reponse : </label>
+                        <label >{{reclamation.Reponse}}</label>
+
+                    </div>
+
+
+                    {% if reclamation.etatr is same as ('traiter') %}
+                        <a href="{{ path('minipo_AfficherMesReclamation') }}"><button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button></a>
+                    {% endif %}
+                    {% if reclamation.etatr is same as ('non traiter') %}
+                        <a href="{{ path('minipo_showdetailed',{'id':reclamation.idr}) }}"><button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Modifier</button></a>
+                        <a href="{{ path('minipo_AfficherMesReclamation') }}"><button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button></a>
+                    {% endif %}
+
+                </form>
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+    {% endblock %}
+{% endblock %}
+
+{% block add_script %}
+
+    <script src="{{ asset('js/validation.js') }}"></script>
+    <script>
+        ! function(window, document, $) {
+            "use strict";
+            $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(), $(".skin-square input").iCheck({
+                checkboxClass: "icheckbox_square-green",
+                radioClass: "iradio_square-green"
+            }), $(".touchspin").TouchSpin(), $(".switchBootstrap").bootstrapSwitch();
+        }(window, document, jQuery);
+    </script>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'Panier.html.twig' %}
+
+{% block tableau %}
+    {% if lc==NULL  %}
+        Pas de formation
+    {% else %}
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="table-responsive table-one margin-minus section-padding-bottom">
+                    <form method="post" >
+                        <table class="spacing-table text-center">
+
+                            <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Unit Price</th>
+                                <th>QTE</th>
+                                <th>Subtotal</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            {% for elt in lc %}
+
+                                <tr>
+                                    <td class="td-img text-left">
+                                        <a href="#"><img src="{{ asset('assetsC/img/products/'~elt.idprod.photo) }}" alt="Add Product" /></a>
+                                        <div class="items-dsc">
+                                            <p><a href="#">{{ elt.idprod.designation }}</a></p>
+                                        </div>
+                                    </td>
+                                    <td>{{ elt.idprod.prix }}</td>
+                                    <td>
+
+                                        {#<div class="plus-minus">
+                                            <a class="dec qtybutton">-</a>
+                                            <input type="text" name="qte" id="qte"  class="plus-minus-box" value={{ elt.qte }} />
+                                            <a class="inc qtybutton">+</a>
+                                        </div>#}
+                                        <p>{{ elt.qte }}</p>
+                                    </td>
+                                    <td>{{ elt.subtotal }}</td>
+                                    <td>
+                                        <a href="{{ path('minipo_deleteLc',{'id':app.user.id,'idLc':elt.idlc}) }}"><i class="fa fa-trash" title="Remove this product"></i></a>
+                                        <a href="{{ path('minipo_updateQteLc',{'idLc':elt.idlc} ) }} "><i class="fa fa-pencil" title="Update this product"></i></a>
+                                    </td>
+                                </tr>
+
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </form>
+                    {# <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+                     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+                     <script type="text/javascript">
+                         jQuery(document).ready(function () {
+
+                             $("#mod").click(function () {
+                                 $.ajax({
+                                     type: "GET",
+                                     url: "{{ path('minipo_updateLc') }}",
+                                     data: {
+                                         q: $("#qte").val(),
+                                     }, dataType: "text",
+                                     success: function () {
+                                         echo("bbbbbb");
+                                     }
+                                 });
+
+                             })
+                         })
+                     </script>#}
+
+                </div>
+            </div>
+        </div>
+        <div class="single-check p-bottom50"style="width: 100%;">
+            <div class="subtotal clearfix"style="width: 100%;">
+                <p>Total: <span class="floatright">{{ lc[0].idcmd.total }} DT</span></p>
+            </div>
+            <div class="col-sm-4" style="width: 100%;">
+                <div class="default-btn text-right">
+                    <a class="btn-style" href="{{ path('minipo_validerCmd',{'id':app.user.id}) }}"style="border: 1px solid #777;font-family: roboto;margin-top: 25px">Valider{#PROCCED TO CHECKOUT#}</a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

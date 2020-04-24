@@ -1,0 +1,85 @@
+{% extends 'Shop.html.twig' %}
+
+{% block page1 %}
+    {% if p==NULL  %}
+        Pas de formation
+    {% else %}
+        <div class="tab-pane fade in active text-center" id="grid">
+            <div class="single-products">
+                {% for elt in p %}
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="product-item margin40">
+                            <div class="pro-img">
+                                <img style="height: 420px;width: 370px;" src="{{ asset('assetsC/img/products/'~elt.photo) }}" alt="Product" />
+                                <div class="tag-n-s">
+                                    <span>New</span>
+                                </div>
+                                <div class="actions-btn">
+                                    <ul class="clearfix">
+                                        <li>
+                                            <a href="{{ path('minipo_ajouterLC',{'idProd':elt.idprod} )  }}"><i class="fa fa-eye"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-title">
+                                <h5>{{ elt.designation }}</h5>
+                                <p><span>{{ elt.prix~" TND" }}</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block page2 %}
+    {% if p==NULL  %}
+        Pas de formation
+    {% else %}
+        <div class="list-view tab-pane fade in" id="list">
+            <div class="col-xs-12 col-sm-8 col-md-9">
+                {% for elt in p %}
+                    <div class="single-product margin40 clearfix">
+                        <div class="left">
+                            <div class="product-item margin-top">
+                                <div class="pro-img">
+                                    <img style="height: 357px;width: 270px;" src="{{ asset('assetsC/img/products/'~elt.photo) }}" alt="Product" />
+                                    <div class="link-icon zoom-gallery">
+                                        <a href="{{ asset('assetsC/img/products/'~elt.photo) }}" ><img src="{{ asset('assetsC/img/icon/w-zoom.png') }}" alt="Product" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="product-item">
+                                <div class="product-title">
+                                    <h4>{{ elt.designation }}</h4>
+                                    <p><span>{{ elt.prix~" TND" }}</span></p>
+                                    <hr />
+                                    <p class="list-p">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas</p>
+                                    <hr />
+                                </div>
+                                <div class="actions-btn">
+                                    <ul class="clearfix text-center">
+                                        <li>
+                                            <a href="{{ path('minipo_ajouterLC',{'idProd':elt.idprod} )  }}"><i class="fa fa-shopping-cart"></i></a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block pagination %}<div class="text-right">{{ knp_pagination_render(p) }}</div>{% endblock %}
+
+
+

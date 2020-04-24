@@ -1,0 +1,20 @@
+
+
+{% for notif in Notification %}
+    <div class="alert alert-success" id="">
+        <a href="{{ path('minipo_deletenotemp',{'id':notif.id}) }}"class="btn btn-primary btn-sm " > <button type="button" class="close" data-dismiss="alert" aria-label="Close"  ></button></a>
+        <h5>Notification</h5>
+
+        <ul id="Notification">
+
+            <li>
+                {{ notif.title }}<br>
+                {{ notif.description }}<br>
+                <a href="{{ path(notif.route , notif.parameters) }}">see</a>
+            </li>
+
+
+        </ul>
+
+    </div>
+{% endfor %}

@@ -1,0 +1,26 @@
+{% extends 'BaseBlogA.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+
+{% block reclamationclient %}
+
+
+{% block body %}
+  <center> <h1 style="margin-top: 5%">Update Your Post !!</h1> </center>
+    {{ form_start(form) }}
+    <div style="width: 50%;margin-left: 25%;margin-top: 5%;margin-bottom: 5%" class="vich-image" xmlns="http://www.w3.org/1999/html">
+        {{ form_widget(form.titre, { 'attr': {'id':'comment' ,  'placeholder':'Titre'} }) }}
+        </br>
+        {{ form_widget(form.description, { 'attr': {'id':'comment' ,  'placeholder':'Description'} }) }}
+        </br>
+
+        {{- form_widget(form.imageFile) -}}
+        </br>
+        {{ form_widget(form.Submit, { 'attr': {'class':'input'} } ) }}
+    </div>
+
+    {{ form_end(form) }}
+{% endblock %}
+
+
+{% endblock %}

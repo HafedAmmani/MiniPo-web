@@ -1,0 +1,506 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Shop || Rideo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assetsC/img/logo-m-c.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assetsC/apple-touch-icon.png') }}">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- style css -->
+    <link rel="stylesheet" href="{{ asset('assetsC/style.css') }}">
+    <!-- modernizr js -->
+    <script src="{{ asset('assetsC/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- header section start -->
+<!-- header section start -->
+{% block header %}
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="left floatleft">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    +216 71 000 000 +216 50 000 000
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope-o"></i>
+                                    projetminipo@gmail.com
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="right floatright">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-user"></i>
+                                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                        {{ app.user.username }}
+                                    {% endif %}
+                                    | <a href="{{ path('fos_user_security_logout') }}">Log out</a>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sticky-menu" class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 header-bottom-bg">
+                        <div class="logo floatleft">
+                            <a href="index.html">
+                                <img src="{{ asset('assetsC/img/logo-M-client.png') }}" alt="Rideo" />
+                            </a>
+                        </div>
+                        <div class="mainmenu text-center floatleft">
+                            <nav>
+                                <ul>
+                                    <li><a href="{{ path('minipo_listblog') }}">Blogs</a></li>
+                                    <li>
+                                        <a href="{{path('minipo_addblog')}}">ajouter blog</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- mobile menu start -->
+                        <div class="mobile-menu-area">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul>
+                                        <li><a href="{{ path('minipo_affichage') }}">Home</a></li>
+                                        <li>
+                                            <a href="{{path('minipo_allProduits')}}">products</a>
+                                        </li>
+                                        <li>
+                                            <a href="about.html">about</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('minipo_ListBlogClientExt') }}">blog</a>
+                                        </li>
+                                        <li>
+                                            <a href="contact.html">contact</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- mobile menu end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+<!-- header section end -->
+
+<!-- page banner area start -->
+<div class="page-banner">
+    <img src="{{ asset('assetsC/img/blogo.jpg') }}" alt="Page Banner">
+</div>
+<section>
+    {% block reclamationclient %}
+
+
+    {% block body %}
+
+    <!-- slider section start -->
+    <div class="slider-area slider-one clearfix">
+        <div class="slider" id="mainslider" >
+            <div data-src="{{ asset('assetsC/img/slider/y.png') }}">
+                <div class="d-table">
+                    <div class="d-tablecell">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="slide-text" style="margin-top: 23%;">
+                                        <h1 class="animated fadeInDown" style="color: black">best cycling experience</h1>
+                                        <div class="shape animated flipInX">
+                                            <img src="{{ asset('assetsC/img/slider/shape.png') }}" alt="" />
+                                        </div>
+                                        <h4 class="animated fadeIn"style="color: black">become the world leader on the internet for the sport of cycling.</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-src="{{ asset('assetsC/img/slider/yy.png') }}">
+                <div class="d-table">
+                    <div class="d-tablecell" >
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="slide-text" style="margin-top: 23%;color: black">
+                                        <h1 class="animated fadeInDown" style="color: black">best cycling experience</h1>
+                                        <div class="shape animated flipInX">
+                                            <img src="{{ asset('assetsC/img/slider/shape.png') }}" alt="" />
+                                        </div>
+                                        <h4 class="animated fadeIn" style="color: black">become the world leader on the internet for the sport of cycling.</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider section end -->
+    <!-- featured section start -->
+
+        <!-- featured section start -->
+        <section class="featured-area featured-one section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-md-6 col-text-center">
+                        <div class="section-title text-center">
+                            <h3><span>Featured</span> products</h3>
+                            <div class="shape">
+                                <img src="{{ asset('assetsC/img/icon/t-shape.png') }}" alt="Title Shape" />
+                            </div>
+                            <p>It is a long established fact that a reader will be distracted by the readable content page when looking at its layout.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="featured-slider single-products">
+                        <div class="single-slide">
+                            <div class="padding30">
+                                <div class="product-item">
+                                    <div class="pro-img">
+                                        <a href="product-details.html"><img src="{{ asset('assetsC/img/products/1.png') }}" alt="" /></a>
+                                    </div>
+                                    <div class="actions-btn">
+                                        <ul class="clearfix">
+                                            <li>
+                                                <a href="#"><i class="fa fa-eye"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-title">
+                                        <a href="product-details.html"><h5>Mount POW C058 FG</h5></a>
+                                        <p>Price   <span>$730</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-slide">
+                            <div class="padding30">
+                                <div class="product-item">
+                                    <div class="pro-img">
+                                        <a href="product-details.html"><img src="{{ asset('assetsC/img/products/3.png') }}" alt="" /></a>
+                                    </div>
+                                    <div class="actions-btn">
+                                        <ul class="clearfix">
+                                            <li>
+                                                <a href="#"><i class="fa fa-eye"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-title">
+                                        <a href="product-details.html"><h5>Mount POW C058 FG</h5></a>
+                                        <p>Price   <span>$730</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-slide">
+                            <div class="padding30">
+                                <div class="product-item">
+                                    <div class="pro-img">
+                                        <a href="product-details.html"><img src="{{ asset('assetsC/img/products/2.png') }}" alt="" /></a>
+                                    </div>
+                                    <div class="actions-btn">
+                                        <ul class="clearfix">
+                                            <li>
+                                                <a href="#"><i class="fa fa-eye"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-title">
+                                        <a href="product-details.html"><h5>Mount POW C058 FG</h5></a>
+                                        <p>Price   <span>$730</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-slide">
+                            <div class="padding30">
+                                <div class="product-item">
+                                    <div class="pro-img">
+                                        <a href="product-details.html"><img src="{{ asset('assetsC/img/products/1.png') }}" alt="" /></a>
+                                    </div>
+                                    <div class="actions-btn">
+                                        <ul class="clearfix">
+
+                                            <li>
+                                                <a href="#"><i class="fa fa-eye"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-title">
+                                        <a href="product-details.html"><h5>Mount POW C058 FG</h5></a>
+                                        <p>Price   <span>$730</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-slide">
+                            <div class="padding30">
+                                <div class="product-item">
+                                    <div class="pro-img">
+                                        <a href="product-details.html"><img src="{{ asset('assetsC/img/products/3.png') }}" alt="" /></a>
+                                    </div>
+                                    <div class="actions-btn">
+                                        <ul class="clearfix">
+
+                                            <li>
+                                                <a href="#"><i class="fa fa-eye"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-title">
+                                        <a href="product-details.html"><h5>Mount POW C058 FG</h5></a>
+                                        <p>Price   <span>$730</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- featured section end -->
+        <!-- sell-up section start -->
+        <section class="sell-up-area sell-up-one">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-7">
+                        <div class="sell-up-right">
+                            <div class="single-sellup">
+                                <a href="product-details.html"><img src="{{ asset('assetsC/img/products/u1.png') }}" alt="" /></a>
+                            </div>
+                            <div class="single-sellup">
+                                <a href="product-details.html"><img src="{{ asset('assetsC/img/products/u1.png') }}" alt="" /></a>
+                            </div>
+                            <div class="single-sellup">
+                                <a href="product-details.html"><img src="{{ asset('assetsC/img/products/u1.png') }}" alt="" /></a>
+                            </div>
+                            <div class="single-sellup">
+                                <a href="product-details.html"><img src="{{ asset('assetsC/img/products/u1.png') }}" alt="" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- sell-up section end -->
+        <!-- riding section start -->
+        <section class="riding-area riding-one section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-md-6 col-text-center">
+                        <div class="section-title text-center">
+                            <h3><span>riding</span> accessories</h3>
+                            <div class="shape">
+                                <img src="{{ asset('assetsC/img/icon/t-shape.png') }}" alt="Title Shape" />
+                            </div>
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="four-item riding-slider single-products">
+                        <div class="riding-item col-xs-12">
+                            <div class="product-item">
+                                <div class="pro-img">
+                                    <a href="product-details.html"><img src="{{ asset('assetsC/img/products/r1.png') }}" alt="Product" /></a>
+                                    <div class="link-icon">
+                                        <a href="product-details.html"><i class="fa fa-link"></i></a>
+                                    </div>
+                                </div>
+                                <div class="riding-title clearfix">
+                                    <div class="product-title text-left floatleft">
+                                        <a href="product-details.html"><h5>Giro Cipher Helmet</h5></a>
+                                        <p><span>$150</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="riding-item col-xs-12">
+                            <div class="product-item">
+                                <div class="pro-img">
+                                    <a href="product-details.html"><img src="{{ asset('assetsC/img/products/r2.png') }}" alt="Product" /></a>
+                                    <div class="link-icon">
+                                        <a href="product-details.html"><i class="fa fa-link"></i></a>
+                                    </div>
+                                </div>
+                                <div class="riding-title clearfix">
+                                    <div class="product-title text-left floatleft">
+                                        <a href="product-details.html"><h5>Giro Cipher Helmet</h5></a>
+                                        <p><span>$150</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="riding-item col-xs-12">
+                            <div class="product-item">
+                                <div class="pro-img">
+                                    <a href="product-details.html"><img src="{{ asset('assetsC/img/products/r3.png') }}" alt="Product" /></a>
+                                    <div class="link-icon">
+                                        <a href="product-details.html"><i class="fa fa-link"></i></a>
+                                    </div>
+                                </div>
+                                <div class="riding-title clearfix">
+                                    <div class="product-title text-left floatleft">
+                                        <a href="product-details.html"><h5>Giro Cipher Helmet</h5></a>
+                                        <p><span>$150</span></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="riding-item col-xs-12">
+                            <div class="product-item">
+                                <div class="pro-img">
+                                    <a href="product-details.html"><img src="{{ asset('assetsC/img/products/r4.png') }}" alt="Product" /></a>
+                                    <div class="link-icon">
+                                        <a href="product-details.html"><i class="fa fa-link"></i></a>
+                                    </div>
+                                </div>
+                                <div class="riding-title clearfix">
+                                    <div class="product-title text-left floatleft">
+                                        <a href="product-details.html"><h5>Giro Cipher Helmet</h5></a>
+                                        <p><span>$150</span></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="riding-item col-xs-12">
+                            <div class="product-item">
+                                <div class="pro-img">
+                                    <a href="product-details.html"><img src="{{ asset('assetsC/img/products/r2.png') }}" alt="Product" /></a>
+                                    <div class="link-icon">
+                                        <a href="product-details.html"><i class="fa fa-link"></i></a>
+                                    </div>
+                                </div>
+                                <div class="riding-title clearfix">
+                                    <div class="product-title text-left floatleft">
+                                        <a href="product-details.html"><h5>Giro Cipher Helmet</h5></a>
+                                        <p><span>$150</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- riding section end -->
+    {% endblock %}
+    {% endblock %}
+    {% block footer %}
+        <!-- footer section start -->
+        <footer>
+
+
+            <div class="footer-logo-text">
+                <div class="container text-center">
+                    <img src="{{ asset('assetsC/img/slider/logo2.png') }}" alt="Logo" />
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have</p>
+                    <p> suffered alteration in some form, by injected humour, or randomised</p>
+                </div>
+            </div>
+            <!-- footer top start -->
+            <div  class="footer-top section-padding">
+                <div   class="container">
+                    <div  class="row">
+
+                        <div class="col-xs-12 col-sm-4 col-md-3">
+                            <div class="s-footer-text">
+                                <div class="footer-title"style="margin-left: 500px; ">
+                                    <h4 >Contact</h4>
+                                </div>
+                                <div class="contact-link" style="margin-left: 350px; width: 250%" >
+                                    <ul>
+                                        <li class="text-center">
+                                            <span>Email:</span><p>projetminipo@gmail.com</p>
+                                        </li>
+                                        <li class="text-center">
+                                            <span>Phone:</span> <p>+216 71 000 000 +216 50 000 000</p>
+                                        </li>
+                                        <li class="text-center">
+                                            <span>Address:</span><p>Z.I. Chotrana II B.P. 160 Pôle Technologique El Ghazela - Ariana 2083</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- footer top end -->
+            <!-- footer bottom start -->
+            <div class="footer-bottom">
+                <div class="container">
+
+                </div>
+            </div>
+            <!-- footer bottom end -->
+        </footer>
+        <!-- footer section end -->
+    {% endblock %}
+
+
+
+</section>
+
+<!-- all js here -->
+<!-- jquery latest version -->
+<script src="{{ asset('assetsC/js/vendor/jquery-1.12.3.min.js') }}"></script>
+<!-- bootstrap js -->
+<script src="{{ asset('assetsC/js/bootstrap.min.js') }}"></script>
+<!-- camera slider JS -->
+<script src="{{ asset('assetsC/js/camera.min.js') }}"></script>
+<!-- jquery.easing js -->
+<script src="{{ asset('assetsC/js/jquery.easing.1.3.js') }}"></script>
+<!-- slick slider js -->
+<script src="{{ asset('assetsC/js/slick.min.js') }}"></script>
+<!-- jquery-ui js -->
+<script src="{{ asset('assetsC/js/jquery-ui.min.js') }}"></script>
+<!-- magnific-popup js -->
+<script src="{{ asset('assetsC/js/magnific-popup.min.js') }}"></script>
+<!-- countdown js -->
+<script src="{{ asset('assetsC/js/countdown.js') }}"></script>
+<!-- meanmenu js -->
+<script src="{{ asset('assetsC/js/jquery.meanmenu.js') }}"></script>
+<!-- plugins js -->
+<script src="{{ asset('assetsC/js/plugins.js') }}"></script>
+<!-- main js -->
+<script src="{{ asset('assetsC/js/main.js') }}"></script>
+
+<!-- Google Map JS -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_Agsvf36du-7l_mp8iu1a-rXoKcWfs2I"> </script>
+<!-- Custom map-script js -->
+<script src="{{ asset('assetsC/js/map-script.js') }}"></script>
+</body>
+</html>

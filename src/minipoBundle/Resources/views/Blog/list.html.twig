@@ -1,0 +1,47 @@
+{% extends 'BaseBlogA.html.twig' %}
+{% block new_style %}
+    <link href="{{ asset('css/image.css') }}" rel="stylesheet">
+{% endblock %}
+{%  block body %}
+
+
+
+
+<div class="page-banner">
+    <section class="blog-area blog-one blog-margin section-padding">
+
+        <div class="container">
+            <div class="row">
+                {% for blogs in blogs %}
+                <div class="col-sm-4">
+
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img class="img1" src="{{ asset('uploads/post/' ~ blogs.getImageName()) }}" alt="{{ blogs.titre }}" />
+                        </div>
+                        <hr style="margin-left: 20px; height: 90px; position: absolute; top: 200px; width: 2px;" class="line"/>
+
+                        <div>
+                            <h3 style="margin-left: 10% ;margin-top: 10%;text-transform: uppercase;"><b>{{ blogs.titre }}</b></h3>
+                            <small style="margin-left: 10%" class="text-muted">  {{ blogs.getFirstname() }} {{ blogs.getLastname() }} | {{ blogs.date|date() }}</small>
+
+                        </div>
+                        <div class="blog-text clearfix">
+                            <p style="margin-left: 5%">{{ blogs.description }}</p>
+                            <div style="margin-bottom: 20%" class="button">
+                                <div style="margin-left:110px;padding-bottom: 5%;padding-top: 10%">
+                            <a  href="{{ path('minipo_UpdateBlog',{'idA':blogs.idA })}}"><button type="button" class="edit-btn" >Modifier</button></a>
+                            <a  href="{{ path('minipo_DeleteBlog',{'idA':blogs.idA })}}"><button type="button"class="deleted-btn" href="single-blog.html">Delete</button></a>
+                                </div>
+                                    <a style="margin-top: 25%;margin-left: 45%" href="{{ path('minipo_DetaileBlog',{'idA':blogs.idA })}}">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            </div>
+    </section>
+</div>
+
+{% endblock  %}

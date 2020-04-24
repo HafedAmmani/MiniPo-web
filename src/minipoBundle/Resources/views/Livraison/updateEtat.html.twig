@@ -1,0 +1,34 @@
+{% extends 'baseLivreur.html.twig' %}
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title" style="font-weight: bold; font-size: large; color: #007bff"><a href="{{ path('minipo_afficheLivreur') }}"><i class="fa fa-arrow-left"></i></a> Update Etat Livraison</div>
+            <div class="form-material m-t-40" _lpchecked="1">
+
+                {{ form_start(f) }}
+                {{ form_errors(f) }}
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-3" style="font-weight: bold">Matricule livraison:</div>
+                    <div class="col-3">{{ livraison.matriculel }}</div>
+                </div>
+
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-3" style="font-weight: bold">Date livraison:</div>
+                    <div class="col-3">{{ livraison.dateliv }}</div>
+                </div>
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-3" style="font-weight: bold">Destination:</div>
+                    <div class="col-3">{{ livraison.destination }}</div>
+                </div>
+
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-3" style="font-weight: bold">{{ form_label(f.etatl, null, { 'label_attr': {'style':'font-weight: bold'}}) }}</div>
+                    <div class="col-3">{{ form_widget(f.etatl) }}</div>
+                </div>
+
+
+                {{ form_end(f) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

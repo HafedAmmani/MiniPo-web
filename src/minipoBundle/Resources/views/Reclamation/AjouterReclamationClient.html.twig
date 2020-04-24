@@ -1,0 +1,38 @@
+{% extends 'BaseReclamationClient.html.twig' %}
+{% block new_style %}
+    <link href="{{ asset('/css/ImageZoom.css') }}" rel="stylesheet">
+{% endblock %}
+{% form_theme f 'bootstrap_4_layout.html.twig' %}
+{% block reclamationclient   %}
+    <div style="margin: 0 auto;width: 1000px;margin-left: 500px;margin-top: 100px;">
+        <div class="card-body" >
+            <h1 class="card-title">Envoyer une Reclamation</h1>
+        </div>
+        <div class="row">
+
+
+            <div class="col-md-6 ">
+                {{ form_start(f)}}
+
+                {{ form_row(f.idcatrec)}}
+                {{ form_row(f.objet,{'attr':{'placeholder':"Objet de votre reclamation"}})}}
+                {{ form_row(f.description,{'attr':{'placeholder':"decrire votre probleme!"}})}}
+                {{ form_row(f.image)}}
+            </div>
+        </div>
+
+
+        <center><div class="row" >
+
+                {{ form_row(f.Envoyer)}}
+                {{ form_end(f)}}
+                <a href="{{ path('minipo_AfficherMesReclamation') }}">
+                    <button type="submit" style="margin-top: 10px;margin-left:8px;"class="bouton1">Cancel</button></a>
+
+            </div></center>
+
+    </div>
+{% endblock    %}
+
+
+

@@ -1,0 +1,10 @@
+{% extends 'baseEmp.html.twig' %}
+ {% block Reclamation %}
+     <li>  <a class="has-arrow waves-effect waves-dark"  aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">Reclamtion </span></a>
+         <ul aria-expanded="false" class="collapse">
+             <li><a href="{{ path('minipo_AjouterReclamationEmploye') }}">Ajouter Reclamations </a></li>
+             <li><a href="{{ path('minipo_AfficherMesReclamationEmployes') }}">Lister Reclamations </a></li>
+         </ul>
+     </li>
+ {% endblock  %}
+

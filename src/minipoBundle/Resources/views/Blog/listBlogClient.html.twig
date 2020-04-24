@@ -1,0 +1,223 @@
+{% extends 'BaseClientInterne.html.twig' %}
+
+{% block new_style %}
+    <link href="{{ asset('css/image.css') }}" rel="stylesheet">
+{% endblock %}
+
+
+{#{% block header %}
+
+    <!-- header section start -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="left floatleft">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    +11 (019) 25184203
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope-o"></i>
+                                    rideo@mail.com
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="right floatright">
+                            <ul>
+                                <li>
+
+
+
+
+
+                                </li>
+                                <li>
+
+
+                                    <i class="fa fa-user"></i>
+                                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                        {{ app.user.username }}
+                                    {% endif %}
+                                    | <a href="{{ path('fos_user_security_logout') }}">Log out</a>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sticky-menu" class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 header-bottom-bg">
+                        <div class="logo floatleft">
+                            <a href="index.html">
+                                <img src="{{ asset('assetsC/img/logo.png') }}" alt="Rideo" />
+                            </a>
+                        </div>
+                        <div class="mainmenu text-center floatleft">
+                            <nav>
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>
+                                        <a href="shop.html">products</a>
+                                    </li>
+                                    <li><a href="about.html">about</a></li>
+                                    <li><a href="{{ path('minipo_ListBlogClient') }}">blog</a>
+
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="cart-menu-area floatright">
+                            <ul>
+                                <li><a href="#"><i class="pe-7s-shopbag"></i> <span>2</span></a>
+                                    <ul class="cart-menu">
+                                        <li>
+                                            <a href="cart.html"><img src="{{ asset('assetsC/img/cart/1.png') }}" alt="" /></a>
+                                            <div class="cart-menu-title">
+                                                <a href="cart.html"><h5>Mount POW C058 FG </h5></a>
+                                                <span>1 x $2500</span>
+                                            </div>
+                                            <span class="cancel-item"><i class="fa fa-close"></i></span>
+                                        </li>
+                                        <li>
+                                            <a href="cart.html"><img src="{{ asset('assetsC/mg/cart/1.png') }}i" alt="" /></a>
+                                            <div class="cart-menu-title">
+                                                <a href="cart.html"><h5>Mount POW C058 FG </h5></a>
+                                                <span>1 x $2500</span>
+                                            </div>
+                                            <span class="cancel-item"><i class="fa fa-close"></i></span>
+                                        </li>
+                                        <li class="cart-menu-btn">
+                                            <a href="cart.html">view cart</a>
+                                            <a href="checkout.html">checkout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header section end -->
+    {% endblock %}
+#}
+
+{% block body %}
+    <div class="page-banner">
+        <img src="{{ asset('assetsC/img/blogo.jpg') }}" alt="Page Banner">
+    </div>
+
+
+    <div class="page-banner">
+        <section class="blog-area blog-one blog-margin section-padding">
+
+            <div class="container">
+
+                <div class="sidebar-search" >
+
+                    <div class="input-group custom-search-form" >
+
+                        <input type="text" id="search" class="form-control" style="width: 150%; margin-left: 230%" placeholder="Chercher ici">
+
+                    </div>
+                    <!-- /input-group -->
+                </div>
+
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="#"> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level" id="entitiesNav">
+                        </ul>
+                    </li>
+                </ul>
+                <br><br><br><br>
+
+
+
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+                <script type="text/javascript">
+                    jQuery(document).ready(function() {
+                        var searchRequest = null;
+                        $("#search").keyup(function() {
+                            var minlength = 1;
+                            var that = this;
+                            var value = $(this).val();
+                            var entitySelector = $("#entitiesNav").html('');
+                            if (value.length >= minlength ) {
+                                if (searchRequest != null)
+                                    searchRequest.abort();
+                                searchRequest = $.ajax({
+                                    type: "GET",
+                                    url: "{{ path('minipo_searchBlog') }}",
+                                    data: {
+                                        'q' : value
+                                    },
+                                    dataType: "text",
+                                    success: function(msg){
+                                        //we need to check if the value is the same
+                                        if (value===$(that).val()) {
+                                            var result = JSON.parse(msg);
+                                            $.each(result, function(key, arr) {
+                                                $.each(arr, function(id, value) {
+                                                    if (key === 'posts') {
+                                                        if (id !== 'error') {
+                                                            console.log(value[1]);
+                                                            entitySelector.append('<li><b>'+value[1]+'</b><a href="../client/detailBlog/'+id+'">'+'<img src="../../uploads/post/'+value[0]+'" style="width: 50px; height: 50px"/>'+'</a></li>');
+                                                        } else {
+                                                            entitySelector.append('<li class="errorLi">'+value+'</li>');
+                                                        }
+                                                    }
+                                                });
+                                            });
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                    });
+                </script>
+
+
+
+                <div class="row">
+                    {% for blogs in blogs %}
+                        <div class="col-sm-4">
+
+                            <div class="blog-item">
+                                <div class="blog-img">
+                                    <img class="img1" src="{{ asset('uploads/post/' ~ blogs.getImageName()) }}" alt="{{ blogs.titre }}" />
+                                </div>
+                                <hr style="margin-left: 20px; height: 90px; position: absolute; top: 200px; width: 2px;" class="line"/>
+
+                                <div>
+                                    <h3 style="margin-left: 10% ;margin-top: 10%;text-transform: uppercase;"><b>{{ blogs.titre }}</b></h3>
+                                    <small style="margin-left: 10%" class="text-muted">{{ blogs.date|date() }}</small>
+
+                                </div>
+                                <div class="blog-text clearfix">
+                                    <p style="margin-left: 5%">{{ blogs.description }}</p>
+                                    <div style="margin-bottom: 20%" class="button">
+                                        <a style="margin-top: 25%;margin-left: 60%" href="{{ path('minipo_DetaileBlogClient',{'idA':blogs.idA })}}"> Afficher </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+{% endblock %}

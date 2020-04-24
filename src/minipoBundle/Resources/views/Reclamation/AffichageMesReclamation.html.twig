@@ -1,0 +1,165 @@
+{% extends 'BaseReclamationClient.html.twig' %}
+
+
+{% block reclamationclient   %}
+
+    {#<Table border="1">
+        <tr>
+            <th>id</th>
+            <th>type</th>
+            <th>Objet</th>
+            <th>Description</th>
+            <th>Date </th>
+            <th>Etat </th>
+            <th>Reponse</th>
+            <th>suppression</th>
+        </tr>
+        {% for elt in reclamation  %}
+        <tr>
+
+
+
+            <td> {{ elt.id.id }}</td>
+            <td> {{ elt.type}}</td>
+            <td> {{ elt.objet}}</td>
+            <td> {{ elt.description}}</td>
+            <td> {{ elt.dater|date}}</td>
+            <td> {{ elt.etatr }}</td>
+            <td> {{ elt.Reponse}} </td>
+            <td><a href="{{ path('minipo_SupprimerReclamation',{'etatr':elt.etatr}) }}">
+                    <button>supprimer</button></a></td>
+            {% endfor  %}
+        </tr>
+
+    </Table>#}
+
+
+
+    {#<label>Search: <input type="search" class="" placeholder="" aria-controls="example23" name="etatr"></label>
+    <a href="{{ path('minipo_RechercheReclamation') }}" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
+    <ul>
+        <li>
+            <a href="{{ path('minipo_RechercheReclamation') }}" data-toggle="tooltip" data-original-title="Close">
+        </li>
+    </ul>#}
+
+
+
+    {#
+      <!-- jQuery is necessary -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+      <script type="text/javascript">
+          jQuery(document).ready(function() {
+              var searchRequest = null;
+              $("#search").keyup(function() {
+                  var minlength = 3;
+                  var that = this;
+                  var value = $(this).val();
+                  var entitySelector = $("#entitiesNav").html('');
+                  if (value.length >= minlength ) {
+                      if (searchRequest != null)
+                          searchRequest.abort();
+                      searchRequest = $.ajax({
+                          type: "GET",
+                          url: "{{ path('minipo_search') }}",
+                          data: {
+                              'q' : value
+                          },
+                          dataType: "text",
+                          success: function(msg){
+                              //we need to check if the value is the same
+                              if (value===$(that).val()) {
+                                  var result = JSON.parse(msg);
+                                  $.each(result, function(key, arr) {
+                                      $.each(arr, function(id, value) {
+                                          if (key === 'entities') {
+                                              if (id !== 'error') {
+                                                  {#entitySelector.append('<li><a href={{ path('minipo_showdetailed',{'id':idr}) }}">'+value+'</a></li>');
+                                              } else {
+                                                  entitySelector.append('<li class="errorLi">'+value+'</li>');
+                                              }
+                                          }
+                                      });
+                                  });
+                              }
+                          }
+                      });
+                  }
+              });
+          });
+      </script>#}
+
+
+    <!-- .row -->
+    <div class="container-fluid">
+        <!-- .row -->
+        <div style="margin: 0 auto;margin-top: 50px;">
+            <div class="card-body">
+                <center><h1 class="card-title">Vos Reclamations !</h1></center>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- .col -->
+            {% for elt in reclamationclient  %}
+                <div class="col-md-6 col-lg-6 col-xlg-4"style="margin-top: 50px;margin-left: 200px;width:auto;" >
+                    <div class="card card-body">
+                        <div class="row">
+                            {% if elt.image == NULL %}
+                                <div class="col-md-4 col-lg-3 text-center">
+                                    <a href="{{ path('minipo_showdetailedEmploye',{'id':elt.idr} ) }}"><img src="{{ asset('assets/images/Point_d_interrogation.jpg') }}" alt="user" class="img-circle img-responsive" width=100px></a>
+                                </div>
+                            {% endif %}
+                            {% if elt.image != NULL %}
+                                <div class="col-md-4 col-lg-3 text-center">
+                                    <a href="{{ path('minipo_showdetailedEmploye',{'id':elt.idr} ) }}"><img src="{{ asset('uploads/post/' ~ elt.image) }}" alt="user" class="img-circle img-responsive" width=100px></a>
+                                </div>
+                            {% endif %}
+                            <div class="col-md-8 col-lg-9">
+                                <h3 class="box-title m-b-0">{{ elt.idcatrec.nom }}</h3> <small>{{ elt.objet}}</small>
+                                <a href="{{ path('minipo_showdetailed',{'id':elt.idr} ) }}">
+                                    <h4>
+                                        {% if  elt.etatr is same as ('traiter')%}
+                                            <div class="label label-table label-success">{{ elt.etatr }}</div>
+                                        {%endif%}
+                                        {% if  elt.etatr is same as ('non traiter')%}
+                                            <div class="label label-table label-danger">{{ elt.etatr }}</div>
+                                        {%endif%}
+                                        <br/>
+                                        <br/>
+                                        <abbr title="Phone">{{ elt.dater|date()}}</abbr>
+
+                                    </h4></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor   %}
+        </div>
+
+    </div>
+    </div>
+    </div>
+    <div class="navigation "id="pagination">
+        {{ knp_pagination_render(reclamationclient) }}
+
+    </div>
+    <script>
+        $(function() {
+            var knp = new KnpPaginatorAjax();
+
+            knp.init({
+                'loadMoreText': 'Load More', //load more text
+                'loadingText': 'Loading..', //loading text
+                'elementsSelector': '.navigation', //this is where the script will append and search results
+                'paginationSelector': 'div.pagination', //pagination selector
+            });
+        });
+    </script>
+{% endblock %}
+
+
+  {# minipo_SupprimerReclamation:
+      path:   /afficher/supprimer/{etatr}
+                  defaults: { _controller: minipoBundle:ServiceReclamationClient:SupprimerReclamation}#}

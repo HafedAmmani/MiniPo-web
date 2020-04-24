@@ -1,0 +1,29 @@
+{{ form(form) }}
+
+<table border="1">
+    <tr> <th>id</th>
+        <th>destination</th>
+        <th>etat livraison</th>
+        <th>id commande </th>
+        <th>id livreur</th>
+        <th>date livraison</th>
+        <th>matricule livraison</th>
+
+    </tr>
+    {% for elt in livraison %}
+        <tr>
+
+            <td>{{ elt.idliv }}</td>
+            <td>{{ elt.destination }}</td>
+            <td>{{ elt.etatl }}</td>
+            <td>{{ elt.idc.refC }}</td>
+            <td>{{ elt.id.username }}</td>
+            <td>{{ elt.dateliv }}</td>
+            <td>{{ elt.matriculeL }}</td>
+
+
+
+        </tr>
+    {% endfor %}
+
+</table>

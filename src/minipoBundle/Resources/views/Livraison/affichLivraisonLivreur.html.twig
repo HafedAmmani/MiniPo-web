@@ -1,0 +1,148 @@
+{% extends 'baseLivreur.html.twig' %}
+{% block content %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    {% if listeliv==NULL  %}
+        Pas de formation
+    {% else %}
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Liste Livraison</h4>
+                <div class="table-responsive">
+                    <div class="dataTables_wrapper">
+
+                        <div id="example_filter" class="dataTables_filter">
+                            {#
+                            <label>Etat Livraison: <select class="custom-select col-6" id="etatl">
+                                    <option value="all" selected="">All</option>
+                                    <option value="livree">Livree</option>
+                                    <option value="non livree">Non livree</option>
+                                    <option value="refusee">Refusee</option>
+                                </select></label>#}
+                            <label>Destination:<input type="search" class="" placeholder="" aria-controls="example" id="destination"></label>
+                        </div>
+
+                        <table class="table table-striped" id="table-data">
+                            <tr> <th>Matricule livraison</th>
+                                <th>Destination</th>
+                                <th>Statut</th>
+                                <th>Date livraison</th>
+                                <th>Action</th>
+                            </tr>
+                            {% for elt in listeliv %}
+                                <tr>
+                                    <td>{{ elt.matriculel }}</td>
+                                    <td>{{ elt.destination }}</td>
+                                    <td>{{ elt.etatl }}</td>
+                                    <td>{{ elt.dateliv }}</td>
+                                    <td class="text-nowrap">
+                                        <a href="{{ path('minipo_updateEtat',{'id':elt.idliv}) }}" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $(document).ready(function() {
+            $('#table-data tr').dataTable({"sPaginationType": "full_numbers"});// note pagination will be done by datatables
+        });
+        $(document).ready(function(){
+            $('#destination').keyup(function(){
+                search_table($(this).val());
+            });
+            function search_table(value){
+                $('#table-data tr').each(function(){
+                    var found = 'false';
+                    $(this).each(function(){
+                        if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                        {
+                            found = 'true';
+                        }
+                    });
+                    if(found === 'true')
+                    {
+                        $(this).show();
+                    }
+                    else
+                    {
+                        $(this).hide();
+                    }
+                });
+            }
+        });
+    </script>
+
+    {{ parent() }}
+    {#
+    <script type="application/javascript">
+
+        $( document ).ready(function() {
+            console.log( "ready!" );
+            $("#destination").keyup(function(){
+                if($(this).val() !== "")
+                    $.ajax({
+                        type: "POST",
+                        url: "/livreur/search",
+                        data: JSON.stringify({"etatl": $('#etatl').val(), "destination": "%"+$(this).val()+"%"}),
+                        dataType:"json"
+                    })
+                        .always(function( data ) {
+                            // insert data into div
+                            $("#table-data").html(data.responseText);
+                        });
+                else
+                    $.ajax({
+                        type: "POST",
+                        url: "/livreur/search",
+                        data: JSON.stringify({"etatl": $('#etatl').val()}),
+                        dataType:"json"
+                    })
+                        .always(function( data ) {
+                            // insert data into div
+                            $("#table-data").html(data.responseText);
+                        });
+            });
+            $("#etatl").change(function(){
+                if($("#destination").val() !== "")
+                    $.ajax({
+                        type: "POST",
+                        url: "/livreur/search",
+                        data: JSON.stringify({"etatl": $(this).val(), "destination": "%"+$("#destination").val()+"%"}),
+                        dataType:"json"
+                    })
+                        .always(function( data ) {
+                            // insert data into div
+                            $("#table-data").html(data.responseText);
+                        });
+                else
+                    $.ajax({
+                        type: "POST",
+                        url: "/livreur/search",
+                        data: JSON.stringify({"etatl": $(this).val()}),
+                        dataType:"json"
+                    })
+                        .always(function( data ) {
+                            // insert data into div
+                            $("#table-data").html(data.responseText);
+                        });
+            });
+
+        });
+
+    </script>
+
+#}
+{% endblock %}
+
+
+
+
+

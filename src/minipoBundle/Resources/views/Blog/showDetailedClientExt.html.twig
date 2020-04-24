@@ -1,0 +1,150 @@
+{% extends 'BaseClient.html.twig' %}
+{% form_theme Form 'BaseClient.html.twig' %}
+
+
+    {% block header %}
+        <header>
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="left floatleft">
+                                <ul>
+                                    <li>
+                                        <i class="fa fa-phone"></i>
+                                        +216 71 000 000 +216 50 000 000
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-envelope-o"></i>
+                                        projetminipo@gmail.com
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="right floatright">
+                                <ul>
+                                    <li>
+                                        <i class="fa fa-user"></i>
+                                        <a href="/Minipo/web/app_dev.php/login">Account</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sticky-menu" class="header-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 header-bottom-bg">
+                            <div class="logo floatleft">
+                                <a href="index.html">
+                                    <img src="{{ asset('assetsC/img/logo-M-client.png') }}" alt="Rideo">
+                                </a>
+                            </div>
+                            <div class="mainmenu text-center floatleft">
+                                <nav>
+                                    <ul>
+                                        <li><a href="{{path('minipo_homepage')}}">Home</a></li>
+
+                                        <li><a href="{{ path('minipo_about') }}">about</a></li>
+                                        <li><a href="{{ path('minipo_ListBlogClientExt') }}">blog</a>
+                                        </li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    {% endblock %}
+
+    {% block body %}
+        <div class="page-banner">
+            <img src="{{ asset('assetsC/img/blogo.jpg') }}" alt="Page Banner">
+        </div>
+        <section class="blog-area sigle-blog blog-margin section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-md-9">
+                        {# <p class="home"><a href="{{ path('minipo_listblog') }}">Home</a> </p>#}
+                        <div class="single-blog-page">
+                            <div class="single-blog-img">
+                                <img src="{{ asset('uploads/post/' ~ blogs.getImageName()) }}" alt="Single Blog">
+                            </div>
+                            <div class="blog-text">
+                                <div class="post-title">
+                                    <h3>{{ Titre }}</h3>
+                                    <p class="date-com"><span>{{ blogs.getFirstname() }} {{ blogs.getLastname() }}</span> | {{ Date |date() }}|  {{ com|length }} comments</p>
+                                </div>
+                                <p>{{ blogs.getDescription() }}</p>
+                                <h4>{{ com|length }} Comments</h4>
+                                {% for comment in com %}
+
+                                    <div class="about-author comments">
+
+                                        <div class="author-des">
+                                            <h4><a href="#">{{ comment.Firstname }} {{ comment.Lastname  }}</a></h4>
+                                            <span>{{ Date |date() }}</span>
+                                            <p>{{ comment.description }}</p>
+                                            <span class="floatright" ><a >Reply</a>  / <a href="{{ path('minipo_deleteCom',{'idcom': comment.idcom,'idA': blogs.idA}) }}">Hide</a></span>
+
+                                        </div>
+                                    </div>
+
+                                {% endfor %}
+                                {#  <div class="about-author reply">
+                                       <div class="autohr-text">
+                                           <img alt="" src="img/about/3.jpg">
+                                           <div class="author-des">
+                                               <h4><a href="#">{{ comment.Firstname }} {{ comment.Lastname  }}</a></h4>
+                                               <span class="floatright"><a href="#">Reply</a>  /   <a href="#">Hide</a></span>
+                                               <span>27 Jun, 2016 at 2:30pm</span>
+                                               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas eleifend. Phasellus a felis at est bibenes dum feugiat ut eget eni Praesent et messages in consectetur.</p>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   </div>
+                                 #}
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                    <div class="leave-comment">
+                                        <h4>leave your review</h4>
+                                        {{ form_start(Form) }}
+
+                                        <div class="row">
+
+                                            <div class="col-xs-12">
+                                                <div class="input-text">
+
+                                                    {{ form_widget(Form.description, { 'attr': {'id':'comment' ,  'placeholder':'description'} }) }}
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <div class="submit-text">
+                                                    {{ form_widget(Form.Submit, { 'attr': {'class':'input'} } ) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{ form_end(Form) }}
+
+                                    </div>
+                                {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+                                    <br><br><br>
+                                    <div class="alert alert-warning" role="alert">
+                                        <h3>
+                                            In order to post in our blog you need to be connected, if you are not
+                                            you can join us by clicking <a href="{{ path('fos_user_registration_register') }}">HERE</a>
+                                            Or if you already have an account click <a href="{{ path('fos_user_security_login') }}" >HERE</a> to connect !
+                                        </h3>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <!-- single post end -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endblock %}

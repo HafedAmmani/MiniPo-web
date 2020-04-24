@@ -1,0 +1,173 @@
+{% extends 'baseEmp.html.twig' %}
+{#{% form_theme f 'bootstrap_4_layout.html.twig' %}#}
+{% block Reclamation %}
+    <li>  <a class="has-arrow waves-effect waves-dark"  aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">Reclamtion </span></a>
+        <ul aria-expanded="false" class="collapse">
+            <li><a href="{{ path('minipo_AjouterReclamationEmploye') }}">Ajouter Reclamations </a></li>
+            <li><a href="{{ path('minipo_AfficherMesReclamationEmployes') }}">Lister Reclamations </a></li>
+        </ul>
+    </li>
+{% endblock  %}
+{% block reclamationclient   %}
+
+    {#<Table border="1">
+        <tr>
+            <th>id</th>
+            <th>type</th>
+            <th>Objet</th>
+            <th>Description</th>
+            <th>Date </th>
+            <th>Etat </th>
+            <th>Reponse</th>
+            <th>suppression</th>
+        </tr>
+        {% for elt in reclamation  %}
+        <tr>
+
+
+
+            <td> {{ elt.id.id }}</td>
+            <td> {{ elt.type}}</td>
+            <td> {{ elt.objet}}</td>
+            <td> {{ elt.description}}</td>
+            <td> {{ elt.dater|date}}</td>
+            <td> {{ elt.etatr }}</td>
+            <td> {{ elt.Reponse}} </td>
+            <td><a href="{{ path('minipo_SupprimerReclamation',{'etatr':elt.etatr}) }}">
+                    <button>supprimer</button></a></td>
+            {% endfor  %}
+        </tr>
+
+    </Table>#}
+
+
+
+    {#<label>Search: <input type="search" class="" placeholder="" aria-controls="example23" name="etatr"></label>
+    <a href="{{ path('minipo_RechercheReclamation') }}" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
+    <ul>
+        <li>
+            <a href="{{ path('minipo_RechercheReclamation') }}" data-toggle="tooltip" data-original-title="Close">
+        </li>
+    </ul>#}
+
+
+
+    {#
+      <!-- jQuery is necessary -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+      <script type="text/javascript">
+          jQuery(document).ready(function() {
+              var searchRequest = null;
+              $("#search").keyup(function() {
+                  var minlength = 3;
+                  var that = this;
+                  var value = $(this).val();
+                  var entitySelector = $("#entitiesNav").html('');
+                  if (value.length >= minlength ) {
+                      if (searchRequest != null)
+                          searchRequest.abort();
+                      searchRequest = $.ajax({
+                          type: "GET",
+                          url: "{{ path('minipo_search') }}",
+                          data: {
+                              'q' : value
+                          },
+                          dataType: "text",
+                          success: function(msg){
+                              //we need to check if the value is the same
+                              if (value===$(that).val()) {
+                                  var result = JSON.parse(msg);
+                                  $.each(result, function(key, arr) {
+                                      $.each(arr, function(id, value) {
+                                          if (key === 'entities') {
+                                              if (id !== 'error') {
+                                                  {#entitySelector.append('<li><a href={{ path('minipo_showdetailed',{'id':idr}) }}">'+value+'</a></li>');
+                                              } else {
+                                                  entitySelector.append('<li class="errorLi">'+value+'</li>');
+                                              }
+                                          }
+                                      });
+                                  });
+                              }
+                          }
+                      });
+                  }
+              });
+          });
+      </script>#}
+
+    <div class="container-fluid">
+        <!-- .row -->
+        <div style="margin: 0 auto;width: 1000px;margin-left: 500px;">
+            <div class="card-body">
+                <h1 class="card-title">Vos Reclamations !</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- .col -->
+
+            {% for elt in reclamationemploye  %}
+
+                <div class="col-md-6 col-lg-6 col-xlg-4">
+                    <div class="card card-body">
+                        <div class="row">
+                            {% if elt.image == NULL %}
+                                <div class="col-md-4 col-lg-3 text-center">
+                                    <a href="{{ path('minipo_showdetailedEmploye',{'id':elt.idremp} ) }}"><img src="{{ asset('assets/images/Point_d_interrogation.jpg') }}" alt="user" class="img-circle img-responsive"></a>
+                                </div>
+                            {% endif %}
+                            {% if elt.image != NULL %}
+                                <div class="col-md-4 col-lg-3 text-center">
+                                    <a href="{{ path('minipo_showdetailedEmploye',{'id':elt.idremp} ) }}"><img src="{{ asset('uploads/post/' ~ elt.image) }}" alt="user" class="img-circle img-responsive"></a>
+                                </div>
+                            {% endif %}
+                            <div class="col-md-8 col-lg-9">
+                                <h3 class="box-title m-b-0">{{ elt.idcatrecemp.nom }}</h3> <small>{{ elt.objet}}</small>
+                                <a href="{{ path('minipo_showdetailedEmploye',{'id':elt.idremp} ) }}"><h4>
+                                        {% if  elt.etatremp is same as ('traiter')%}
+                                            <div class="label label-table label-success">{{ elt.etatremp }}</div>
+                                        {%endif%}
+                                        {% if  elt.etatremp is same as ('non traiter')%}
+                                            <div class="label label-table label-danger">{{ elt.etatremp }}</div>
+                                        {%endif%}
+                                        <br/>
+                                        <br/>
+                                        <abbr title="Phone">{{ elt.dateRemp|date()}}</abbr>
+
+                                    </h4></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor   %}
+        </div>
+    </div>
+
+
+
+    {{ render(controller('minipoBundle:Notification:display') )}}
+
+    {# Call NotificationsBundles's assets #}
+    {{ notifications_assets() }}
+
+    <script>
+        /**
+         * After calling notifications_assets() "pusher" is now available
+         * and you can use it this way
+         */
+
+            // select the channel you want to listen to
+        var channel = pusher.subscribe("notifications");// notifications channel
+        channel.bind("my-event", function(data) {
+            console.log('from notifications channel', data);
+        });
+
+        var channel = pusher.subscribe("messages");// messages channel
+        channel.bind("my-event", function(data) {
+            console.log('from messages channel', data);
+        });
+    </script>
+{% endblock %}
+

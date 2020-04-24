@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Produit
  *
  * @ORM\Table(name="produit", indexes={@ORM\Index(name="id", columns={"id"}), @ORM\Index(name="idcateg", columns={"idcateg"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="minipoBundle\Repository\ProduitRepository")
  */
 class Produit
 {
@@ -27,6 +27,13 @@ class Produit
      * @ORM\Column(name="designation", type="string", length=50, nullable=false)
      */
     private $designation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255, nullable=false)
+     */
+    private $description;
 
     /**
      * @var float
@@ -61,6 +68,12 @@ class Produit
      * })
      */
     private $idcateg;
+
+    /**
+     * @var string
+     * @ORM\Column(name="photo", type="string", length=255, nullable=false)
+     */
+    private $photo;
 
     /**
      * @return int
@@ -157,6 +170,41 @@ class Produit
     {
         $this->idcateg = $idcateg;
     }
+
+    /**
+     * @return string
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param string $photo
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+
+
 
 
 }

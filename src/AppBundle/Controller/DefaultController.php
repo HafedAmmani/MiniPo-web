@@ -18,4 +18,8 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
+    public function livreurAction()
+    {
+        return $this->render('@minipo/Livraison/affichLivraisonLivreur.html.twig');
+    }
 }

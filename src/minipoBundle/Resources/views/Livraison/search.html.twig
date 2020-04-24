@@ -1,0 +1,17 @@
+<tr> <th>Matricule livraison</th>
+    <th>Destination</th>
+    <th>Statut</th>
+    <th>Date livraison</th>
+    <th>Action</th>
+</tr>
+{% for elt in livraison %}
+    <tr>
+        <td>{{ elt.matriculel }}</td>
+        <td>{{ elt.destination }}</td>
+        <td>{{ elt.etatl }}</td>
+        <td>{{ elt.dateliv }}</td>
+        <td class="text-nowrap">
+            <a href="/livreur/updateEtat/{{ elt.idliv }}" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+        </td>
+    </tr>
+{% endfor %}

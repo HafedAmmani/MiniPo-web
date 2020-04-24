@@ -1,0 +1,79 @@
+{% extends 'Checkout.html.twig' %}
+
+
+
+{% block content %}
+    <section class="cart-page section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="single-check responsive">
+                            <form method="post">
+                                <div class="single-input p-bottom50 clearfix"style="height:10px;" >
+                                    <div class="col-xs-12">
+                                        <div class="check-title">
+                                            <h3>Destination:</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>entrer votre adresse: </label>
+                                        <div class="input-text">
+                                            <textarea name="des" style="width:450px;" rows="4" cols="50"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12">
+                                        <div class="submit-text ">
+                                            <input type="submit" name="submit" value="Livrer">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="single-check p-bottom50 clearfix">
+                        <div class="check-title">
+                            <h3>Your Orders</h3>
+                        </div>
+                        <div class="table-responsive table-two">
+                            <table class="order-table text-center">
+                                <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Prix Unitaire</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for elt in lcc %}
+                                    <tr>
+                                        <td class="td-text">
+                                            <div class="order-dsc">
+                                                <p><a href="#">{{ elt.idprod.designation }}</a></p>
+                                            </div>
+                                        </td>
+                                        <td>{{ elt.idprod.prix }}</td>
+                                        <td>{{ elt.qte }}</td>
+                                        <td>{{ elt.subtotal }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="single-check p-bottom50">
+                        <div class="subtotal clearfix">
+
+                            <p>Total <strong class="floatright"><span>{{ lcc[0].idcmd.total }}</span></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

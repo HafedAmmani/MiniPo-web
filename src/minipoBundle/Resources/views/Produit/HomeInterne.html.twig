@@ -1,0 +1,283 @@
+{% extends 'BaseClient.html.twig' %}
+
+{% block header %}
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="left floatleft">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    +216 71 000 000 +216 50 000 000
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope-o"></i>
+                                    projetminipo@gmail.com
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="right floatright">
+                            <ul>
+                                <li>
+
+
+                                    <i class="fa fa-user"></i>
+                                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                        {{ app.user.username }}
+                                    {% endif %}
+                                    | <a href="{{ path('fos_user_security_logout') }}">Log out</a>
+
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sticky-menu" class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 header-bottom-bg">
+                        <div class="logo floatleft">
+
+                            <img src="{{ asset('assetsC/img/logo-M-client.png') }}" alt="Rideo" />
+
+                        </div>
+                        <div class="mainmenu text-center floatleft">
+                            <nav>
+                                <ul>
+                                    <li><a href="{{ path('minipo_affichageInterne') }}">Home</a></li>
+                                    <li>
+                                        <a href="{{path('minipo_allProduits')}}">products</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Reclamation</a>
+                                        <ul>
+                                            <li><a href="{{ path('minipo_AjouterReclamation')}}">Envoyer Recmalation</a>
+                                            </li>
+
+                                            <li><a href="{{ path('minipo_AfficherMesReclamation')}}">Lister Reclamations </a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Commandes</a>
+                                        <ul>
+                                            <li><a href="{{path('minipo_commandesClt',{'id':app.user.id}) }}">Mes Commandes</a></li>
+                                            <li><a href="{{path('minipo_facturesClt',{'id':app.user.id}) }}">Mes Factures</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li><a href="{{ path('minipo_ListBlogClient') }}">blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">contact</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- mobile menu start -->
+                        <div class="mobile-menu-area">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul>
+                                        <li><a href="{{path('minipo_homepage')}}">Home</a></li>
+                                        <li><a href="about.html">about</a></li>
+                                        <li><a href="blog-1.html">blog</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="blog-1.html">Blog Style One</a>
+                                                </li>
+                                                <li>
+                                                    <a href="single-blog.html">Single Blog</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="contact.html">contact</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- mobile menu end -->
+
+                        {% block panierMobile %}
+                            {% if lc==NULL  %}
+                                <div class="cart-menu-area floatright">
+                                    <ul>
+                                        <li><a href="#"><i class="pe-7s-shopbag"></i> <span>0</span></a>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            {% else %}
+
+                                <div class="cart-menu-area floatright">
+                                    <ul>
+                                        <li><a href="#"><i class="pe-7s-shopbag"></i><span>{{ lc|length }}</span></a>
+                                            <ul class="cart-menu">
+                                                {% for elt in lc|slice(0,2) %}
+                                                    <li>
+                                                        <a href="cart.html"><img src="{{ asset('assetsC/img/products/'~elt.idprod.photo) }}" alt="" /></a>
+                                                        <div class="cart-menu-title">
+                                                            <h5>{{elt.idprod.designation}} </h5>
+                                                            <span>{{ elt.qte ~" x "~elt.idprod.prix }}   </span>
+                                                        </div>
+                                                        <span class="cancel-item"><a href="#"><i class="fa fa-close"></i></a></span>
+                                                    </li>
+                                                {% endfor %}
+                                                <li class="cart-menu-btn">
+                                                    <a href="{{ path('minipo_afficherPanier',{'id':app.user.id}) }}">checkout</a>
+                                                    <a href="{{ path('minipo_validerCmd',{'id':app.user.id}) }}">Valier</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <section class="featured-area featured-one section-padding">
+        <div class="container">
+
+            {% for elt in pc %}
+                <br><br><br><br><br>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-md-6 col-text-center">
+                        <div class="section-title text-center">
+                            <h3><span>Categorie:</span>{{ elt.0.idcateg.nom }}</h3>
+                            <div class="shape">
+                                <img src="{{ asset('assetsC/img/icon/t-shape.png') }}" alt="Title Shape" />
+                            </div>
+                            <p>It is a long established fact that a reader will be distracted by the readable content page when looking at its layout.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row text-center">
+                    <div class="featured-slider single-products">
+
+                        {% for el in elt %}
+                            <div class="single-slide">
+                                <div class="padding30">
+                                    <div class="product-item">
+                                        <div class="pro-img">
+                                            <a href="product-details.html"><img style="width:435px ;height:265px ;" src="{{ asset('assetsC/img/products/'~el.photo) }}" alt="" /></a>
+                                        </div>
+                                        <div class="actions-btn">
+                                            <ul class="clearfix">
+                                                <li>
+                                                    <a href="{{ path('minipo_ajouterLC',{'idProd':el.idprod} )  }}"><i class="fa fa-eye"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-title">
+                                            <a href="product-details.html"><h5>{{ el.designation }}</h5></a>
+                                            <p>Price   <span>{{ el.prix~" TND" }}</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+{% block blog %}
+
+    {% if  blogs==NULL  %}
+        <section class="blog-area blog-one section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-md-6 col-text-center">
+                        <div class="section-title text-center">
+                            <p>Pas de blogs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% else %}
+        <section class="blog-area blog-one section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-md-6 col-text-center">
+                        <div class="section-title text-center">
+                            <h3><span>FROM</span> BLOG</h3>
+                            <div class="shape">
+                                <img src="{{ asset('assetsC/img/icon/t-shape.png') }}" alt="Title Shape" />
+                            </div>
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 hidden-sm col-md-4">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <a href="product-details.html"><img src="{{ asset('uploads/post/' ~ blogs[0].getImageName()) }}" alt="Blog" /></a>
+                            </div>
+                            <div class="blog-text clearfix">
+                                <hr class="line"/>
+                                <a href="single-blog.html"><h4>{{ blogs[0].titre }}</h4></a>
+                                <p><span>{{ blogs[0].date|date() }}</span></p>
+                                <p>{{ blogs[0].description }} </p>
+                                <div class="view-more">
+                                    <a class="shop-btn" href="{{ path('minipo_DetaileBlogClient',{'idA':blogs[0].idA })}}">View More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="blog-item middel">
+                            <div class="blog-text clearfix">
+                                <hr class="line"/>
+                                <a href="single-blog.html"><h4>{{ blogs[1].titre }}</h4></a>
+                                <p><span>{{ blogs[1].date|date() }} </span></p>
+                                <p>{{ blogs[1].description }} </p>
+                                <div class="view-more">
+                                    <a class="shop-btn" href="{{ path('minipo_DetaileBlogClient',{'idA':blogs[1].idA })}}">View More</a>
+                                </div>
+                            </div>
+                            <div class="blog-img">
+                                <a href="product-details.html"><img src="{{ asset('uploads/post/' ~ blogs[1].getImageName()) }}" alt="Blog" /></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 hidden-sm col-md-4">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <a href="product-details.html"><img src="{{ asset('uploads/post/' ~ blogs[2].getImageName()) }}" alt="Blog" /></a>
+                            </div>
+                            <div class="blog-text clearfix">
+                                <hr class="line"/>
+                                <a href="single-blog.html"><h4>{{ blogs[2].titre }}</h4></a>
+                                <p><span>{{ blogs[2].date|date() }}</span></p>
+                                <p>{{ blogs[2].description }} </p>
+                                <div class="view-more">
+                                    <a class="shop-btn" href="{{ path('minipo_DetaileBlogClient',{'idA':blogs[2].idA })}}">View More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'BaseReclamationClient.html.twig' %}
+{% form_theme f 'bootstrap_4_layout.html.twig' %}
+{% block reclamationclient   %}
+<div style="margin: 0 auto;width: 1000px;margin-left: 500px;">
+    <div class="card-body">
+        <h1 class="card-title">Envoyer une Reclamation</h1>
+    </div>
+    <div class="row">
+
+        <div class="col-md-6 ">
+            <div class="form-group">
+                <label >Catagorie : </label>
+                <label >Probleme de Commande </label>
+
+                {#<input type="text"  class="form-control" value={{ reclamation.type}}>#}
+            </div>
+            <div class="form-group">
+                <label >Reference commande: </label>
+                <label >{{c.refC}}</label>
+                {#<input type="text"  class="form-control" value={{ reclamation.type}}>#}
+            </div>
+            {{ form_start(f)}}
+            {{ form_row(f.objet,{'attr':{'placeholder':"Objet de votre reclamation"}})}}
+            {{ form_row(f.description,{'attr':{'placeholder':"Decrire votre probleme"}})}}
+            {{ form_row(f.image)}}
+        </div>
+    </div>
+    <div class="row">
+        {{ form_row(f.Envoyer)}}
+        {{ form_end(f)}}
+        <a href="{{ path('minipo_commandesClt',{'id':app.user.id}) }}"><button type="submit" class="btn btn-inverse waves-effect waves-light"style="margin-left: 50px">Cancel</button></a>
+
+
+
+    </div>
+
+    {% endblock    %}

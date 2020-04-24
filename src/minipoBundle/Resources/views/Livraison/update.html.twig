@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block reclamationclient %}
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title"><a href="/admin/affiche"><i class="fa fa-arrow-left"></i></a> Update Livraison</div>
+            <div class="form-material m-t-40" _lpchecked="1">
+
+                {{ form_start(f) }}
+                {{ form_errors(f) }}
+
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-3" >Matricule commande</div>
+                    <div class="col-3">{{ liv.idc.refc }}</div>
+                </div>
+
+                <div class="row" style="margin-bottom: 15px">
+                    {{ form_label(f.destination, null,{'label_attr': {'class': 'col-3'}}) }}
+                    {{ form_widget(f.destination, {'attr': {'class': 'col-3'}}) }}
+                </div>
+
+                <div class="row" style="margin-bottom: 15px">
+                    {{ form_label(f.dateliv, "Date", {'label_attr': {'class': 'col-3'}}) }}
+                    {{ form_widget(f.dateliv, {'attr': {'class': 'col-3'}}) }}
+                </div>
+
+                <div class="row" style="margin-bottom: 15px">
+                    {{ form_label(f.id, "Livreur", {'label_attr': {'class': 'col-3'}}) }}
+                    {{ form_widget(f.id, {'attr': {'class': 'col-3'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_widget(f.modifier, {'attr': {'class': 'btn waves-effect waves-light btn-primary'}}) }}
+                </div>
+
+                {{ form_end(f) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

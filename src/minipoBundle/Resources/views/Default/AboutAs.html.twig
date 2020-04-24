@@ -1,0 +1,356 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <title>{% block title %}About {% endblock %}</title>
+    {% block stylesheets %}
+        <title>Home Version One || Rideo</title>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assetsC/img/logo-m-c.png') }}">
+        <link rel="apple-touch-icon" href="{{ asset('assetsC/apple-touch-icon.png') }}">
+        <!-- Place favicon.ico in the root directory -->
+        <!-- all css here -->
+        <!-- style css -->
+        <link rel="stylesheet" href="{{ asset('assetsC/style.css') }}">
+        <!-- modernizr js -->
+        <script src="{{ asset('assetsC/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+
+    {% endblock %}
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- header section start -->
+{% block header %}
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="left floatleft">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    +216 71 000 000 +216 50 000 000
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope-o"></i>
+                                    projetminipo@gmail.com
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="right floatright">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-user"></i>
+                                    <a href="{{ path('fos_user_security_login') }}">Account</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sticky-menu" class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 header-bottom-bg">
+                        <div class="logo floatleft">
+                            <a href="index.html">
+                                <img src="{{ asset('assetsC/img/logo-M-client.png') }}" alt="Rideo" />
+                            </a>
+                        </div>
+                        <div class="mainmenu text-center floatleft">
+                            <nav>
+                                <ul>
+                                    <li><a href="{{ path('minipo_affichage') }}">Home</a></li>
+
+                                    <li>
+                                        <a href="{{ path('minipo_about') }}">about</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('minipo_ListBlogClientExt') }}">blog</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- mobile menu start -->
+                        <div class="mobile-menu-area">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul>
+                                        <li><a href="{{ path('minipo_affichage') }}">Home</a></li>
+                                        <li>
+                                            <a href="{{path('minipo_allProduits')}}">products</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('minipo_about') }}">about</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('minipo_ListBlogClientExt') }}">blog</a>
+                                        </li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- mobile menu end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+<!-- header section end -->
+<!-- page banner area start -->
+<div class="page-banner">
+    <img style="width:1920px;height:300px" src="{{ asset('assetsC/img/slider/yy.png') }}" alt="Page Banner" />
+</div>
+<!-- page banner area end -->
+<!-- about us section start -->
+<section class="about-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-6">
+
+                <img style="width:520px;height: 370px;" src="{{ asset('assetsC/img/about/1.jpg') }}" alt="" />
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="about-text">
+                    <h3>About Minipo</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem  Lorem  The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', </p> <br />
+                    <p> making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years,</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about us section end -->
+
+<!-- our team section start -->
+{% block team %}
+    <div class="our-team section-padding-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6 col-text-center">
+                    <div class="section-title about-title text-center">
+                        <h3>Our Team</h3>
+                        <div class="shape">
+                            <img src="{{ asset('assetsC/img/icon/t-shape.png') }}" alt="Title Shape" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="single-member">
+                        <div class="member-img">
+                            <img style="width: 320px;height: 270px;" src="{{ asset('assetsC/img/about/12.jpg') }}" alt="Team Member" />
+                            <div class="social-share text-center">
+                                <div class="link-icon">
+                                    <a href="#"><i class="fa fa-link"></i></a>
+                                </div>
+                                <ul class="clearfix">
+                                    <li>
+                                        <a href="#"><i class="fa fa-google"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-behance"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h4>Jouini Hiba</h4>
+                        <p>Designer</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="single-member">
+                        <div class="member-img">
+                            <img style="width: 320px;height: 270px;"src="{{ asset('assetsC/img/about/13.jpg') }}" alt="Team Member" />
+                            <div class="social-share text-center">
+                                <div class="link-icon">
+                                    <a href="#"><i class="fa fa-link"></i></a>
+                                </div>
+                                <ul class="clearfix">
+                                    <li>
+                                        <a href="#"><i class="fa fa-google"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-behance"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h4>Amani Hafedh</h4>
+                        <p>Directeur</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="single-member">
+                        <div class="member-img">
+                            <img style="width: 320px;height: 270px;"src="{{ asset('assetsC/img/about/14.jpg') }}" alt="Team Member" />
+                            <div class="social-share text-center">
+                                <div class="link-icon">
+                                    <a href="#"><i class="fa fa-link"></i></a>
+                                </div>
+                                <ul class="clearfix">
+                                    <li>
+                                        <a href="#"><i class="fa fa-google"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-behance"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h4>Boudaya Sinda</h4>
+                        <p>Administrateur</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="single-member">
+                        <div class="member-img">
+                            <img style="width: 320px;height: 270px;"src="{{ asset('assetsC/img/about/15.jpg') }}" alt="Team Member" />
+                            <div class="social-share text-center">
+                                <div class="link-icon">
+                                    <a href="#"><i class="fa fa-link"></i></a>
+                                </div>
+                                <ul class="clearfix">
+                                    <li>
+                                        <a href="#"><i class="fa fa-google"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-behance"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h4>Daragi Ines</h4>
+                        <p>Responsable RH</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+<!-- our team section end -->
+
+<!-- footer section start -->
+{% block footer %}
+    <!-- footer section start -->
+    <footer>
+
+
+        <div class="footer-logo-text">
+            <div class="container text-center">
+                <img src="{{ asset('assetsC/img/slider/logo2.png') }}" alt="Logo" />
+
+            </div>
+        </div>
+        <!-- footer top start -->
+        <div  class="footer-top section-padding">
+            <div   class="container">
+                <div  class="row">
+
+                    <div class="col-xs-12 col-sm-4 col-md-3">
+                        <div class="s-footer-text">
+                            <div class="footer-title"style="margin-left: 500px; ">
+                                <h4 >Contact</h4>
+                            </div>
+                            <div class="contact-link" style="margin-left: 350px; width: 250%" >
+                                <ul>
+                                    <li class="text-center">
+                                        <span>Email:</span><p>projetminipo@gmail.com</p>
+                                    </li>
+                                    <li class="text-center">
+                                        <span>Phone:</span> <p>+216 71 000 000 +216 50 000 000</p>
+                                    </li>
+                                    <li class="text-center">
+                                        <span>Address:</span><p>Z.I. Chotrana II B.P. 160 Pôle Technologique El Ghazela - Ariana 2083</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- footer top end -->
+        <!-- footer bottom start -->
+        <div class="footer-bottom">
+            <div class="container">
+
+            </div>
+        </div>
+        <!-- footer bottom end -->
+    </footer>
+    <!-- footer section end -->
+{% endblock %}
+<!-- footer section end -->
+
+{% block javascripts %}
+    <!-- all js here -->
+    <!-- jquery latest version -->
+    <script src="{{ asset ('assetsC/js/vendor/jquery-1.12.3.min.js') }}"></script>
+    <!-- bootstrap js -->
+    <script src="{{ asset ('assetsC/js/bootstrap.min.js') }}"></script>
+    <!-- camera slider JS -->
+    <script src="{{ asset ('assetsC/js/camera.min.js') }}"></script>
+
+    <!-- jquery.easing js -->
+    <script src="{{ asset ('assetsC/js/jquery.easing.1.3.js') }}"></script>
+    <!-- slick slider js -->
+    <script src="{{ asset ('assetsC/js/slick.min.js') }}"></script>
+    <!-- jquery-ui js -->
+    <script src="{{ asset ('assetsC/js/jquery-ui.min.js') }}"></script>
+    <!-- magnific-popup js -->
+    <script src="{{ asset ('assetsC/js/magnific-popup.min.js') }}"></script>
+    <!-- countdown js -->
+    <script src="{{ asset ('assetsC/js/countdown.js') }}"></script>
+    <!-- meanmenu js -->
+    <script src="{{ asset ('assetsC/js/jquery.meanmenu.js') }}"></script>
+    <!-- plugins js -->
+    <script src="{{ asset ('assetsC/js/plugins.js') }}"></script>
+    <!-- Google Map JS -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_Agsvf36du-7l_mp8iu1a-rXoKcWfs2I"> </script>
+    <!-- Custom map-script js -->
+    <script src="{{ asset ('assetsC/js/map-script.js') }}"></script>
+    <!-- main js -->
+    <script src="{{ asset ('assetsC/js/main.js') }}"></script>
+
+{% endblock %}
+</body>
+</html>

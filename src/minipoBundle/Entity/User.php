@@ -6,6 +6,8 @@ use Doctrine\Common\Collections\Collection;
 use FOS\UserBundle\Model\GroupInterface;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 
 /**
@@ -27,11 +29,10 @@ class User extends BaseUser
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank
      * @ORM\Column(name="adresse", type="string", length=30, nullable=true)
      */
     protected $adresse;
-
 
 
     /**
@@ -43,35 +44,34 @@ class User extends BaseUser
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="Firstname", type="string", length=180, nullable=false)
+     * @Assert\NotBlank
+     * @ORM\Column(name="Firstname", type="string", length=180, nullable=true)
      */
     protected $firstname;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Genre", type="string", length=20, nullable=false)
+     * @ORM\Column(name="Genre", type="string", length=20, nullable=true)
      */
     protected $genre;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="Lastname", type="string", length=180, nullable=false)
+     *@Assert\NotBlank
+     * @ORM\Column(name="Lastname", type="string", length=180, nullable=true)
      */
     protected $lastname;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="matricule", type="string", length=255, nullable=true)
      */
     protected $matricule;
 
     /**
      * @var string
-     *
+     * @Assert\Regex("^[0-9]$^")
      * @ORM\Column(name="salaire", type="string", length=150, nullable=true)
      */
     protected $salaire;
@@ -79,10 +79,17 @@ class User extends BaseUser
 
     /**
      * @var string
-     *
+     * @Assert\Regex("^[0-9]{8}$^")
+     * @Assert\NotBlank()
      * @ORM\Column(name="tel", type="string", length=150, nullable=true)
      */
     protected $tel;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=150, nullable=true)
+     */
+    protected $image;
 
     /**
      * @return string
@@ -446,14 +453,27 @@ class User extends BaseUser
         $this->tel = $tel;
     }
 
+    /**
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
 
-
+    /**
+     * @param string $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
 
     public function __construct()
     {
         parent::__construct();
         // your own logic
-         }
+    }
 
 
 }

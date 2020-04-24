@@ -1,0 +1,54 @@
+{% extends 'baseEmp.html.twig' %}
+{% form_theme f 'bootstrap_4_layout.html.twig' %}
+
+{% block Reclamation %}
+    <li>  <a class="has-arrow waves-effect waves-dark"  aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">Reclamtion </span></a>
+        <ul aria-expanded="false" class="collapse">
+            <li><a href="{{ path('minipo_AjouterReclamationEmploye') }}">Ajouter Reclamations </a></li>
+            <li><a href="{{ path('minipo_AfficherMesReclamationEmployes') }}">Lister Reclamations </a></li>
+        </ul>
+    </li>
+{% endblock  %}
+{% block reclamationclient   %}
+    {# templates/base.html.twig #}
+
+    {# read and display just one flash message type #}
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {# read and display several types of flash messages #}
+    {% for label, messages in app.flashes(['success', 'warning']) %}
+        {% for message in messages %}
+            <div class="flash-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    <div style="margin: 0 auto;width: 1000px;margin-left: 500px;">
+        <div class="card-body">
+            <h1 class="card-title">Envoyer une Reclamation</h1>
+        </div>
+        <div class="row">
+
+            <div class="col-md-6 ">
+                {{ form_start(f)}}
+
+                {{ form_row(f.idcatrecemp)}}
+                {{ form_row(f.objet,{'attr':{'placeholder':"Objet de votre reclamation"}})}}
+                {{ form_row(f.description,{'attr':{'placeholder':"decrire votre probleme!"}})}}
+                {{ form_row(f.image)}}
+            </div>
+        </div>
+        <div class="row">
+
+            {{ form_row(f.Envoyer)}}
+            {{ form_end(f)}}
+            <a href="{{ path('minipo_AfficherMesReclamationEmployes') }}"><button type="submit" class="btn btn-inverse waves-effect waves-light"style="margin-left: 50px">Cancel</button></a>
+
+        </div>
+    </div>
+
+{% endblock    %}

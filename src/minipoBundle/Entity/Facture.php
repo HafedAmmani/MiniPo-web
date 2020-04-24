@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Facture
  *
  * @ORM\Table(name="facture", indexes={@ORM\Index(name="idcmd", columns={"idcmd"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="minipoBundle\Repository\FactureRepository")
  */
 class Facture
 {

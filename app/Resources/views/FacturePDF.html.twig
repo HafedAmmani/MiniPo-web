@@ -1,0 +1,126 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    {% block title %}<title>Facture || Minipo</title> {% endblock %}
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assetsC/img/favicon.ico')}}">
+    <link rel="apple-touch-icon" href="{{ asset('assetsC/apple-touch-icon.png') }}">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- style css -->s
+    <link rel="stylesheet" type="text/css" href="C:\wamp64\www\Minipot\web\assetsC\css\style.css">
+</head>
+<body style="color:#222;">
+{% if fact==NULL %}
+    Pas de formation
+{% else %}
+    <h1>Facture</h1>
+    <br/><br/>
+    <div style="position:absolute;top:7px;right:0;width:30%;">
+        <div style="color:#555;float:left;width:105px;text-align:right;">De:</div>
+        <div style="margin-left: 115px;border-left: 1px solid #cccccc;padding-left: 10px;">
+            <strong>Minipo Groupe</strong>
+            <p>67 Rue Alain Savry
+            <p>Résidence Jardin II Bloc B،</p>
+            <p>Tunis 1002</p>
+            <p>71 582 006|71 582 005</p>
+            <p>Site: www.Minipo.tn</p>
+        </div>
+    </div>
+
+
+
+    <section class="cart-page section-padding">
+        <div class="container">
+
+            <div class="col-xs-12">
+                <div class="single-check p-bottom50 clearfix">
+                    <div class="check-title">
+                        <br/><br/><br/><br/><br/>
+                        <strong><LABEL>Facture Réference: </LABEL></strong><br/><br/>
+                        <LABEL>date d'emission: </LABEL><br/><br/>
+                        <LABEL>client: </LABEL><br/><br/>
+                        <label>Contact: </label><br/><br/><br/>
+                    </div>
+
+                    <div class="table-responsive table-two">
+                        <table class="order-table text-center">
+                            <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Prix Unitaire</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+
+                            <tr>
+                                <td class="td-text">
+
+                                    <div class="order-dsc">
+                                        <p><a href="#">Sensor Carbon Jenson GX1 Bike</a></p>
+                                    </div>
+                                </td>
+                                <td>40.000</td>
+                                <td>1</td>
+                                <td>$170.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-text">
+                                    <div class="order-dsc">
+                                        <p><a href="#">Sensor Carbon Jenson GX1 Bike</a></p>
+                                    </div>
+                                </td>
+                                <td>40.000</td>
+                                <td>1</td>
+                                <td>$170.00</td>
+                            </tr>
+                            <tr>
+                                <td class="td-text">
+                                    <div class="order-dsc">
+                                        <p><a href="#">Sensor Carbon Jenson GX1 Bike</a></p>
+                                    </div>
+                                </td>
+                                <td>40.000</td>
+                                <td>1</td>
+                                <td>$170.00</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="single-check p-bottom50">
+                    <div class="check-title">
+                        <h3>Facture Totals</h3>
+                    </div>
+                    <div class="subtotal clearfix">
+                        <p>Total <strong class="floatright"><span>$170.00</span></strong></p>
+                    </div>
+                    <br/><br/><br/>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+    <footer>
+
+        <p style="position: absolute;left:780px;top:1100px;height:120px;">Signature<p>
+            <img src="C:\wamp64\www\Minipot\web\assetsC\img\blog\ss.png" style="position:absolute;left:700px;top:1130px;width:20%;"/>
+
+
+    </footer>
+{% endif %}
+</body>
+</html>

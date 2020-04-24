@@ -1,0 +1,31 @@
+{% extends 'BaseBlogA.html.twig' %}
+{% form_theme Form 'bootstrap_4_layout.html.twig' %}
+{#
+{%  block body %}
+<h1>creer votre poste</h1>
+    {{ form_start(Form) }}
+
+    {{ form_end(Form) }}
+
+{% endblock  %}
+#}
+{% block reclamationclient %}
+{%- block vich_image_widget -%}
+    {{ form_start(Form) }}
+    <div style="width: 50%;margin-left: 25%;margin-top: 5%;margin-bottom: 5%" class="vich-image" xmlns="http://www.w3.org/1999/html">
+        {{ form_widget(Form.titre, { 'attr': {'id':'comment' ,  'placeholder':'Titre'} }) }}
+    </br>
+        {{ form_widget(Form.description, { 'attr': {'id':'comment' ,  'placeholder':'Description'} }) }}
+        </br>
+
+        {{- form_widget(Form.imageFile) -}}
+        </br>
+        {{ form_widget(Form.Submit, { 'attr': {'class':'input'} } ) }}
+    </div>
+    {{ form_end(Form) }}
+{%- endblock -%}
+{% endblock  %}
+
+
+
+

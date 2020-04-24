@@ -1,0 +1,42 @@
+{% extends 'BaseReclamationClient.html.twig' %}
+
+{% block reclamationclient %}
+
+    {% if p==NULL  %}
+        Pas de formation
+    {% else %}
+
+        <table style="width:100%;max-width:100%;margin-bottom:20px">
+            <tr>
+                <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">id Produit</th>
+                <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">designation</th>
+                <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">qte en Stock</th>
+                <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">Prix</th>
+                <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">Categorie</th>
+                <th style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">Action</th>
+            </tr>
+            {% for elt in p %}
+                <tr>
+                    <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">{{ elt.idprod }}</td>
+                    <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">{{ elt.designation }}</td>
+                    <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">{{ elt.qtestock}}</td>
+                    <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">{{ elt.prix }}</td>
+                    <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">{{ elt.idcateg.nom }}</td>
+                    <td style="padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6;text-align: center">
+
+                        <a href=" {{ path('minipo_ajouterLC',{'idProd':elt.idprod} )  }}" >
+                            <i class="fa fa-shopping-cart" title="buy this product"></i>
+                        </a>
+
+
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+        <div class="text-center">{{ knp_pagination_render(p) }}</div>
+    {% endif %}
+{% endblock %}
+
+
+

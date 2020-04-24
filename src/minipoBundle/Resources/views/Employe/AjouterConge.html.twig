@@ -1,0 +1,82 @@
+{% extends 'baseEmp.html.twig' %}
+{% block title %}Demande Conge{% endblock %}
+{% block content %}
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h3 class="text-themecolor">Demande Conge</h3>
+        </div>
+
+        <div>
+            <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <form class="m-t-40" novalidate method="post">
+                        <div class="form-group">
+                            <h5>Basic Select <span class="text-danger">*</span></h5>
+                            <div class="controls">
+                                <select name="type" id="select" required class="form-control">
+                                    <option value="">Choisir type de conge</option>
+                                    <option value="Vacances">Vacances</option>
+                                    <option value="Maladie">Maladie</option>
+                                    <option value="Autre">Autre</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h5>Date de debut <span class="text-danger">*</span></h5>
+                            <div class="controls">
+                                <input type="date" name="date_debut" class="form-control" required data-validation-required-message="This field is required"> </div>
+
+                        </div>
+                        <div class="form-group">
+                            <h5>Date de fin <span class="text-danger">*</span></h5>
+                            <div class="controls">
+                                <input type="date" name="date_fin" class="form-control" required data-validation-required-message="This field is required"> </div>
+
+                        </div>
+                        <div class="form-group">
+                            <h5>Nombre des jours posé <span class="text-danger">*</span></h5>
+                            <div class="input-group">
+
+                                <input type="number" name="nbrjrs" placeholder="Nombre des jours" class="form-control" required data-validation-required-message="This field is required" min="1" >
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h5>Information complimentaire <span class="text-danger">*</span></h5>
+                            <div class="controls">
+                                <textarea name="info_comp" id="textarea" class="form-control" required placeholder="Entre votre information..."></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="text-xs-right">
+                            <button type="submit" class="btn btn-info">Submit</button>
+                            <button type="reset" class="btn btn-inverse">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block add_script %}
+
+    <script src="{{ asset('js/validation.js') }}"></script>
+    <script>
+        ! function(window, document, $) {
+            "use strict";
+            $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(), $(".skin-square input").iCheck({
+                checkboxClass: "icheckbox_square-green",
+                radioClass: "iradio_square-green"
+            }), $(".touchspin").TouchSpin(), $(".switchBootstrap").bootstrapSwitch();
+        }(window, document, jQuery);
+    </script>
+{% endblock %}

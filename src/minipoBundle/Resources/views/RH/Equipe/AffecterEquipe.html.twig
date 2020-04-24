@@ -1,0 +1,131 @@
+{% extends 'baseRH.html.twig' %}
+{% block title %}Affecter Equipe{% endblock %}
+{% block add_style %}
+    <link href="{{ asset('assets/plugins/bootstrap-select/bootstrap-select.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/plugins/footable/css/footable.core.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/bootstrap-select/bootstrap-select.min.css') }}" rel="stylesheet" />
+{% endblock %}
+{% block content %}
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h3 class="text-themecolor">Affectation des Equipes</h3>
+        </div>
+        <div class="col-md-7 col-4 align-self-center">
+            <div class="d-flex m-t-10 justify-content-end">
+                <div class="d-flex m-r-20 m-l-10 hidden-md-down">
+                    <div class="chart-text m-r-10">
+                        <h5 class="m-b-0"><small>Nombres des equipes</small></h5>
+                        <h4 class="m-t-0 text-info">{{ listequipe | length }}</h4></div>
+                    <div class="spark-chart">
+                        <div id="monthchart"></div>
+                    </div>
+                </div>
+                <div class="d-flex m-r-20 m-l-10 hidden-md-down">
+                    <div class="chart-text m-r-10">
+                        <h5 class="m-b-0"><small>Nombres employe affecter</small></h5>
+                        <h4 class="m-t-0 text-info">{{ listaffectation | length }}</h4></div>
+                    <div class="spark-chart">
+                        <div id="monthchart"></div>
+                    </div>
+                </div>
+                <div class="">
+                    <button class="right-side-toggle waves-effect waves-light btn-success btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-warning">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Affecter des equipes</h2>
+                    <hr>
+                    <form class="m-t-40" novalidate method="post">
+
+                        <div class="col-md-12">
+                            <label class="control-label text-right col-md-3">Nom d'employe</label>
+                            <select name="nom" class="selectpicker m-b-20 m-r-10" data-style="btn-info btn-outline-info">
+                                {% for elt in listeEmploye %}
+                                    <option  value="{{ elt.Lastname }}">{{ elt.Lastname }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="control-label text-right col-md-3">Nom d'equipe</label>
+                            <select class="selectpicker m-b-20 m-r-10" name="equipe" data-style="btn-info btn-outline-info">
+                                {% for elt in listequipe %}
+                                    <option  value="{{ elt.NomEq }}">{{ elt.NomEq }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button type="submit" class="btn waves-effect waves-light btn-rounded btn-success">Affecter</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Liste des employes affecté</h2>
+                    <hr>
+                    <label class="form-inline">Afficher &nbsp;
+                        <select id="demo-show-entries">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                        </select> &nbsp; rows </label>
+                    <table id="demo-foo-pagination" class="table m-b-0 toggle-arrow-tiny" data-page-size="5">
+                        <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Nom d'employe</th>
+                            <th>Nom d'equipe</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for elt in listaffectation %}
+                            <tr>
+                                <td>{{ elt.idaffect }}</td>
+                                <td>{{ elt.nom }}</td>
+                                <td>{{ elt.NomEq }}</td>
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="5">
+                                <div class="text-right">
+                                    <ul class="pagination pagination-split m-t-30"> </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block add_script %}
+    <script src="{{asset('assets/plugins/bootstrap-select/bootstrap-select.min.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('assets/plugins/footable/js/footable.all.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap-select/bootstrap-select.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/footable-init.js') }}"></script>
+{% endblock %}

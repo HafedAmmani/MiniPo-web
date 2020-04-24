@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+{% block reclamationclient %}
+    {% if listeliv==NULL  %}
+        Pas de formation
+    {% else %}
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Liste Livraison</h4>
+                <div class="table-responsive">
+
+
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Matricule</th>
+                            <th>Destination</th>
+                            <th>Statut</th>
+                            <th>Matricule commande </th>
+                            <th>Nom livreur</th>
+                            <th>Date livraison</th>
+                            <th>Action</th>
+
+                        </tr>
+                        {% for elt in listeliv %}
+                            <tr>
+
+                                <td>{{ elt.matriculeL }}</td>
+                                <td>{{ elt.destination }}</td>
+                                <td><span class="label label-{% if elt.etatl == "non livree" %}warning{% elseif elt.etatl == "livree" %}success{% else %}danger{% endif %}">{{ elt.etatl }}</span></td>
+                                <td>{{ elt.idc.refC }}</td>
+                                <td>{{ elt.id.username }}</td>
+                                <td>{{ elt.dateliv }}</td>
+
+                                <td class="text-nowrap">
+                                    <a href="{{ path('minipo_details',{'id':elt.idliv}) }}" data-toggle="tooltip" data-original-title="Detail"> <i class="fa fa-eye text-inverse m-r-10"></i> </a>
+                                    <a href="{{ path('minipo_update',{'id':elt.idliv}) }}" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                    <a href="{{ path('minipo_deletel',{'id':elt.idliv}) }}" data-toggle="tooltip" data-original-title="Delete"> <i class="fa fa-close text-danger"></i> </a>
+                                </td>
+
+
+
+                            </tr>
+                        {% endfor %}
+
+                    </table>
+                </div>
+
+                <div  style="float: right">{{ knp_pagination_render(listeliv) }}</div>
+            </div>
+
+        </div>
+
+    {% endif %}
+{% endblock %}
+
+

@@ -39,7 +39,7 @@ class AfterLoginRedirection implements AuthenticationSuccessHandlerInterface
 
         if (in_array('ROLE_ADMIN', $rolesTab, true)) {
 
-            $redirection = new RedirectResponse($this->router->generate('minipo_admin'));
+            $redirection = new RedirectResponse($this->router->generate('minipo_AcceuilAdmin'));
         }
         if (in_array('ROLE_EMPLOYE', $rolesTab, true)) {
 
@@ -53,7 +53,16 @@ class AfterLoginRedirection implements AuthenticationSuccessHandlerInterface
 
             $redirection = new RedirectResponse($this->router->generate('minipo_Afficher'));
         }
+        if (in_array('ROLE_BLOG', $rolesTab, true)) {
+
+            $redirection = new RedirectResponse($this->router->generate('minipo_listblog'));
+        }
+        if (in_array('ROLE_LIVREUR', $rolesTab, true)) {
+
+            $redirection = new RedirectResponse($this->router->generate('minipo_afficheLivreur'));
+        }
         return $redirection;
+
     }
 
 }

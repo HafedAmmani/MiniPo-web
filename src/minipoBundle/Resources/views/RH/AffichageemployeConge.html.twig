@@ -1,0 +1,64 @@
+{% extends 'baseRH.html.twig' %}
+{% block title %}Employe en Conge{% endblock %}
+
+{% block add_style %}
+    <link href="{{ asset('assets/plugins/footable/css/footable.core.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/bootstrap-select/bootstrap-select.min.css') }}" rel="stylesheet" />
+{% endblock %}
+{% block content %}
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h3 class="text-themecolor">Employe en Conge</h3>
+        </div>
+
+        <div>
+            <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <table id="demo-foo-row-toggler" class="table toggle-circle table-hover">
+                <thead>
+                <tr>
+                    <th data-toggle="true"> Nom </th>
+                    <th data-toggle="true"> Prenom </th>
+                    <th data-toggle="true"> Email </th>
+                    <th data-toggle="true"> Telephone </th>
+                    <th data-hide="all"> Date de debut </th>
+                    <th data-hide="all"> Date de retour </th>
+                    <th data-hide="all"> Type </th>
+                    <th data-hide="all"> Description </th>
+                    <th data-hide="all"> QR code </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for elt in listemploye %}
+
+
+                    <tr>
+                        <td>{{ elt.lastname }}</td>
+                        <td>{{ elt.firstname }}</td>
+                        <td>{{ elt.email }}</td>
+                        <td>{{ elt.tel }}</td>
+                        <td>{{ elt.datedebut }}</td>
+                        <td>{{ elt.datefin }}</td>
+                        <td>{{ elt.type }}</td>
+                        <td>{{ elt.description }}</td>
+                        <td>{{ barcode({code: elt.tel , type: 'qrcode', format: 'html'}) }}</td>
+                    </tr>
+
+
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
+{% block add_script %}
+    <script src="{{ asset('assets/plugins/footable/js/footable.all.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap-select/bootstrap-select.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/footable-init.js') }}"></script>
+{% endblock %}

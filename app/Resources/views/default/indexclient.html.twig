@@ -1,0 +1,27 @@
+{% extends 'BaseClientInterne.html.twig' %}
+
+
+{% block Reclamation %}
+    <li>
+        <a href="#">Reclamation</a>
+        <ul>
+            <li><a href="{{ path('minipo_AjouterReclamation')}}">Envoyer Recmalation</a>
+            </li>
+
+            <li><a href="{{ path('minipo_AfficherMesReclamation')}}">Lister Reclamations </a></li>
+
+        </ul>
+    </li>
+    <li>
+        <a href="#">Commandes</a>
+        <ul>
+
+            {# {% if is_granted('IS_AUTHENTICATED_FULLY') %}#}
+            <li><a href=" {{ path('minipo_commandesClt' )  }}">Mes Commandes</a></li>
+            {#{% endblock %}#}
+            <li><a href="#">Mes Factures</a>
+            </li>
+        </ul>
+    </li>
+
+{% endblock  %}

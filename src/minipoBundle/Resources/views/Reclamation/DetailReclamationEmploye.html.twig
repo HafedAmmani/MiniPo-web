@@ -1,0 +1,125 @@
+{% extends 'baseEmp.html.twig' %}
+
+
+{% block Reclamation %}
+    <li>  <a class="has-arrow waves-effect waves-dark"  aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">Reclamtion </span></a>
+        <ul aria-expanded="false" class="collapse">
+            <li><a href="{{ path('minipo_AjouterReclamationEmploye') }}">Ajouter Reclamations </a></li>
+            <li><a href="{{ path('minipo_AfficherMesReclamationEmployes') }}">Lister Reclamations </a></li>
+        </ul>
+    </li>
+{% endblock  %}
+{% block reclamationclient   %}
+
+    <form method="post"novalidate>
+        <div style="margin: 0 auto;width: 1000px;">
+            <div class="card-body">
+                <center><h1 class="card-title">Votre Reclamation !</h1></center>
+            </div>
+            <div class="col-md-6 "style="margin-left: 200px;">
+                <form class="form-horizontal m-t-40" method="post">
+
+                    <div class="form-group">
+                        <label>Envoye le  :</label>
+                        <label >{{ reclamation.dateremp|date}}</label>
+                        {#<input type="text"  class="form-control" value={{ reclamation.objet}}>#}
+                    </div>
+                    <h4>
+                        <label>Etat  :</label>
+                        {% if   reclamation.etatremp is same as ('traiter')%}
+                            <div class="label label-table label-success">{{ reclamation.etatremp}}</div>
+                        {%endif%}
+                        {% if  reclamation.etatremp is same as ('non traiter')%}
+                            <div class="label label-table label-danger">{{ reclamation.etatremp}}</div>
+                        {%endif%}
+
+
+                    </h4>
+                    <div class="form-group">
+                        <label>Categorie :</label>
+                        <label >{{ reclamation.idcatrecemp.nom}}</label>
+                        {#<input type="text"  class="form-control" value={{ reclamation.objet}}>#}
+                    </div>
+
+                    <div class="form-group">
+                        <label>Objet :</label>
+                        <label >{{ reclamation.objet}}</label>
+                        {#<input type="text"  class="form-control" value={{ reclamation.objet}}>#}
+                    </div>
+                    {% if reclamation.etatremp is same as ('non traiter') %}
+                        <div class="form-group">
+                            <label>Description :</label>
+                            <div class="controls">
+                                <textarea class="form-control" id="textarea" name="description"required data-validation-required-message="Vous devez inserer une description"minlength="2"  rows="5" value="{{ reclamation.description}}">{{ reclamation.description}}</textarea>
+                                {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if reclamation.etatremp is same as ('traiter') %}
+                        <div class="form-group">
+                            <label>Description :</label>
+                            <label>{{ reclamation.description}}</label>
+                            {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
+                        </div>
+                    {% endif %}
+                    {% if reclamation.image == NULL %}
+                        <div class="form-group" >
+                            <img src="{{ asset('assets/images/Point_d_interrogation.jpg') }}" alt="user"  width="200px"style="margin-left: 100px"></div>
+                    {% endif  %}
+                    {% if reclamation.image != NULL %}
+                        <div class="form-group" >
+                            <img src="{{ asset('uploads/post/' ~ reclamation.image) }}" alt="user" class=""width="200px"style="margin-left: 100px"></div>
+                    {% endif  %}
+                    <div class="form-group">
+                        <label>Reponse</label>
+                        <label >{{reclamation.Reponse}}</label>
+
+                    </div>
+
+
+
+                    {% if reclamation.etatremp is same as ('traiter') %}
+                        <a href="{{ path('minipo_AfficherMesReclamationEmployes') }}"><button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button></a>
+                    {% endif %}
+
+                    {% if reclamation.etatremp is same as ('non traiter') %}
+                        <a href="{{ path('minipo_showdetailedEmploye',{'id':reclamation.idremp}) }}"><button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Modifier</button></a>
+                        <a href="{{ path('minipo_AfficherMesReclamationEmployes') }}"><button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button></a>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </form>
+
+    {#Etat:<select name="etat" value={{ reclamation.etatr}}>
+            {% if  reclamation.etatr is same as ('traiter')%}
+                <option selected>traiter</option>
+                <option>non traiter</option>
+            {%endif%}
+            {% if  reclamation.etatr is same as ('non traiter')%}
+                <option>traiter</option>
+                <option selected>non traiter</option>
+            {%endif%}
+
+        </select>
+        Reponse:<input type ="text" name="reponse" value={{ reclamation.Reponse}}>
+        <td><a href="{{ path('minipo_ModifierEtatReclamation',{'id':reclamation.idr}) }}">
+        <button >modifier</button></a>
+
+
+    </form>#}
+
+{% endblock    %}
+{% block add_script %}
+
+    <script src="{{ asset('js/validation.js') }}"></script>
+    <script>
+        ! function(window, document, $) {
+            "use strict";
+            $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(), $(".skin-square input").iCheck({
+                checkboxClass: "icheckbox_square-green",
+                radioClass: "iradio_square-green"
+            }), $(".touchspin").TouchSpin(), $(".switchBootstrap").bootstrapSwitch();
+        }(window, document, jQuery);
+    </script>
+{% endblock %}

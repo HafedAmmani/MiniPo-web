@@ -1,0 +1,17 @@
+{% extends 'baseRH.html.twig' %}
+{% block title %}Bilan{% endblock %}
+{% block content %}
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h3 class="text-themecolor">Bilan</h3>
+        </div>
+
+        <div>
+            <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+        </div>
+    </div>
+    <div id="div_chart"></div>
+{% endblock %}
+{% block add_script %}
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> <script type="text/javascript"> {{ gc_draw(piechart, 'div_chart') }} </script>
+{% endblock %}

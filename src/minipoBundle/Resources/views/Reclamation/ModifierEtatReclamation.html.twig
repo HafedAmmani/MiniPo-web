@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+{% block Reclamation %}
+    <li>  <a class="has-arrow waves-effect waves-dark"  aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">Gestion Reclamtion </span></a>
+        <ul aria-expanded="false" class="collapse">
+            <li><a href="{{ path('minipo_AfficherToutesReclamationEmploye') }}">Reclamations employe  </a></li>
+            <li><a href="{{ path('minipo_AfficherToutesReclamation') }}">Reclamations Client </a></li>
+            <li><a href="{{ path('minipo_Stat') }}">Statistique</a></li>
+            <li><a href="/">Modern</a></li>
+        </ul>
+    </li>
+{% endblock  %}
+
+
+{% block reclamationclient   %}
+    <form method="post" novalidate>
+        <div style="margin: 0 auto;width: 1000px;">
+            <div class="card-body">
+                <h1 class="card-title">Traitement de la Reclamation</h1>
+            </div>
+            <div class="col-md-6 ">
+                <form class="form-horizontal m-t-40" novalidate method="post">
+                    {#<div class="form-group">
+                        <label>Date  <span class="help"> e.g. "George deo"</span></label>
+                        <input type="text" class="form-control" value={{ reclamation.dater}}>
+                    </div>#}
+                    {% if reclamation.idcatrec.nom is same as('Problème de Commande') %}
+                        <div class="form-group">
+                            <label>Reference de la commande :</label>
+                            <label >{{ reclamation.idcmd.refC}}</label>
+                            {#<input type="text"  class="form-control" value={{ reclamation.type}}>#}
+                        </div>
+                    {% endif %}
+                    <div class="form-group">
+                        <label>Objet :</label>
+                        <label >{{ reclamation.objet}}</label>
+                        {#<input type="text"  class="form-control" value={{ reclamation.objet}}>#}
+                    </div>
+                    <div class="form-group">
+                        <label>Description :</label>
+                        <label >{{ reclamation.description}}</label>
+                        {#<textarea class="form-control" rows="5" value={{ reclamation.description}}>{{ reclamation.description}}</textarea>#}
+                    </div>
+                    {% if reclamation.image == NULL %}
+                        <div class="form-group" >
+                            <img src="{{ asset('assets/images/Point_d_interrogation.jpg') }}" alt="user" class="" width="200px" style="margin-left: 100px"></div>
+                    {% endif  %}
+                    {% if reclamation.image != NULL %}
+                        <div class="form-group" >
+                            <img src="{{ asset('uploads/post/' ~ reclamation.image) }}" alt="user" class=""width="200px"style="margin-left: 100px"></div>
+                    {% endif  %}
+                    {% if  reclamation.etatr is same as ('traiter')%}
+                        <div class="form-group">
+                            <label>Reponse</label>
+                            <label>{{reclamation.Reponse}}</label>
+                        </div>
+                    {%endif%}
+                    {% if  reclamation.etatr is same as ('non traiter')%}
+                        <div class="form-group">
+                            <label>Reponse <span class="text-danger">*</span></label>
+                            <div class="controls">
+                                <textarea class="form-control" id="textarea" required data-validation-required-message="Vous devez repondre" name="reponse"  rows="5"minlength="2" value={{ reclamation.reponse}}>{{reclamation.Reponse}}</textarea>
+                            </div>
+                        </div>
+
+                    {%endif%}
+
+                    {% if  reclamation.etatr is same as ('traiter')%}
+                        <div class="form-group">
+                            <label>Etat: </label>
+                            <div class="label label-table label-success"><label>Traiter</label></div>
+                        </div>
+                    {%endif%}
+                    {% if  reclamation.etatr is same as ('non traiter')%}
+                        <div class="form-group">
+                            <label>Etat: </label>
+                            <select class="custom-select col-12" id="inlineFormCustomSelect" name="etat" value={{ reclamation.etatr}}>
+                                <option>traiter</option>
+                                <option selected>non traiter</option>
+                            </select>
+                        </div>
+                    {%endif%}
+
+
+
+                    <a href="{{ path('minipo_AfficherToutesReclamation') }}"><button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button></a>
+
+
+                    {% if  reclamation.etatr is same as ('non traiter')%}
+                        <a href="{{ path('minipo_ModifierEtatReclamation',{'id':reclamation.idr}) }}"><button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Traiter</button></a>
+                    {%endif%}
+
+                </form>
+
+            </div>
+        </div>
+    </form>
+
+{% endblock    %}
+
+{% block add_script %}
+
+    <script src="{{ asset('js/validation.js') }}"></script>
+    <script>
+        ! function(window, document, $) {
+            "use strict";
+            $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(), $(".skin-square input").iCheck({
+                checkboxClass: "icheckbox_square-green",
+                radioClass: "iradio_square-green"
+            }), $(".touchspin").TouchSpin(), $(".switchBootstrap").bootstrapSwitch();
+        }(window, document, jQuery);
+    </script>
+{% endblock %}

@@ -1,0 +1,21 @@
+
+
+
+
+
+
+
+{% for comment in com %}
+    <div class="about-author reply">
+        <div class="autohr-text">
+            <img alt="" src="img/about/3.jpg">
+            <div class="author-des">
+                <h4><a href="">{{ comment.Firstname }} {{ comment.Lastname  }}</a></h4>
+                <span class="floatright"><a href="{{ path('minipo_DetaileBlog') }}">Reply</a>  /   <a href="#">Hide</a></span>
+                <span>27 Jun, 2016 at 2:30pm</span>
+                <p>{{ comment.getdescription() }}</p>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endfor %}

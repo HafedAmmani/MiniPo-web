@@ -8,6 +8,8 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+    photos_directory: '%kernel.root_dir%/../web/uploads/post'
+    image_directory:    '%kernel.project_dir%/web/assets/images/img'
 
 framework:
     #esi: ~
@@ -47,6 +49,8 @@ doctrine:
         user: '%database_user%'
         password: '%database_password%'
         charset: UTF8
+        types:
+          enumetat:  minipoBundle\Entity\EnumEtatType
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
         #     e.g. database_path: '%kernel.project_dir%/var/data/data.sqlite'
@@ -61,15 +65,23 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
-    spool: { type: memory }
+  transport:        gmail
+  username:         projetminipo@gmail.com
+  password:         projetminipo2020
+  host:             localhost
+  port:             465
+  encryption:       ssl
+  auth-mode:        login
+  spool: { type: 'memory' }
+  stream_options:
+    ssl:
+      allow_self_signed: true
+      verify_peer: false
+      verify_peer_name: false
 
 sensio_framework_extra:
-   router:
-        annotations: false
+  router:
+    annotations: false
 
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
@@ -80,3 +92,51 @@ fos_user:
     from_email:
         address: "hafed.ammani@esprit.tn"
         sender_name: "Minipo"
+
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        product_image:
+            uri_prefix: /web/uploads/post
+            upload_destination: '%kernel.root_dir%/../web/uploads/post'
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+knp_paginator:
+    page_range: 5                       # number of links showed in the pagination menu (e.g: you have 10 pages, a page_range of 3, on the 5th page you'll see links to page 4, 5, 6)
+    default_options:
+        page_name: page                 # page query parameter name
+        sort_field_name: sort           # sort field query parameter name
+        sort_direction_name: direction  # sort direction query parameter name
+        distinct: true                  # ensure distinct results, useful when ORM queries are using GROUP BY statements
+        filter_field_name: filterField  # filter field query parameter name
+        filter_value_name: filterValue  # filter value query parameter name
+    template:
+        pagination: '@KnpPaginator/Pagination/twitter_bootstrap_v3_pagination.html.twig'     # sliding pagination controls template
+        sortable: '@KnpPaginator/Pagination/sortable_link.html.twig' # sort link template
+        filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template
+# NotificationsBundle configuration
+notifications:
+    app_id:     967708
+    app_key:    42638cdeb6b47bc89d2b
+    app_secret: 84d4bb50a6286f5f58c6
+    cluster:    eu
+    # Optional
+    # Default false: work without ssl encryption
+    # Set it to true to work with ssl encryption
+    encrypted:  false
+    #PDF
+knp_snappy:
+    pdf:
+        enabled:    true
+        # If you have wkhtmltopdf as an environment variable you don't need to provide the
+        # full path to the executable, use it in the same way as you use in the console
+        #binary:  "wkhtmltopdf"
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
+        options:    []
+    image:
+        enabled:    true
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
+        options:    []
+    temporary_folder: %kernel.cache_dir%/snappy

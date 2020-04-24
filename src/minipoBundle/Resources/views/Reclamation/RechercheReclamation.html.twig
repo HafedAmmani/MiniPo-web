@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+{% block reclamationclient   %}
+    {#<Table border="1">
+        <tr>
+            <th>id</th>
+            <th>type</th>
+            <th>Objet</th>
+            <th>Description</th>
+            <th>Date </th>
+            <th>Etat </th>
+            <th>Reponse</th>
+            <th>suppression</th>
+        </tr>
+        {% for elt in reclamation  %}
+        <tr>
+
+
+
+            <td> {{ elt.id.id }}</td>
+            <td> {{ elt.type}}</td>
+            <td> {{ elt.objet}}</td>
+            <td> {{ elt.description}}</td>
+            <td> {{ elt.dater|date}}</td>
+            <td> {{ elt.etatr }}</td>
+            <td> {{ elt.Reponse}} </td>
+            <td><a href="{{ path('minipo_SupprimerReclamation',{'etatr':elt.etatr}) }}">
+                    <button>supprimer</button></a></td>
+            {% endfor  %}
+        </tr>
+
+    </Table>#}
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Bordered Table</h4>
+                <h6 class="card-subtitle">Add<code>.table-bordered</code>for borders on all sides of the table and cells.</h6>
+                {#<form method="POST">
+
+                    <label>Search: <input type="search" class="" placeholder="" aria-controls="example23" name="etatr"></label>
+                    <a href="{{ path('minipo_RechercheReclamation') }}" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
+                </form>#}
+                {{ form(reclamation) }}
+
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>type</th>
+                            <th>Objet</th>
+                            <th>Description</th>
+                            <th>Date </th>
+                            <th>Etat </th>
+                            <th>Reponse</th>
+                            <th class="text-nowrap">Action</th>
+                        </tr>
+                        </thead>
+                        {% for elt in reclamation  %}
+                        <tbody>
+
+                        <tr>
+                            <td> {{ elt.id.id }}</td>
+                            <td> {{ elt.type}}</td>
+                            <td> {{ elt.objet}}</td>
+                            <td> {{ elt.description}}</td>
+                            <td> {{ elt.dater|date}}</td>
+                            <td>
+                                {% if  elt.etatr is same as ('traiter')%}
+                                    <div class="label label-table label-success">{{ elt.etatr }}</div>
+                                {%endif%}
+                                {% if  elt.etatr is same as ('non traiter')%}
+                                    <div class="label label-table label-danger">{{ elt.etatr }}</div>
+                                {%endif%}
+                            </td>
+
+                            <td> {{ elt.Reponse}} </td>
+                            <td class="text-nowrap">
+                                <a href="{{ path('minipo_ModifierEtatReclamation',{'id':elt.idr}) }}" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                <a href="{{ path('minipo_SupprimerReclamation',{'etatr':elt.etatr}) }}" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
+                            </td>
+                            {% endfor  %}
+
+
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+  {# minipo_SupprimerReclamation:
+      path:   /afficher/supprimer/{etatr}
+                  defaults: { _controller: minipoBundle:ServiceReclamationClient:SupprimerReclamation}#}

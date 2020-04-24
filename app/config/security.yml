@@ -8,8 +8,11 @@ security:
         ROLE_USER: ROLE_USER
         ROLE_ADMIN: ROLE_ADMIN
         ROLE_EMPLOYE : ROLE_EMPLOYE
+        ROLE_LIVREUR : ROLE_LIVREUR
         ROLE_CLIENT : ROLE_CLIENT
         ROLE_RH : ROLE_RH
+        ROLE_BLOG : ROLE_BLOG
+        ROLE_ADMINH : ROLE_ADMINH
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         in_memory:
@@ -38,5 +41,7 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin, role: ROLE_ADMIN }
         - { path: ^/employe, role: ROLE_EMPLOYE }
+        - { path: ^/livreur, role: ROLE_LIVREUR }
         - { path: ^/client, role: ROLE_CLIENT }
-        - { path: ^/adminRH, role: ROLE_RH }
+        - { path: ^/RH, role: ROLE_RH }
+        - { path: ^/adminBlog, role: ROLE_BLOG }

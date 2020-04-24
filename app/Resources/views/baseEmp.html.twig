@@ -11,7 +11,7 @@
             <meta name="description" content="">
             <meta name="author" content="">
             <!-- Favicon icon -->
-            <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
+            <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/logo-M.png') }}">
 
             <!-- Bootstrap Core CSS -->
             <link href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -22,6 +22,8 @@
             <!-- You can change the theme colors from here -->
             <link href="{{ asset('css/colors/blue.css') }}" id="theme" rel="stylesheet">
 
+        {% endblock %}
+        {% block new_style %}
         {% endblock %}
     </head>
     <body class="fix-header fix-sidebar card-no-border">
@@ -51,16 +53,16 @@
                                 <!-- Logo icon --><b>
                                     <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                                     <!-- Dark Logo icon -->
-                                    <img src="{{ asset('assets/images/logo-icon.png') }}" alt="homepage" class="dark-logo" />
+                                    <img src="{{ asset('assets/images/logo-M.png') }}" alt="homepage" class="dark-logo" />
                                     <!-- Light Logo icon -->
                                     <img src="{{ asset('assets/images/logo-light-icon.png') }}" alt="homepage" class="light-logo" />
                                 </b>
                                 <!--End Logo icon -->
                                 <!-- Logo text --><span>
                          <!-- dark Logo text -->
-                         <img src="{{ asset('assets/images/logo-text.png') }}" alt="homepage" class="dark-logo" />
+                         <img src="{{ asset('assets/images/minipo-v1.png') }}" alt="homepage" class="dark-logo" />
                                     <!-- Light Logo text -->
-                         <img src="{{ asset('assets/images/logo-light-text.png') }}" class="light-logo" alt="homepage" /></span> </a>
+                         <img src="{{ asset('assets/images/minipo-light.png') }}" class="light-logo" alt="homepage" /></span> </a>
                         </div>
                         <!-- ============================================================== -->
                         <!-- End Logo -->
@@ -78,7 +80,7 @@
                                 <!-- ============================================================== -->
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
-                                        <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                                        {#<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>#}
                                     </a>
                                     <div class="dropdown-menu mailbox animated slideInUp">
                                         <ul>
@@ -127,7 +129,7 @@
                                 <!-- ============================================================== -->
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-email"></i>
-                                        <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                                        {#<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>#}
                                     </a>
                                     <div class="dropdown-menu mailbox animated slideInUp" aria-labelledby="2">
                                         <ul>
@@ -192,15 +194,15 @@
                                 <!-- Profile -->
                                 <!-- ============================================================== -->
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('assets/images/users/1.jpg') }}" alt="user" class="profile-pic" /></a>
+                                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('assets/images/img/'~app.user.image) }}" alt="user" class="profile-pic" /></a>
                                     <div class="dropdown-menu dropdown-menu-right scale-up">
                                         <ul class="dropdown-user">
                                             <li>
                                                 <div class="dw-user-box">
-                                                    <div class="u-img"><img src="{{ asset('assets/images/users/1.jpg') }}" alt="user"></div>
+                                                    <div class="u-img"><img src="{{ asset('assets/images/img/'~app.user.image) }}" alt="user"></div>
                                                     <div class="u-text">
-                                                        <h4>Steave Jobs</h4>
-                                                        <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+                                                        <h4>{{ app.user.Lastname }} {{ app.user.Firstname }}</h4>
+                                                        <p class="text-muted">{{ app.user.email }}</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
                                                 </div>
                                             </li>
                                             <li role="separator" class="divider"></li>
@@ -230,9 +232,9 @@
                     <!-- User profile -->
                     <div class="user-profile">
                         <!-- User profile image -->
-                        <div class="profile-img"> <img src="{{ asset('assets/images/users/profile.png') }}" alt="user" />
+                        <div class="profile-img"> <img src="{{ asset('assets/images/img/'~app.user.image) }}" alt="user" />
                             <!-- this is blinking heartbit-->
-                            <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            {#<div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>#}
                         </div>
                         <!-- User profile text-->
                         <div class="profile-text">
@@ -269,16 +271,18 @@
                             <li class="nav-small-cap"><a href="base.html.twig"><i class="mdi mdi-home"></i>Acceuil</a></li>
                             <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-book-plus"></i><span class="hide-menu">Demande Conge</span></a>
                                 <ul aria-expanded="false" class="collapse">
-
+                                    <li><a href="{{ path('minipo_AjouterConge') }}">Envoyer une demande</a></li>
+                                    <li><a href="{{ path('minipo_AfficherConge') }}">Lister Les demandes</a></li>
                                 </ul>
                             </li>
-
-                            <li>  <a class="has-arrow waves-effect waves-dark"  aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">Reclamtion </span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="/">Ajouter Reclamations </a></li>
-                                    <li><a href="/">Lister Reclamations </a></li>
-                                </ul>
-                            </li>
+                            {% block Reclamation %}
+                                <li>  <a class="has-arrow waves-effect waves-dark"  aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">Reclamtion </span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="{{ path('minipo_AjouterReclamationEmploye') }}">Ajouter Reclamations </a></li>
+                                        <li><a href="{{ path('minipo_AfficherMesReclamationEmployes') }}">Lister Reclamations </a></li>
+                                    </ul>
+                                </li>
+                            {% endblock  %}
 
 
                         </ul>
@@ -303,7 +307,10 @@
                         <!-- ============================================================== -->
                         <!-- Start Page Content -->
                         <!-- ============================================================== -->
-
+                        {% block reclamationclient   %}
+                        {% endblock  %}
+                        {% block content %}
+                        {% endblock %}
                         <!-- ============================================================== -->
                         <!-- End PAge Content -->
                         <!-- ============================================================== -->
@@ -374,5 +381,7 @@
 
 
         {% endblock %}
+            {% block add_script %}
+        {% endblock    %}
     </body>
 </html>

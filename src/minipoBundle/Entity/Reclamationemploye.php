@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Reclamationemploye
  *
  * @ORM\Table(name="reclamationemploye", indexes={@ORM\Index(name="id", columns={"id"}), @ORM\Index(name="idcatrec", columns={"idcatrec"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="minipoBundle\Repository\ReclamationemployeRepository")
  */
 class Reclamationemploye
 {
@@ -25,6 +25,8 @@ class Reclamationemploye
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=1000, nullable=false)
+     * @Assert\NotBlank
+     * @Assert\Length(min=10,minMessage="vous devez inserer une description s'il vous plait!")
      */
     private $description;
 
@@ -46,6 +48,8 @@ class Reclamationemploye
      * @var string
      *
      * @ORM\Column(name="objet", type="string", length=255, nullable=false)
+     *  @Assert\NotBlank
+     * @Assert\Length(min=5)
      */
     private $objet;
 
@@ -59,20 +63,22 @@ class Reclamationemploye
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string", length=500, nullable=false)
+     * @ORM\Column(name="image", type="string", length=500, nullable=true)
      * @Assert\File(maxSize="500k", mimeTypes={"image/jpeg", "image/jpg", "image/png", "image/GIF"})
      */
     private $image;
 
     /**
-     * @var \CategorieReclamation
+     * @var \CategorieReclamationEmp
      *
-     * @ORM\ManyToOne(targetEntity="CategorieReclamation")
+     * @ORM\ManyToOne(targetEntity="CategorieReclamationEmp")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idcatrec", referencedColumnName="idcatrec")
+     *   @ORM\JoinColumn(name="idcatrecemp", referencedColumnName="idcatrecemp")
      * })
      */
-    private $idcatrec;
+    private $idcatrecemp;
+
+
 
     /**
      * @var \User
@@ -194,19 +200,19 @@ class Reclamationemploye
     }
 
     /**
-     * @return \CategorieReclamation
+     * @return \CategorieReclamationEmp|int
      */
-    public function getIdcatrec()
+    public function  getIdcatrecemp()
     {
-        return $this->idcatrec;
+        return  $this->idcatrecemp;
     }
 
     /**
-     * @param \CategorieReclamation $idcatrec
+     * @param \CategorieReclamationEmp $idcatrecemp
      */
-    public function setIdcatrec($idcatrec)
+    public function setIdcatrecemp($idcatrecemp)
     {
-        $this->idcatrec = $idcatrec;
+        $this->idcatrecemp = $idcatrecemp;
     }
 
     /**

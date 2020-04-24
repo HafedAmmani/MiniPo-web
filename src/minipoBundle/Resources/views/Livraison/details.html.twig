@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block reclamationclient %}
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title" style="font-weight: bold; font-size: large; color: #007bff">Détails Livraison</div>
+            <div class="form-material m-t-40" _lpchecked="1">
+
+
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-3" style="font-weight: bold">Matricule livraison:</div>
+                    <div class="col-3">{{ liv.matriculel }}</div>
+                </div>
+
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-3" style="font-weight: bold">Date livraison:</div>
+                    <div class="col-3">{{ liv.dateliv }}</div>
+                </div>
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-3" style="font-weight: bold">Destination:</div>
+                    <div class="col-3">{{ liv.destination }}</div>
+                </div>
+
+                <div class="row" style="margin-bottom: 15px">
+                    <div class="col-3" style="font-weight: bold">Etat livraison:</div>
+                    <div class="col-3">{{ liv.etatl }}</div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

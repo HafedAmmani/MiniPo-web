@@ -1,0 +1,40 @@
+{% extends 'AboutProduct.html.twig' %}
+
+    {% block choose %}{% endblock %}
+    {% block ourProd %}{% endblock %}
+
+
+    {% block infoProd %}
+        {% if p==NULL  %}
+            Pas de formation
+        {% else %}
+
+            <div class="col-xs-12 col-sm-9 col-md-6">
+                <div>
+                    <img style="height: 285px;width: 370px;" src="{{ asset('assetsC/img/products/'~p.photo) }}" alt="{{ p.designation }}" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="about-text">
+                    <h3>{{ p.designation }}</h3>
+                    <strong><h1>{{ p.prix~" TND" }}</h1></strong>
+                    <hr/><br/>
+                    <p>{{ p.description }}</p>
+                    <hr/>
+
+                    {{ form(f) }}
+
+                    <hr>
+                    <div cogass="categ-tag">
+                        <ul class="clearfix">
+                            <li>
+                                <p>CATEGORIES: {{ p.idcateg.nom }}</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        {% endif %}
+    {% endblock %}

@@ -4,9 +4,349 @@ minipo_homepage:
 minipo_client:
     path:     /client/
     defaults: { _controller: minipoBundle:Default:client }
+minipo_agentBlog:
+    path:     /agentBlog/
+    defaults: { _controller: minipoBundle:Default:blog }
 minipo_employe:
     path:     /employe/
     defaults: { _controller: minipoBundle:Default:employe }
 minipo_admin:
     path:     /admin/
     defaults: { _controller: minipoBundle:Default:admin }
+minipo_addblog:
+    path:     /agentBlog/addBlog
+    defaults: { _controller: minipoBundle:Blog:addBlog }
+
+minipo_UpdateBlog:
+    path:     /updateBlog/{idA}
+    defaults: { _controller: minipoBundle:Blog:updateBlog }
+minipo_DeleteBlog:
+    path:     /agentBlog/deleteBlog/{idA}
+    defaults: { _controller: minipoBundle:Blog:deleteBlog }
+
+minipo_DetaileBlog:
+    path:     /agentBlog/detailBlog/{idA}
+    defaults: { _controller: minipoBundle:Blog:detailBlog }
+
+minipo_DetaileBlogClient:
+    path:     /client/detailBlog/{idA}
+    defaults: { _controller: minipoBundle:Blog:detailBlogClient }
+
+
+minipo_DetaileBlogClientEx:
+    path:     /detailBlogClientExt/{idA}
+    defaults: { _controller: minipoBundle:Blog:detailBlogClientEx }
+
+
+
+
+minipo_addcomment:
+    path:     /addCom
+    defaults: { _controller: minipoBundle:Blog:addComment }
+minipo_listCom:
+    path:     /listCom
+    defaults: { _controller: minipoBundle:Blog:listCom }
+minipo_deleteCom:
+    path:     /deleteCom/{idcom}/{idA}
+    defaults: { _controller: minipoBundle:Blog:deleteCommentaire }
+
+minipo_listComRep:
+    path:     /listComRep
+    defaults: { _controller: minipoBundle:Blog:addCommentRep }
+
+
+
+minipo_searchByTitleBlog:
+    path:     /search
+    defaults: { _controller: minipoBundle:Blog:search }
+minipo_searchBlog:
+  path:     /client/search
+  defaults: { _controller: minipoBundle:Blog:search }
+minipo_searchBlogExt:
+  path:     /search
+  defaults: { _controller: minipoBundle:Blog:search}
+
+
+
+
+
+minipo_ListBlogClient:
+  path:     /client/ListBlogClient
+  defaults: { _controller: minipoBundle:Blog:listBlogClient }
+
+minipo_ListBlogClientExt:
+    path:     /ListBlogClient
+    defaults: { _controller: minipoBundle:Blog:listBlogExterne }
+minipo_listblog:
+    path:     /agentBlog/listBlog
+    defaults: { _controller: minipoBundle:Blog:listBlog }
+
+
+minipo_AfficherToutesReclamation:
+    path:   /admin/afficher
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:AfficherToutesReclamation}
+
+minipo_AjouterReclamation:
+    path:   /client/ajouter
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:AjouterReclamation}
+
+minipo_AfficherMesReclamation:
+    path:   /client/afficherMesReclamation
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:AfficherMesReclamation}
+
+minipo_showdetailed:
+    path:   /client/showdetailed/{id}
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:showdetailedClient}
+
+minipo_ModifierEtatReclamation:
+    path:   /admin/modifieretat/{id}
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:ModifierEtatReclamation}
+minipo_SupprimerReclamation:
+    path:   /admin/afficher/supprimer/{etatr}
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:SupprimerReclamation}
+minipo_searchClub:
+    path:   /admin/RechercheReclamation
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:searchClub}
+minipo_showdetailedEmploye:
+    path:   /employe/showdetailed/{id}
+    defaults: { _controller: minipoBundle:ServiceReclamationEmploye:showdetailedEmploye}
+minipo_AfficherToutesReclamationEmploye:
+    path:   /admin/afficheremployer/
+    defaults: { _controller: minipoBundle:ServiceReclamationEmploye:AfficherToutesReclamationEmploye}
+
+minipo_ModifierEtatReclamationEmploye:
+    path:   /modifieretatemploye/{id}
+    defaults: { _controller: minipoBundle:ServiceReclamationEmploye:ModifierEtatReclamationEmploye}
+minipo_SupprimerReclamationEmploye:
+    path:   /afficher/supprimerEmploye/{etatr}
+    defaults: { _controller: minipoBundle:ServiceReclamationEmploye:SupprimerReclamationEmploye}
+minipo_AjouterReclamationEmploye:
+    path:   /employe/ajouterEmploye
+    defaults: { _controller: minipoBundle:ServiceReclamationEmploye:AjouterReclamationEmploye}
+
+minipo_Search:
+    path:   /admin/SearchEmploye
+    defaults: { _controller: minipoBundle:ServiceReclamationEmploye:ajaxList}
+
+
+minipo_AfficherMesReclamationEmployes:
+    path:   /employe/AfficherMesReclamationEmployes
+    defaults: { _controller: minipoBundle:ServiceReclamationEmploye:AfficherMesReclamationEmploye}
+minipo_reclamationcommande:
+    path:     /client/reccmd/{idcmd}
+    defaults: { _controller: minipoBundle:ServiceReclamationClient:AjouterReclamationCommande }
+minipo_Stat:
+    path:     /admin/stat
+    defaults: { _controller: minipoBundle:Stat:StatRecClt }
+minipo_deletenotemp:
+    path:     /employe/deletenotemp/{id}
+    defaults: { _controller: minipoBundle:Notification:Remove }
+minipo_Afficher:
+  path:     /RH/AfficherEmploye
+  defaults: { _controller: minipoBundle:Employe:trouverEmploye }
+minipo_editEmploye:
+  path:     /RH/edit/{id}
+  defaults: { _controller: minipoBundle:Employe:edit }
+minipo_updateEmploye:
+  path:     /RH/update/{id}
+  defaults: { _controller: minipoBundle:Employe:update }
+minipo_delete:
+  path:     /RH/delete/{id}
+  defaults: { _controller: minipoBundle:Employe:delete }
+minipo_Ajouter:
+  path:     /RH/AjouterEmploye
+  defaults: { _controller: minipoBundle:Employe:Ajouter }
+minipo_AjouterEmp:
+  path:     /RH/AjouterEmploye1
+  defaults: { _controller: minipoBundle:Employe:Ajouter2 }
+minipo_Affecter:
+  path:     /RH/AffecterEquipe
+  defaults: { _controller: minipoBundle:Equipe:Affecter }
+minipo_Equipe:
+  path:     /RH/GererEquipe
+  defaults: { _controller: minipoBundle:Equipe:Equipe }
+minipo_deleteEquipe:
+  path:     /RH/deleteEquipe/{id}
+  defaults: { _controller: minipoBundle:Equipe:delete }
+minipo_updateEquipe:
+  path:     /RH/updateEquipe/{id}
+  defaults: { _controller: minipoBundle:Equipe:update }
+minipo_BilanRH:
+  path:     /RH/Bilan
+  defaults: { _controller: minipoBundle:Bilan:index}
+minipo_AjouterConge:
+  path:     /employe/AjouterConge
+  defaults: { _controller: minipoBundle:Employe:AjouterConge}
+minipo_AfficherConge:
+  path:     /employe/AfficherConge
+  defaults: { _controller: minipoBundle:Employe:AfficherConge}
+minipo_AfficherEmployeConge:
+  path:     /RH/AfficherEmployeConge
+  defaults: { _controller: minipoBundle:Employe:AfficherEmployeEnConge}
+minipo_DemandeConge:
+  path:     /RH/DemandeConge
+  defaults: { _controller: minipoBundle:Employe:DemandeConge}
+minipo_AccepterConge:
+  path:     /RH/AccepterConge/{id}
+  defaults: { _controller: minipoBundle:Employe:AccepterConge}
+minipo_acceuilRH:
+  path:     /RH/acceuilRH
+  defaults: { _controller: minipoBundle:Acceuil:acceuil}
+minipo_profile:
+  path:     /RH/Profile
+  defaults: { _controller: minipoBundle:Profile:ProfileEmp}
+
+minipo_AcceuilAdmin:
+  path:     /admin/AcceuilAdmin
+  defaults: { _controller: minipoBundle:Acceuiladmin:Acceuiladmin }
+
+
+
+minipo_afficheLiv:
+  path:     /admin/affiche
+  defaults: { _controller: minipoBundle:LivraisonBack:afficheLiv }
+minipo_ajoutliv:
+  path:     /admin/ajout
+  defaults: { _controller: minipoBundle:LivraisonBack:ajoutliv }
+minipo_update:
+  path:     /admin/update/{id}
+  defaults: { _controller: minipoBundle:LivraisonBack:updateLiv }
+minipo_deletel:
+  path:     /admin/delete/{id}
+  defaults: { _controller: minipoBundle:LivraisonBack:Delete }
+minipo_afficheLivreur:
+  path:     /livreur/afficheLivreur
+  defaults: { _controller: minipoBundle:LivraisonFront:afficheLivreur }
+minipo_updateEtat:
+  path:     /livreur/updateEtat/{id}
+  defaults: { _controller: minipoBundle:LivraisonFront:updateEtat }
+minipo_searchByEtat:
+  path:     /livreur/searchByEtat
+  defaults: { _controller: minipoBundle:LivraisonFront:searchByEtat }
+minipo_searchByDest:
+  path:     /livreur/searchByDest
+  defaults: { _controller: minipoBundle:LivraisonFront:searchByDest }
+minipo_search:
+  path:     /livreur/search
+  defaults: { _controller: minipoBundle:LivraisonFront:search }
+minipo_mail:
+  path:     /admin/mail/{name}
+  defaults: { _controller: minipoBundle:LivraisonBack:mail }
+minipo_details:
+  path:     /admin/details/{id}
+  defaults: { _controller: minipoBundle:LivraisonBack:details }
+minipo_about:
+  path:     /about
+  defaults: { _controller: minipoBundle:Default:About }
+
+
+
+
+
+
+
+
+
+
+
+minipo_index:
+  path:     /pdf/{idFact}
+  defaults: { _controller: minipoBundle:Default:index}
+minipo_allCommandes:
+  path:     /allcmd
+  defaults: { _controller: minipoBundle:Commande:allCommandes }
+minipo_accepterCmd:
+  path:     /mod/{id}
+  defaults: { _controller: minipoBundle:Commande:accepterCmd }
+minipo_refuserCmd:
+  path:     /ref/{id}
+  defaults: { _controller: minipoBundle:Commande:refuserCmd }
+minipo_allFactures:
+  path:     /allfact
+  defaults: { _controller: minipoBundle:Facture:allFactures }
+minipo_allProduits:
+  path:     /allprod
+  defaults: { _controller: minipoBundle:Produit:allProduits }
+minipo_commandesClt:
+  path:     /MesCmd/{id}
+  defaults: { _controller: minipoBundle:Commande:commandesClt }
+minipo_validerCmd:
+  path:     /validerCmd/{id}
+  defaults: { _controller: minipoBundle:Commande:validerCmd }
+minipo_validCmd:
+  path:     /vvvvvvv/{id}
+  defaults: { _controller: minipoBundle:Commande:validCmd }
+minipo_aboutLc:
+  path:     /aboutLC/{idLc}
+  defaults: { _controller: minipoBundle:LigneCommande:aboutLc }
+minipo_aboutProd:
+  path:     /aboutprod/{id}
+  defaults: { _controller: minipoBundle:LigneCommande:aboutProd }
+minipo_infoProd:
+  path:     /infoprod/{idProd}
+  defaults: { _controller: minipoBundle:LigneCommande:infoProd }
+minipo_ajouterLC:
+  path:     /ajoutlc/{idProd}
+  defaults: { _controller: minipoBundle:LigneCommande:ajouterLC }
+minipo_afficherPanier:
+  path:     /panier/{id}
+  defaults: { _controller: minipoBundle:LigneCommande:afficherPanier }
+minipo_affTest:
+  path:     /test
+  defaults: { _controller: minipoBundle:LigneCommande:affTest }
+minipo_deleteLc:
+  path:     /delLc/{id}/{idLc}
+  defaults: { _controller: minipoBundle:LigneCommande:deleteLc }
+minipo_updateQteLc:
+  path:     /upqteLc/{idLc}
+  defaults: { _controller: minipoBundle:LigneCommande:updateQteLc }
+minipo_createFacture:
+  path:     /addfact/{id}/{idCmd}
+  defaults: { _controller: minipoBundle:Facture:createFacture }
+minipo_facturesClt:
+  path:     /factclt/{id}
+  defaults: { _controller: minipoBundle:Facture:facturesClt }
+minipo_updateEtatFact:
+  path:     /updaEtatFact/{id}/{idCmd}
+  defaults: { _controller: minipoBundle:Facture:updateEtatFact }
+minipo_deleteFacture:
+  path:     /delFact/{id}/{idCmd}
+  defaults: { _controller: minipoBundle:Facture:deleteFacture }
+minipo_deleteCmd:
+  path:     /delCmd/{id}/{idCmd}
+  defaults: { _controller: minipoBundle:Commande:deleteCmd }
+minipo_suppCmd:
+  path:     /delete/{id}/{idCmd}
+  defaults: { _controller: minipoBundle:Commande:suppCmd }
+minipo_detailCmd:
+  path:     /detailCmd/{idCmd}
+  defaults: { _controller: minipoBundle:Commande:detailCmd }
+minipo_ajouter:
+  path:     /ajouterrrr/{idProd}
+  defaults: { _controller: minipoBundle:LigneCommande:ajouter }
+minipo_paiment:
+  path:     /pp
+  defaults: { _controller: minipoBundle:Default:paiment }
+minipo_recherche:
+  path:     /recherche
+  defaults: { _controller: minipoBundle:Commande:recherche }
+minipo_testProduits:
+  path:     /testprod
+  defaults: { _controller: minipoBundle:Produit:testProduits }
+minipo_pp:
+  path:     /pp/{idp}
+  defaults: { _controller: minipoBundle:Produit:pp }
+minipo_updateLc:
+  path:     /upqteLctest
+  defaults: { _controller: minipoBundle:LigneCommande:updateLc }
+minipo_statistique:
+  path:     /stat
+  defaults: { _controller: minipoBundle:Facture:statistique }
+minipo_affichage:
+  path:     /minipo
+  defaults: { _controller: minipoBundle:Produit:affichage }
+minipo_affichageInterne:
+  path:     /affichageInt
+  defaults: { _controller: minipoBundle:Produit:affichageInterne }
+
+

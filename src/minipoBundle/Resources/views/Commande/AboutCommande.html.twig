@@ -1,0 +1,60 @@
+{% extends 'Panier.html.twig' %}
+
+{% block tableau %}
+    {% if cmd==NULL  %}
+        Pas de formation
+    {% else %}
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="table-responsive table-one margin-minus section-padding-bottom">
+
+                    <table class="spacing-table text-center">
+                        <thead>
+                        <tr>
+                            <th><strong>Commande Ref: </strong>{{ cmd[0].idcmd.refc }}</th>
+                            <th><strong>Etat Commande: </strong>{{ cmd[0].idcmd.etatc }}</th>
+                            <th><strong>Date: </strong>{{ cmd[0].idcmd.datec|date('d-m-Y') }}</th>
+                        </tr>
+                        </thead>
+                    </table>
+
+                    <table class="spacing-table text-center">
+                        <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Unit Price</th>
+                            <th>QTE</th>
+                            <th>Subtotal</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for elt in cmd %}
+                            <form method="post" >
+                                <tr>
+                                    <td class="td-img text-left">
+                                        <a href="#"><img src="{{ asset('assetsC/img/products/'~elt.idprod.photo) }}" alt="Add Product" /></a>
+                                        <div class="items-dsc">
+                                            <p><a href="#">{{ elt.idprod.designation }}</a></p>
+                                        </div>
+                                    </td>
+                                    <td>{{ elt.idprod.prix }}</td>
+                                    <td>
+                                       {{ elt.qte }}
+                                    </td>
+                                    <td>{{ elt.subtotal }}</td>
+                                </tr>
+                            </form>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <div class="single-check p-bottom50"style="width: 100%;">
+            <div class="subtotal clearfix"style="width: 100%;">
+                <p>Total: <span class="floatright">{{ cmd[0].idcmd.total }} DT</span></p>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

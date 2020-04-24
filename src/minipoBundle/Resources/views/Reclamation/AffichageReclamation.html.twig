@@ -1,0 +1,295 @@
+{% extends 'base.html.twig' %}
+{% block Reclamation %}
+    <li>  <a class="has-arrow waves-effect waves-dark"  aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">Gestion Reclamtion </span></a>
+        <ul aria-expanded="false" class="collapse">
+            <li><a href="{{ path('minipo_AfficherToutesReclamationEmploye') }}">Reclamations employe  </a></li>
+            <li><a href="{{ path('minipo_AfficherToutesReclamation') }}">Reclamations Client </a></li>
+            <li><a href="{{ path('minipo_Stat') }}">Statistique</a></li>
+
+        </ul>
+    </li>
+{% endblock  %}
+{% block reclamationclient   %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    {#<Table border="1">
+        <tr>
+            <th>id</th>
+            <th>type</th>
+            <th>Objet</th>
+            <th>Description</th>
+            <th>Date </th>
+            <th>Etat </th>
+            <th>Reponse</th>
+            <th>suppression</th>
+        </tr>
+        {% for elt in reclamation  %}
+        <tr>
+
+
+
+            <td> {{ elt.id.id }}</td>
+            <td> {{ elt.type}}</td>
+            <td> {{ elt.objet}}</td>
+            <td> {{ elt.description}}</td>
+            <td> {{ elt.dater|date}}</td>
+            <td> {{ elt.etatr }}</td>
+            <td> {{ elt.Reponse}} </td>
+            <td><a href="{{ path('minipo_SupprimerReclamation',{'etatr':elt.etatr}) }}">
+                    <button>supprimer</button></a></td>
+            {% endfor  %}
+        </tr>
+
+    </Table>#}
+
+
+
+    {#<label>Search: <input type="search" class="" placeholder="" aria-controls="example23" name="etatr"></label>
+    <a href="{{ path('minipo_RechercheReclamation') }}" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>
+    <ul>
+        <li>
+            <a href="{{ path('minipo_RechercheReclamation') }}" data-toggle="tooltip" data-original-title="Close">
+        </li>
+    </ul>#}
+
+
+
+    {#
+      <!-- jQuery is necessary -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+      <script type="text/javascript">
+          jQuery(document).ready(function() {
+              var searchRequest = null;
+              $("#search").keyup(function() {
+                  var minlength = 3;
+                  var that = this;
+                  var value = $(this).val();
+                  var entitySelector = $("#entitiesNav").html('');
+                  if (value.length >= minlength ) {
+                      if (searchRequest != null)
+                          searchRequest.abort();
+                      searchRequest = $.ajax({
+                          type: "GET",
+                          url: "{{ path('minipo_search') }}",
+                          data: {
+                              'q' : value
+                          },
+                          dataType: "text",
+                          success: function(msg){
+                              //we need to check if the value is the same
+                              if (value===$(that).val()) {
+                                  var result = JSON.parse(msg);
+                                  $.each(result, function(key, arr) {
+                                      $.each(arr, function(id, value) {
+                                          if (key === 'entities') {
+                                              if (id !== 'error') {
+                                                  {#entitySelector.append('<li><a href={{ path('minipo_showdetailed',{'id':idr}) }}">'+value+'</a></li>');
+                                              } else {
+                                                  entitySelector.append('<li class="errorLi">'+value+'</li>');
+                                              }
+                                          }
+                                      });
+                                  });
+                              }
+                          }
+                      });
+                  }
+              });
+          });
+      </script>#}
+
+
+    <div class="row" >
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Reclamation Employe</h4>
+                    <h6 class="card-subtitle">Liste des Reclamations Employe</h6>
+                    <div class="row m-t-40">
+                        <!-- Column -->
+                        <div class="col-md-6 col-lg-3 col-xlg-3">
+                            <div class="card card-inverse card-info">
+                                <div class="box bg-info text-center">
+                                    <h1 class="font-light text-white">{{ total }}</h1>
+                                    <h6 class="text-white">Total Reclamation </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 col-xlg-3">
+                            <div class="card card-success card-inverse">
+                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark " href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div class="notify "> <span class="heartbit"></span> <span class="point"></span> </div>
+                                    <div class="box text-center">
+
+                                        <h1 class="font-light text-white">{{ sommetraité }}</h1>
+
+
+                                        <h6 class="text-white">Total  traiter</h6>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu mailbox animated slideInUp card-success" aria-labelledby="2" >
+                                    <ul>
+
+                                        <div class="drop-title "><h2 class="font-light text-white ">Par Categorie</h2></div>
+
+
+
+                                        <li><div class="drop-title"><h5 class="font-light text-white label label-table label-primary">Probleme de Compte</h5> <center><label class="font-light text-white">{{ TPC }}</label> </center> </div></li>
+                                        <li><div class="drop-title"><h5 class="font-light text-white label label-table label-info">Probleme de Commande</h5><center> <label class="font-light text-white">{{ TPCMD }}</label> </center>  </div></li>
+                                        <li><div class="drop-title"><h5 class="font-light text-white label label-table label-warning">Autre</h5><center> <label class="font-light text-white">{{ TAutre }}</label> </center>  </div></li>
+
+
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+                        <div class="col-md-6 col-lg-3 col-xlg-3 dropdown">
+                            <div class="card card-inverse card-danger nav-item dropdown">
+
+                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark " href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+
+                                    <div class="box text-center">
+                                        <h1 class="font-light text-white " >{{ sommenontraité }}</h1>
+                                        <h6 class="text-white">Total Non Traiter</h6>
+                                    </div></a>
+                                <div class="dropdown-menu mailbox animated slideInUp card-danger" aria-labelledby="2">
+                                    <ul>
+
+                                        <div class="drop-title "><h2 class="font-light text-white">Par Categorie</h2></div>
+
+
+
+                                        <li><div class="drop-title "><h5 class="font-light text-white label label-table label-primary">Probleme de Compte</h5> <center><label class="font-light text-white">{{ NPC }}</label> </center> </div></li>
+                                        <li><div class="drop-title "><h5 class="font-light text-white label label-table label-info">Probleme de Commande</h5> <center><label class="font-light text-white">{{ NPCMD }}</label> </center> </div></li>
+                                        <li><div class="drop-title"><h5 class="font-light text-white label label-table label-warning">Autre</h5><center> <label class="font-light text-white">{{ NAutre }}</label> </center>  </div></li>
+
+
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div></div>
+                <div class="card-body collapse show">
+                    <div align="center" width="10px">
+                        <input type="text" name="search" id="search" class="form-control" placeholder="Rechercher" />
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="client_table">
+                            <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>{{ knp_pagination_sortable(reclamation,'Categorie','c.idcatrec') }}</th>
+                                <th>Objet</th>
+                                <th>Description</th>
+                                <th>Image</th>
+                                <th>Reponse</th>
+                                <th>{{ knp_pagination_sortable(reclamation,'Date','r.dater') }}</th>
+                                <th>{{ knp_pagination_sortable(reclamation,'Etat','r.etatr') }}</th>
+                                <th class="text-nowrap">Action</th>
+                            </tr>
+                            </thead>
+                            {% for elt in reclamation  %}
+                            <tbody>
+
+                            <tr>
+                                <td> {{ elt.id.firstname ~" "~ elt.id.lastname}}</td>
+                                <td>  {% if  elt.idcatrec.nom is same as ('Problème de Compte')%}
+                                        <div class="label label-table label-primary">{{ elt.idcatrec.nom }}</div>
+                                    {%endif%}
+                                    {% if  elt.idcatrec.nom is same as ('Problème de Commande')%}
+                                        <div class="label label-table label-info">{{ elt.idcatrec.nom }}</div>
+                                    {%endif%}
+                                    {% if  elt.idcatrec.nom is same as ('Autre')%}
+                                        <div class="label label-table label-warning">{{ elt.idcatrec.nom }}</div>
+                                    {%endif%}
+                                </td>
+                                <td> {{ elt.objet}}</td>
+                                <td> {{ elt.description}}</td>
+                                {% if elt.image == NULL %}
+                                    <td width="1%" ><center> <img class="img-fluid"width="20%" src="{{ asset('assets/images/Point_d_interrogation.jpg') }}" ></center></td>
+                                {% endif  %}
+                                {% if elt.image != NULL %}
+                                    <td width="10%"height="20%"><center> <img class="img-fluid"width="30%" src="{{ asset('uploads/post/' ~ elt.image) }}" alt=""></center></td>
+                                {% endif %}
+                                <td> {{ elt.Reponse}} </td>
+                                <td> {{ elt.dater|date()}}</td>
+                                <td>
+                                    {% if  elt.etatr is same as ('traiter')%}
+                                        <div class="label label-table label-success">{{ elt.etatr }}</div>
+                                    {%endif%}
+                                    {% if  elt.etatr is same as ('non traiter')%}
+                                        <div class="label label-table label-danger">{{ elt.etatr }}</div>
+                                    {%endif%}
+                                </td>
+
+
+                                <td class="text-nowrap">
+                                    <center><a href="{{ path('minipo_ModifierEtatReclamation',{'id':elt.idr}) }}" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a></center>
+                                    {#<a href="{{ path('minipo_SupprimerReclamation',{'etatr':elt.etatr}) }}" data-toggle="tooltip" data-original-title="Close"> <i class="fa fa-close text-danger"></i> </a>#}
+                                </td>
+                                {% endfor  %}
+
+
+
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <div class="navigation ">
+                            {{ knp_pagination_render(reclamation) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#client_table tr').dataTable({"sPaginationType": "full_numbers"});// note pagination will be done by datatables
+        });
+        $(document).ready(function(){
+            $('#search').keyup(function(){
+                search_table($(this).val());
+            });
+            function search_table(value){
+                $('#client_table tr').each(function(){
+                    var found = 'false';
+                    $(this).each(function(){
+                        if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                        {
+                            found = 'true';
+                        }
+                    });
+                    if(found === 'true')
+                    {
+                        $(this).show();
+                    }
+                    else
+                    {
+                        $(this).hide();
+                    }
+                });
+            }
+        });
+    </script>
+{% endblock %}
+
+  {# minipo_SupprimerReclamation:
+      path:   /afficher/supprimer/{etatr}
+                  defaults: { _controller: minipoBundle:ServiceReclamationClient:SupprimerReclamation}#}
