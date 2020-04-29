@@ -43,3 +43,15 @@ minipo_mail:
 minipo_details:
     path:     /admin/details/{id}
     defaults: { _controller: minipoBundle:LivraisonBack:details }
+minipo_affichLiv:
+    path:     /api/livraison
+    defaults: { _controller: minipoBundle:Mobile:affichLiv }
+minipo_searchl:
+    path:     /api/livraison/recherche
+    defaults: { _controller: minipoBundle:Mobile:searchl }
+minipo_api_update:
+    path:     /api/livraison/etat
+    defaults: { _controller: minipoBundle:Mobile:updateEtat }
+minipo_api_detail:
+    path:     /api/livraison/detail
+    defaults: { _controller: minipoBundle:Mobile:detail }

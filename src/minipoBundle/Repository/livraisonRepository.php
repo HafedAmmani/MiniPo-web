@@ -11,6 +11,12 @@ class livraisonRepository extends EntityRepository
         return $query=$qb->getResult();
     }
 
+    public function findLivraisonById($id){
+        $qb=$this->getEntityManager()->createQuery("select l from minipoBundle:livraison l where l.idliv=:id")
+        ->setParameter('id',$id);
+        return $query=$qb->getArrayResult();
+    }
+
     public function findLivreur($id){
         $qb=$this->getEntityManager()->createQuery("select l from minipoBundle:livraison l where l.id=:id ")->setParameter('id', $id);
         return $query=$qb->getResult();
@@ -37,6 +43,24 @@ class livraisonRepository extends EntityRepository
             ->setParameter('idliv', $idliv);
         return $query=$qb->getResult();
 
+    }
+    public function findLivreurlist($id){
+        $qb=$this->getEntityManager()->createQuery("select l from minipoBundle:livraison l where l.id=:id ")->setParameter('id', $id);
+        return $query=$qb->getArrayResult();
+    }
+    public function searchLiv($id, $etatl, $destination){
+        if($etatl === "all")
+            $qb=$this->getEntityManager()
+                ->createQuery("select l from minipoBundle:livraison l where l.id=:id and l.destination LIKE :destination")
+                ->setParameter('id', $id)
+                ->setParameter('destination', $destination);
+        else
+            $qb=$this->getEntityManager()
+                ->createQuery("select l from minipoBundle:livraison l where l.id=:id and l.etatl=:etatl and l.destination LIKE :destination")
+                ->setParameter('etatl', $etatl)
+                ->setParameter('id', $id)
+                ->setParameter('destination', $destination);
+        return $query=$qb->getArrayResult();
     }
 
 }
