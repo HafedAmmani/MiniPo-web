@@ -6,9 +6,11 @@ use minipoBundle\Entity\Livraison;
 use minipoBundle\Form\RechercheDestType;
 use minipoBundle\Form\RechercheLType;
 use minipoBundle\Form\UpdateEtatType;
+use Swift_Message;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
@@ -52,6 +54,33 @@ class MobileController extends Controller
                 $msg = array();
                 $msg['message'] = "Updated";
                 $formatted = $serializer->normalize($msg);
+                $data = $em->getRepository(Livraison::class)
+                    ->getEmailData($liv->getIdc(),$liv->getIdliv());
+                if($params['etatl'] == "refusee")
+                    $message = (new Swift_Message('Order Confirmation'))
+                        ->setFrom('projetminipo@gmail.com')
+                        ->setTo('projetminipo@gmail.com')
+                        ->setBody(
+                            $this->renderView(
+                            // app/Resources/views/Emails/registration.html.twig
+                                '@minipo/Livraison/emailRefusee.html.twig',
+                                ['data' => $data]
+                            ),
+                            'text/html'
+                        );
+                else
+                    $message = (new Swift_Message('Order Confirmation'))
+                        ->setFrom('projetminipo@gmail.com')
+                        ->setTo('projetminipo@gmail.com')
+                        ->setBody(
+                            $this->renderView(
+                            // app/Resources/views/Emails/registration.html.twig
+                                '@minipo/Livraison/emailLivree.html.twig',
+                                ['data' => $data]
+                            ),
+                            'text/html'
+                        );
+                $this->get('mailer')->send($message);
                 return new JsonResponse($formatted);
             }
         }
@@ -107,5 +136,26 @@ class MobileController extends Controller
             $livs = $this->getDoctrine()->getRepository(Livraison::class)->findAll();
         }
         return $this->render("@minipo/Livraison/searchbydest.html.twig", array('form'=>$form->createView(),'livraison'=>$livs));
+    }
+    public function mailLAction($name)
+    {
+        $message = (new Swift_Message('Hello Email'))
+            ->setFrom('projetminipo@gmail.com')
+            ->setTo('projetminipo@gmail.com')
+            ->setBody(
+                $this->renderView(
+                // app/Resources/views/Emails/registration.html.twig
+                    '@minipo/Livraison/email.html.twig',
+                    ['name' => $name]
+                ),
+                'text/html'
+            );
+
+        $this->get('mailer')->send($message);
+
+        // or, you can also fetch the mailer service this way
+        // $this->get('mailer')->send($message);
+
+        return new Response('<html><body>test</body></html>');
     }
 }
